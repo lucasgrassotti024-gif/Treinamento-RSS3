@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>RSS3 Treinamentos de Segurança</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+
+
+
+
+
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav a {
+      color: var(--branco);
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--laranja);
+    }
+
+    /* HERO / BANNER PRINCIPAL */
+.hero {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8, #ff7a00);
+  color: var(--branco);
+  padding: 90px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 2.6em;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.15em;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--branco);
+  padding: 16px 36px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: 0.2s;
+}
+
+.hero-btn:hover {
+  background: var(--branco);
+  color: var(--azul);
+  transform: translateY(-3px);
+}
+
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      flex: 1;
+      font-size: 0.95em;
+    }
+
+    .card a {
+      margin-top: 15px;
+      background: var(--laranja);
+      color: var(--branco);
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .secao-titulo {
+      margin: 50px 0 20px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+      color: var(--azul);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>RSS<span>3</span> Treinamentos</h1>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>Treinamentos interno de Segurança Industrial</h2>
+    <p>
+      Plataforma de conscientização para apoiar o aprendizado, reforçar
+      comportamentos seguros e reduzir riscos no ambiente de trabalho.
+    </p>
+
+    <a href="#cursos" class="hero-btn">Ver Cursos</a>
+  </div>
+</section>
+
+
+<main id="cursos">
+
+
+  <!-- BÁSICOS E NRs -->
+  <h2 class="secao-titulo">🦺 Cursos Básicos e NRs</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>NR-06 – Uso de EPI</h3>
+      <p>Importância do EPI, uso correto, conservação e responsabilidade.</p>
+      <a href="curso-epi.html">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3>NR-23 – Prevenção e Combate a Incêndio</h3>
+      <p>Extintores, rotas de fuga, tipos de fogo e comportamento seguro.</p>
+      <a href="curso-incendio.html">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3>NR-35 – Trabalho em Altura</h3>
+      <p>Cinto, ancoragem, quedas e regras básicas acima de 2 metros.</p>
+      <a href="curso-altura.html">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3>NR-11 – Movimentação de Cargas</h3>
+      <p>Empilhadeiras, pontes rolantes e transporte interno.</p>
+      <a href="curso-nr11.html">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3>NR-12 – Máquinas e Equipamentos</h3>
+      <p>Proteções, bloqueios e segurança em máquinas.</p>
+      <a href="curso-nr12.html">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3>Ergonomia (NR-17)</h3>
+      <p>Postura, esforço físico e prevenção de dores e lesões.</p>
+      <a href="curso-ergonomia.html">Acessar Curso</a>
+    </div>
+  </div>
+
+  <!-- TRABALHOS ESPECIAIS -->
+  <h2 class="secao-titulo">🎨🏗️ Trabalhos Especiais</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Pintura Industrial Segura</h3>
+      <p>Vapores, incêndio, EPIs e cuidados na pintura.</p>
+      <a href="curso-pintura.html">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3>Uso Seguro de Andaimes</h3>
+      <p>Quedas, inspeção, guarda-corpo e acesso seguro.</p>
+      <a href="curso-andaime.html">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3>Hidrojato – Riscos e Segurança</h3>
+      <p>Alta pressão, cortes e EPIs especiais.</p>
+      <a href="curso-hidrojato.html">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3>Hidrovácuo – Operação Segura</h3>
+      <p>Sucção, gases e resíduos contaminados.</p>
+      <a href="curso-hidrovacuo.html">Acessar Curso</a>
+    </div>
+  </div>
+
+  <!-- QUÍMICOS E CRÍTICOS -->
+  <h2 class="secao-titulo">🧪🕳️ Segurança Crítica</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Gases e Vazamentos Químicos</h3>
+      <p>Identificação, fuga e comunicação.</p>
+      <a href="curso-gases-vazamentos.html">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3>Chuveiro de Emergência e Lava-Olhos</h3>
+      <p>Uso correto em acidentes químicos.</p>
+      <a href="curso-chuveiro-lavaolhos.html">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3>Espaço Confinado (NR-33)</h3>
+      <p>Falta de oxigênio, gases e resgate.</p>
+      <a href="curso-espaco-confinado.html">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3>Permissão de Trabalho (PT)</h3>
+      <p>Autorização, riscos e responsabilidades.</p>
+      <a href="curso-permissao-trabalho.html">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3>Parada Geral – Segurança</h3>
+      <p>Grandes manutenções e riscos elevados.</p>
+      <a href="curso-parada-geral.html">Acessar Curso</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 <span>RSS3</span> Treinamentos de Segurança
+</footer>
+
+</body>
+</html>
