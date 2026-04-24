@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso Primeiros Socorros - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--laranja);
+    }
+
+    /* HERO / BANNER PRINCIPAL */
+.hero {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8, #ff7a00);
+  color: var(--branco);
+  padding: 90px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 2.6em;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.15em;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--branco);
+  padding: 16px 36px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: 0.2s;
+}
+
+.hero-btn:hover {
+  background: var(--branco);
+  color: var(--azul);
+  transform: translateY(-3px);
+}
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      flex: 1;
+      font-size: 0.95em;
+    }
+
+    .card a {
+      margin-top: 15px;
+      background: var(--laranja);
+      color: var(--branco);
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .secao-titulo {
+      margin: 50px 0 20px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+      color: var(--azul);
+    }
+
+    /* Seletor de Idiomas */
+    .language-selector {
+      display: flex;
+      gap: 5px;
+      margin-left: 20px;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--branco);
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8em;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+      color: var(--branco);
+      border-color: var(--laranja);
+    }
+
+    /* Estilos do Curso */
+    .course-section {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .course-section h2 {
+      color: var(--azul);
+      margin-bottom: 20px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+    }
+
+    .course-section p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .epi-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .epi-type-card {
+      background: var(--branco);
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .epi-type-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .epi-type-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--azul);
+    }
+
+    .epi-type-title {
+      font-size: 1.2rem;
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .epi-type-desc {
+      color: var(--cinza-texto);
+      line-height: 1.5;
+    }
+
+    .image-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .course-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .image-caption {
+      font-style: italic;
+      color: #666;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .info-list li {
+      background: var(--cinza-claro);
+      border-left: 4px solid var(--laranja);
+      padding: 15px 20px;
+      margin: 10px 0;
+      border-radius: 0 8px 8px 0;
+      transition: transform 0.3s ease;
+    }
+
+    .info-list li:hover {
+      transform: translateX(5px);
+      background: #e9ecef;
+    }
+
+    .alert-box {
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+      box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+    }
+
+    .alert-box h4 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .quiz-section {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .quiz-title {
+      color: var(--azul);
+      text-align: center;
+      margin-bottom: 30px;
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .quiz-question {
+      background: var(--cinza-claro);
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .quiz-question h4 {
+      color: var(--azul);
+      margin-bottom: 15px;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quiz-option-label {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      background: var(--branco);
+      border: 1px solid #e9ecef;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-option-label:hover {
+      background: var(--cinza-claro);
+      border-color: var(--laranja);
+    }
+
+    .quiz-option-label input[type="radio"] {
+      margin-right: 12px;
+    }
+
+    .quiz-submit-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .quiz-submit {
+      background: var(--laranja);
+      color: var(--branco);
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .quiz-submit:hover {
+      background: #e67300;
+      transform: translateY(-2px);
+    }
+
+    .quiz-result {
+      display: none;
+      background: var(--branco);
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .quiz-result h3 {
+      color: var(--azul);
+      margin-bottom: 20px;
+    }
+
+    .score-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      margin: 20px 0;
+    }
+
+    .score-circle.passing {
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+    }
+
+    .score-circle.failing {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+    }
+
+    .quiz-message {
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .quiz-message.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .quiz-message.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .quiz-actions button, .quiz-actions a {
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .quiz-actions button {
+      background: var(--azul);
+      color: var(--branco);
+      border: none;
+    }
+
+    .quiz-actions a {
+      background: var(--laranja);
+      color: var(--branco);
+    }
+
+    .quiz-actions button:hover, .quiz-actions a:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      nav a {
+        margin: 5px 0;
+      }
+      
+      .hero {
+        padding: 60px 20px;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .epi-types-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .quiz-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>RSS<span>3</span> Treinamentos</h1>
+  <nav>
+    <a href="../index.html" data-translate="nav-home">Início</a>
+    <a href="../sobre.html" data-translate="nav-about">Sobre</a>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2 data-translate="course-firstaid-hero-title">Primeiros Socorros</h2>
+    <p data-translate="course-firstaid-hero-subtitle">Aprenda a socorrer vítimas na fábrica de celulose</p>
+    <a href="#conteudo" class="hero-btn" data-translate="hero-btn">Começar Curso</a>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <section class="course-section">
+    <h2 data-translate="firstaid-section-1-title">O que são Primeiros Socorros?</h2>
+    <p data-translate="course-firstaid-intro">
+      Primeiros socorros são os cuidados imediatos prestados a uma vítima de acidente ou mal súbito, antes da chegada de ajuda médica profissional. Na fábrica de celulose, onde os riscos são elevados, saber primeiros socorros pode fazer a diferença entre a vida e a morte. Cada segundo conta e um atendimento correto pode evitar sequelas permanentes.
+    </p>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="firstaid-section-2-title">Princípios Fundamentais</h2>
+    <p data-translate="firstaid-section-2-text">
+      Os princípios básicos dos primeiros socorros são:
+    </p>
+    
+    <div class="epi-types-grid">
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🆘</div>
+        <h3 class="epi-type-title" data-translate="firstaid-type-1-title">Mantenha a Calma</h3>
+        <p class="epi-type-desc" data-translate="firstaid-type-1-desc">A calma é essencial para avaliar a situação e agir corretamente.</p>
+      </div>
+      
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🆘</div>
+        <h3 class="epi-type-title" data-translate="firstaid-type-2-title">Segurança Primeiro</h3>
+        <p class="epi-type-desc" data-translate="firstaid-type-2-desc">Verifique se o local é seguro antes de abordar a vítima.</p>
+      </div>
+      
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🆘</div>
+        <h3 class="epi-type-title" data-translate="firstaid-type-3-title">Peça Ajuda</h3>
+        <p class="epi-type-desc" data-translate="firstaid-type-3-desc">Acione o serviço de emergência imediatamente.</p>
+      </div>
+    </div>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="firstaid-section-3-title">Avaliação da Vítima</h2>
+    <p data-translate="firstaid-section-3-text">
+      Para avaliar uma vítima, siga estes passos:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="firstaid-assessment-1">Verifique a consciência: chame a vítima e toque levemente</li>
+      <li data-translate="firstaid-assessment-2">Verifique a respiração: observe o movimento do tórax</li>
+      <li data-translate="firstaid-assessment-3">Verifique sangramentos graves: procure ferimentos ativos</li>
+      <li data-translate="firstaid-assessment-4">Verifique fraturas: observe deformidades ou dor intensa</li>
+      <li data-translate="firstaid-assessment-5">Verifique queimaduras: avalie extensão e profundidade</li>
+    </ul>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="firstaid-section-4-title">Emergências Comuns</h2>
+    <p data-translate="firstaid-section-4-text">
+      Na fábrica de celulose, as emergências mais frequentes são:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="firstaid-emergencies-1">Quedas e traumas: imobilize e verifique lesões internas</li>
+      <li data-translate="firstaid-emergencies-2">Queimaduras químicas: lave abundantemente com água</li>
+      <li data-translate="firstaid-emergencies-3">Inalação de gases: remova para área ventilada</li>
+      <li data-translate="firstaid-emergencies-4">Cortes e amputações: controle o sangramento</li>
+      <li data-translate="firstaid-emergencies-5">Choque elétrico: desligue a energia antes de abordar</li>
+    </ul>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="firstaid-section-5-title">Procedimentos Específicos</h2>
+    <p data-translate="firstaid-section-5-text">
+      Para cada tipo de emergência, proceda da seguinte forma:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="firstaid-procedures-1">RCP: 30 compressões e 2 ventilações até ajuda chegar</li>
+      <li data-translate="firstaid-procedures-2">Engasgamento: manobra de Heimlich se consciente</li>
+      <li data-translate="firstaid-procedures-3">Hemorragia: pressão direta no ponto de sangramento</li>
+      <li data-translate="firstaid-procedures-4">Fraturas: imobilize e não tente alinhar</li>
+      <li data-translate="firstaid-procedures-5">Choque: deite a vítima e eleve as pernas</li>
+    </ul>
+    
+        
+    <div class="alert-box">
+      <h4 data-translate="firstaid-alert-title">Atenção!</h4>
+      <p data-translate="firstaid-alert-text">Primeiros socorros não substituem atendimento médico profissional. Seu papel é estabilizar a vítima até a chegada do socorro especializado. Nunca faça procedimentos que não conhece bem. Em dúvida, apenas mantenha a vítima confortável e aguarde ajuda.</p>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h2 class="quiz-title" data-translate="firstaid-quiz-title">Teste seu Conhecimento</h2>
+    
+    <div class="quiz-question">
+      <h4 data-translate="firstaid-quiz-question-1">Qual o primeiro passo ao abordar uma vítima?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="a" class="quiz-option">
+          <span data-translate="firstaid-quiz-q1-a">Começar a fazer curativos</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="b" class="quiz-option">
+          <span data-translate="firstaid-quiz-q1-b">Verificar se o local é seguro</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="c" class="quiz-option">
+          <span data-translate="firstaid-quiz-q1-c">Mover a vítima imediatamente</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="d" class="quiz-option">
+          <span data-translate="firstaid-quiz-q1-d">Apenas observar de longe</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="e" class="quiz-option">
+          <span data-translate="firstaid-quiz-q1-e">Chamar um colega para ajudar</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="firstaid-quiz-question-2">O que fazer em caso de queimadura química?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="a" class="quiz-option">
+          <span data-translate="firstaid-quiz-q2-a">Passar pomada imediatamente</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="b" class="quiz-option">
+          <span data-translate="firstaid-quiz-q2-b">Lavar abundantemente com água</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="c" class="quiz-option">
+          <span data-translate="firstaid-quiz-q2-c">Cobrir com pano seco</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="d" class="quiz-option">
+          <span data-translate="firstaid-quiz-q2-d">Apenas esperar o médico</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="e" class="quiz-option">
+          <span data-translate="firstaid-quiz-q2-e">Tirar fotos para registro</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="firstaid-quiz-question-3">Qual a proporção da RCP?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="a" class="quiz-option">
+          <span data-translate="firstaid-quiz-q3-a">10 compressões e 1 ventilação</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="b" class="quiz-option">
+          <span data-translate="firstaid-quiz-q3-b">30 compressões e 2 ventilações</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="c" class="quiz-option">
+          <span data-translate="firstaid-quiz-q3-c">Apenas ventilações</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="d" class="quiz-option">
+          <span data-translate="firstaid-quiz-q3-d">Apenas compressões</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="e" class="quiz-option">
+          <span data-translate="firstaid-quiz-q3-e">Depende da idade da vítima</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="firstaid-quiz-question-4">Como controlar sangramento grave?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="a" class="quiz-option">
+          <span data-translate="firstaid-quiz-q4-a">Elevar o membro e esperar</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="b" class="quiz-option">
+          <span data-translate="firstaid-quiz-q4-b">Pressão direta no ponto de sangramento</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="c" class="quiz-option">
+          <span data-translate="firstaid-quiz-q4-c">Apenas limpar o ferimento</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="d" class="quiz-option">
+          <span data-translate="firstaid-quiz-q4-d">Colocar gelo imediatamente</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="e" class="quiz-option">
+          <span data-translate="firstaid-quiz-q4-e">Mover a vítima para hospital</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-submit-container">
+      <button id="quiz-submit" class="quiz-submit" data-translate="quiz-submit">Enviar Respostas</button>
+    </div>
+    
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 <span>RSS3</span> Treinamentos de Segurança
+</footer>
+
+<script>
+// Sistema de Tradução RSS3 Treinamentos
+const translations = {
+    pt: {
+        'nav-home': 'Início',
+        'nav-about': 'Sobre',
+        'course-firstaid-hero-title': 'Primeiros Socorros',
+        'course-firstaid-hero-subtitle': 'Aprenda a socorrer vítimas na fábrica de celulose',
+        'hero-btn': 'Começar Curso',
+        
+        'firstaid-section-1-title': 'O que são Primeiros Socorros?',
+        'course-firstaid-intro': 'Primeiros socorros são os cuidados imediatos prestados a uma vítima de acidente ou mal súbito, antes da chegada de ajuda médica profissional. Na fábrica de celulose, onde os riscos são elevados, saber primeiros socorros pode fazer a diferença entre a vida e a morte. Cada segundo conta e um atendimento correto pode evitar sequelas permanentes.',
+        
+        'firstaid-section-2-title': 'Princípios Fundamentais',
+        'firstaid-section-2-text': 'Os princípios básicos dos primeiros socorros são:',
+        
+        'firstaid-type-1-title': 'Mantenha a Calma',
+        'firstaid-type-1-desc': 'A calma é essencial para avaliar a situação e agir corretamente.',
+        
+        'firstaid-type-2-title': 'Segurança Primeiro',
+        'firstaid-type-2-desc': 'Verifique se o local é seguro antes de abordar a vítima.',
+        
+        'firstaid-type-3-title': 'Peça Ajuda',
+        'firstaid-type-3-desc': 'Acione o serviço de emergência imediatamente.',
+        
+        'firstaid-section-3-title': 'Avaliação da Vítima',
+        'firstaid-section-3-text': 'Para avaliar uma vítima, siga estes passos:',
+        
+        'firstaid-assessment-1': 'Verifique a consciência: chame a vítima e toque levemente',
+        'firstaid-assessment-2': 'Verifique a respiração: observe o movimento do tórax',
+        'firstaid-assessment-3': 'Verifique sangramentos graves: procure ferimentos ativos',
+        'firstaid-assessment-4': 'Verifique fraturas: observe deformidades ou dor intensa',
+        'firstaid-assessment-5': 'Verifique queimaduras: avalie extensão e profundidade',
+        
+        'firstaid-section-4-title': 'Emergências Comuns',
+        'firstaid-section-4-text': 'Na fábrica de celulose, as emergências mais frequentes são:',
+        
+        'firstaid-emergencies-1': 'Quedas e traumas: imobilize e verifique lesões internas',
+        'firstaid-emergencies-2': 'Queimaduras químicas: lave abundantemente com água',
+        'firstaid-emergencies-3': 'Inalação de gases: remova para área ventilada',
+        'firstaid-emergencies-4': 'Cortes e amputações: controle o sangramento',
+        'firstaid-emergencies-5': 'Choque elétrico: desligue a energia antes de abordar',
+        
+        'firstaid-section-5-title': 'Procedimentos Específicos',
+        'firstaid-section-5-text': 'Para cada tipo de emergência, proceda da seguinte forma:',
+        
+        'firstaid-procedures-1': 'RCP: 30 compressões e 2 ventilações até ajuda chegar',
+        'firstaid-procedures-2': 'Engasgamento: manobra de Heimlich se consciente',
+        'firstaid-procedures-3': 'Hemorragia: pressão direta no ponto de sangramento',
+        'firstaid-procedures-4': 'Fraturas: imobilize e não tente alinhar',
+        'firstaid-procedures-5': 'Choque: deite a vítima e eleve as pernas',
+        
+        'firstaid-alert-title': 'Atenção!',
+        'firstaid-alert-text': 'Primeiros socorros não substituem atendimento médico profissional. Seu papel é estabilizar a vítima até a chegada do socorro especializado. Nunca faça procedimentos que não conhece bem. Em dúvida, apenas mantenha a vítima confortável e aguarde ajuda.',
+        
+        'firstaid-quiz-title': 'Teste seu Conhecimento',
+        'firstaid-quiz-question-1': 'Qual o primeiro passo ao abordar uma vítima?',
+        'firstaid-quiz-question-2': 'O que fazer em caso de queimadura química?',
+        'firstaid-quiz-question-3': 'Qual a proporção da RCP?',
+        'firstaid-quiz-question-4': 'Como controlar sangramento grave?',
+        
+        'firstaid-quiz-q1-a': 'Começar a fazer curativos',
+        'firstaid-quiz-q1-b': 'Verificar se o local é seguro',
+        'firstaid-quiz-q1-c': 'Mover a vítima imediatamente',
+        'firstaid-quiz-q1-d': 'Apenas observar de longe',
+        'firstaid-quiz-q1-e': 'Chamar um colega para ajudar',
+        
+        'firstaid-quiz-q2-a': 'Passar pomada imediatamente',
+        'firstaid-quiz-q2-b': 'Lavar abundantemente com água',
+        'firstaid-quiz-q2-c': 'Cobrir com pano seco',
+        'firstaid-quiz-q2-d': 'Apenas esperar o médico',
+        'firstaid-quiz-q2-e': 'Tirar fotos para registro',
+        
+        'firstaid-quiz-q3-a': '10 compressões e 1 ventilação',
+        'firstaid-quiz-q3-b': '30 compressões e 2 ventilações',
+        'firstaid-quiz-q3-c': 'Apenas ventilações',
+        'firstaid-quiz-q3-d': 'Apenas compressões',
+        'firstaid-quiz-q3-e': 'Depende da idade da vítima',
+        
+        'firstaid-quiz-q4-a': 'Elevar o membro e esperar',
+        'firstaid-quiz-q4-b': 'Pressão direta no ponto de sangramento',
+        'firstaid-quiz-q4-c': 'Apenas limpar o ferimento',
+        'firstaid-quiz-q4-d': 'Colocar gelo imediatamente',
+        'firstaid-quiz-q4-e': 'Mover a vítima para hospital',
+        
+        'quiz-submit': 'Enviar Respostas',
+        'quiz-result-title': 'Resultado do Quiz',
+        'quiz-score': 'Sua pontuação',
+        'quiz-correct': 'Respostas corretas',
+        'quiz-incorrect': 'Respostas incorretas',
+        'quiz-congratulations': 'Parabéns! Você acertou',
+        'quiz-try-again': 'Tente novamente! Você acertou',
+        'quiz-retry': 'Refazer Quiz',
+        'quiz-back': 'Voltar para os Cursos'
+    },
+    
+    es: {
+        'nav-home': 'Inicio',
+        'nav-about': 'Acerca de',
+        'course-firstaid-hero-title': 'Primeros Auxilios',
+        'course-firstaid-hero-subtitle': 'Aprenda a socorrer víctimas en la fábrica de celulosa',
+        'hero-btn': 'Comenzar Curso',
+        
+        'firstaid-section-1-title': '¿Qué son Primeros Auxilios?',
+        'course-firstaid-intro': 'Primeros auxilios son los cuidados inmediatos prestados a una víctima de accidente o mal súbito, antes de la llegada de ayuda médica profesional. En la fábrica de celulosa, donde los riesgos son elevados, saber primeros auxilios puede marcar la diferencia entre la vida y la muerte. Cada segundo cuenta y una atención correcta puede evitar secuelas permanentes.',
+        
+        'firstaid-section-2-title': 'Principios Fundamentales',
+        'firstaid-section-2-text': 'Los principios básicos de los primeros auxilios son:',
+        
+        'firstaid-type-1-title': 'Mantenga la Calma',
+        'firstaid-type-1-desc': 'La calma es esencial para evaluar la situación y actuar correctamente.',
+        
+        'firstaid-type-2-title': 'Seguridad Primero',
+        'firstaid-type-2-desc': 'Verifique si el lugar es seguro antes de abordar a la víctima.',
+        
+        'firstaid-type-3-title': 'Pida Ayuda',
+        'firstaid-type-3-desc': 'Active el servicio de emergencia inmediatamente.',
+        
+        'firstaid-section-3-title': 'Evaluación de la Víctima',
+        'firstaid-section-3-text': 'Para evaluar a una víctima, siga estos pasos:',
+        
+        'firstaid-assessment-1': 'Verifique la conciencia: llame a la víctima y toque ligeramente',
+        'firstaid-assessment-2': 'Verifique la respiración: observe el movimiento del tórax',
+        'firstaid-assessment-3': 'Verifique sangrados graves: busque heridas activas',
+        'firstaid-assessment-4': 'Verifique fracturas: observe deformidades o dolor intenso',
+        'firstaid-assessment-5': 'Verifique quemaduras: evalúe extensión y profundidad',
+        
+        'firstaid-section-4-title': 'Emergencias Comunes',
+        'firstaid-section-4-text': 'En la fábrica de celulosa, las emergencias más frecuentes son:',
+        
+        'firstaid-emergencies-1': 'Caídas y traumas: inmovilice y verifique lesiones internas',
+        'firstaid-emergencies-2': 'Quemaduras químicas: lave abundantemente con agua',
+        'firstaid-emergencies-3': 'Inhalación de gases: remueva a área ventilada',
+        'firstaid-emergencies-4': 'Cortes y amputaciones: controle el sangrado',
+        'firstaid-emergencies-5': 'Choque eléctrico: desconecte la energía antes de abordar',
+        
+        'firstaid-section-5-title': 'Procedimientos Específicos',
+        'firstaid-section-5-text': 'Para cada tipo de emergencia, proceda de la siguiente forma:',
+        
+        'firstaid-procedures-1': 'RCP: 30 compresiones y 2 ventilaciones hasta que llegue ayuda',
+        'firstaid-procedures-2': 'Ahogamiento: maniobra de Heimlich si está consciente',
+        'firstaid-procedures-3': 'Hemorragia: presión directa en el punto de sangrado',
+        'firstaid-procedures-4': 'Fracturas: inmovilice y no intente alinear',
+        'firstaid-procedures-5': 'Choque: acueste a la víctima y eleve las piernas',
+        
+        'firstaid-alert-title': '¡Atención!',
+        'firstaid-alert-text': 'Primeros auxilios no sustituyen atención médica profesional. Su papel es estabilizar a la víctima hasta la llegada del socorro especializado. Nunca haga procedimientos que no conoce bien. En duda, solo mantenga a la víctima confortable y espere ayuda.',
+        
+        'firstaid-quiz-title': 'Pruebe su Conocimiento',
+        'firstaid-quiz-question-1': '¿Cuál es el primer paso al abordar a una víctima?',
+        'firstaid-quiz-question-2': '¿Qué hacer en caso de quemadura química?',
+        'firstaid-quiz-question-3': '¿Cuál es la proporción de RCP?',
+        'firstaid-quiz-question-4': '¿Cómo controlar sangrado grave?',
+        
+        'firstaid-quiz-q1-a': 'Comenzar a hacer curaciones',
+        'firstaid-quiz-q1-b': 'Verificar si el lugar es seguro',
+        'firstaid-quiz-q1-c': 'Mover a la víctima inmediatamente',
+        'firstaid-quiz-q1-d': 'Solo observar de lejos',
+        'firstaid-quiz-q1-e': 'Llamar a un colega para ayudar',
+        
+        'firstaid-quiz-q2-a': 'Pasar pomada inmediatamente',
+        'firstaid-quiz-q2-b': 'Lavar abundantemente con agua',
+        'firstaid-quiz-q2-c': 'Cubrir con paño seco',
+        'firstaid-quiz-q2-d': 'Solo esperar al médico',
+        'firstaid-quiz-q2-e': 'Tomar fotos para registro',
+        
+        'firstaid-quiz-q3-a': '10 compresiones y 1 ventilación',
+        'firstaid-quiz-q3-b': '30 compresiones y 2 ventilaciones',
+        'firstaid-quiz-q3-c': 'Solo ventilaciones',
+        'firstaid-quiz-q3-d': 'Solo compresiones',
+        'firstaid-quiz-q3-e': 'Depende de la edad de la víctima',
+        
+        'firstaid-quiz-q4-a': 'Elevar el miembro y esperar',
+        'firstaid-quiz-q4-b': 'Presión directa en el punto de sangrado',
+        'firstaid-quiz-q4-c': 'Solo limpiar la herida',
+        'firstaid-quiz-q4-d': 'Colocar hielo inmediatamente',
+        'firstaid-quiz-q4-e': 'Mover a la víctima al hospital',
+        
+        'quiz-submit': 'Enviar Respuestas',
+        'quiz-result-title': 'Resultado del Quiz',
+        'quiz-score': 'Su puntuación',
+        'quiz-correct': 'Respuestas correctas',
+        'quiz-incorrect': 'Respuestas incorrectas',
+        'quiz-congratulations': '¡Felicidades! Usted acertó',
+        'quiz-try-again': '¡Inténtelo de nuevo! Usted acertó',
+        'quiz-retry': 'Rehacer Quiz',
+        'quiz-back': 'Volver a los Cursos'
+    },
+    
+    en: {
+        'nav-home': 'Home',
+        'nav-about': 'About',
+        'course-firstaid-hero-title': 'First Aid',
+        'course-firstaid-hero-subtitle': 'Learn to help victims in the pulp factory',
+        'hero-btn': 'Start Course',
+        
+        'firstaid-section-1-title': 'What is First Aid?',
+        'course-firstaid-intro': 'First aid is the immediate care provided to an accident or sudden illness victim, before the arrival of professional medical help. In the pulp factory, where risks are high, knowing first aid can make the difference between life and death. Every second counts and proper care can prevent permanent sequelae.',
+        
+        'firstaid-section-2-title': 'Fundamental Principles',
+        'firstaid-section-2-text': 'The basic principles of first aid are:',
+        
+        'firstaid-type-1-title': 'Stay Calm',
+        'firstaid-type-1-desc': 'Calm is essential to assess the situation and act correctly.',
+        
+        'firstaid-type-2-title': 'Safety First',
+        'firstaid-type-2-desc': 'Check if the area is safe before approaching the victim.',
+        
+        'firstaid-type-3-title': 'Call for Help',
+        'firstaid-type-3-desc': 'Activate emergency services immediately.',
+        
+        'firstaid-section-3-title': 'Victim Assessment',
+        'firstaid-section-3-text': 'To assess a victim, follow these steps:',
+        
+        'firstaid-assessment-1': 'Check consciousness: call the victim and touch lightly',
+        'firstaid-assessment-2': 'Check breathing: observe chest movement',
+        'firstaid-assessment-3': 'Check severe bleeding: look for active wounds',
+        'firstaid-assessment-4': 'Check fractures: observe deformities or intense pain',
+        'firstaid-assessment-5': 'Check burns: assess extent and depth',
+        
+        'firstaid-section-4-title': 'Common Emergencies',
+        'firstaid-section-4-text': 'In the pulp factory, the most frequent emergencies are:',
+        
+        'firstaid-emergencies-1': 'Falls and trauma: immobilize and check internal injuries',
+        'firstaid-emergencies-2': 'Chemical burns: wash abundantly with water',
+        'firstaid-emergencies-3': 'Gas inhalation: remove to ventilated area',
+        'firstaid-emergencies-4': 'Cuts and amputations: control bleeding',
+        'firstaid-emergencies-5': 'Electric shock: disconnect power before approaching',
+        
+        'firstaid-section-5-title': 'Specific Procedures',
+        'firstaid-section-5-text': 'For each type of emergency, proceed as follows:',
+        
+        'firstaid-procedures-1': 'CPR: 30 compressions and 2 ventilations until help arrives',
+        'firstaid-procedures-2': 'Choking: Heimlich maneuver if conscious',
+        'firstaid-procedures-3': 'Hemorrhage: direct pressure at bleeding point',
+        'firstaid-procedures-4': 'Fractures: immobilize and don\'t try to align',
+        'firstaid-procedures-5': 'Shock: lay victim down and elevate legs',
+        
+        'firstaid-alert-title': 'Attention!',
+        'firstaid-alert-text': 'First aid does not replace professional medical care. Your role is to stabilize the victim until specialized help arrives. Never perform procedures you don\'t know well. In doubt, just keep the victim comfortable and wait for help.',
+        
+        'firstaid-quiz-title': 'Test Your Knowledge',
+        'firstaid-quiz-question-1': 'What is the first step when approaching a victim?',
+        'firstaid-quiz-question-2': 'What to do in case of chemical burn?',
+        'firstaid-quiz-question-3': 'What is the CPR ratio?',
+        'firstaid-quiz-question-4': 'How to control severe bleeding?',
+        
+        'firstaid-quiz-q1-a': 'Start making bandages',
+        'firstaid-quiz-q1-b': 'Check if the area is safe',
+        'firstaid-quiz-q1-c': 'Move the victim immediately',
+        'firstaid-quiz-q1-d': 'Just observe from afar',
+        'firstaid-quiz-q1-e': 'Call a colleague to help',
+        
+        'firstaid-quiz-q2-a': 'Apply ointment immediately',
+        'firstaid-quiz-q2-b': 'Wash abundantly with water',
+        'firstaid-quiz-q2-c': 'Cover with dry cloth',
+        'firstaid-quiz-q2-d': 'Just wait for the doctor',
+        'firstaid-quiz-q2-e': 'Take photos for record',
+        
+        'firstaid-quiz-q3-a': '10 compressions and 1 ventilation',
+        'firstaid-quiz-q3-b': '30 compressions and 2 ventilations',
+        'firstaid-quiz-q3-c': 'Only ventilations',
+        'firstaid-quiz-q3-d': 'Only compressions',
+        'firstaid-quiz-q3-e': 'Depends on victim\'s age',
+        
+        'firstaid-quiz-q4-a': 'Elevate limb and wait',
+        'firstaid-quiz-q4-b': 'Direct pressure at bleeding point',
+        'firstaid-quiz-q4-c': 'Just clean the wound',
+        'firstaid-quiz-q4-d': 'Apply ice immediately',
+        'firstaid-quiz-q4-e': 'Move victim to hospital',
+        
+        'quiz-submit': 'Submit Answers',
+        'quiz-result-title': 'Quiz Result',
+        'quiz-score': 'Your score',
+        'quiz-correct': 'Correct answers',
+        'quiz-incorrect': 'Incorrect answers',
+        'quiz-congratulations': 'Congratulations! You got',
+        'quiz-try-again': 'Try again! You got',
+        'quiz-retry': 'Retry Quiz',
+        'quiz-back': 'Back to Courses'
+    }
+};
+
+// Estado atual do idioma
+let currentLanguage = 'pt';
+
+// Função para traduzir elementos
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+// Função para mudar idioma
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Sistema de Quiz
+class QuizSystem {
+    constructor() {
+        this.currentQuiz = null;
+        this.answers = {};
+        this.score = 0;
+        this.totalQuestions = 0;
+    }
+
+    initQuiz(quizData) {
+        this.currentQuiz = quizData;
+        this.answers = {};
+        this.score = 0;
+        this.totalQuestions = Object.keys(quizData.questions).length;
+        
+        // Limpar seleções anteriores
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado anterior
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+    }
+
+    submitQuiz() {
+        if (!this.currentQuiz) return;
+        
+        this.score = 0;
+        this.answers = {};
+        
+        // Coletar respostas
+        Object.keys(this.currentQuiz.questions).forEach(questionKey => {
+            const selectedOption = document.querySelector(`input[name="${questionKey}"]:checked`);
+            if (selectedOption) {
+                this.answers[questionKey] = selectedOption.value;
+                if (selectedOption.value === this.currentQuiz.questions[questionKey].correct) {
+                    this.score++;
+                }
+            }
+        });
+        
+        // Mostrar resultado
+        this.showResult();
+    }
+
+    showResult() {
+        const resultDiv = document.getElementById('quiz-result');
+        if (!resultDiv) return;
+        
+        const percentage = Math.round((this.score / this.totalQuestions) * 100);
+        const isPassing = percentage >= 70;
+        
+        // Obter textos traduzidos
+        const resultTitle = this.getTranslatedText('quiz-result-title');
+        const scoreText = this.getTranslatedText('quiz-score');
+        const correctText = this.getTranslatedText('quiz-correct');
+        const incorrectText = this.getTranslatedText('quiz-incorrect');
+        const congratulationsText = this.getTranslatedText('quiz-congratulations');
+        const tryAgainText = this.getTranslatedText('quiz-try-again');
+        const retryText = this.getTranslatedText('quiz-retry');
+        const backText = this.getTranslatedText('quiz-back');
+        
+        resultDiv.innerHTML = `
+            <h3>${resultTitle}</h3>
+            <div style="text-align: center; margin: 20px 0;">
+                <div class="score-circle ${isPassing ? 'passing' : 'failing'}">
+                    <span>${percentage}%</span>
+                </div>
+                <div style="margin-top: 20px;">
+                    <p><strong>${scoreText}:</strong> ${this.score}/${this.totalQuestions}</p>
+                    <p style="color: #27ae60; font-weight: bold;">${correctText}: ${this.score}</p>
+                    <p style="color: #e74c3c; font-weight: bold;">${incorrectText}: ${this.totalQuestions - this.score}</p>
+                </div>
+            </div>
+            <div class="quiz-message ${isPassing ? 'success' : 'error'}">
+                ${isPassing ? 
+                    `<p>${congratulationsText} ${this.score} de ${this.totalQuestions} perguntas!</p>` :
+                    `<p>${tryAgainText} ${this.score} de ${this.totalQuestions} perguntas.</p>`
+                }
+            </div>
+            <div class="quiz-actions">
+                <button onclick="quizSystem.retryQuiz()">${retryText}</button>
+                <a href="../index.html">${backText}</a>
+            </div>
+        `;
+        
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    retryQuiz() {
+        if (!this.currentQuiz) return;
+        
+        // Limpar seleções
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+        
+        // Resetar
+        this.answers = {};
+        this.score = 0;
+        
+        // Voltar ao topo do quiz
+        const quizSection = document.querySelector('.quiz-section');
+        if (quizSection) {
+            quizSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    getTranslatedText(key) {
+        const lang = localStorage.getItem('rss3-language') || 'pt';
+        if (translations && translations[lang] && translations[lang][key]) {
+            return translations[lang][key];
+        }
+        return key;
+    }
+}
+
+// Instância global do quiz
+const quizSystem = new QuizSystem();
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado - iniciando sistema de idiomas');
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            changeLanguage(lang);
+        });
+    });
+    
+    // Adicionar evento ao botão de submit
+    const submitBtn = document.getElementById('quiz-submit');
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+            quizSystem.submitQuiz();
+        });
+    }
+    
+    // Inicializar quiz
+    const quizData = {
+        questions: {
+            q1: { correct: 'b' },
+            q2: { correct: 'b' },
+            q3: { correct: 'b' },
+            q4: { correct: 'b' }
+        }
+    };
+    
+    quizSystem.initQuiz(quizData);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso DDS (Diálogo Diário de Segurança) - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--laranja);
+    }
+
+    .language-selector {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: var(--branco);
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--azul), #1a5fb4);
+      color: var(--branco);
+      padding: 60px 40px;
+      border-radius: 15px;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .hero h1 {
+      font-size: 2.8em;
+      margin: 0 0 15px 0;
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      margin: 0 0 30px 0;
+      opacity: 0.9;
+    }
+
+    .start-btn {
+      background: var(--laranja);
+      color: var(--branco);
+      border: none;
+      padding: 15px 35px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-weight: bold;
+    }
+
+    .start-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255,122,0,0.4);
+    }
+
+    .course-section {
+      background: var(--branco);
+      padding: 40px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .course-section h2 {
+      color: var(--azul);
+      font-size: 1.8em;
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--laranja);
+      padding-bottom: 10px;
+    }
+
+    .course-section p {
+      font-size: 1.1em;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .info-list li {
+      background: var(--cinza-claro);
+      padding: 15px 20px;
+      margin-bottom: 10px;
+      border-left: 5px solid var(--laranja);
+      border-radius: 5px;
+      font-size: 1.05em;
+    }
+
+    .info-list li strong {
+      color: var(--azul);
+    }
+
+    .epi-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 30px 0;
+    }
+
+    .epi-type-card {
+      background: var(--branco);
+      border: 2px solid var(--cinza-claro);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .epi-type-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      border-color: var(--laranja);
+    }
+
+    .epi-type-icon {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+
+    .epi-type-title {
+      color: var(--azul);
+      font-size: 1.3em;
+      margin: 0 0 10px 0;
+    }
+
+    .epi-type-desc {
+      color: var(--cinza-texto);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .alert-box {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .alert-box h3 {
+      color: #856404;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .alert-box p {
+      color: #856404;
+      margin: 0;
+    }
+
+    .quiz-section {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      padding: 40px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .quiz-section h2 {
+      color: var(--azul);
+      font-size: 1.8em;
+      margin-top: 0;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .question {
+      background: var(--branco);
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .question h3 {
+      color: var(--azul);
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.2em;
+    }
+
+    .options {
+      display: grid;
+      gap: 12px;
+    }
+
+    .option {
+      background: var(--cinza-claro);
+      border: 2px solid transparent;
+      padding: 15px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .option:hover {
+      background: #e8f4fd;
+      border-color: var(--azul);
+    }
+
+    .option.selected {
+      background: #d4edda;
+      border-color: #28a745;
+    }
+
+    .option.correct {
+      background: #d4edda;
+      border-color: #28a745;
+    }
+
+    .option.incorrect {
+      background: #f8d7da;
+      border-color: #dc3545;
+    }
+
+    .quiz-actions {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .quiz-btn {
+      background: var(--azul);
+      color: var(--branco);
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 0 10px;
+      transition: background 0.3s;
+    }
+
+    .quiz-btn:hover {
+      background: #0a2d6b;
+    }
+
+    .quiz-btn.primary {
+      background: var(--laranja);
+    }
+
+    .quiz-btn.primary:hover {
+      background: #e66800;
+    }
+
+    .result-container {
+      text-align: center;
+      padding: 30px;
+      background: var(--branco);
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .result-container h3 {
+      color: var(--azul);
+      font-size: 1.8em;
+      margin-top: 0;
+    }
+
+    .score {
+      font-size: 3em;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .score.pass {
+      color: #28a745;
+    }
+
+    .score.fail {
+      color: #dc3545;
+    }
+
+    .result-message {
+      font-size: 1.2em;
+      margin: 20px 0;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      header, footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 40px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2.2em;
+      }
+
+      .course-section, .quiz-section {
+        padding: 25px;
+      }
+
+      .epi-types-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1><span>RSS3</span> Treinamentos</h1>
+    </div>
+    <nav>
+      <a href="../index.html" data-translate="nav-back">Voltar</a>
+      <a href="#" data-translate="nav-about">Sobre</a>
+    </nav>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1 data-translate="dds-hero-title">DDS - Diálogo Diário de Segurança</h1>
+      <p data-translate="dds-hero-subtitle">Conversa rápida para proteger todos os dias</p>
+      <button class="start-btn" onclick="scrollToContent()" data-translate="dds-hero-btn">Começar Curso</button>
+    </div>
+
+    <section class="course-section">
+      <h2 data-translate="dds-section-1-title">O que é DDS?</h2>
+      <p data-translate="dds-section-1-text">
+        DDS é uma conversa rápida sobre segurança que acontece todo dia antes do trabalho começar. 
+        São 5 a 10 minutos para falar sobre como trabalhar seguro e evitar acidentes.
+      </p>
+      
+      <div class="epi-types-grid">
+        <div class="epi-type-card">
+          <div class="epi-type-icon">dialogue</div>
+          <h3 class="epi-type-title" data-translate="dds-type-1-title">Conversa Rápida</h3>
+          <p class="epi-type-desc" data-translate="dds-type-1-desc">Poucos minutos para falar de segurança antes de começar o trabalho.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">people</div>
+          <h3 class="epi-type-title" data-translate="dds-type-2-title">Todos Participam</h3>
+          <p class="epi-type-desc" data-translate="dds-type-2-desc">Todos os trabalhadores ouvem e podem dar sua opinião.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">shield</div>
+          <h3 class="epi-type-title" data-translate="dds-type-3-title">Prevenção</h3>
+          <p class="epi-type-desc" data-translate="dds-type-3-desc">Ajuda a evitar acidentes e proteger a vida de todos.</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="dds-section-2-title">Para que serve o DDS?</h2>
+      <p data-translate="dds-section-2-text">
+        O DDS serve para lembrar todo mundo sobre os perigos do trabalho e como se proteger. 
+        É como um "lembrete diário" de segurança.
+      </p>
+      
+      <ul class="info-list">
+        <li data-translate="dds-benefit-1"><strong>Avisar sobre perigos:</strong> Fala dos riscos que existem no trabalho.</li>
+        <li data-translate="dds-benefit-2"><strong>Ensinar o certo:</strong> Mostra a forma segura de fazer as coisas.</li>
+        <li data-translate="dds-benefit-3"><strong>Unir o time:</strong> Todos se ajudam a cuidar da segurança.</li>
+        <li data-translate="dds-benefit-4"><strong>Avisar de mudanças:</strong> Informa sobre novos perigos ou regras.</li>
+      </ul>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="dds-section-3-title">Por que o DDS é importante?</h2>
+      <p data-translate="dds-section-3-text">
+        O DDS salva vidas! Muitos acidentes acontecem porque as pessoas esquecem 
+        das regras de segurança. O DDS ajuda a manter todo mundo atento e seguro.
+      </p>
+      
+      <div class="alert-box">
+        <h3>dialogue <span data-translate="dds-alert-title">Atenção!</span></h3>
+        <p data-translate="dds-alert-text">Participar do DDS não é obrigação, é cuidado com sua vida e com seus colegas!</p>
+      </div>
+      
+      <ul class="info-list">
+        <li data-translate="dds-importance-1"><strong>Menos acidentes:</strong> Quem presta atenção tem menos chance de se machucar.</li>
+        <li data-translate="dds-importance-2"><strong>Trabalho mais seguro:</strong> Todo mundo sabe como evitar perigos.</li>
+        <li data-translate="dds-importance-3"><strong>Comunicação melhor:</strong> As pessoas falam sobre os problemas de segurança.</li>
+        <li data-translate="dds-importance-4"><strong>Cultura de segurança:</strong> Cria o hábito de pensar em segurança todo dia.</li>
+      </ul>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="dds-section-4-title">Exemplos de temas de DDS</h2>
+      <p data-translate="dds-section-4-text">
+        No DDS podemos falar de muitos assuntos importantes. Veja alguns exemplos:
+      </p>
+      
+      <div class="epi-types-grid">
+        <div class="epi-type-card">
+          <div class="epi-type-icon">hard_hat</div>
+          <h3 class="epi-type-title" data-translate="dds-theme-1-title">Uso de EPI</h3>
+          <p class="epi-type-desc" data-translate="dds-theme-1-desc">Como usar capacete, luvas, óculos e outros equipamentos de proteção.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">warning</div>
+          <h3 class="epi-type-title" data-translate="dds-theme-2-title">Riscos do Dia</h3>
+          <p class="epi-type-desc" data-translate="dds-theme-2-desc">Perigos que existem no trabalho de hoje e como evitá-los.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">emergency</div>
+          <h3 class="epi-type-title" data-translate="dds-theme-3-title">O que fazer em emergência</h3>
+          <p class="epi-type-desc" data-translate="dds-theme-3-desc">Para onde correr, quem chamar e como agir em caso de acidente.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">health</div>
+          <h3 class="epi-type-title" data-translate="dds-theme-4-title">Cuidado com o corpo</h3>
+          <p class="epi-type-desc" data-translate="dds-theme-4-desc">Como levantar peso direito, evitar dores nas costas e cuidar da saúde.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">fire</div>
+          <h3 class="epi-type-title" data-translate="dds-theme-5-title">Prevenção de incêndio</h3>
+          <p class="epi-type-desc" data-translate="dds-theme-5-desc">Onde fica o extintor e como usar em caso de fogo.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">clean</div>
+          <h3 class="epi-type-title" data-translate="dds-theme-6-title">Ordem e limpeza</h3>
+          <p class="epi-type-desc" data-translate="dds-theme-6-desc">Manter o local limpo para evitar quedas e acidentes.</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="dds-section-5-title">Como participar do DDS</h2>
+      <p data-translate="dds-section-5-text">
+        Para o DDS funcionar, todo mundo precisa participar. Veja como você pode ajudar:
+      </p>
+      
+      <ul class="info-list">
+        <li data-translate="dds-participate-1"><strong>Chegue na hora:</strong> Não atrase o início do DDS.</li>
+        <li data-translate="dds-participate-2"><strong>Escute com atenção:</strong> Preste atenção no que está sendo falado.</li>
+        <li data-translate="dds-participate-3"><strong>Tire dúvidas:</strong> Se não entendeu, pergunte!</li>
+        <li data-translate="dds-participate-4"><strong>Compartilhe problemas:</strong> Avisar sobre perigos que você vê.</li>
+        <li data-translate="dds-participate-5"><strong>Siga as dicas:</strong> Coloque em prática o que aprendeu.</li>
+      </ul>
+      
+    <div class="alert-box">
+      <h4 data-translate="dds-alert-title">Dica Importante!</h4>
+      <p data-translate="dds-alert-text">Uma boa ideia no DDS pode evitar um acidente grave. Fale! Sua opinião salva vidas.</p>
+    </div>
+      
+    </section>
+
+  <section class="quiz-section">
+    <h2 class="quiz-title" data-translate="dds-quiz-title">Teste seu Conhecimento</h2>
+    
+    <div class="quiz-question">
+      <h4 data-translate="dds-quiz-question-1">1. O que significa DDS?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="a" class="quiz-option">
+          <span data-translate="dds-quiz-q1-a">Diálogo Diário de Segurança</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="b" class="quiz-option">
+          <span data-translate="dds-quiz-q1-b">Documento de Segurança do Trabalho</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="c" class="quiz-option">
+          <span data-translate="dds-quiz-q1-c">Direito de Segurança do Servidor</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="d" class="quiz-option">
+          <span data-translate="dds-quiz-q1-d">Departamento de Defesa Social</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="e" class="quiz-option">
+          <span data-translate="dds-quiz-q1-e">Diário de Dados de Segurança</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="dds-quiz-question-2">2. Quanto tempo dura normalmente um DDS?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="a" class="quiz-option">
+          <span data-translate="dds-quiz-q2-a">1 hora</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="b" class="quiz-option">
+          <span data-translate="dds-quiz-q2-b">30 minutos</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="c" class="quiz-option">
+          <span data-translate="dds-quiz-q2-c">5 a 10 minutos</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="d" class="quiz-option">
+          <span data-translate="dds-quiz-q2-d">2 horas</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="e" class="quiz-option">
+          <span data-translate="dds-quiz-q2-e">15 minutos</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="dds-quiz-question-3">3. Quando o DDS geralmente acontece?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="a" class="quiz-option">
+          <span data-translate="dds-quiz-q3-a">No final do expediente</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="b" class="quiz-option">
+          <span data-translate="dds-quiz-q3-b">Durante o almoço</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="c" class="quiz-option">
+          <span data-translate="dds-quiz-q3-c">Antes de começar o trabalho</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="d" class="quiz-option">
+          <span data-translate="dds-quiz-q3-d">Uma vez por semana</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="e" class="quiz-option">
+          <span data-translate="dds-quiz-q3-e">Só quando tem acidente</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="dds-quiz-question-4">4. Por que é importante participar do DDS?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="a" class="quiz-option">
+          <span data-translate="dds-quiz-q4-a">Porque é obrigatório</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="b" class="quiz-option">
+          <span data-translate="dds-quiz-q4-b">Para receber pagamento extra</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="c" class="quiz-option">
+          <span data-translate="dds-quiz-q4-c">Para aprender a se proteger e proteger os colegas</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="d" class="quiz-option">
+          <span data-translate="dds-quiz-q4-d">Para passar o tempo mais rápido</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="e" class="quiz-option">
+          <span data-translate="dds-quiz-q4-e">Porque o chefe manda</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-actions">
+      <button class="quiz-btn" onclick="checkQuiz()" data-translate="dds-quiz-submit">Verificar Respostas</button>
+      <button class="quiz-btn" onclick="resetQuiz()" data-translate="dds-quiz-reset">Refazer Quiz</button>
+    </div>
+  </section>
+
+  <div id="quiz-result" class="quiz-result" style="display: none;">
+    <h3 data-translate="dds-quiz-result-title">Resultado</h3>
+    <p id="quiz-score"></p>
+    <p id="quiz-message"></p>
+    <div class="quiz-actions">
+      <button class="quiz-btn" onclick="resetQuiz()" data-translate="dds-quiz-reset">Refazer Quiz</button>
+      <button class="quiz-btn" onclick="window.location.href='../index.html'" data-translate="dds-quiz-back">Voltar</button>
+    </div>
+  </div>
+
+  </main>
+
+  <footer>
+    <div>
+      <p>© 2026 <span>RSS3</span> Treinamentos de Segurança</p>
+    </div>
+    <div>
+      <p>Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+// Sistema de Tradução
+const translations = {
+    pt: {
+        'nav-back': 'Voltar',
+        'nav-about': 'Sobre',
+        'dds-hero-title': 'DDS - Diálogo Diário de Segurança',
+        'dds-hero-subtitle': 'Conversa rápida para proteger todos os dias',
+        'dds-hero-btn': 'Começar Curso',
+        
+        'dds-section-1-title': 'O que é DDS?',
+        'dds-section-1-text': 'DDS é uma conversa rápida sobre segurança que acontece todo dia antes do trabalho começar. São 5 a 10 minutos para falar sobre como trabalhar seguro e evitar acidentes.',
+        
+        'dds-type-1-title': 'Conversa Rápida',
+        'dds-type-1-desc': 'Poucos minutos para falar de segurança antes de começar o trabalho.',
+        'dds-type-2-title': 'Todos Participam',
+        'dds-type-2-desc': 'Todos os trabalhadores ouvem e podem dar sua opinião.',
+        'dds-type-3-title': 'Prevenção',
+        'dds-type-3-desc': 'Ajuda a evitar acidentes e proteger a vida de todos.',
+        
+        'dds-section-2-title': 'Para que serve o DDS?',
+        'dds-section-2-text': 'O DDS serve para lembrar todo mundo sobre os perigos do trabalho e como se proteger. É como um "lembrete diário" de segurança.',
+        
+        'dds-benefit-1': 'Avisar sobre perigos: Fala dos riscos que existem no trabalho.',
+        'dds-benefit-2': 'Ensinar o certo: Mostra a forma segura de fazer as coisas.',
+        'dds-benefit-3': 'Unir o time: Todos se ajudam a cuidar da segurança.',
+        'dds-benefit-4': 'Avisar de mudanças: Informa sobre novos perigos ou regras.',
+        
+        'dds-section-3-title': 'Por que o DDS é importante?',
+        'dds-section-3-text': 'O DDS salva vidas! Muitos acidentes acontecem porque as pessoas esquecem das regras de segurança. O DDS ajuda a manter todo mundo atento e seguro.',
+        
+        'dds-alert-title': 'Atenção!',
+        'dds-alert-text': 'Participar do DDS não é obrigação, é cuidado com sua vida e com seus colegas!',
+        
+        'dds-importance-1': 'Menos acidentes: Quem presta atenção tem menos chance de se machucar.',
+        'dds-importance-2': 'Trabalho mais seguro: Todo mundo sabe como evitar perigos.',
+        'dds-importance-3': 'Comunicação melhor: As pessoas falam sobre os problemas de segurança.',
+        'dds-importance-4': 'Cultura de segurança: Cria o hábito de pensar em segurança todo dia.',
+        
+        'dds-section-4-title': 'Exemplos de temas de DDS',
+        'dds-section-4-text': 'No DDS podemos falar de muitos assuntos importantes. Veja alguns exemplos:',
+        
+        'dds-theme-1-title': 'Uso de EPI',
+        'dds-theme-1-desc': 'Como usar capacete, luvas, óculos e outros equipamentos de proteção.',
+        'dds-theme-2-title': 'Riscos do Dia',
+        'dds-theme-2-desc': 'Perigos que existem no trabalho de hoje e como evitá-los.',
+        'dds-theme-3-title': 'O que fazer em emergência',
+        'dds-theme-3-desc': 'Para onde correr, quem chamar e como agir em caso de acidente.',
+        'dds-theme-4-title': 'Cuidado com o corpo',
+        'dds-theme-4-desc': 'Como levantar peso direito, evitar dores nas costas e cuidar da saúde.',
+        'dds-theme-5-title': 'Prevenção de incêndio',
+        'dds-theme-5-desc': 'Onde fica o extintor e como usar em caso de fogo.',
+        'dds-theme-6-title': 'Ordem e limpeza',
+        'dds-theme-6-desc': 'Manter o local limpo para evitar quedas e acidentes.',
+        
+        'dds-section-5-title': 'Como participar do DDS',
+        'dds-section-5-text': 'Para o DDS funcionar, todo mundo precisa participar. Veja como você pode ajudar:',
+        
+        'dds-participate-1': 'Chegue na hora: Não atrase o início do DDS.',
+        'dds-participate-2': 'Escute com atenção: Preste atenção no que está sendo falado.',
+        'dds-participate-3': 'Tire dúvidas: Se não entendeu, pergunte!',
+        'dds-participate-4': 'Compartilhe problemas: Avisar sobre perigos que você vê.',
+        'dds-participate-5': 'Siga as dicas: Coloque em prática o que aprendeu.',
+        
+        'dds-tip-title': 'Dica Importante!',
+        'dds-tip-text': 'Uma boa ideia no DDS pode evitar um acidente grave. Fale! Sua opinião salva vidas.',
+        
+        'quiz-title': 'Teste seu conhecimento',
+        'dds-question-1': '1. O que significa DDS?',
+        'dds-question-2': '2. Quanto tempo dura normalmente um DDS?',
+        'dds-question-3': '3. Quando o DDS geralmente acontece?',
+        'dds-question-4': '4. Por que é importante participar do DDS?',
+        'quiz-check': 'Verificar Respostas',
+        'quiz-retry': 'Refazer Quiz',
+        'quiz-result-title': 'Resultado do Quiz',
+        'quiz-back': 'Voltar aos Cursos'
+    },
+    
+    es: {
+        'nav-back': 'Volver',
+        'nav-about': 'Acerca de',
+        'dds-hero-title': 'DDS - Diálogo Diario de Seguridad',
+        'dds-hero-subtitle': 'Conversación rápida para proteger todos los días',
+        'dds-hero-btn': 'Comenzar Curso',
+        
+        'dds-section-1-title': '¿Qué es DDS?',
+        'dds-section-1-text': 'DDS es una conversación rápida sobre seguridad que sucede todos los días antes de comenzar el trabajo. Son 5 a 10 minutos para hablar sobre cómo trabajar seguro y evitar accidentes.',
+        
+        'dds-type-1-title': 'Conversación Rápida',
+        'dds-type-1-desc': 'Pocos minutos para hablar de seguridad antes de comenzar el trabajo.',
+        'dds-type-2-title': 'Todos Participan',
+        'dds-type-2-desc': 'Todos los trabajadores escuchan y pueden dar su opinión.',
+        'dds-type-3-title': 'Prevención',
+        'dds-type-3-desc': 'Ayuda a evitar accidentes y proteger la vida de todos.',
+        
+        'dds-section-2-title': '¿Para qué sirve DDS?',
+        'dds-section-2-text': 'DDS sirve para recordar a todos sobre los peligros del trabajo y cómo protegerse. Es como un "recordatorio diario" de seguridad.',
+        
+        'dds-benefit-1': 'Avisar sobre peligros: Habla de los riesgos que existen en el trabajo.',
+        'dds-benefit-2': 'Enseñar lo correcto: Muestra la forma segura de hacer las cosas.',
+        'dds-benefit-3': 'Unir al equipo: Todos se ayudan a cuidar de la seguridad.',
+        'dds-benefit-4': 'Avisar de cambios: Informa sobre nuevos peligros o reglas.',
+        
+        'dds-section-3-title': '¿Por qué es importante DDS?',
+        'dds-section-3-text': '¡DDS salva vidas! Muchos accidentes suceden porque las personas olvidan las reglas de seguridad. DDS ayuda a mantener a todos atentos y seguros.',
+        
+        'dds-alert-title': '¡Atención!',
+        'dds-alert-text': 'Participar en DDS no es obligación, es cuidado con tu vida y con tus colegas!',
+        
+        'dds-importance-1': 'Menos accidentes: Quien presta atención tiene menos chance de lastimarse.',
+        'dds-importance-2': 'Trabajo más seguro: Todos saben cómo evitar peligros.',
+        'dds-importance-3': 'Comunicación mejor: Las personas hablan sobre los problemas de seguridad.',
+        'dds-importance-4': 'Cultura de seguridad: Crea el hábito de pensar en seguridad todos los días.',
+        
+        'dds-section-4-title': 'Ejemplos de temas de DDS',
+        'dds-section-4-text': 'En DDS podemos hablar de muchos asuntos importantes. Vea algunos ejemplos:',
+        
+        'dds-theme-1-title': 'Uso de EPI',
+        'dds-theme-1-desc': 'Cómo usar casco, guantes, gafas y otros equipos de protección.',
+        'dds-theme-2-title': 'Riesgos del Día',
+        'dds-theme-2-desc': 'Peligros que existen en el trabajo de hoy y cómo evitarlos.',
+        'dds-theme-3-title': 'Qué hacer en emergencia',
+        'dds-theme-3-desc': 'A dónde correr, a quién llamar y cómo actuar en caso de accidente.',
+        'dds-theme-4-title': 'Cuidado con el cuerpo',
+        'dds-theme-4-desc': 'Cómo levantar peso correctamente, evitar dolores de espalda y cuidar la salud.',
+        'dds-theme-5-title': 'Prevención de incendios',
+        'dds-theme-5-desc': 'Dónde está el extintor y cómo usar en caso de fuego.',
+        'dds-theme-6-title': 'Orden y limpieza',
+        'dds-theme-6-desc': 'Mantener el lugar limpio para evitar caídas y accidentes.',
+        
+        'dds-section-5-title': 'Cómo participar en DDS',
+        'dds-section-5-text': 'Para que DDS funcione, todos necesitan participar. Vea cómo puedes ayudar:',
+        
+        'dds-participate-1': 'Llegue a tiempo: No atrase el inicio de DDS.',
+        'dds-participate-2': 'Escuche con atención: Preste atención en lo que se está hablando.',
+        'dds-participate-3': 'Saque dudas: Si no entendió, pregunte!',
+        'dds-participate-4': 'Comparta problemas: Avisar sobre peligros que usted ve.',
+        'dds-participate-5': 'Siga las dicas: Ponga en práctica lo que aprendió.',
+        
+        'dds-tip-title': '¡Dica Importante!',
+        'dds-tip-text': 'Una buena idea en DDS puede evitar un accidente grave. ¡Hable! Su opinión salva vidas.',
+        
+        'quiz-title': 'Pruebe su conocimiento',
+        'dds-question-1': '1. ¿Qué significa DDS?',
+        'dds-question-2': '2. ¿Cuánto tiempo dura normalmente un DDS?',
+        'dds-question-3': '3. ¿Cuándo generalmente sucede DDS?',
+        'dds-question-4': '4. ¿Por qué es importante participar en DDS?',
+        'quiz-check': 'Verificar Respuestas',
+        'quiz-retry': 'Rehacer Quiz',
+        'quiz-result-title': 'Resultado del Quiz',
+        'quiz-back': 'Volver a los Cursos'
+    },
+    
+    en: {
+        'nav-back': 'Back',
+        'nav-about': 'About',
+        'dds-hero-title': 'DDS - Daily Safety Dialogue',
+        'dds-hero-subtitle': 'Quick conversation to protect everyone daily',
+        'dds-hero-btn': 'Start Course',
+        
+        'dds-section-1-title': 'What is DDS?',
+        'dds-section-1-text': 'DDS is a quick safety conversation that happens every day before work starts. It\'s 5 to 10 minutes to talk about how to work safely and avoid accidents.',
+        
+        'dds-type-1-title': 'Quick Conversation',
+        'dds-type-1-desc': 'Few minutes to talk about safety before starting work.',
+        'dds-type-2-title': 'Everyone Participates',
+        'dds-type-2-desc': 'All workers listen and can give their opinion.',
+        'dds-type-3-title': 'Prevention',
+        'dds-type-3-desc': 'Helps avoid accidents and protect everyone\'s life.',
+        
+        'dds-section-2-title': 'What is DDS for?',
+        'dds-section-2-text': 'DDS serves to remind everyone about work dangers and how to protect themselves. It\'s like a "daily reminder" of safety.',
+        
+        'dds-benefit-1': 'Warn about dangers: Talks about risks that exist at work.',
+        'dds-benefit-2': 'Teach the right way: Shows the safe way to do things.',
+        'dds-benefit-3': 'Unite the team: Everyone helps take care of safety.',
+        'dds-benefit-4': 'Announce changes: Informs about new dangers or rules.',
+        
+        'dds-section-3-title': 'Why is DDS important?',
+        'dds-section-3-text': 'DDS saves lives! Many accidents happen because people forget safety rules. DDS helps keep everyone alert and safe.',
+        
+        'dds-alert-title': 'Attention!',
+        'dds-alert-text': 'Participating in DDS is not an obligation, it\'s care for your life and your colleagues!',
+        
+        'dds-importance-1': 'Fewer accidents: Those who pay attention have less chance of getting hurt.',
+        'dds-importance-2': 'Safer work: Everyone knows how to avoid dangers.',
+        'dds-importance-3': 'Better communication: People talk about safety problems.',
+        'dds-importance-4': 'Safety culture: Creates the habit of thinking about safety every day.',
+        
+        'dds-section-4-title': 'DDS Topic Examples',
+        'dds-section-4-text': 'In DDS we can talk about many important subjects. See some examples:',
+        
+        'dds-theme-1-title': 'PPE Use',
+        'dds-theme-1-desc': 'How to use helmet, gloves, glasses and other protective equipment.',
+        'dds-theme-2-title': 'Day\'s Risks',
+        'dds-theme-2-desc': 'Dangers that exist in today\'s work and how to avoid them.',
+        'dds-theme-3-title': 'What to do in emergency',
+        'dds-theme-3-desc': 'Where to run, who to call and how to act in case of accident.',
+        'dds-theme-4-title': 'Body Care',
+        'dds-theme-4-desc': 'How to lift weight correctly, avoid back pain and take care of health.',
+        'dds-theme-5-title': 'Fire Prevention',
+        'dds-theme-5-desc': 'Where the extinguisher is and how to use in case of fire.',
+        'dds-theme-6-title': 'Order and Cleanliness',
+        'dds-theme-6-desc': 'Keep the place clean to avoid falls and accidents.',
+        
+        'dds-section-5-title': 'How to participate in DDS',
+        'dds-section-5-text': 'For DDS to work, everyone needs to participate. See how you can help:',
+        
+        'dds-participate-1': 'Arrive on time: Don\'t delay the start of DDS.',
+        'dds-participate-2': 'Listen carefully: Pay attention to what is being said.',
+        'dds-participate-3': 'Ask questions: If you didn\'t understand, ask!',
+        'dds-participate-4': 'Share problems: Warn about dangers that you see.',
+        'dds-participate-5': 'Follow the tips: Put into practice what you learned.',
+        
+        'dds-alert-title': 'Important Tip!',
+        'dds-alert-text': 'A good idea in DDS can prevent a serious accident. Speak! Your opinion saves lives.',
+        
+        'dds-quiz-title': 'Test your Knowledge',
+        'dds-quiz-question-1': '1. What does DDS mean?',
+        'dds-quiz-q1-a': 'Daily Safety Dialogue',
+        'dds-quiz-q1-b': 'Work Safety Document',
+        'dds-quiz-q1-c': 'Server Safety Right',
+        'dds-quiz-q1-d': 'Social Defense Department',
+        'dds-quiz-q1-e': 'Daily Safety Data',
+        
+        'dds-quiz-question-2': '2. How long does a DDS usually last?',
+        'dds-quiz-q2-a': '1 hour',
+        'dds-quiz-q2-b': '30 minutes',
+        'dds-quiz-q2-c': '5 to 10 minutes',
+        'dds-quiz-q2-d': '2 hours',
+        'dds-quiz-q2-e': '15 minutes',
+        
+        'dds-quiz-question-3': '3. When does DDS usually happen?',
+        'dds-quiz-q3-a': 'At the end of the workday',
+        'dds-quiz-q3-b': 'During lunch',
+        'dds-quiz-q3-c': 'Before starting work',
+        'dds-quiz-q3-d': 'Once a week',
+        'dds-quiz-q3-e': 'Only when there\'s an accident',
+        
+        'dds-quiz-question-4': '4. Why is it important to participate in DDS?',
+        'dds-quiz-q4-a': 'Because it\'s mandatory',
+        'dds-quiz-q4-b': 'To receive extra payment',
+        'dds-quiz-q4-c': 'To learn to protect yourself and colleagues',
+        'dds-quiz-q4-d': 'To pass time faster',
+        'dds-quiz-q4-e': 'Because the boss orders',
+        
+        'dds-quiz-submit': 'Check Answers',
+        'dds-quiz-reset': 'Retry Quiz',
+        'dds-quiz-result-title': 'Result',
+        'dds-quiz-back': 'Back'
+    }
+};
+
+// Sistema de Quiz
+class QuizSystem {
+    constructor() {
+        this.currentQuiz = null;
+        this.answers = {};
+        this.score = 0;
+        this.correctAnswers = {
+            'dds': {
+                'q1': 'a',
+                'q2': 'c', 
+                'q3': 'c',
+                'q4': 'c'
+            }
+        };
+    }
+
+    startQuiz(quizType) {
+        this.currentQuiz = quizType;
+        this.answers = {};
+        this.score = 0;
+        
+        // Limpar seleções anteriores
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+    }
+
+    submitQuiz() {
+        if (!this.currentQuiz) return;
+        
+        const quizAnswers = this.correctAnswers[this.currentQuiz];
+        let correctCount = 0;
+        const totalQuestions = Object.keys(quizAnswers).length;
+        
+        // Verificar cada resposta
+        for (const [questionId, correctAnswer] of Object.entries(quizAnswers)) {
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+            
+            if (selectedOption) {
+                const userAnswer = selectedOption.value;
+                this.answers[questionId] = userAnswer;
+                
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    // Marcar como correto
+                    selectedOption.parentElement.classList.add('correct');
+                } else {
+                    // Marcar como incorreto e mostrar a resposta correta
+                    selectedOption.parentElement.classList.add('incorrect');
+                    const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`);
+                    if (correctOption) {
+                        correctOption.parentElement.classList.add('correct');
+                    }
+                }
+            } else {
+                // Não respondida - mostrar resposta correta
+                const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`);
+                if (correctOption) {
+                    correctOption.parentElement.classList.add('correct');
+                }
+            }
+        }
+        
+        this.score = correctCount;
+        this.showResult(correctCount, totalQuestions);
+    }
+
+    showResult(correctCount, totalQuestions) {
+        const resultDiv = document.getElementById('quiz-result');
+        const scoreElement = document.getElementById('quiz-score');
+        const messageElement = document.getElementById('quiz-message');
+        
+        if (resultDiv && scoreElement && messageElement) {
+            const percentage = Math.round((correctCount / totalQuestions) * 100);
+            
+            scoreElement.textContent = this.getTranslatedText('dds-quiz-score-text') + `: ${correctCount}/${totalQuestions} (${percentage}%)`;
+            
+            if (percentage >= 70) {
+                messageElement.textContent = this.getTranslatedText('dds-quiz-success-message');
+                scoreElement.style.color = '#28a745';
+            } else {
+                messageElement.textContent = this.getTranslatedText('dds-quiz-fail-message');
+                scoreElement.style.color = '#dc3545';
+            }
+            
+            resultDiv.style.display = 'block';
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    retryQuiz() {
+        if (!this.currentQuiz) return;
+        
+        // Limpar seleções
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Limpar classes de correção
+        document.querySelectorAll('.quiz-option-label').forEach(label => {
+            label.classList.remove('correct', 'incorrect');
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+        
+        // Resetar
+        this.answers = {};
+        this.score = 0;
+        
+        // Voltar ao topo do quiz
+        const quizSection = document.querySelector('.quiz-section');
+        if (quizSection) {
+            quizSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    getTranslatedText(key) {
+        const lang = localStorage.getItem('rss3-language') || 'pt';
+        if (translations && translations[lang] && translations[lang][key]) {
+            return translations[lang][key];
+        }
+        return key;
+    }
+}
+
+// Instância global do quiz
+const quizSystem = new QuizSystem();
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado - iniciando sistema de idiomas');
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            changeLanguage(btn.getAttribute('data-lang'));
+        });
+    });
+    
+    // Iniciar quiz DDS
+    quizSystem.startQuiz('dds');
+});
+
+// Funções globais para o quiz
+function checkQuiz() {
+    quizSystem.submitQuiz();
+}
+
+function resetQuiz() {
+    quizSystem.retryQuiz();
+}
+
+// Sistema de Tradução
+let currentLanguage = 'pt';
+
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Função para rolar para o conteúdo
+function scrollToContent() {
+    document.querySelector('.course-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso NR-04 - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-1px);
+    }
+
+    /* Seletor de Idiomas */
+    .language-selector {
+      display: flex;
+      gap: 5px;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--branco);
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8em;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+      color: var(--branco);
+      border-color: var(--laranja);
+    }
+
+    /* Conteúdo Principal */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0a3d91, #1a5fb8);
+      color: var(--branco);
+      padding: 60px 30px;
+      text-align: center;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    .hero-btn {
+      background: var(--laranja);
+      color: var(--branco);
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .hero-btn:hover {
+      background: #e68a00;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(255,122,0,0.3);
+    }
+
+    .course-section {
+      background: var(--branco);
+      padding: 40px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .course-section h2 {
+      color: var(--azul);
+      margin-bottom: 25px;
+      font-size: 1.8em;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-list li {
+      background: var(--cinza-claro);
+      margin-bottom: 15px;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid var(--laranja);
+      transition: all 0.3s ease;
+    }
+
+    .info-list li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .info-list strong {
+      color: var(--azul);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .alert-box {
+      background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+      border: 2px solid var(--laranja);
+      border-radius: 10px;
+      padding: 25px;
+      margin: 30px 0;
+      box-shadow: 0 4px 15px rgba(255,122,0,0.2);
+    }
+
+    .alert-box h4 {
+      color: var(--azul);
+      margin-bottom: 15px;
+      font-size: 1.3em;
+    }
+
+    .alert-box p {
+      color: var(--cinza-texto);
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    /* Quiz */
+    .quiz-section {
+      background: var(--branco);
+      padding: 40px;
+      border-radius: 12px;
+      margin-top: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .quiz-title {
+      color: var(--azul);
+      margin-bottom: 30px;
+      font-size: 1.8em;
+      text-align: center;
+    }
+
+    .quiz-question {
+      margin-bottom: 30px;
+      padding: 25px;
+      background: var(--cinza-claro);
+      border-radius: 10px;
+      border-left: 5px solid var(--azul);
+    }
+
+    .quiz-question h4 {
+      color: var(--azul);
+      margin-bottom: 20px;
+      font-size: 1.2em;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 15px;
+    }
+
+    .quiz-option-label {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background: var(--branco);
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-option-label:hover {
+      border-color: var(--azul);
+      background: rgba(10,61,145,0.05);
+    }
+
+    .quiz-option {
+      margin-right: 12px;
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .quiz-btn {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-btn:hover {
+      background: #0956b3;
+      transform: translateY(-2px);
+    }
+
+    .quiz-result {
+      background: linear-gradient(135deg, #e8f5e8, #f5f5f5);
+      border: 2px solid var(--azul);
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 30px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .quiz-result h3 {
+      color: var(--azul);
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+
+    #quiz-score {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    #quiz-message {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .correct {
+      background: #d4edda !important;
+      border-color: #28a745 !important;
+      color: #155724 !important;
+    }
+
+    .incorrect {
+      background: #f8d7da !important;
+      border-color: #dc3545 !important;
+      color: #721c24 !important;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      header, footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 40px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .course-section, .quiz-section {
+        padding: 25px;
+      }
+
+      .quiz-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>RSS<span>3</span> Treinamentos</h1>
+  <nav>
+    <a href="../index.html" data-translate="nav-back">Voltar</a>
+    <a href="../sobre.html" data-translate="nav-about">Sobre</a>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 data-translate="nr04-hero-title">NR-04 Serviços Especializados em Segurança</h1>
+    <p data-translate="nr04-hero-subtitle">
+      Organização e estruturação dos serviços especializados de segurança e medicina do trabalho,
+      incluindo SESMT, CIPA e responsabilidades legais.
+    </p>
+    <a href="#conteudo" class="hero-btn" data-translate="nr04-hero-btn">Começar Curso</a>
+  </div>
+</section>
+
+<main id="conteudo">
+  <section class="course-section">
+    <h2 data-translate="nr04-section-1-title">O que é a NR-04?</h2>
+    <p data-translate="nr04-section-1-text">
+      A NR-04 estabelece os requisitos para os Serviços Especializados em Segurança 
+      e Medicina do Trabalho (SESMT), definindo obrigações para empresas 
+      com mais de 50 funcionários e estabelecendo responsabilidades legais.
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr04-point-1">
+        <strong>SESMT:</strong>
+        Serviço Especializado em Segurança e Medicina do Trabalho.
+      </li>
+      <li data-translate="nr04-point-2">
+        <strong>Obrigatoriedade:</strong>
+          Empresas com mais de 50 funcionários precisam ter SESMT.
+      </li>
+      <li data-translate="nr04-point-3">
+        <strong>Composição:</strong>
+          Engenheiro de Segurança, Médico do Trabalho, Enfermeiro, Técnico, etc.
+      </li>
+      <li data-translate="nr04-point-4">
+        <strong>Atribuições:</strong>
+          Planejamento, coordenação e controle dos serviços de segurança.
+      </li>
+    </ul>
+  </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr04-section-2-title">CIPA - Comissão Interna de Prevenção de Acidentes</h2>
+    <p data-translate="nr04-section-2-text">
+      A CIPA é uma comissão obrigatória em empresas com mais de 20 funcionários,
+      composta por representantes dos trabalhadores e empregadores,
+      com o objetivo de prevenir acidentes e doenças ocupacionais.
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr04-cipa-1">
+        <strong>Objetivo Principal:</strong>
+          Prevenir acidentes e doenças através de ações preventivas.
+      </li>
+      <li data-translate="nr04-cipa-2">
+        <strong>Composição:</strong>
+          Representantes dos empregados e empregadores.
+      </li>
+      <li data-translate="nr04-cipa-3">
+        <strong>Reuniões Mensais:</strong>
+          Análise de acidentes e planejamento de ações preventivas.
+      </li>
+      <li data-translate="nr04-cipa-4">
+        <strong>Inspeções de Segurança:</strong>
+          Verificação das condições de trabalho e identificação de riscos.
+      </li>
+      <li data-translate="nr04-cipa-5">
+        <strong>Campanhas:</strong>
+          Conscientização sobre segurança e prevenção de acidentes.
+      </li>
+    </ul>
+  </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr04-section-3-title">PCMSO - Programa de Controle Médico de Saúde Ocupacional</h2>
+    <p data-translate="nr04-section-3-text">
+      O PCMSO é um programa obrigatório que visa proteger a saúde dos trabalhadores 
+      através de exames médicos, monitoramento e ações preventivas.
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr04-pcmso-1">
+        <strong>Exames Admissional:</strong>
+          Avaliação inicial da saúde do trabalhador antes de iniciar as atividades.
+      </li>
+      <li data-translate="nr04-pcmso-2">
+        <strong>Exames Periódicos:</strong>
+          Avaliações regulares para detectar problemas de saúde ocupacional.
+      </li>
+      <li data-translate="nr04-pcmso-3">
+        <strong>Exames Demissional:</strong>
+          Avaliação final ao final do contrato de trabalho.
+      </li>
+      <li data-translate="nr04-pcmso-4">
+        <strong>Exames de Retorno ao Trabalho:</strong>
+          Avaliação após afastamento por doença ou acidente.
+      </li>
+      <li data-translate="nr04-pcmso-5">
+        <strong>Programas de Saúde:</strong>
+          Vacinação, atividades físicas e programas de bem-estar.
+      </li>
+      <li data-translate="nr04-pcmso-6">
+        <strong>Relatórios Estatísticos:</strong>
+          Análise de dados para identificar tendências e planejar ações.
+      </li>
+    </ul>
+  </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr04-section-4-title">Responsabilidades do Empregador</h2>
+    <p data-translate="nr04-section-4-text">
+      A NR-04 define as responsabilidades específicas do empregador 
+      em relação aos serviços especializados, incluindo a organização, 
+      manutenção e fiscalização dos serviços de segurança.
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr04-responsibility-1">
+        <strong>Organizar SESMT:</strong>
+          Estruturar e manter os serviços especializados conforme a lei.
+      </li>
+      <li data-translate="nr04-responsibility-2">
+        <strong>Manter Documentação:</strong>
+          PCMSO, PPRA e relatórios atualizados e disponíveis.
+      </li>
+      <li data-translate="nr04-responsibility-3">
+        <strong>Capacitar Profissionais:</strong>
+          Garantir qualificação contínua dos membros da equipe.
+      </li>
+      <li data-translate="nr04-responsibility-4">
+        <strong>Fornecer Recursos:</strong>
+          EPIs, equipamentos e condições adequadas de trabalho.
+      </li>
+      <li data-translate="nr04-responsibility-5">
+        <strong>Investigar Acidentes:</strong>
+          Analisar causas e implementar medidas preventivas.
+      </li>
+    </ul>
+  </section>
+
+  <div class="alert-box">
+    <h4 data-translate="nr04-tip-title">DICAS IMPORTANTES</h4>
+    <p data-translate="nr04-tip-text">
+      A NR-04 é fundamental para organizar a segurança em empresas maiores. 
+      SESMT e CIPA salvam vidas e previnem acidentes graves!
+    </p>
+  </div>
+
+  <section class="quiz-section">
+    <h2 class="quiz-title" data-translate="nr04-quiz-title">Teste seu Conhecimento</h2>
+    
+    <div class="quiz-question">
+      <h4 data-translate="nr04-quiz-question-1">1. O que significa SESMT?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="a" class="quiz-option">
+          <span data-translate="nr04-quiz-q1-a">Serviços de Engenharia</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="b" class="quiz-option">
+          <span data-translate="nr04-quiz-q1-b">Serviços Especializados</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="c" class="quiz-option">
+          <span data-translate="nr04-quiz-q1-c">Serviços de Saúde</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="d" class="quiz-option">
+          <span data-translate="nr04-quiz-q1-d">Serviços de Manutenção</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="e" class="quiz-option">
+          <span data-translate="nr04-quiz-q1-e">Serviços de Treinamento</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="nr04-quiz-question-2">2. Quando é obrigatória a CIPA?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="a" class="quiz-option">
+          <span data-translate="nr04-quiz-q2-a">Empresas com mais de 10 funcionários</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="b" class="quiz-option">
+          <span data-translate="nr04-quiz-q2-b">Empresas com mais de 20 funcionários</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="c" class="quiz-option">
+          <span data-translate="nr04-quiz-q2-c">Empresas com mais de 50 funcionários</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="d" class="quiz-option">
+          <span data-translate="nr04-quiz-q2-d">Indústrias em geral</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="e" class="quiz-option">
+          <span data-translate="nr04-quiz-q2-e">Todas as empresas sem exceção</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="nr04-quiz-question-3">3. Qual é o objetivo principal do PCMSO?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="a" class="quiz-option">
+            <span data-translate="nr04-quiz-q3-a">Aumentar a produtividade</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="b" class="quiz-option">
+            <span data-translate="nr04-quiz-q3-b">Proteger a saúde dos trabalhadores</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="c" class="quiz-option">
+            <span data-translate="nr04-quiz-q3-c">Reduzir custos com doenças</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="d" class="quiz-option">
+            <span data-translate="nr04-quiz-q3-d">Cumprir exigências legais</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="e" class="quiz-option">
+            <span data-translate="nr04-quiz-q3-e">Todas as anteriores</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="nr04-quiz-question-4">4. Quem compõe a equipe SESMT?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="a" class="quiz-option">
+            <span data-translate="nr04-quiz-q4-a">Apenas o Engenheiro de Segurança</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="b" class="quiz-option">
+            <span data-translate="nr04-quiz-q4-b">Engenheiro e Médico do Trabalho</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="c" class="quiz-option">
+            <span data-translate="nr04-quiz-q4-c">Equipe completa com todos os especialistas</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="d" class="quiz-option">
+            <span data-translate="nr04-quiz-q4-d">Inclui representantes dos trabalhadores</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="e" class="quiz-option">
+            <span data-translate="nr04-quiz-q4-e">Contratação de serviços terceirizados</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-actions">
+      <button class="quiz-btn" onclick="checkQuiz()" data-translate="nr04-quiz-submit">Verificar Respostas</button>
+      <button class="quiz-btn" onclick="resetQuiz()" data-translate="nr04-quiz-reset">Refazer Quiz</button>
+    </div>
+  </section>
+
+  <div id="quiz-result" class="quiz-result" style="display: none;">
+    <h3 data-translate="nr04-quiz-result-title">Resultado</h3>
+    <p id="quiz-score"></p>
+    <p id="quiz-message"></p>
+    <div class="quiz-actions">
+      <button class="quiz-btn" onclick="resetQuiz()" data-translate="nr04-quiz-reset">Refazer Quiz</button>
+      <button class="quiz-btn" onclick="window.location.href='../index.html'" data-translate="nr04-quiz-back">Voltar</button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-box">
+      <h4>🏢 <span data-translate="footer-courses">Cursos</span></h4>
+      <p><a href="../index.html" data-translate="footer-all-courses">Todos os cursos</a></p>
+    </div>
+    <div class="footer-box">
+      <h4>📚 <span data-translate="footer-resources">Recursos</span></h4>
+      <p><a href="../sobre.html" data-translate="footer-materials">Materiais de apoio</a></p>
+    </div>
+    <div class="footer-box">
+      <h4>📞 <span data-translate="footer-contact">Contato</span></h4>
+      <p data-translate="footer-support">Suporte RSS3</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 <span>RSS3</span> Treinamentos de Segurança
+  </div>
+</footer>
+
+<script>
+// Sistema de Tradução
+const translations = {
+    pt: {
+        'nav-back': 'Voltar',
+        'nav-about': 'Sobre',
+        'nr04-hero-title': 'NR-04 Serviços Especializados em Segurança',
+        'nr04-hero-subtitle': 'Organização e estruturação dos serviços especializados de segurança e medicina do trabalho, incluindo SESMT, CIPA e responsabilidades legais.',
+        'nr04-hero-btn': 'Começar Curso',
+        
+        'nr04-section-1-title': 'O que é a NR-04?',
+        'nr04-section-1-text': 'A NR-04 estabelece os requisitos para os Serviços Especializados em Segurança e Medicina do Trabalho (SESMT), definindo obrigações para empresas com mais de 50 funcionários e estabelecendo responsabilidades legais.',
+        'nr04-point-1': '<strong>SESMT:</strong> Serviço Especializado em Segurança e Medicina do Trabalho.',
+        'nr04-point-2': '<strong>Obrigatoriedade:</strong> Empresas com mais de 50 funcionários precisam ter SESMT.',
+        'nr04-point-3': '<strong>Composição:</strong> Engenheiro de Segurança, Médico do Trabalho, Enfermeiro, Técnico, etc.',
+        'nr04-point-4': '<strong>Atribuições:</strong> Planejamento, coordenação e controle dos serviços de segurança.',
+        
+        'nr04-section-2-title': 'CIPA - Comissão Interna de Prevenção de Acidentes',
+        'nr04-section-2-text': 'A CIPA é uma comissão obrigatória em empresas com mais de 20 funcionários, composta por representantes dos trabalhadores e empregadores, com o objetivo de prevenir acidentes e doenças ocupacionais.',
+        'nr04-cipa-1': '<strong>Objetivo Principal:</strong> Prevenir acidentes e doenças através de ações preventivas.',
+        'nr04-cipa-2': '<strong>Composição:</strong> Representantes dos empregados e empregadores.',
+        'nr04-cipa-3': '<strong>Reuniões Mensais:</strong> Análise de acidentes e planejamento de ações preventivas.',
+        'nr04-cipa-4': '<strong>Inspeções de Segurança:</strong> Verificação das condições de trabalho e identificação de riscos.',
+        'nr04-cipa-5': '<strong>Campanhas:</strong> Conscientização sobre segurança e prevenção de acidentes.',
+        
+        'nr04-section-3-title': 'PCMSO - Programa de Controle Médico de Saúde Ocupacional',
+        'nr04-section-3-text': 'O PCMSO é um programa obrigatório que visa proteger a saúde dos trabalhadores através de exames médicos, monitoramento e ações preventivas.',
+        'nr04-pcmso-1': '<strong>Exames Admissional:</strong> Avaliação inicial da saúde do trabalhador antes de iniciar as atividades.',
+        'nr04-pcmso-2': '<strong>Exames Periódicos:</strong> Avaliações regulares para detectar problemas de saúde ocupacional.',
+        'nr04-pcmso-3': '<strong>Exames Demissional:</strong> Avaliação final ao final do contrato de trabalho.',
+        'nr04-pcmso-4': '<strong>Exames de Retorno ao Trabalho:</strong> Avaliação após afastamento por doença ou acidente.',
+        'nr04-pcmso-5': '<strong>Programas de Saúde:</strong> Vacinação, atividades físicas e programas de bem-estar.',
+        'nr04-pcmso-6': '<strong>Relatórios Estatísticos:</strong> Análise de dados para identificar tendências e planejar ações.',
+        
+        'nr04-section-4-title': 'Responsabilidades do Empregador',
+        'nr04-section-4-text': 'A NR-04 define as responsabilidades específicas do empregador em relação aos serviços especializados, incluindo a organização, manutenção e fiscalização dos serviços de segurança.',
+        'nr04-responsibility-1': '<strong>Organizar SESMT:</strong> Estruturar e manter os serviços especializados conforme a lei.',
+        'nr04-responsibility-2': '<strong>Manter Documentação:</strong> PCMSO, PPRA e relatórios atualizados e disponíveis.',
+        'nr04-responsibility-3': '<strong>Capacitar Profissionais:</strong> Garantir qualificação contínua dos membros da equipe.',
+        'nr04-responsibility-4': '<strong>Fornecer Recursos:</strong> EPIs, equipamentos e condições adequadas de trabalho.',
+        'nr04-responsibility-5': '<strong>Investigar Acidentes:</strong> Analisar causas e implementar medidas preventivas.',
+        
+        'nr04-tip-title': 'DICAS IMPORTANTES',
+        'nr04-tip-text': 'A NR-04 é fundamental para organizar a segurança em empresas maiores. SESMT e CIPA salvam vidas e previnem acidentes graves!',
+        
+        'nr04-quiz-title': 'Teste seu Conhecimento',
+        'nr04-quiz-question-1': '1. O que significa SESMT?',
+        'nr04-quiz-q1-a': 'Serviços de Engenharia',
+        'nr04-quiz-q1-b': 'Serviços Especializados',
+        'nr04-quiz-q1-c': 'Serviços de Saúde',
+        'nr04-quiz-q1-d': 'Serviços de Manutenção',
+        'nr04-quiz-q1-e': 'Serviços de Treinamento',
+        
+        'nr04-quiz-question-2': '2. Quando é obrigatória a CIPA?',
+        'nr04-quiz-q2-a': 'Empresas com mais de 10 funcionários',
+        'nr04-quiz-q2-b': 'Empresas com mais de 20 funcionários',
+        'nr04-quiz-q2-c': 'Empresas com mais de 50 funcionários',
+        'nr04-quiz-q2-d': 'Indústrias em geral',
+        'nr04-quiz-q2-e': 'Todas as empresas sem exceção',
+        
+        'nr04-quiz-question-3': '3. Qual é o objetivo principal do PCMSO?',
+        'nr04-quiz-q3-a': 'Aumentar a produtividade',
+        'nr04-quiz-q3-b': 'Proteger a saúde dos trabalhadores',
+        'nr04-quiz-q3-c': 'Reduzir custos com doenças',
+        'nr04-quiz-q3-d': 'Cumprir exigências legais',
+        'nr04-quiz-q3-e': 'Todas as anteriores',
+        
+        'nr04-quiz-question-4': '4. Quem compõe a equipe SESMT?',
+        'nr04-quiz-q4-a': 'Apenas o Engenheiro de Segurança',
+        'nr04-quiz-q4-b': 'Engenheiro e Médico do Trabalho',
+        'nr04-quiz-q4-c': 'Equipe completa com todos os especialistas',
+        'nr04-quiz-q4-d': 'Inclui representantes dos trabalhadores',
+        'nr04-quiz-q4-e': 'Contratação de serviços terceirizados',
+        
+        'nr04-quiz-submit': 'Verificar Respostas',
+        'nr04-quiz-reset': 'Refazer Quiz',
+        'nr04-quiz-result-title': 'Resultado',
+        'nr04-quiz-back': 'Voltar',
+        'nr04-quiz-score-text': 'Sua pontuação',
+        'nr04-quiz-success-message': 'Parabéns! Você demonstrou excelente conhecimento sobre a NR-04 e seus fundamentos para organizar a segurança e saúde ocupacional.',
+        'nr04-quiz-fail-message': 'Estude um pouco mais. A NR-04 é essencial para garantir a segurança e saúde dos trabalhadores em empresas maiores.',
+        
+        'footer-courses': 'Cursos',
+        'footer-all-courses': 'Todos os cursos',
+        'footer-resources': 'Recursos',
+        'footer-materials': 'Materiais de apoio',
+        'footer-contact': 'Contato',
+        'footer-support': 'Suporte RSS3'
+    },
+    
+    es: {
+        'nav-back': 'Volver',
+        'nav-about': 'Acerca de',
+        'nr04-hero-title': 'NR-04 Servicios Especializados en Seguridad',
+        'nr04-hero-subtitle': 'Organización y estructuración de los servicios especializados de seguridad y medicina del trabajo, incluyendo SESMT, CIPA y responsabilidades legales.',
+        'nr04-hero-btn': 'Comenzar Curso',
+        
+        'nr04-section-1-title': '¿Qué es la NR-04?',
+        'nr04-section-1-text': 'La NR-04 establece los requisitos para los Servicios Especializados en Seguridad y Medicina del Trabajo (SESMT), definiendo obligaciones para empresas con más de 50 funcionarios y estableciendo responsabilidades legales.',
+        'nr04-point-1': '<strong>SESMT:</strong> Servicio Especializado en Seguridad y Medicina del Trabajo.',
+        'nr04-point-2': '<strong>Obligatoriedad:</strong> Empresas con más de 50 funcionarios necesitan tener SESMT.',
+        'nr04-point-3': '<strong>Composición:</strong> Ingeniero de Seguridad, Médico del Trabajo, Enfermero, Técnico, etc.',
+        'nr04-point-4': '<strong>Atribuciones:</strong> Planificación, coordinación y control de los servicios de seguridad.',
+        
+        'nr04-section-2-title': 'CIPA - Comisión Interna de Prevención de Accidentes',
+        'nr04-section-2-text': 'La CIPA es una comisión obligatoria en empresas con más de 20 funcionarios, compuesta por representantes de los trabajadores y empleadores, con el objetivo de prevenir accidentes y enfermedades ocupacionales.',
+        'nr04-cipa-1': '<strong>Objetivo Principal:</strong> Prevenir accidentes y enfermedades a través de acciones preventivas.',
+        'nr04-cipa-2': '<strong>Composición:</strong> Representantes de los empleados y empleadores.',
+        'nr04-cipa-3': '<strong>Reuniones Mensuales:</strong> Análisis de accidentes y planificación de acciones preventivas.',
+        'nr04-cipa-4': '<strong>Inspecciones de Seguridad:</strong> Verificación de las condiciones de trabajo e identificación de riesgos.',
+        'nr04-cipa-5': '<strong>Campañas:</strong> Concientización sobre seguridad y prevención de accidentes.',
+        
+        'nr04-section-3-title': 'PCMSO - Programa de Control Médico de Salud Ocupacional',
+        'nr04-section-3-text': 'El PCMSO es un programa obligatorio que busca proteger la salud de los trabajadores a través de exámenes médicos, monitoreo y acciones preventivas.',
+        'nr04-pcmso-1': '<strong>Exámenes Admissional:</strong> Evaluación inicial de la salud del trabajador antes de iniciar las actividades.',
+        'nr04-pcmso-2': '<strong>Exámenes Periódicos:</strong> Evaluaciones regulares para detectar problemas de salud ocupacional.',
+        'nr04-pcmso-3': '<strong>Exámenes Demisional:</strong> Evaluación final al final del contrato de trabajo.',
+        'nr04-pcmso-4': '<strong>Exámenes de Retorno al Trabajo:</strong> Evaluación después de ausencia por enfermedad o accidente.',
+        'nr04-pcmso-5': '<strong>Programas de Salud:</strong> Vacunación, actividades físicas y programas de bienestar.',
+        'nr04-pcmso-6': '<strong>Informes Estadísticos:</strong> Análisis de datos para identificar tendencias y planificar acciones.',
+        
+        'nr04-section-4-title': 'Responsabilidades del Empleador',
+        'nr04-section-4-text': 'La NR-04 define las responsabilidades específicas del empleador en relación a los servicios especializados, incluyendo la organización, mantenimiento y fiscalización de los servicios de seguridad.',
+        'nr04-responsibility-1': '<strong>Organizar SESMT:</strong> Estructurar y mantener los servicios especializados conforme la ley.',
+        'nr04-responsibility-2': '<strong>Mantener Documentación:</strong> PCMSO, PPRA e informes actualizados y disponibles.',
+        'nr04-responsibility-3': '<strong>Capacitar Profesionales:</strong> Garantir calificación continua de los miembros del equipo.',
+        'nr04-responsibility-4': '<strong>Proporcionar Recursos:</strong> EPIs, equipos y condiciones adecuadas de trabajo.',
+        'nr04-responsibility-5': '<strong>Investigar Accidentes:</strong> Analizar causas e implementar medidas preventivas.',
+        
+        'nr04-tip-title': 'CONSEJOS IMPORTANTES',
+        'nr04-tip-text': 'La NR-04 es fundamental para organizar la seguridad en empresas mayores. ¡SESMT y CIPA salvan vidas y previenen accidentes graves!',
+        
+        'nr04-quiz-title': 'Pruebe su Conocimiento',
+        'nr04-quiz-question-1': '1. ¿Qué significa SESMT?',
+        'nr04-quiz-q1-a': 'Servicios de Ingeniería',
+        'nr04-quiz-q1-b': 'Servicios Especializados',
+        'nr04-quiz-q1-c': 'Servicios de Salud',
+        'nr04-quiz-q1-d': 'Servicios de Mantenimiento',
+        'nr04-quiz-q1-e': 'Servicios de Entrenamiento',
+        
+        'nr04-quiz-question-2': '2. ¿Cuándo es obligatoria la CIPA?',
+        'nr04-quiz-q2-a': 'Empresas con más de 10 funcionarios',
+        'nr04-quiz-q2-b': 'Empresas con más de 20 funcionarios',
+        'nr04-quiz-q2-c': 'Empresas con más de 50 funcionarios',
+        'nr04-quiz-q2-d': 'Industrias en general',
+        'nr04-quiz-q2-e': 'Todas las empresas sin excepción',
+        
+        'nr04-quiz-question-3': '3. ¿Cuál es el objetivo principal del PCMSO?',
+        'nr04-quiz-q3-a': 'Aumentar la productividad',
+        'nr04-quiz-q3-b': 'Proteger la salud de los trabajadores',
+        'nr04-quiz-q3-c': 'Reducir costos con enfermedades',
+        'nr04-quiz-q3-d': 'Cumplir exigencias legales',
+        'nr04-quiz-q3-e': 'Todas las anteriores',
+        
+        'nr04-quiz-question-4': '4. ¿Quién compone el equipo SESMT?',
+        'nr04-quiz-q4-a': 'Solo el Ingeniero de Seguridad',
+        'nr04-quiz-q4-b': 'Ingeniero y Médico del Trabajo',
+        'nr04-quiz-q4-c': 'Equipo completo con todos los especialistas',
+        'nr04-quiz-q4-d': 'Incluye representantes de los trabajadores',
+        'nr04-quiz-q4-e': 'Contratación de servicios terceros',
+        
+        'nr04-quiz-submit': 'Verificar Respuestas',
+        'nr04-quiz-reset': 'Rehacer Quiz',
+        'nr04-quiz-result-title': 'Resultado',
+        'nr04-quiz-back': 'Volver',
+        'nr04-quiz-score-text': 'Su puntuación',
+        'nr04-quiz-success-message': '¡Felicidades! Usted demostró excelente conocimiento sobre la NR-04 y sus fundamentos para organizar la seguridad y salud ocupacional.',
+        'nr04-quiz-fail-message': 'Estudie un poco más. La NR-04 es esencial para garantizar la seguridad y salud de los trabajadores en empresas mayores.',
+        
+        'footer-courses': 'Cursos',
+        'footer-all-courses': 'Todos los cursos',
+        'footer-resources': 'Recursos',
+        'footer-materials': 'Materiales de apoyo',
+        'footer-contact': 'Contacto',
+        'footer-support': 'Soporte RSS3'
+    },
+    
+    en: {
+        'nav-back': 'Back',
+        'nav-about': 'About',
+        'nr04-hero-title': 'NR-04 Specialized Safety Services',
+        'nr04-hero-subtitle': 'Organization and structuring of specialized safety and occupational health services, including SESMT, CIPA and legal responsibilities.',
+        'nr04-hero-btn': 'Start Course',
+        
+        'nr04-section-1-title': 'What is NR-04?',
+        'nr04-section-1-text': 'NR-04 establishes requirements for Specialized Safety and Occupational Health Services (SESMT), defining obligations for companies with more than 50 employees and establishing legal responsibilities.',
+        'nr04-point-1': '<strong>SESMT:</strong> Specialized Safety and Occupational Health Service.',
+        'nr04-point-2': '<strong>Mandatory:</strong> Companies with more than 50 employees need to have SESMT.',
+        'nr04-point-3': '<strong>Composition:</strong> Safety Engineer, Occupational Physician, Nurse, Technician, etc.',
+        'nr04-point-4': '<strong>Responsibilities:</strong> Planning, coordination and control of safety services.',
+        
+        'nr04-section-2-title': 'CIPA - Internal Accident Prevention Commission',
+        'nr04-section-2-text': 'CIPA is a mandatory commission in companies with more than 20 employees, composed of worker and employer representatives, with the objective of preventing accidents and occupational diseases.',
+        'nr04-cipa-1': '<strong>Main Objective:</strong> Prevent accidents and diseases through preventive actions.',
+        'nr04-cipa-2': '<strong>Composition:</strong> Worker and employer representatives.',
+        'nr04-cipa-3': '<strong>Monthly Meetings:</strong> Accident analysis and preventive action planning.',
+        'nr04-cipa-4': '<strong>Safety Inspections:</strong> Verification of working conditions and risk identification.',
+        'nr04-cipa-5': '<strong>Campaigns:</strong> Safety awareness and accident prevention campaigns.',
+        
+        'nr04-section-3-title': 'PCMSO - Occupational Health Medical Control Program',
+        'nr04-section-3-text': 'PCMSO is a mandatory program that aims to protect worker health through medical examinations, monitoring and preventive actions.',
+        'nr04-pcmso-1': '<strong>Admissional Exams:</strong> Initial evaluation of worker health before starting activities.',
+        'nr04-pcmso-2': '<strong>Periodic Exams:</strong> Regular evaluations to detect occupational health problems.',
+        'nr04-pcmso-3': '<strong>Dismissal Exams:</strong> Final evaluation at the end of employment contract.',
+        'nr04-pcmso-4': '<strong>Return to Work Exams:</strong> Evaluation after absence due to illness or accident.',
+        'nr04-pcmso-5': '<strong>Health Programs:</strong> Vaccination, physical activities and wellness programs.',
+        'nr04-pcmso-6': '<strong>Statistical Reports:</strong> Data analysis to identify trends and plan actions.',
+        
+        'nr04-section-4-title': 'Employer Responsibilities',
+        'nr04-section-4-text': 'NR-04 defines specific employer responsibilities regarding specialized services, including organization, maintenance and oversight of safety services.',
+        'nr04-responsibility-1': '<strong>Organize SESMT:</strong> Structure and maintain specialized services according to law.',
+        'nr04-responsibility-2': '<strong>Maintain Documentation:</strong> PCMSO, PPRA and updated and available reports.',
+        'nr04-responsibility-3': '<strong>Train Professionals:</strong> Ensure continuous qualification of team members.',
+        'nr04-responsibility-4': '<strong>Provide Resources:</strong> PPEs, equipment and adequate working conditions.',
+        'nr04-responsibility-5': '<strong>Investigate Accidents:</strong> Analyze causes and implement preventive measures.',
+        
+        'nr04-tip-title': 'IMPORTANT TIPS',
+        'nr04-tip-text': 'NR-04 is fundamental for organizing safety in larger companies. SESMT and CIPA save lives and prevent serious accidents!',
+        
+        'nr04-quiz-title': 'Test your Knowledge',
+        'nr04-quiz-question-1': '1. What does SESMT mean?',
+        'nr04-quiz-q1-a': 'Engineering Services',
+        'nr04-quiz-q1-b': 'Specialized Services',
+        'nr04-quiz-q1-c': 'Health Services',
+        'nr04-quiz-q1-d': 'Maintenance Services',
+        'nr04-quiz-q1-e': 'Training Services',
+        
+        'nr04-quiz-question-2': '2. When is CIPA mandatory?',
+        'nr04-quiz-q2-a': 'Companies with more than 10 employees',
+        'nr04-quiz-q2-b': 'Companies with more than 20 employees',
+        'nr04-quiz-q2-c': 'Companies with more than 50 employees',
+        'nr04-quiz-q2-d': 'Industries in general',
+        'nr04-quiz-q2-e': 'All companies without exception',
+        
+        'nr04-quiz-question-3': '3. What is the main objective of PCMSO?',
+        'nr04-quiz-q3-a': 'Increase productivity',
+        'nr04-quiz-q3-b': 'Protect worker health',
+        'nr04-quiz-q3-c': 'Reduce costs with illnesses',
+        'nr04-quiz-q3-d': 'Comply with legal requirements',
+        'nr04-quiz-q3-e': 'All of the above',
+        
+        'nr04-quiz-question-4': '4. Who composes the SESMT team?',
+        'nr04-quiz-q4-a': 'Only the Safety Engineer',
+        'nr04-quiz-q4-b': 'Safety Engineer and Occupational Physician',
+        'nr04-quiz-q4-c': 'Complete team with all specialists',
+        'nr04-quiz-q4-d': 'Includes worker representatives',
+        'nr04-quiz-q4-e': 'Third-party service contracting',
+        
+        'nr04-quiz-submit': 'Check Answers',
+        'nr04-quiz-reset': 'Retry Quiz',
+        'nr04-quiz-result-title': 'Result',
+        'nr04-quiz-back': 'Back',
+        'nr04-quiz-score-text': 'Your score',
+        'nr04-quiz-success-message': 'Congratulations! You demonstrated excellent knowledge about NR-04 and its fundamentals for organizing safety and occupational health.',
+        'nr04-quiz-fail-message': 'Study a little more. NR-04 is essential to ensure the safety and health of workers in larger companies.',
+        
+        'footer-courses': 'Courses',
+        'footer-all-courses': 'All Courses',
+        'footer-resources': 'Resources',
+        'footer-materials': 'Support Materials',
+        'footer-contact': 'Contact',
+        'footer-support': 'RSS3 Support'
+    }
+};
+
+// Sistema de Quiz
+class QuizSystem {
+    constructor() {
+        this.currentQuiz = null;
+        this.answers = {};
+        this.score = 0;
+        this.correctAnswers = {
+            'nr04': {
+                'q1': 'b',
+                'q2': 'b',
+                'q3': 'b',
+                'q4': 'c'
+            }
+        };
+    }
+
+    startQuiz(quizType) {
+        this.currentQuiz = quizType;
+        this.answers = {};
+        this.score = 0;
+        
+        // Limpar seleções anteriores
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+    }
+
+    submitQuiz() {
+        if (!this.currentQuiz) return;
+        
+        const quizAnswers = this.correctAnswers[this.currentQuiz];
+        let correctCount = 0;
+        const totalQuestions = Object.keys(quizAnswers).length;
+        
+        // Verificar cada resposta
+        for (const [questionId, correctAnswer] of Object.entries(quizAnswers)) {
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+            
+            if (selectedOption) {
+                const userAnswer = selectedOption.value;
+                this.answers[questionId] = userAnswer;
+                
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    // Marcar como correto
+                    selectedOption.parentElement.classList.add('correct');
+                } else {
+                    // Marcar como incorreto e mostrar a resposta correta
+                    selectedOption.parentElement.classList.add('incorrect');
+                    const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`);
+                    if (correctOption) {
+                        correctOption.parentElement.classList.add('correct');
+                    }
+                }
+            } else {
+                // Não respondida - mostrar resposta correta
+                const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`);
+                if (correctOption) {
+                    correctOption.parentElement.classList.add('correct');
+                }
+            }
+        }
+        
+        this.score = correctCount;
+        this.showResult(correctCount, totalQuestions);
+    }
+
+    showResult(correctCount, totalQuestions) {
+        const resultDiv = document.getElementById('quiz-result');
+        const scoreElement = document.getElementById('quiz-score');
+        const messageElement = document.getElementById('quiz-message');
+        
+        if (resultDiv && scoreElement && messageElement) {
+            const percentage = Math.round((correctCount / totalQuestions) * 100);
+            
+            scoreElement.textContent = this.getTranslatedText('nr04-quiz-score-text') + `: ${correctCount}/${totalQuestions} (${percentage}%)`;
+            
+            if (percentage >= 70) {
+                messageElement.textContent = this.getTranslatedText('nr04-quiz-success-message');
+                scoreElement.style.color = '#28a745';
+            } else {
+                messageElement.textContent = this.getTranslatedText('nr04-quiz-fail-message');
+                scoreElement.style.color = '#dc3545';
+            }
+            
+            resultDiv.style.display = 'block';
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    retryQuiz() {
+        if (!this.currentQuiz) return;
+        
+        // Limpar seleções
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Limpar classes de correção
+        document.querySelectorAll('.quiz-option-label').forEach(label => {
+            label.classList.remove('correct', 'incorrect');
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+        
+        // Resetar
+        this.answers = {};
+        this.score = 0;
+        
+        // Voltar ao topo do quiz
+        const quizSection = document.querySelector('.quiz-section');
+        if (quizSection) {
+            quizSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    getTranslatedText(key) {
+        const lang = localStorage.getItem('rss3-language') || 'pt';
+        if (translations && translations[lang] && translations[lang][key]) {
+            return translations[lang][key];
+        }
+        return key;
+    }
+}
+
+// Instância global do quiz
+const quizSystem = new QuizSystem();
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado - iniciando sistema de idiomas');
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            changeLanguage(btn.getAttribute('data-lang'));
+        });
+    });
+    
+    // Iniciar quiz nr04
+    quizSystem.startQuiz('nr04');
+});
+
+// Funções globais para o quiz
+function checkQuiz() {
+    quizSystem.submitQuiz();
+}
+
+function resetQuiz() {
+    quizSystem.retryQuiz();
+}
+
+// Sistema de Tradução
+let currentLanguage = 'pt';
+
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Função para rolar para o conteúdo
+function scrollToContent() {
+    document.querySelector('.course-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+  </script>
+
+</body>
+</html>

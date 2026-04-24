@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso Cores das Tubulações - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--laranja);
+    }
+
+    .language-selector {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: var(--branco);
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--azul), #1a5fb4);
+      color: var(--branco);
+      padding: 60px 40px;
+      border-radius: 15px;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .hero h1 {
+      font-size: 2.8em;
+      margin: 0 0 15px 0;
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      margin: 0 0 30px 0;
+      opacity: 0.9;
+    }
+
+    .start-btn {
+      background: var(--laranja);
+      color: var(--branco);
+      border: none;
+      padding: 15px 35px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-weight: bold;
+    }
+
+    .start-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255,122,0,0.4);
+    }
+
+    .course-section {
+      background: var(--branco);
+      padding: 40px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .course-section h2 {
+      color: var(--azul);
+      font-size: 1.8em;
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--laranja);
+      padding-bottom: 10px;
+    }
+
+    .course-section p {
+      font-size: 1.1em;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .info-list li {
+      background: var(--cinza-claro);
+      padding: 15px 20px;
+      margin-bottom: 10px;
+      border-left: 5px solid var(--laranja);
+      border-radius: 5px;
+      font-size: 1.05em;
+    }
+
+    .info-list li strong {
+      color: var(--azul);
+    }
+
+    .epi-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 30px 0;
+    }
+
+    .epi-type-card {
+      background: var(--branco);
+      border: 2px solid var(--cinza-claro);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .epi-type-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      border-color: var(--laranja);
+    }
+
+    .epi-type-icon {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+
+    .epi-type-title {
+      color: var(--azul);
+      font-size: 1.3em;
+      margin: 0 0 10px 0;
+    }
+
+    .epi-type-desc {
+      color: var(--cinza-texto);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .alert-box {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .alert-box h3 {
+      color: #856404;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .alert-box p {
+      color: #856404;
+      margin: 0;
+    }
+
+    .danger-box {
+      background: #f8d7da;
+      border: 2px solid #dc3545;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .danger-box h3 {
+      color: #721c24;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .danger-box p {
+      color: #721c24;
+      margin: 0;
+    }
+
+    .color-card {
+      background: var(--branco);
+      border: 3px solid;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-bottom: 20px;
+    }
+
+    .color-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .color-card.red {
+      border-color: #dc3545;
+      background: linear-gradient(135deg, #fff5f5, #ffe0e0);
+    }
+
+    .color-card.green {
+      border-color: #28a745;
+      background: linear-gradient(135deg, #f8fff8, #e8f5e8);
+    }
+
+    .color-card.yellow {
+      border-color: #ffc107;
+      background: linear-gradient(135deg, #fffbf0, #fff3cd);
+    }
+
+    .color-card.blue {
+      border-color: #007bff;
+      background: linear-gradient(135deg, #f8f9ff, #e3f2fd);
+    }
+
+    .color-card.orange {
+      border-color: #fd7e14;
+      background: linear-gradient(135deg, #fff8f0, #ffe8cc);
+    }
+
+    .color-card.purple {
+      border-color: #6f42c1;
+      background: linear-gradient(135deg, #faf8ff, #f3e5f5);
+    }
+
+    .color-card.brown {
+      border-color: #795548;
+      background: linear-gradient(135deg, #faf8f6, #f5efe6);
+    }
+
+    .color-card.black {
+      border-color: #343a40;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    }
+
+    .color-icon {
+      font-size: 4em;
+      margin-bottom: 15px;
+    }
+
+    .color-title {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin: 0 0 10px 0;
+    }
+
+    .color-desc {
+      font-size: 1.1em;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .quiz-section {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      padding: 40px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .quiz-section h2 {
+      color: var(--azul);
+      font-size: 1.8em;
+      margin-top: 0;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .question {
+      background: var(--branco);
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .question h3 {
+      color: var(--azul);
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.2em;
+    }
+
+    .options {
+      display: grid;
+      gap: 12px;
+    }
+
+    .option {
+      background: var(--cinza-claro);
+      border: 2px solid transparent;
+      padding: 15px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .option:hover {
+      background: #e8f4fd;
+      border-color: var(--azul);
+    }
+
+    .option.selected {
+      background: #d4edda;
+      border-color: #28a745;
+    }
+
+    .option.correct {
+      background: #d4edda;
+      border-color: #28a745;
+    }
+
+    .option.incorrect {
+      background: #f8d7da;
+      border-color: #dc3545;
+    }
+
+    .quiz-actions {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .quiz-btn {
+      background: var(--azul);
+      color: var(--branco);
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 0 10px;
+      transition: background 0.3s;
+    }
+
+    .quiz-btn:hover {
+      background: #0a2d6b;
+    }
+
+    .quiz-btn.primary {
+      background: var(--laranja);
+    }
+
+    .quiz-btn.primary:hover {
+      background: #e66800;
+    }
+
+    .result-container {
+      text-align: center;
+      padding: 30px;
+      background: var(--branco);
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .result-container h3 {
+      color: var(--azul);
+      font-size: 1.8em;
+      margin-top: 0;
+    }
+
+    .score {
+      font-size: 3em;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .score.pass {
+      color: #28a745;
+    }
+
+    .score.fail {
+      color: #dc3545;
+    }
+
+    .result-message {
+      font-size: 1.2em;
+      margin: 20px 0;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      header, footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 40px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2.2em;
+      }
+
+      .course-section, .quiz-section {
+        padding: 25px;
+      }
+
+      .epi-types-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1><span>RSS3</span> Treinamentos</h1>
+    </div>
+    <nav>
+      <a href="../index.html" data-translate="nav-back">Voltar</a>
+      <a href="#" data-translate="nav-about">Sobre</a>
+    </nav>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1 data-translate="pipes-hero-title">Cores das Tubulações</h1>
+      <p data-translate="pipes-hero-subtitle">Cada cor indica um produto diferente - saiba identificar!</p>
+      <button class="start-btn" onclick="scrollToContent()" data-translate="pipes-hero-btn">Começar Curso</button>
+    </div>
+
+    <section class="course-section">
+      <h2 data-translate="pipes-section-1-title">O que são as cores das tubulações?</h2>
+      <p data-translate="pipes-section-1-text">
+        Na indústria, as tubulações têm cores diferentes para mostrar que tipo de produto 
+        passa por dentro. Cada cor tem um significado específico. Isso é muito importante 
+        para a segurança de todos.
+      </p>
+      
+      <div class="epi-types-grid">
+        <div class="epi-type-card">
+          <div class="epi-type-icon">colorize</div>
+          <h3 class="epi-type-title" data-translate="pipes-type-1-title">Identificação Visual</h3>
+          <p class="epi-type-desc" data-translate="pipes-type-1-desc">As cores ajudam a saber o que tem dentro dos canos.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">security</div>
+          <h3 class="epi-type-title" data-translate="pipes-type-2-title">Segurança</h3>
+          <p class="epi-type-desc" data-translate="pipes-type-2-desc">Evita acidentes ao mostrar os perigos de cada tubulação.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">speed</div>
+          <h3 class="epi-type-title" data-translate="pipes-type-3-title">Agilidade</h3>
+          <p class="epi-type-desc" data-translate="pipes-type-3-desc">Ajuda a encontrar rápido o que precisa em emergência.</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="pipes-section-2-title">Principais cores e significados</h2>
+      <p data-translate="pipes-section-2-text">
+        Conheça as cores mais comuns nas tubulações industriais e o que cada uma significa. 
+        Memorizar estas cores pode salvar sua vida!
+      </p>
+      
+      <div class="color-card red">
+        <div class="color-icon">fire_extinguisher</div>
+        <h3 class="color-title" data-translate="pipes-red-title">VERMELHO</h3>
+        <p class="color-desc" data-translate="pipes-red-desc">Combate a incêndio - Água para apagar fogo e sistemas de segurança contra incêndio.</p>
+      </div>
+      
+      <div class="color-card green">
+        <div class="color-icon">water_drop</div>
+        <h3 class="color-title" data-translate="pipes-green-title">VERDE</h3>
+        <p class="color-desc" data-translate="pipes-green-desc">Água - Água limpa para uso geral, resfriamento e processos industriais.</p>
+      </div>
+      
+      <div class="color-card yellow">
+        <div class="color-icon">gas</div>
+        <h3 class="color-title" data-translate="pipes-yellow-title">AMARELO</h3>
+        <p class="color-desc" data-translate="pipes-yellow-desc">Gases - Gás natural, GLP, gases combustíveis e inflamáveis.</p>
+      </div>
+      
+      <div class="color-card blue">
+        <div class="color-icon">air</div>
+        <h3 class="color-title" data-translate="pipes-blue-title">AZUL</h3>
+        <p class="color-desc" data-translate="pipes-blue-desc">Ar comprimido - Ar comprimido para ferramentas e equipamentos pneumáticos.</p>
+      </div>
+      
+      <div class="color-card orange">
+        <div class="color-icon">local_fire_department</div>
+        <h3 class="color-title" data-translate="pipes-orange-title">LARANJA</h3>
+        <p class="color-desc" data-translate="pipes-orange-desc">Vapor - Vapor quente para processos industriais e aquecimento.</p>
+      </div>
+      
+      <div class="color-card purple">
+        <div class="color-icon">science</div>
+        <h3 class="color-title" data-translate="pipes-purple-title">ROXO</h3>
+        <p class="color-desc" data-translate="pipes-purple-desc">Ácidos e produtos químicos corrosivos.</p>
+      </div>
+      
+      <div class="color-card brown">
+        <div class="color-icon">oil_barrel</div>
+        <h3 class="color-title" data-translate="pipes-brown-title">MARROM</h3>
+        <p class="color-desc" data-translate="pipes-brown-desc">Óleos e combustíveis líquidos - diesel, querosene, óleo lubrificante.</p>
+      </div>
+      
+      <div class="color-card black">
+        <div class="color-icon">warning</div>
+        <h3 class="color-title" data-translate="pipes-black-title">PRETO</h3>
+        <p class="color-desc" data-translate="pipes-black-desc">Outros fluidos não perigosos e sistemas de vácuo.</p>
+      </div>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="pipes-section-3-title">Por que isso é importante para segurança?</h2>
+      <p data-translate="pipes-section-3-text">
+        Saber identificar as cores das tubulações é fundamental para sua segurança. 
+        Um erro pode causar acidentes graves. Veja por que isso é tão importante:
+      </p>
+      
+      <div class="danger-box">
+        <h3>error <span data-translate="pipes-danger-title">PERIGO DE NÃO SABER AS CORES</span></h3>
+        <p data-translate="pipes-danger-text">Errar a identificação pode causar explosões, queimaduras ou até morte!</p>
+      </div>
+      
+      <ul class="info-list">
+        <li data-translate="pipes-safety-1"><strong>Evita acidentes:</strong> Saber o produto certo evita manuseio errado.</li>
+        <li data-translate="pipes-safety-2"><strong>Manutenção segura:</strong> Trabalhadores sabem que EPI usar em cada tubulação.</li>
+        <li data-translate="pipes-safety-3"><strong>Emergências:</strong> Em vazamentos, sabe-se qual o perigo e como agir.</li>
+        <li data-translate="pipes-safety-4"><strong>Isolamento correto:</strong> Fecha a válvula certa sem errar o produto.</li>
+        <li data-translate="pipes-safety-5"><strong>Primeiros socorros:</strong> Médicos sabem que tipo de contaminação tratar.</li>
+        <li data-translate="pipes-safety-6"><strong>Prevenção:</strong> Evita misturar produtos químicos perigosos.</li>
+      </ul>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="pipes-section-4-title">Riscos de não respeitar a identificação</h2>
+      <p data-translate="pipes-section-4-text">
+        Ignorar as cores das tubulações ou não entender seu significado pode ter consequências 
+        muito graves. Veja os principais riscos:
+      </p>
+      
+      <div class="epi-types-grid">
+        <div class="epi-type-card">
+          <div class="epi-type-icon">explosion</div>
+          <h3 class="epi-type-title" data-translate="pipes-risk-1-title">Explosão</h3>
+          <p class="epi-type-desc" data-translate="pipes-risk-1-desc">Abrir tubulação de gás pensando que é água pode causar explosão.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">local_hospital</div>
+          <h3 class="epi-type-title" data-translate="pipes-risk-2-title">Queimaduras</h3>
+          <p class="epi-type-desc" data-translate="pipes-risk-2-desc">Vapor ou água quente pode causar queimaduras graves.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">coronavirus</div>
+          <h3 class="epi-type-title" data-translate="pipes-risk-3-title">Intoxicação</h3>
+          <p class="epi-type-desc" data-translate="pipes-risk-3-desc">Gases venenosos podem causar envenenamento e morte.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">flash_off</div>
+          <h3 class="epi-type-title" data-translate="pipes-risk-4-title">Incêndio</h3>
+          <p class="epi-type-desc" data-translate="pipes-risk-4-desc">Combustíveis próximos de fontes de calor podem pegar fogo.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">build</div>
+          <h3 class="epi-type-title" data-translate="pipes-risk-5-title">Danos Equipamentos</h3>
+          <p class="epi-type-desc" data-translate="pipes-risk-5-desc">Produto errado pode estragar máquinas e equipamentos.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">gavel</div>
+          <h3 class="epi-type-title" data-translate="pipes-risk-6-title">Problemas Legais</h3>
+          <p class="epi-type-desc" data-translate="pipes-risk-6-desc">Erros podem causar multas e problemas com a fiscalização.</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="pipes-section-5-title">Como identificar corretamente?</h2>
+      <p data-translate="pipes-section-5-text">
+        Para identificar as tubulações corretamente, você precisa observar alguns detalhes importantes. 
+        Nem sempre é só a cor, existem outras informações também.
+      </p>
+      
+    <div class="alert-box">
+      <h4 data-translate="pipes-tip-title">DICAS DE IDENTIFICAÇÃO</h4>
+      <p data-translate="pipes-tip-text">Sempre olhe com atenção e nunca presuma que sabe o produto só pela cor!</p>
+    </div>
+      
+      <ul class="info-list">
+        <li data-translate="pipes-identify-1"><strong>Cor da tubulação:</strong> A cor principal indica o tipo de produto.</li>
+        <li data-translate="pipes-identify-2"><strong>Faixas coloridas:</strong> Faixas podem indicar perigo ou estado do produto.</li>
+        <li data-translate="pipes-identify-3"><strong>Setas de fluxo:</strong> Mostram a direção que o produto circula.</li>
+        <li data-translate="pipes-identify-4"><strong>Placas identificadoras:</strong> Tem nome do produto e informações de segurança.</li>
+        <li data-translate="pipes-identify-5"><strong>Códigos de cor:</strong> Algumas empresas usam códigos especiais internos.</li>
+        <li data-translate="pipes-identify-6"><strong>Peça ajuda:</strong> Na dúvida, pergunte ao responsável ou ao supervisor.</li>
+      </ul>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="pipes-section-6-title">Cuidados ao trabalhar perto de tubulações</h2>
+      <p data-translate="pipes-section-6-text">
+        Ao trabalhar próximo a tubulações, você precisa tomar cuidados especiais. 
+        Cada tipo de produto exige cuidados diferentes.
+      </p>
+      
+      <ul class="info-list">
+        <li data-translate="pipes-care-1"><strong>Verifique sempre a cor:</strong> Antes de qualquer trabalho, identifique a tubulação.</li>
+        <li data-translate="pipes-care-2"><strong>Use EPI adequado:</strong> Cada produto exige proteção diferente.</li>
+        <li data-translate="pipes-care-3"><strong>Não bata nas tubulações:</strong> Pode causar vazamento ou ruptura.</li>
+        <li data-translate="pipes-care-4"><strong>Mantenha distância:</strong> Não trabalhe muito perto de tubulações quentes.</li>
+        <li data-translate="pipes-care-5"><strong>Avise se encontrar vazamento:</strong> Comunique imediatamente ao responsável.</li>
+        <li data-translate="pipes-care-6"><strong>Sinalize o local:</strong> Coloque placas de advertência quando necessário.</li>
+        <li data-translate="pipes-care-7"><strong>Conheça os procedimentos:</strong> Saiba o que fazer em emergência.</li>
+      </ul>
+      
+      <div class="danger-box">
+        <h3>priority_high <span data-translate="pipes-emergency-title">EM CASO DE VAZAMENTO</span></h3>
+        <p data-translate="pipes-emergency-text">Afaste-se, avise o responsável e siga os procedimentos de emergência imediatamente!</p>
+      </div>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="pipes-section-7-title">Responsabilidade de todos</h2>
+      <p data-translate="pipes-section-7-text">
+        Conhecer as cores das tubulações é responsabilidade de todos que trabalham na indústria. 
+        Este conhecimento salva vidas e protege a todos.
+      </p>
+      
+      <ul class="info-list">
+        <li data-translate="pipes-responsibility-1"><strong>Aprenda as cores:</strong> Memorize as cores e seus significados.</li>
+        <li data-translate="pipes-responsibility-2"><strong>Ensine os colegas:</strong> Ajude outros a aprenderem também.</li>
+        <li data-translate="pipes-responsibility-3"><strong>Esteja sempre atento:</strong> Preste atenção nas tubulações ao seu redor.</li>
+        <li data-translate="pipes-responsibility-4"><strong>Participe de treinamentos:</strong> Mantenha seu conhecimento atualizado.</li>
+        <li data-translate="pipes-responsibility-5"><strong>Não tenha vergonha de perguntar:</strong> É melhor perguntar do que errar.</li>
+      </ul>
+      
+    <div class="alert-box">
+      <h4 data-translate="pipes-benefit-title">BENEFÍCIOS DE CONHECER AS CORES</h4>
+      <p data-translate="pipes-benefit-text">Conhecimento das cores = menos acidentes + trabalho mais seguro + vida protegida!</p>
+    </div>
+      
+    </section>
+
+  <section class="quiz-section">
+    <h2 class="quiz-title" data-translate="pipes-quiz-title">Teste seu Conhecimento</h2>
+    
+    <div class="quiz-question">
+      <h4 data-translate="pipes-quiz-question-1">1. O que significa a tubulação vermelha?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="a" class="quiz-option">
+          <span data-translate="pipes-quiz-q1-a">Água potável</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="b" class="quiz-option">
+          <span data-translate="pipes-quiz-q1-b">Combate a incêndio</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="c" class="quiz-option">
+          <span data-translate="pipes-quiz-q1-c">Gás natural</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="d" class="quiz-option">
+          <span data-translate="pipes-quiz-q1-d">Ar comprimido</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="e" class="quiz-option">
+          <span data-translate="pipes-quiz-q1-e">Vapor</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="pipes-quiz-question-2">2. Qual cor indica gases inflamáveis?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="a" class="quiz-option">
+          <span data-translate="pipes-quiz-q2-a">Verde</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="b" class="quiz-option">
+          <span data-translate="pipes-quiz-q2-b">Azul</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="c" class="quiz-option">
+          <span data-translate="pipes-quiz-q2-c">Amarelo</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="d" class="quiz-option">
+          <span data-translate="pipes-quiz-q2-d">Vermelho</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="e" class="quiz-option">
+          <span data-translate="pipes-quiz-q2-e">Preto</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="pipes-quiz-question-3">3. O que passa em tubulação azul?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="a" class="quiz-option">
+          <span data-translate="pipes-quiz-q3-a">Água limpa</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="b" class="quiz-option">
+          <span data-translate="pipes-quiz-q3-b">Vapor quente</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="c" class="quiz-option">
+          <span data-translate="pipes-quiz-q3-c">Ar comprimido</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="d" class="quiz-option">
+          <span data-translate="pipes-quiz-q3-d">Óleo diesel</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="e" class="quiz-option">
+          <span data-translate="pipes-quiz-q3-e">Ácidos</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="pipes-quiz-question-4">4. Por que é importante conhecer as cores das tubulações?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="a" class="quiz-option">
+          <span data-translate="pipes-quiz-q4-a">Porque é bonito</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="b" class="quiz-option">
+          <span data-translate="pipes-quiz-q4-b">Para evitar acidentes graves</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="c" class="quiz-option">
+          <span data-translate="pipes-quiz-q4-c">Porque o chefe manda</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="d" class="quiz-option">
+          <span data-translate="pipes-quiz-q4-d">Para passar no tempo</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="e" class="quiz-option">
+          <span data-translate="pipes-quiz-q4-e">Para decorar a fábrica</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-actions">
+      <button class="quiz-btn" onclick="checkQuiz()" data-translate="pipes-quiz-submit">Verificar Respostas</button>
+      <button class="quiz-btn" onclick="resetQuiz()" data-translate="pipes-quiz-reset">Refazer Quiz</button>
+    </div>
+  </section>
+
+  <div id="quiz-result" class="quiz-result" style="display: none;">
+    <h3 data-translate="pipes-quiz-result-title">Resultado</h3>
+    <p id="quiz-score"></p>
+    <p id="quiz-message"></p>
+    <div class="quiz-actions">
+      <button class="quiz-btn" onclick="resetQuiz()" data-translate="pipes-quiz-reset">Refazer Quiz</button>
+      <button class="quiz-btn" onclick="window.location.href='../index.html'" data-translate="pipes-quiz-back">Voltar</button>
+    </div>
+  </div>
+
+  </main>
+
+  <footer>
+    <div>
+      <p>© 2026 <span>RSS3</span> Treinamentos de Segurança</p>
+    </div>
+    <div>
+      <p>Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+// Sistema de Tradução
+const translations = {
+    pt: {
+        'nav-back': 'Voltar',
+        'nav-about': 'Sobre',
+        'pipes-hero-title': 'Cores das Tubulações',
+        'pipes-hero-subtitle': 'Cada cor indica um produto diferente - saiba identificar!',
+        'pipes-hero-btn': 'Começar Curso',
+        
+        'pipes-section-1-title': 'O que são as cores das tubulações?',
+        'pipes-section-1-text': 'Na indústria, as tubulações têm cores diferentes para mostrar que tipo de produto passa por dentro. Cada cor tem um significado específico. Isso é muito importante para a segurança de todos.',
+        
+        'pipes-type-1-title': 'Identificação Visual',
+        'pipes-type-1-desc': 'As cores ajudam a saber o que tem dentro dos canos.',
+        'pipes-type-2-title': 'Segurança',
+        'pipes-type-2-desc': 'Evita acidentes ao mostrar os perigos de cada tubulação.',
+        'pipes-type-3-title': 'Agilidade',
+        'pipes-type-3-desc': 'Ajuda a encontrar rápido o que precisa em emergência.',
+        
+        'pipes-section-2-title': 'Principais cores e significados',
+        'pipes-section-2-text': 'Conheça as cores mais comuns nas tubulações industriais e o que cada uma significa. Memorizar estas cores pode salvar sua vida!',
+        
+        'pipes-red-title': 'VERMELHO',
+        'pipes-red-desc': 'Combate a incêndio - Água para apagar fogo e sistemas de segurança contra incêndio.',
+        'pipes-green-title': 'VERDE',
+        'pipes-green-desc': 'Água - Água limpa para uso geral, resfriamento e processos industriais.',
+        'pipes-yellow-title': 'AMARELO',
+        'pipes-yellow-desc': 'Gases - Gás natural, GLP, gases combustíveis e inflamáveis.',
+        'pipes-blue-title': 'AZUL',
+        'pipes-blue-desc': 'Ar comprimido - Ar comprimido para ferramentas e equipamentos pneumáticos.',
+        'pipes-orange-title': 'LARANJA',
+        'pipes-orange-desc': 'Vapor - Vapor quente para processos industriais e aquecimento.',
+        'pipes-purple-title': 'ROXO',
+        'pipes-purple-desc': 'Ácidos e produtos químicos corrosivos.',
+        'pipes-brown-title': 'MARROM',
+        'pipes-brown-desc': 'Óleos e combustíveis líquidos - diesel, querosene, óleo lubrificante.',
+        'pipes-black-title': 'PRETO',
+        'pipes-black-desc': 'Outros fluidos não perigosos e sistemas de vácuo.',
+        
+        'pipes-section-3-title': 'Por que isso é importante para segurança?',
+        'pipes-section-3-text': 'Saber identificar as cores das tubulações é fundamental para sua segurança. Um erro pode causar acidentes graves. Veja por que isso é tão importante:',
+        
+        'pipes-danger-title': 'PERIGO DE NÃO SABER AS CORES',
+        'pipes-danger-text': 'Errar a identificação pode causar explosões, queimaduras ou até morte!',
+        
+        'pipes-safety-1': 'Evita acidentes: Saber o produto certo evita manuseio errado.',
+        'pipes-safety-2': 'Manutenção segura: Trabalhadores sabem que EPI usar em cada tubulação.',
+        'pipes-safety-3': 'Emergências: Em vazamentos, sabe-se qual o perigo e como agir.',
+        'pipes-safety-4': 'Isolamento correto: Fecha a válvula certa sem errar o produto.',
+        'pipes-safety-5': 'Primeiros socorros: Médicos sabem que tipo de contaminação tratar.',
+        'pipes-safety-6': 'Prevenção: Evita misturar produtos químicos perigosos.',
+        
+        'pipes-section-4-title': 'Riscos de não respeitar a identificação',
+        'pipes-section-4-text': 'Ignorar as cores das tubulações ou não entender seu significado pode ter consequências muito graves. Veja os principais riscos:',
+        
+        'pipes-risk-1-title': 'Explosão',
+        'pipes-risk-1-desc': 'Abrir tubulação de gás pensando que é água pode causar explosão.',
+        'pipes-risk-2-title': 'Queimaduras',
+        'pipes-risk-2-desc': 'Vapor ou água quente pode causar queimaduras graves.',
+        'pipes-risk-3-title': 'Intoxicação',
+        'pipes-risk-3-desc': 'Gases venenosos podem causar envenenamento e morte.',
+        'pipes-risk-4-title': 'Incêndio',
+        'pipes-risk-4-desc': 'Combustíveis próximos de fontes de calor podem pegar fogo.',
+        'pipes-risk-5-title': 'Danos Equipamentos',
+        'pipes-risk-5-desc': 'Produto errado pode estragar máquinas e equipamentos.',
+        'pipes-risk-6-title': 'Problemas Legais',
+        'pipes-risk-6-desc': 'Erros podem causar multas e problemas com a fiscalização.',
+        
+        'pipes-section-5-title': 'Como identificar corretamente?',
+        'pipes-section-5-text': 'Para identificar as tubulações corretamente, você precisa observar alguns detalhes importantes. Nem sempre é só a cor, existem outras informações também.',
+        
+        'pipes-tip-title': 'DICAS DE IDENTIFICAÇÃO',
+        'pipes-tip-text': 'Sempre olhe com atenção e nunca presuma que sabe o produto só pela cor!',
+        
+        'pipes-identify-1': 'Cor da tubulação: A cor principal indica o tipo de produto.',
+        'pipes-identify-2': 'Fauxas coloridas: Faixas podem indicar perigo ou estado do produto.',
+        'pipes-identify-3': 'Setas de fluxo: Mostram a direção que o produto circula.',
+        'pipes-identify-4': 'Placas identificadoras: Tem nome do produto e informações de segurança.',
+        'pipes-identify-5': 'Códigos de cor: Algumas empresas usam códigos especiais internos.',
+        'pipes-identify-6': 'Peça ajuda: Na dúvida, pergunte ao responsável ou ao supervisor.',
+        
+        'pipes-section-6-title': 'Cuidados ao trabalhar perto de tubulações',
+        'pipes-section-6-text': 'Ao trabalhar próximo a tubulações, você precisa tomar cuidados especiais. Cada tipo de produto exige cuidados diferentes.',
+        
+        'pipes-care-1': 'Verifique sempre a cor: Antes de qualquer trabalho, identifique a tubulação.',
+        'pipes-care-2': 'Use EPI adequado: Cada produto exige proteção diferente.',
+        'pipes-care-3': 'Não bata nas tubulações: Pode causar vazamento ou ruptura.',
+        'pipes-care-4': 'Mantenha distância: Não trabalhe muito perto de tubulações quentes.',
+        'pipes-care-5': 'Avise se encontrar vazamento: Comunique imediatamente ao responsável.',
+        'pipes-care-6': 'Sinalize o local: Coloque placas de advertência quando necessário.',
+        'pipes-care-7': 'Conheça os procedimentos: Saiba o que fazer em emergência.',
+        
+        'pipes-emergency-title': 'EM CASO DE VAZAMENTO',
+        'pipes-emergency-text': 'Afaste-se, avise o responsável e siga os procedimentos de emergência imediatamente!',
+        
+        'pipes-section-7-title': 'Responsabilidade de todos',
+        'pipes-section-7-text': 'Conhecer as cores das tubulações é responsabilidade de todos que trabalham na indústria. Este conhecimento salva vidas e protege a todos.',
+        
+        'pipes-responsibility-1': 'Aprenda as cores: Memorize as cores e seus significados.',
+        'pipes-responsibility-2': 'Ensine os colegas: Ajude outros a aprenderem também.',
+        'pipes-responsibility-3': 'Esteja sempre atento: Preste atenção nas tubulações ao seu redor.',
+        'pipes-responsibility-4': 'Participe de treinamentos: Mantenha seu conhecimento atualizado.',
+        'pipes-responsibility-5': 'Não tenha vergonha de perguntar: É melhor perguntar do que errar.',
+        
+        'pipes-benefit-title': 'BENEFÍCIOS DE CONHECER AS CORES',
+        'pipes-benefit-text': 'Conhecimento das cores = menos acidentes + trabalho mais seguro + vida protegida!',
+        
+        'pipes-quiz-title': 'Teste seu Conhecimento',
+        'pipes-quiz-question-1': '1. O que significa a tubulação vermelha?',
+        'pipes-quiz-q1-a': 'Água potável',
+        'pipes-quiz-q1-b': 'Combate a incêndio',
+        'pipes-quiz-q1-c': 'Gás natural',
+        'pipes-quiz-q1-d': 'Ar comprimido',
+        'pipes-quiz-q1-e': 'Vapor',
+        
+        'pipes-quiz-question-2': '2. Qual cor indica gases inflamáveis?',
+        'pipes-quiz-q2-a': 'Verde',
+        'pipes-quiz-q2-b': 'Azul',
+        'pipes-quiz-q2-c': 'Amarelo',
+        'pipes-quiz-q2-d': 'Vermelho',
+        'pipes-quiz-q2-e': 'Preto',
+        
+        'pipes-quiz-question-3': '3. O que passa em tubulação azul?',
+        'pipes-quiz-q3-a': 'Água limpa',
+        'pipes-quiz-q3-b': 'Vapor quente',
+        'pipes-quiz-q3-c': 'Ar comprimido',
+        'pipes-quiz-q3-d': 'Óleo diesel',
+        'pipes-quiz-q3-e': 'Ácidos',
+        
+        'pipes-quiz-question-4': '4. Por que é importante conhecer as cores das tubulações?',
+        'pipes-quiz-q4-a': 'Porque é bonito',
+        'pipes-quiz-q4-b': 'Para evitar acidentes graves',
+        'pipes-quiz-q4-c': 'Porque o chefe manda',
+        'pipes-quiz-q4-d': 'Para passar no tempo',
+        'pipes-quiz-q4-e': 'Para decorar a fábrica',
+        
+        'pipes-quiz-submit': 'Verificar Respostas',
+        'pipes-quiz-reset': 'Refazer Quiz',
+        'pipes-quiz-result-title': 'Resultado',
+        'pipes-quiz-back': 'Voltar'
+    },
+    
+    es: {
+        'nav-back': 'Volver',
+        'nav-about': 'Acerca de',
+        'pipes-hero-title': 'Colores de las Tubulaciones',
+        'pipes-hero-subtitle': '¡Cada color indica un producto diferente - aprenda a identificar!',
+        'pipes-hero-btn': 'Comenzar Curso',
+        
+        'pipes-section-1-title': '¿Qué son los colores de las tubulaciones?',
+        'pipes-section-1-text': 'En la industria, las tubulaciones tienen colores diferentes para mostrar qué tipo de producto pasa por dentro. Cada color tiene un significado específico. Esto es muy importante para la seguridad de todos.',
+        
+        'pipes-type-1-title': 'Identificación Visual',
+        'pipes-type-1-desc': 'Los colores ayudan a saber qué hay dentro de los caños.',
+        'pipes-type-2-title': 'Seguridad',
+        'pipes-type-2-desc': 'Evita accidentes al mostrar los peligros de cada tubulación.',
+        'pipes-type-3-title': 'Agilidad',
+        'pipes-type-3-desc': 'Ayuda a encontrar rápido lo que necesita en emergencia.',
+        
+        'pipes-section-2-title': 'Principales colores y significados',
+        'pipes-section-2-text': 'Conozca los colores más comunes en las tubulaciones industriales y lo que cada uno significa. ¡Memorizar estos colores puede salvar su vida!',
+        
+        'pipes-red-title': 'ROJO',
+        'pipes-red-desc': 'Combate a incendios - Agua para apagar fuego y sistemas de seguridad contra incendios.',
+        'pipes-green-title': 'VERDE',
+        'pipes-green-desc': 'Agua - Agua limpia para uso general, enfriamiento y procesos industriales.',
+        'pipes-yellow-title': 'AMARILLO',
+        'pipes-yellow-desc': 'Gases - Gas natural, GLP, gases combustibles e inflamables.',
+        'pipes-blue-title': 'AZUL',
+        'pipes-blue-desc': 'Aire comprimido - Aire comprimido para herramientas y equipos neumáticos.',
+        'pipes-orange-title': 'NARANJA',
+        'pipes-orange-desc': 'Vapor - Vapor caliente para procesos industriales y calentamiento.',
+        'pipes-purple-title': 'MORADO',
+        'pipes-purple-desc': 'Ácidos y productos químicos corrosivos.',
+        'pipes-brown-title': 'MARRÓN',
+        'pipes-brown-desc': 'Aceites y combustibles líquidos - diésel, queroseno, aceite lubricante.',
+        'pipes-black-title': 'NEGRO',
+        'pipes-black-desc': 'Otros fluidos no peligrosos y sistemas de vacío.',
+        
+        'pipes-section-3-title': '¿Por qué esto es importante para la seguridad?',
+        'pipes-section-3-text': 'Saber identificar los colores de las tubulaciones es fundamental para su seguridad. Un error puede causar accidentes graves. Vea por qué esto es tan importante:',
+        
+        'pipes-danger-title': '¡PELIGRO DE NO SABER LOS COLORES!',
+        'pipes-danger-text': '¡Errar la identificación puede causar explosiones, quemaduras o hasta muerte!',
+        
+        'pipes-safety-1': 'Evita accidentes: Saber el producto correcto evita manejo errado.',
+        'pipes-safety-2': 'Mantenimiento seguro: Trabajadores saben qué EPI usar en cada tubulación.',
+        'pipes-safety-3': 'Emergencias: En fugas, se sabe cuál es el peligro y cómo actuar.',
+        'pipes-safety-4': 'Aislamiento correcto: Cierra la válvula correcta sin errar el producto.',
+        'pipes-safety-5': 'Primeros auxilios: Médicos saben qué tipo de contaminación tratar.',
+        'pipes-safety-6': 'Prevención: Evita mezclar productos químicos peligrosos.',
+        
+        'pipes-section-4-title': 'Riesgos de no respetar la identificación',
+        'pipes-section-4-text': 'Ignorar los colores de las tubulaciones o no entender su significado puede tener consecuencias muy graves. Vea los principales riesgos:',
+        
+        'pipes-risk-1-title': 'Explosión',
+        'pipes-risk-1-desc': 'Abrir tubulación de gas pensando que es agua puede causar explosión.',
+        'pipes-risk-2-title': 'Quemaduras',
+        'pipes-risk-2-desc': 'Vapor o agua caliente puede causar quemaduras graves.',
+        'pipes-risk-3-title': 'Intoxicación',
+        'pipes-risk-3-desc': 'Gases venenosos pueden causar envenenamiento y muerte.',
+        'pipes-risk-4-title': 'Incendio',
+        'pipes-risk-4-desc': 'Combustibles cerca de fuentes de calor pueden prender fuego.',
+        'pipes-risk-5-title': 'Daños Equipamientos',
+        'pipes-risk-5-desc': 'Producto errado puede estropear máquinas y equipos.',
+        'pipes-risk-6-title': 'Problemas Legales',
+        'pipes-risk-6-desc': 'Errores pueden causar multas y problemas con la fiscalización.',
+        
+        'pipes-section-5-title': '¿Cómo identificar correctamente?',
+        'pipes-section-5-text': 'Para identificar las tubulaciones correctamente, necesita observar algunos detalles importantes. No siempre es solo el color, existen otras informaciones también.',
+        
+        'pipes-tip-title': 'CONSEJOS DE IDENTIFICACIÓN',
+        'pipes-tip-text': '¡Siempre mire con atención y nunca presuma que sabe el producto solo por el color!',
+        
+        'pipes-identify-1': 'Color de la tubulación: El color principal indica el tipo de producto.',
+        'pipes-identify-2': 'Franjas coloridas: Franjas pueden indicar peligro o estado del producto.',
+        'pipes-identify-3': 'Flechas de flujo: Muestran la dirección que el producto circula.',
+        'pipes-identify-4': 'Placas identificadoras: Tiene nombre del producto e informaciones de seguridad.',
+        'pipes-identify-5': 'Códigos de color: Algunas empresas usan códigos especiales internos.',
+        'pipes-identify-6': 'Pida ayuda: En la duda, pregunte al responsable o al supervisor.',
+        
+        'pipes-section-6-title': 'Cuidados al trabajar cerca de tubulaciones',
+        'pipes-section-6-text': 'Al trabajar próximo a tubulaciones, necesita tomar cuidados especiales. Cada tipo de producto exige cuidados diferentes.',
+        
+        'pipes-care-1': 'Verifique siempre el color: Antes de cualquier trabajo, identifique la tubulación.',
+        'pipes-care-2': 'Use EPI adecuado: Cada producto exige protección diferente.',
+        'pipes-care-3': 'No golpee las tubulaciones: Puede causar fuga o ruptura.',
+        'pipes-care-4': 'Mantenga distancia: No trabaje muy cerca de tubulaciones calientes.',
+        'pipes-care-5': 'Avise si encuentra fuga: Comunique inmediatamente al responsable.',
+        'pipes-care-6': 'Señalice el local: Coloque placas de advertencia cuando necesario.',
+        'pipes-care-7': 'Conozca los procedimientos: Sepa qué hacer en emergencia.',
+        
+        'pipes-emergency-title': 'EN CASO DE FUGA',
+        'pipes-emergency-text': '¡Aléjese, avise al responsable y siga los procedimientos de emergencia inmediatamente!',
+        
+        'pipes-section-7-title': 'Responsabilidad de todos',
+        'pipes-section-7-text': 'Conocer los colores de las tubulaciones es responsabilidad de todos que trabajan en la industria. Este conocimiento salva vidas y protege a todos.',
+        
+        'pipes-responsibility-1': 'Aprenda los colores: Memorice los colores y sus significados.',
+        'pipes-responsibility-2': 'Enseñe a los colegas: Ayude a otros a aprender también.',
+        'pipes-responsibility-3': 'Esté siempre atento: Preste atención en las tubulaciones a su alrededor.',
+        'pipes-responsibility-4': 'Participe de entrenamientos: Mantenga su conocimiento actualizado.',
+        'pipes-responsibility-5': 'No tenga vergüenza de preguntar: Es mejor preguntar que errar.',
+        
+        'pipes-benefit-title': 'BENEFICIOS DE CONOCER LOS COLORES',
+        'pipes-benefit-text': '¡Conocimiento de los colores = menos accidentes + trabajo más seguro + vida protegida!',
+        
+        'quiz-title': 'Pruebe su conocimiento',
+        'pipes-question-1': '1. ¿Qué significa la tubulación roja?',
+        'pipes-question-2': '2. ¿Qué color indica gases inflamables?',
+        'pipes-question-3': '3. ¿Qué pasa en tubulación azul?',
+        'pipes-question-4': '4. ¿Por qué es importante conocer los colores de las tubulaciones?',
+        'quiz-check': 'Verificar Respuestas',
+        'quiz-retry': 'Rehacer Quiz',
+        'quiz-result-title': 'Resultado del Quiz',
+        'quiz-back': 'Volver a los Cursos'
+    },
+    
+    en: {
+        'nav-back': 'Back',
+        'nav-about': 'About',
+        'pipes-hero-title': 'Pipe Colors',
+        'pipes-hero-subtitle': 'Each color indicates a different product - learn to identify!',
+        'pipes-hero-btn': 'Start Course',
+        
+        'pipes-section-1-title': 'What are pipe colors?',
+        'pipes-section-1-text': 'In industry, pipes have different colors to show what type of product passes through them. Each color has a specific meaning. This is very important for everyone\'s safety.',
+        
+        'pipes-type-1-title': 'Visual Identification',
+        'pipes-type-1-desc': 'Colors help to know what\'s inside the pipes.',
+        'pipes-type-2-title': 'Safety',
+        'pipes-type-2-desc': 'Prevents accidents by showing the dangers of each pipe.',
+        'pipes-type-3-title': 'Speed',
+        'pipes-type-3-desc': 'Helps to find quickly what you need in emergency.',
+        
+        'pipes-section-2-title': 'Main colors and meanings',
+        'pipes-section-2-text': 'Learn the most common colors in industrial pipes and what each one means. Memorizing these colors can save your life!',
+        
+        'pipes-red-title': 'RED',
+        'pipes-red-desc': 'Fire fighting - Water to extinguish fire and fire safety systems.',
+        'pipes-green-title': 'GREEN',
+        'pipes-green-desc': 'Water - Clean water for general use, cooling and industrial processes.',
+        'pipes-yellow-title': 'YELLOW',
+        'pipes-yellow-desc': 'Gases - Natural gas, LPG, combustible and flammable gases.',
+        'pipes-blue-title': 'BLUE',
+        'pipes-blue-desc': 'Compressed air - Compressed air for tools and pneumatic equipment.',
+        'pipes-orange-title': 'ORANGE',
+        'pipes-orange-desc': 'Steam - Hot steam for industrial processes and heating.',
+        'pipes-purple-title': 'PURPLE',
+        'pipes-purple-desc': 'Acids and corrosive chemical products.',
+        'pipes-brown-title': 'BROWN',
+        'pipes-brown-desc': 'Oils and liquid fuels - diesel, kerosene, lubricating oil.',
+        'pipes-black-title': 'BLACK',
+        'pipes-black-desc': 'Other non-hazardous fluids and vacuum systems.',
+        
+        'pipes-section-3-title': 'Why is this important for safety?',
+        'pipes-section-3-text': 'Knowing how to identify pipe colors is fundamental for your safety. A mistake can cause serious accidents. See why this is so important:',
+        
+        'pipes-danger-title': 'DANGER OF NOT KNOWING THE COLORS!',
+        'pipes-danger-text': 'Mistaking identification can cause explosions, burns or even death!',
+        
+        'pipes-safety-1': 'Prevents accidents: Knowing the right product avoids wrong handling.',
+        'pipes-safety-2': 'Safe maintenance: Workers know what PPE to use on each pipe.',
+        'pipes-safety-3': 'Emergencies: In leaks, you know what the danger is and how to act.',
+        'pipes-safety-4': 'Correct isolation: Close the right valve without mistaking the product.',
+        'pipes-safety-5': 'First aid: Doctors know what type of contamination to treat.',
+        'pipes-safety-6': 'Prevention: Avoid mixing dangerous chemical products.',
+        
+        'pipes-section-4-title': 'Risks of not respecting identification',
+        'pipes-section-4-text': 'Ignoring pipe colors or not understanding their meaning can have very serious consequences. See the main risks:',
+        
+        'pipes-risk-1-title': 'Explosion',
+        'pipes-risk-1-desc': 'Opening gas pipe thinking it\'s water can cause explosion.',
+        'pipes-risk-2-title': 'Burns',
+        'pipes-risk-2-desc': 'Steam or hot water can cause serious burns.',
+        'pipes-risk-3-title': 'Poisoning',
+        'pipes-risk-3-desc': 'Poisonous gases can cause poisoning and death.',
+        'pipes-risk-4-title': 'Fire',
+        'pipes-risk-4-desc': 'Fuels near heat sources can catch fire.',
+        'pipes-risk-5-title': 'Equipment Damage',
+        'pipes-risk-5-desc': 'Wrong product can damage machines and equipment.',
+        'pipes-risk-6-title': 'Legal Problems',
+        'pipes-risk-6-desc': 'Mistakes can cause fines and problems with authorities.',
+        
+        'pipes-section-5-title': 'How to identify correctly?',
+        'pipes-section-5-text': 'To identify pipes correctly, you need to observe some important details. It\'s not always just the color, there are other informations too.',
+        
+        'pipes-tip-title': 'IDENTIFICATION TIPS',
+        'pipes-tip-text': 'Always look carefully and never assume you know the product just by the color!',
+        
+        'pipes-identify-1': 'Pipe color: The main color indicates the type of product.',
+        'pipes-identify-2': 'Colored stripes: Stripes can indicate danger or product state.',
+        'pipes-identify-3': 'Flow arrows: Show the direction that the product circulates.',
+        'pipes-identify-4': 'Identification plates: Has product name and safety information.',
+        'pipes-identify-5': 'Color codes: Some companies use special internal codes.',
+        'pipes-identify-6': 'Ask for help: In doubt, ask the responsible person or supervisor.',
+        
+        'pipes-section-6-title': 'Care when working near pipes',
+        'pipes-section-6-text': 'When working near pipes, you need to take special care. Each type of product requires different care.',
+        
+        'pipes-care-1': 'Always check the color: Before any work, identify the pipe.',
+        'pipes-care-2': 'Use adequate PPE: Each product requires different protection.',
+        'pipes-care-3': 'Don\'t hit the pipes: Can cause leakage or rupture.',
+        'pipes-care-4': 'Keep distance: Don\'t work too close to hot pipes.',
+        'pipes-care-5': 'Warn if you find a leak: Communicate immediately to the responsible.',
+        'pipes-care-6': 'Signal the location: Place warning signs when necessary.',
+        'pipes-care-7': 'Know the procedures: Know what to do in emergency.',
+        
+        'pipes-emergency-title': 'IN CASE OF LEAK',
+        'pipes-emergency-text': 'Move away, warn the responsible person and follow emergency procedures immediately!',
+        
+        'pipes-section-7-title': 'Everyone\'s responsibility',
+        'pipes-section-7-text': 'Knowing pipe colors is everyone\'s responsibility who works in industry. This knowledge saves lives and protects everyone.',
+        
+        'pipes-responsibility-1': 'Learn the colors: Memorize the colors and their meanings.',
+        'pipes-responsibility-2': 'Teach colleagues: Help others to learn too.',
+        'pipes-responsibility-3': 'Always be attentive: Pay attention to pipes around you.',
+        'pipes-responsibility-4': 'Participate in trainings: Keep your knowledge updated.',
+        'pipes-responsibility-5': 'Don\'t be ashamed to ask: It\'s better to ask than to make a mistake.',
+        
+        'pipes-benefit-title': 'BENEFITS OF KNOWING THE COLORS',
+        'pipes-benefit-text': 'Knowledge of colors = fewer accidents + safer work + protected life!',
+        
+        'quiz-title': 'Test your knowledge',
+        'pipes-question-1': '1. What does the red pipe mean?',
+        'pipes-question-2': '2. Which color indicates flammable gases?',
+        'pipes-question-3': '3. What passes through blue pipe?',
+        'pipes-question-4': '4. Why is it important to know pipe colors?',
+        'quiz-check': 'Check Answers',
+        'quiz-retry': 'Retry Quiz',
+        'quiz-result-title': 'Quiz Result',
+        'quiz-back': 'Back to Courses'
+    }
+};
+
+// Sistema de Quiz
+class QuizSystem {
+    constructor() {
+        this.currentQuiz = null;
+        this.answers = {};
+        this.score = 0;
+        this.correctAnswers = {
+            'pipes': {
+                'q1': 'b',
+                'q2': 'c', 
+                'q3': 'c',
+                'q4': 'b'
+            }
+        };
+    }
+
+    startQuiz(quizType) {
+        this.currentQuiz = quizType;
+        this.answers = {};
+        this.score = 0;
+        
+        // Limpar seleções anteriores
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+    }
+
+    submitQuiz() {
+        if (!this.currentQuiz) return;
+        
+        const quizAnswers = this.correctAnswers[this.currentQuiz];
+        let correctCount = 0;
+        const totalQuestions = Object.keys(quizAnswers).length;
+        
+        // Verificar cada resposta
+        for (const [questionId, correctAnswer] of Object.entries(quizAnswers)) {
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+            
+            if (selectedOption) {
+                const userAnswer = selectedOption.value;
+                this.answers[questionId] = userAnswer;
+                
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    // Marcar como correto
+                    selectedOption.parentElement.classList.add('correct');
+                } else {
+                    // Marcar como incorreto e mostrar a resposta correta
+                    selectedOption.parentElement.classList.add('incorrect');
+                    const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`);
+                    if (correctOption) {
+                        correctOption.parentElement.classList.add('correct');
+                    }
+                }
+            } else {
+                // Não respondida - mostrar resposta correta
+                const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`);
+                if (correctOption) {
+                    correctOption.parentElement.classList.add('correct');
+                }
+            }
+        }
+        
+        this.score = correctCount;
+        this.showResult(correctCount, totalQuestions);
+    }
+
+    showResult(correctCount, totalQuestions) {
+        const resultDiv = document.getElementById('quiz-result');
+        const scoreElement = document.getElementById('quiz-score');
+        const messageElement = document.getElementById('quiz-message');
+        
+        if (resultDiv && scoreElement && messageElement) {
+            const percentage = Math.round((correctCount / totalQuestions) * 100);
+            
+            scoreElement.textContent = this.getTranslatedText('pipes-quiz-score-text') + `: ${correctCount}/${totalQuestions} (${percentage}%)`;
+            
+            if (percentage >= 70) {
+                messageElement.textContent = this.getTranslatedText('pipes-quiz-success-message');
+                scoreElement.style.color = '#28a745';
+            } else {
+                messageElement.textContent = this.getTranslatedText('pipes-quiz-fail-message');
+                scoreElement.style.color = '#dc3545';
+            }
+            
+            resultDiv.style.display = 'block';
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    retryQuiz() {
+        if (!this.currentQuiz) return;
+        
+        // Limpar seleções
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Limpar classes de correção
+        document.querySelectorAll('.quiz-option-label').forEach(label => {
+            label.classList.remove('correct', 'incorrect');
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+        
+        // Resetar
+        this.answers = {};
+        this.score = 0;
+        
+        // Voltar ao topo do quiz
+        const quizSection = document.querySelector('.quiz-section');
+        if (quizSection) {
+            quizSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    getTranslatedText(key) {
+        const lang = localStorage.getItem('rss3-language') || 'pt';
+        if (translations && translations[lang] && translations[lang][key]) {
+            return translations[lang][key];
+        }
+        return key;
+    }
+}
+
+// Instância global do quiz
+const quizSystem = new QuizSystem();
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado - iniciando sistema de idiomas');
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            changeLanguage(btn.getAttribute('data-lang'));
+        });
+    });
+    
+    // Iniciar quiz pipes
+    quizSystem.startQuiz('pipes');
+});
+
+// Funções globais para o quiz
+function checkQuiz() {
+    quizSystem.submitQuiz();
+}
+
+function resetQuiz() {
+    quizSystem.retryQuiz();
+}
+
+// Sistema de Tradução
+let currentLanguage = 'pt';
+
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Função para rolar para o conteúdo
+function scrollToContent() {
+    document.querySelector('.course-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+  </script>
+
+</body>
+</html>

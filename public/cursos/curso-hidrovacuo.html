@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso Hidrovácuo - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--laranja);
+    }
+
+    /* HERO / BANNER PRINCIPAL */
+.hero {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8, #ff7a00);
+  color: var(--branco);
+  padding: 90px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 2.6em;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.15em;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--branco);
+  padding: 16px 36px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: 0.2s;
+}
+
+.hero-btn:hover {
+  background: var(--branco);
+  color: var(--azul);
+  transform: translateY(-3px);
+}
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      flex: 1;
+      font-size: 0.95em;
+    }
+
+    .card a {
+      margin-top: 15px;
+      background: var(--laranja);
+      color: var(--branco);
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .secao-titulo {
+      margin: 50px 0 20px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+      color: var(--azul);
+    }
+
+    /* Seletor de Idiomas */
+    .language-selector {
+      display: flex;
+      gap: 5px;
+      margin-left: 20px;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--branco);
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8em;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+      color: var(--branco);
+      border-color: var(--laranja);
+    }
+
+    /* Estilos do Curso */
+    .course-section {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .course-section h2 {
+      color: var(--azul);
+      margin-bottom: 20px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+    }
+
+    .course-section p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .epi-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .epi-type-card {
+      background: var(--branco);
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .epi-type-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .epi-type-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--azul);
+    }
+
+    .epi-type-title {
+      font-size: 1.2rem;
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .epi-type-desc {
+      color: var(--cinza-texto);
+      line-height: 1.5;
+    }
+
+    .image-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .course-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .image-caption {
+      font-style: italic;
+      color: #666;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .info-list li {
+      background: var(--cinza-claro);
+      border-left: 4px solid var(--laranja);
+      padding: 15px 20px;
+      margin: 10px 0;
+      border-radius: 0 8px 8px 0;
+      transition: transform 0.3s ease;
+    }
+
+    .info-list li:hover {
+      transform: translateX(5px);
+      background: #e9ecef;
+    }
+
+    .alert-box {
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+      box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+    }
+
+    .alert-box h4 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .quiz-section {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .quiz-title {
+      color: var(--azul);
+      text-align: center;
+      margin-bottom: 30px;
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .quiz-question {
+      background: var(--cinza-claro);
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .quiz-question h4 {
+      color: var(--azul);
+      margin-bottom: 15px;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quiz-option-label {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      background: var(--branco);
+      border: 1px solid #e9ecef;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-option-label:hover {
+      background: var(--cinza-claro);
+      border-color: var(--laranja);
+    }
+
+    .quiz-option-label input[type="radio"] {
+      margin-right: 12px;
+    }
+
+    .quiz-submit-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .quiz-submit {
+      background: var(--laranja);
+      color: var(--branco);
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .quiz-submit:hover {
+      background: #e67300;
+      transform: translateY(-2px);
+    }
+
+    .quiz-result {
+      display: none;
+      background: var(--branco);
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .quiz-result h3 {
+      color: var(--azul);
+      margin-bottom: 20px;
+    }
+
+    .score-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      margin: 20px 0;
+    }
+
+    .score-circle.passing {
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+    }
+
+    .score-circle.failing {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+    }
+
+    .quiz-message {
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .quiz-message.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .quiz-message.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .quiz-actions button, .quiz-actions a {
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .quiz-actions button {
+      background: var(--azul);
+      color: var(--branco);
+      border: none;
+    }
+
+    .quiz-actions a {
+      background: var(--laranja);
+      color: var(--branco);
+    }
+
+    .quiz-actions button:hover, .quiz-actions a:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      nav a {
+        margin: 5px 0;
+      }
+      
+      .hero {
+        padding: 60px 20px;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .epi-types-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .quiz-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>RSS<span>3</span> Treinamentos</h1>
+  <nav>
+    <a href="../index.html" data-translate="nav-home">Início</a>
+    <a href="../sobre.html" data-translate="nav-about">Sobre</a>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2 data-translate="course-hydrovac-hero-title">Hidrovácuo Operação Segura</h2>
+    <p data-translate="course-hydrovac-hero-subtitle">Aprenda a operar hidrovácuo com segurança na fábrica de celulose</p>
+    <a href="#conteudo" class="hero-btn" data-translate="hero-btn">Começar Curso</a>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <section class="course-section">
+    <h2 data-translate="hydrovac-section-1-title">O que é Hidrovácuo?</h2>
+    <p data-translate="course-hydrovac-intro">
+      Hidrovácuo é um equipamento que usa vácuo e água para limpeza industrial na fábrica de celulose. Ele remove resíduos sólidos, lama e produtos químicos de superfícies. É muito eficiente, mas envolve riscos de gases, pressão e materiais contaminados.
+    </p>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="hydrovac-section-2-title">Riscos do Hidrovácuo</h2>
+    <p data-translate="hydrovac-section-2-text">
+      A operação de hidrovácuo apresenta vários perigos graves:
+    </p>
+    
+    <div class="epi-types-grid">
+      <div class="epi-type-card">
+        <div class="epi-type-icon">💨</div>
+        <h3 class="epi-type-title" data-translate="hydrovac-type-1-title">Gases Tóxicos</h3>
+        <p class="epi-type-desc" data-translate="hydrovac-type-1-desc">Vapores químicos podem causar problemas respiratórios.</p>
+      </div>
+      
+      <div class="epi-type-card">
+        <div class="epi-type-icon">💨</div>
+        <h3 class="epi-type-title" data-translate="hydrovac-type-2-title">Pressão Negativa</h3>
+        <p class="epi-type-desc" data-translate="hydrovac-type-2-desc">Vácuo pode prender partes do corpo ou roupas.</p>
+      </div>
+      
+      <div class="epi-type-card">
+        <div class="epi-type-icon">💨</div>
+        <h3 class="epi-type-title" data-translate="hydrovac-type-3-title">Resíduos Contaminados</h3>
+        <p class="epi-type-desc" data-translate="hydrovac-type-3-desc">Materiais coletados podem ser perigosos à saúde.</p>
+      </div>
+    </div>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="hydrovac-section-3-title">Equipamentos de Proteção</h2>
+    <p data-translate="hydrovac-section-3-text">
+      Para operar hidrovácuo com segurança, use estes EPIs especiais:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="hydrovac-protection-1">Macacão de proteção química</li>
+      <li data-translate="hydrovac-protection-2">Respirador com filtro para vapores</li>
+      <li data-translate="hydrovac-protection-3">Luvas resistentes a produtos químicos</li>
+      <li data-translate="hydrovac-protection-4">Botas e calçados impermeáveis</li>
+      <li data-translate="hydrovac-protection-5">Proteção facial completa</li>
+    </ul>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="hydrovac-section-4-title">Operação Segura</h2>
+    <p data-translate="hydrovac-section-4-text">
+      Siga estas regras ao operar hidrovácuo na fábrica:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="hydrovac-operation-1">Faça inspeção completa antes de usar</li>
+      <li data-translate="hydrovac-operation-2">Verifique todas as conexões e mangueiras</li>
+      <li data-translate="hydrovac-operation-3">Trabalhe em área bem ventilada</li>
+      <li data-translate="hydrovac-operation-4">Nunca aponte o jato para pessoas</li>
+      <li data-translate="hydrovac-operation-5">Use sempre duas pessoas na operação</li>
+    </ul>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="hydrovac-section-5-title">Manuseio de Resíduos</h2>
+    <p data-translate="hydrovac-section-5-text">
+      Os resíduos coletados precisam ser tratados com cuidado:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="hydrovac-waste-1">Separe os resíduos por tipo de material</li>
+      <li data-translate="hydrovac-waste-2">Use recipientes adequados e identificados</li>
+      <li data-translate="hydrovac-waste-3">Siga procedimentos de descarte corretos</li>
+      <li data-translate="hydrovac-waste-4">Não misture diferentes tipos de resíduos</li>
+      <li data-translate="hydrovac-waste-5">Registre todo material coletado</li>
+    </ul>
+    
+        
+    <div class="alert-box">
+      <h4 data-translate="hydrovac-alert-title">Atenção!</h4>
+      <p data-translate="hydrovac-alert-text">O hidrovácuo pode expor você a gases perigosos. Use sempre proteção completa e trabalhe em equipe. Nunca ignore sintomas de intoxicação.</p>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h2 class="quiz-title" data-translate="hydrovac-quiz-title">Teste seu Conhecimento</h2>
+    
+    <div class="quiz-question">
+      <h4 data-translate="hydrovac-quiz-question-1">Qual o principal risco do hidrovácuo?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="a" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q1-a">Barulho alto</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="b" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q1-b">Gases tóxicos e pressão negativa</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="c" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q1-c">Gastar muita água</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="d" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q1-d">Sujeira no chão</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="e" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q1-e">Risco de incêndio</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="hydrovac-quiz-question-2">O que fazer antes de usar o hidrovácuo?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="a" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q2-a">Ligar direto para testar</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="b" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q2-b">Fazer inspeção completa das conexões</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="c" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q2-c">Apenas pegar a mangueira</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="d" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q2-d">Avisar os colegas</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="e" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q2-e">Verificar a água</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="hydrovac-quiz-question-3">Pode operar hidrovácuo sozinho?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="a" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q3-a">Sim, se for experiente</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="b" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q3-b">Não, sempre precisa de outra pessoa</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="c" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q3-c">Apenas em trabalhos rápidos</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="d" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q3-d">Se tiver celular por perto</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="e" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q3-e">Depende do tipo de trabalho</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="hydrovac-quiz-question-4">Como descartar os resíduos coletados?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="a" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q4-a">Jogar tudo no mesmo recipiente</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="b" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q4-b">Separar por tipo e usar recipientes adequados</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="c" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q4-c">Deixar no chão para o pessoal da limpeza</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="d" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q4-d">Enterrar no terreno da fábrica</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="e" class="quiz-option">
+          <span data-translate="hydrovac-quiz-q4-e">Misturar tudo para facilitar o transporte</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-submit-container">
+      <button id="quiz-submit" class="quiz-submit" data-translate="quiz-submit">Enviar Respostas</button>
+    </div>
+    
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 <span>RSS3</span> Treinamentos de Segurança
+</footer>
+
+<script>
+// Sistema de Tradução RSS3 Treinamentos
+const translations = {
+    pt: {
+        'nav-home': 'Início',
+        'nav-about': 'Sobre',
+        'course-hydrovac-hero-title': 'Hidrovácuo Operação Segura',
+        'course-hydrovac-hero-subtitle': 'Aprenda a operar hidrovácuo com segurança na fábrica de celulose',
+        'hero-btn': 'Começar Curso',
+        
+        'hydrovac-section-1-title': 'O que é Hidrovácuo?',
+        'course-hydrovac-intro': 'Hidrovácuo é um equipamento que usa vácuo e água para limpeza industrial na fábrica de celulose. Ele remove resíduos sólidos, lama e produtos químicos de superfícies. É muito eficiente, mas envolve riscos de gases, pressão e materiais contaminados.',
+        
+        'hydrovac-section-2-title': 'Riscos do Hidrovácuo',
+        'hydrovac-section-2-text': 'A operação de hidrovácuo apresenta vários perigos graves:',
+        
+        'hydrovac-type-1-title': 'Gases Tóxicos',
+        'hydrovac-type-1-desc': 'Vapores químicos podem causar problemas respiratórios.',
+        
+        'hydrovac-type-2-title': 'Pressão Negativa',
+        'hydrovac-type-2-desc': 'Vácuo pode prender partes do corpo ou roupas.',
+        
+        'hydrovac-type-3-title': 'Resíduos Contaminados',
+        'hydrovac-type-3-desc': 'Materiais coletados podem ser perigosos à saúde.',
+        
+        'hydrovac-section-3-title': 'Equipamentos de Proteção',
+        'hydrovac-section-3-text': 'Para operar hidrovácuo com segurança, use estes EPIs especiais:',
+        
+        'hydrovac-protection-1': 'Macacão de proteção química',
+        'hydrovac-protection-2': 'Respirador com filtro para vapores',
+        'hydrovac-protection-3': 'Luvas resistentes a produtos químicos',
+        'hydrovac-protection-4': 'Botas e calçados impermeáveis',
+        'hydrovac-protection-5': 'Proteção facial completa',
+        
+        'hydrovac-section-4-title': 'Operação Segura',
+        'hydrovac-section-4-text': 'Siga estas regras ao operar hidrovácuo na fábrica:',
+        
+        'hydrovac-operation-1': 'Faça inspeção completa antes de usar',
+        'hydrovac-operation-2': 'Verifique todas as conexões e mangueiras',
+        'hydrovac-operation-3': 'Trabalhe em área bem ventilada',
+        'hydrovac-operation-4': 'Nunca aponte o jato para pessoas',
+        'hydrovac-operation-5': 'Use sempre duas pessoas na operação',
+        
+        'hydrovac-section-5-title': 'Manuseio de Resíduos',
+        'hydrovac-section-5-text': 'Os resíduos coletados precisam ser tratados com cuidado:',
+        
+        'hydrovac-waste-1': 'Separe os resíduos por tipo de material',
+        'hydrovac-waste-2': 'Use recipientes adequados e identificados',
+        'hydrovac-waste-3': 'Siga procedimentos de descarte corretos',
+        'hydrovac-waste-4': 'Não misture diferentes tipos de resíduos',
+        'hydrovac-waste-5': 'Registre todo material coletado',
+        
+        'hydrovac-alert-title': 'Atenção!',
+        'hydrovac-alert-text': 'O hidrovácuo pode expor você a gases perigosos. Use sempre proteção completa e trabalhe em equipe. Nunca ignore sintomas de intoxicação.',
+        
+        'hydrovac-quiz-title': 'Teste seu Conhecimento',
+        'hydrovac-quiz-question-1': 'Qual o principal risco do hidrovácuo?',
+        'hydrovac-quiz-question-2': 'O que fazer antes de usar o hidrovácuo?',
+        'hydrovac-quiz-question-3': 'Pode operar hidrovácuo sozinho?',
+        'hydrovac-quiz-question-4': 'Como descartar os resíduos coletados?',
+        
+        'hydrovac-quiz-q1-a': 'Barulho alto',
+        'hydrovac-quiz-q1-b': 'Gases tóxicos e pressão negativa',
+        'hydrovac-quiz-q1-c': 'Gastar muita água',
+        'hydrovac-quiz-q1-d': 'Sujeira no chão',
+        'hydrovac-quiz-q1-e': 'Risco de incêndio',
+        
+        'hydrovac-quiz-q2-a': 'Ligar direto para testar',
+        'hydrovac-quiz-q2-b': 'Fazer inspeção completa das conexões',
+        'hydrovac-quiz-q2-c': 'Apenas pegar a mangueira',
+        'hydrovac-quiz-q2-d': 'Avisar os colegas',
+        'hydrovac-quiz-q2-e': 'Verificar a água',
+        
+        'hydrovac-quiz-q3-a': 'Sim, se for experiente',
+        'hydrovac-quiz-q3-b': 'Não, sempre precisa de outra pessoa',
+        'hydrovac-quiz-q3-c': 'Apenas em trabalhos rápidos',
+        'hydrovac-quiz-q3-d': 'Se tiver celular por perto',
+        'hydrovac-quiz-q3-e': 'Depende do tipo de trabalho',
+        
+        'hydrovac-quiz-q4-a': 'Jogar tudo no mesmo recipiente',
+        'hydrovac-quiz-q4-b': 'Separar por tipo e usar recipientes adequados',
+        'hydrovac-quiz-q4-c': 'Deixar no chão para o pessoal da limpeza',
+        'hydrovac-quiz-q4-d': 'Enterrar no terreno da fábrica',
+        'hydrovac-quiz-q4-e': 'Misturar tudo para facilitar o transporte',
+        
+        'quiz-submit': 'Enviar Respostas',
+        'quiz-result-title': 'Resultado do Quiz',
+        'quiz-score': 'Sua pontuação',
+        'quiz-correct': 'Respostas corretas',
+        'quiz-incorrect': 'Respostas incorretas',
+        'quiz-congratulations': 'Parabéns! Você acertou',
+        'quiz-try-again': 'Tente novamente! Você acertou',
+        'quiz-retry': 'Refazer Quiz',
+        'quiz-back': 'Voltar para os Cursos'
+    },
+    
+    es: {
+        'nav-home': 'Inicio',
+        'nav-about': 'Acerca de',
+        'course-hydrovac-hero-title': 'Hidrovácuo Operación Segura',
+        'course-hydrovac-hero-subtitle': 'Aprenda a operar hidrovácuo con seguridad en la fábrica de celulosa',
+        'hero-btn': 'Comenzar Curso',
+        
+        'hydrovac-section-1-title': '¿Qué es Hidrovácuo?',
+        'course-hydrovac-intro': 'Hidrovácuo es un equipo que usa vacío y agua para limpieza industrial en la fábrica de celulosa. Remueve residuos sólidos, lodo y productos químicos de superficies. Es muy eficiente, pero involucra riesgos de gases, presión y materiales contaminados.',
+        
+        'hydrovac-section-2-title': 'Riesgos del Hidrovácuo',
+        'hydrovac-section-2-text': 'La operación de hidrovácuo presenta varios peligros graves:',
+        
+        'hydrovac-type-1-title': 'Gases Tóxicos',
+        'hydrovac-type-1-desc': 'Vapores químicos pueden causar problemas respiratorios.',
+        
+        'hydrovac-type-2-title': 'Presión Negativa',
+        'hydrovac-type-2-desc': 'El vacío puede atrapar partes del cuerpo o ropas.',
+        
+        'hydrovac-type-3-title': 'Residuos Contaminados',
+        'hydrovac-type-3-desc': 'Materiales colectados pueden ser peligrosos a la salud.',
+        
+        'hydrovac-section-3-title': 'Equipos de Protección',
+        'hydrovac-section-3-text': 'Para operar hidrovácuo con seguridad, use estos EPIs especiales:',
+        
+        'hydrovac-protection-1': 'Traje de protección química',
+        'hydrovac-protection-2': 'Respirador con filtro para vapores',
+        'hydrovac-protection-3': 'Guantes resistentes a productos químicos',
+        'hydrovac-protection-4': 'Botas y calzado impermeable',
+        'hydrovac-protection-5': 'Protección facial completa',
+        
+        'hydrovac-section-4-title': 'Operación Segura',
+        'hydrovac-section-4-text': 'Siga estas reglas al operar hidrovácuo en la fábrica:',
+        
+        'hydrovac-operation-1': 'Haga inspección completa antes de usar',
+        'hydrovac-operation-2': 'Verifique todas las conexiones y mangueras',
+        'hydrovac-operation-3': 'Trabaje en área bien ventilada',
+        'hydrovac-operation-4': 'Nunca apunte el chorro hacia personas',
+        'hydrovac-operation-5': 'Use siempre dos personas en la operación',
+        
+        'hydrovac-section-5-title': 'Manejo de Residuos',
+        'hydrovac-section-5-text': 'Los residuos colectados necesitan ser tratados con cuidado:',
+        
+        'hydrovac-waste-1': 'Separe los residuos por tipo de material',
+        'hydrovac-waste-2': 'Use recipientes adecuados e identificados',
+        'hydrovac-waste-3': 'Siga procedimientos de descarte correctos',
+        'hydrovac-waste-4': 'No mezcle diferentes tipos de residuos',
+        'hydrovac-waste-5': 'Registre todo material colectado',
+        
+        'hydrovac-alert-title': '¡Atención!',
+        'hydrovac-alert-text': 'El hidrovácuo puede exponerlo a gases peligrosos. Use siempre protección completa y trabaje en equipo. Nunca ignore síntomas de intoxicación.',
+        
+        'hydrovac-quiz-title': 'Pruebe su Conocimiento',
+        'hydrovac-quiz-question-1': '¿Cuál es el principal riesgo del hidrovácuo?',
+        'hydrovac-quiz-question-2': '¿Qué hacer antes de usar el hidrovácuo?',
+        'hydrovac-quiz-question-3': '¿Puede operar hidrovácuo solo?',
+        'hydrovac-quiz-question-4': '¿Cómo descartar los residuos colectados?',
+        
+        'hydrovac-quiz-q1-a': 'Ruido alto',
+        'hydrovac-quiz-q1-b': 'Gases tóxicos y presión negativa',
+        'hydrovac-quiz-q1-c': 'Gastar mucha agua',
+        'hydrovac-quiz-q1-d': 'Suciedad en el suelo',
+        'hydrovac-quiz-q1-e': 'Riesgo de incendio',
+        
+        'hydrovac-quiz-q2-a': 'Conectar directo para probar',
+        'hydrovac-quiz-q2-b': 'Hacer inspección completa de las conexiones',
+        'hydrovac-quiz-q2-c': 'Solo tomar la manguera',
+        'hydrovac-quiz-q2-d': 'Avisar a los colegas',
+        'hydrovac-quiz-q2-e': 'Verificar el agua',
+        
+        'hydrovac-quiz-q3-a': 'Sí, si es experimentado',
+        'hydrovac-quiz-q3-b': 'No, siempre necesita de otra persona',
+        'hydrovac-quiz-q3-c': 'Solo en trabajos rápidos',
+        'hydrovac-quiz-q3-d': 'Si tiene celular cerca',
+        'hydrovac-quiz-q3-e': 'Depende del tipo de trabajo',
+        
+        'hydrovac-quiz-q4-a': 'Tirar todo en el mismo recipiente',
+        'hydrovac-quiz-q4-b': 'Separar por tipo y usar recipientes adecuados',
+        'hydrovac-quiz-q4-c': 'Dejar en el suelo para el personal de limpieza',
+        'hydrovac-quiz-q4-d': 'Enterrar en el terreno de la fábrica',
+        'hydrovac-quiz-q4-e': 'Mezclar todo para facilitar el transporte',
+        
+        'quiz-submit': 'Enviar Respuestas',
+        'quiz-result-title': 'Resultado del Quiz',
+        'quiz-score': 'Su puntuación',
+        'quiz-correct': 'Respuestas correctas',
+        'quiz-incorrect': 'Respuestas incorrectas',
+        'quiz-congratulations': '¡Felicidades! Usted acertó',
+        'quiz-try-again': '¡Inténtelo de nuevo! Usted acertó',
+        'quiz-retry': 'Rehacer Quiz',
+        'quiz-back': 'Volver a los Cursos'
+    },
+    
+    en: {
+        'nav-home': 'Home',
+        'nav-about': 'About',
+        'course-hydrovac-hero-title': 'Hydrovacuum Safe Operation',
+        'course-hydrovac-hero-subtitle': 'Learn to operate hydrovacuum safely in the pulp factory',
+        'hero-btn': 'Start Course',
+        
+        'hydrovac-section-1-title': 'What is Hydrovacuum?',
+        'course-hydrovac-intro': 'Hydrovacuum is equipment that uses vacuum and water for industrial cleaning in the pulp factory. It removes solid residues, sludge and chemical products from surfaces. It is very efficient, but involves risks of gases, pressure and contaminated materials.',
+        
+        'hydrovac-section-2-title': 'Hydrovacuum Risks',
+        'hydrovac-section-2-text': 'Hydrovacuum operation presents several serious dangers:',
+        
+        'hydrovac-type-1-title': 'Toxic Gases',
+        'hydrovac-type-1-desc': 'Chemical vapors can cause respiratory problems.',
+        
+        'hydrovac-type-2-title': 'Negative Pressure',
+        'hydrovac-type-2-desc': 'Vacuum can trap body parts or clothing.',
+        
+        'hydrovac-type-3-title': 'Contaminated Residues',
+        'hydrovac-type-3-desc': 'Collected materials can be dangerous to health.',
+        
+        'hydrovac-section-3-title': 'Protection Equipment',
+        'hydrovac-section-3-text': 'To operate hydrovacuum safely, use these special PPEs:',
+        
+        'hydrovac-protection-1': 'Chemical protection coverall',
+        'hydrovac-protection-2': 'Respirator with vapor filter',
+        'hydrovac-protection-3': 'Gloves resistant to chemical products',
+        'hydrovac-protection-4': 'Waterproof boots and footwear',
+        'hydrovac-protection-5': 'Complete face protection',
+        
+        'hydrovac-section-4-title': 'Safe Operation',
+        'hydrovac-section-4-text': 'Follow these rules when operating hydrovacuum in the factory:',
+        
+        'hydrovac-operation-1': 'Do complete inspection before use',
+        'hydrovac-operation-2': 'Check all connections and hoses',
+        'hydrovac-operation-3': 'Work in well-ventilated area',
+        'hydrovac-operation-4': 'Never point the jet at people',
+        'hydrovac-operation-5': 'Always use two people in operation',
+        
+        'hydrovac-section-5-title': 'Residue Handling',
+        'hydrovac-section-5-text': 'Collected residues need to be handled with care:',
+        
+        'hydrovac-waste-1': 'Separate residues by material type',
+        'hydrovac-waste-2': 'Use adequate and identified containers',
+        'hydrovac-waste-3': 'Follow correct disposal procedures',
+        'hydrovac-waste-4': 'Do not mix different types of residues',
+        'hydrovac-waste-5': 'Record all collected material',
+        
+        'hydrovac-alert-title': 'Attention!',
+        'hydrovac-alert-text': 'Hydrovacuum can expose you to dangerous gases. Always use complete protection and work in a team. Never ignore intoxication symptoms.',
+        
+        'hydrovac-quiz-title': 'Test Your Knowledge',
+        'hydrovac-quiz-question-1': 'What is the main risk of hydrovacuum?',
+        'hydrovac-quiz-question-2': 'What to do before using hydrovacuum?',
+        'hydrovac-quiz-question-3': 'Can you operate hydrovacuum alone?',
+        'hydrovac-quiz-question-4': 'How to dispose of collected residues?',
+        
+        'hydrovac-quiz-q1-a': 'Loud noise',
+        'hydrovac-quiz-q1-b': 'Toxic gases and negative pressure',
+        'hydrovac-quiz-q1-c': 'Waste a lot of water',
+        'hydrovac-quiz-q1-d': 'Dirt on the floor',
+        'hydrovac-quiz-q1-e': 'Fire risk',
+        
+        'hydrovac-quiz-q2-a': 'Connect directly to test',
+        'hydrovac-quiz-q2-b': 'Do complete inspection of connections',
+        'hydrovac-quiz-q2-c': 'Just take the hose',
+        'hydrovac-quiz-q2-d': 'Notify colleagues',
+        'hydrovac-quiz-q2-e': 'Check the water',
+        
+        'hydrovac-quiz-q3-a': 'Yes, if experienced',
+        'hydrovac-quiz-q3-b': 'No, always need another person',
+        'hydrovac-quiz-q3-c': 'Only for quick jobs',
+        'hydrovac-quiz-q3-d': 'If you have a cell phone nearby',
+        'hydrovac-quiz-q3-e': 'Depends on the type of work',
+        
+        'hydrovac-quiz-q4-a': 'Throw everything in the same container',
+        'hydrovac-quiz-q4-b': 'Separate by type and use adequate containers',
+        'hydrovac-quiz-q4-c': 'Leave on the floor for cleaning staff',
+        'hydrovac-quiz-q4-d': 'Bury in the factory grounds',
+        'hydrovac-quiz-q4-e': 'Mix everything to facilitate transport',
+        
+        'quiz-submit': 'Submit Answers',
+        'quiz-result-title': 'Quiz Result',
+        'quiz-score': 'Your score',
+        'quiz-correct': 'Correct answers',
+        'quiz-incorrect': 'Incorrect answers',
+        'quiz-congratulations': 'Congratulations! You got',
+        'quiz-try-again': 'Try again! You got',
+        'quiz-retry': 'Retry Quiz',
+        'quiz-back': 'Back to Courses'
+    }
+};
+
+// Estado atual do idioma
+let currentLanguage = 'pt';
+
+// Função para traduzir elementos
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+// Função para mudar idioma
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Sistema de Quiz
+class QuizSystem {
+    constructor() {
+        this.currentQuiz = null;
+        this.answers = {};
+        this.score = 0;
+        this.totalQuestions = 0;
+    }
+
+    initQuiz(quizData) {
+        this.currentQuiz = quizData;
+        this.answers = {};
+        this.score = 0;
+        this.totalQuestions = Object.keys(quizData.questions).length;
+        
+        // Limpar seleções anteriores
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado anterior
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+    }
+
+    submitQuiz() {
+        if (!this.currentQuiz) return;
+        
+        this.score = 0;
+        this.answers = {};
+        
+        // Coletar respostas
+        Object.keys(this.currentQuiz.questions).forEach(questionKey => {
+            const selectedOption = document.querySelector(`input[name="${questionKey}"]:checked`);
+            if (selectedOption) {
+                this.answers[questionKey] = selectedOption.value;
+                if (selectedOption.value === this.currentQuiz.questions[questionKey].correct) {
+                    this.score++;
+                }
+            }
+        });
+        
+        // Mostrar resultado
+        this.showResult();
+    }
+
+    showResult() {
+        const resultDiv = document.getElementById('quiz-result');
+        if (!resultDiv) return;
+        
+        const percentage = Math.round((this.score / this.totalQuestions) * 100);
+        const isPassing = percentage >= 70;
+        
+        // Obter textos traduzidos
+        const resultTitle = this.getTranslatedText('quiz-result-title');
+        const scoreText = this.getTranslatedText('quiz-score');
+        const correctText = this.getTranslatedText('quiz-correct');
+        const incorrectText = this.getTranslatedText('quiz-incorrect');
+        const congratulationsText = this.getTranslatedText('quiz-congratulations');
+        const tryAgainText = this.getTranslatedText('quiz-try-again');
+        const retryText = this.getTranslatedText('quiz-retry');
+        const backText = this.getTranslatedText('quiz-back');
+        
+        resultDiv.innerHTML = `
+            <h3>${resultTitle}</h3>
+            <div style="text-align: center; margin: 20px 0;">
+                <div class="score-circle ${isPassing ? 'passing' : 'failing'}">
+                    <span>${percentage}%</span>
+                </div>
+                <div style="margin-top: 20px;">
+                    <p><strong>${scoreText}:</strong> ${this.score}/${this.totalQuestions}</p>
+                    <p style="color: #27ae60; font-weight: bold;">${correctText}: ${this.score}</p>
+                    <p style="color: #e74c3c; font-weight: bold;">${incorrectText}: ${this.totalQuestions - this.score}</p>
+                </div>
+            </div>
+            <div class="quiz-message ${isPassing ? 'success' : 'error'}">
+                ${isPassing ? 
+                    `<p>${congratulationsText} ${this.score} de ${this.totalQuestions} perguntas!</p>` :
+                    `<p>${tryAgainText} ${this.score} de ${this.totalQuestions} perguntas.</p>`
+                }
+            </div>
+            <div class="quiz-actions">
+                <button onclick="quizSystem.retryQuiz()">${retryText}</button>
+                <a href="../index.html">${backText}</a>
+            </div>
+        `;
+        
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    retryQuiz() {
+        if (!this.currentQuiz) return;
+        
+        // Limpar seleções
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+        
+        // Resetar
+        this.answers = {};
+        this.score = 0;
+        
+        // Voltar ao topo do quiz
+        const quizSection = document.querySelector('.quiz-section');
+        if (quizSection) {
+            quizSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    getTranslatedText(key) {
+        const lang = localStorage.getItem('rss3-language') || 'pt';
+        if (translations && translations[lang] && translations[lang][key]) {
+            return translations[lang][key];
+        }
+        return key;
+    }
+}
+
+// Instância global do quiz
+const quizSystem = new QuizSystem();
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado - iniciando sistema de idiomas');
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            changeLanguage(lang);
+        });
+    });
+    
+    // Adicionar evento ao botão de submit
+    const submitBtn = document.getElementById('quiz-submit');
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+            quizSystem.submitQuiz();
+        });
+    }
+    
+    // Inicializar quiz
+    const quizData = {
+        questions: {
+            q1: { correct: 'b' },
+            q2: { correct: 'b' },
+            q3: { correct: 'b' },
+            q4: { correct: 'b' }
+        }
+    };
+    
+    quizSystem.initQuiz(quizData);
+});
+</script>
+
+</body>
+</html>

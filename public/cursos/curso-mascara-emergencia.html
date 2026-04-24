@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso Máscara de Emergência - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--laranja);
+    }
+
+    .language-selector {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: var(--branco);
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--azul), #1a5fb4);
+      color: var(--branco);
+      padding: 60px 40px;
+      border-radius: 15px;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .hero h1 {
+      font-size: 2.8em;
+      margin: 0 0 15px 0;
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      margin: 0 0 30px 0;
+      opacity: 0.9;
+    }
+
+    .start-btn {
+      background: var(--laranja);
+      color: var(--branco);
+      border: none;
+      padding: 15px 35px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-weight: bold;
+    }
+
+    .start-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255,122,0,0.4);
+    }
+
+    .course-section {
+      background: var(--branco);
+      padding: 40px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .course-section h2 {
+      color: var(--azul);
+      font-size: 1.8em;
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--laranja);
+      padding-bottom: 10px;
+    }
+
+    .course-section p {
+      font-size: 1.1em;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .info-list li {
+      background: var(--cinza-claro);
+      padding: 15px 20px;
+      margin-bottom: 10px;
+      border-left: 5px solid var(--laranja);
+      border-radius: 5px;
+      font-size: 1.05em;
+    }
+
+    .info-list li strong {
+      color: var(--azul);
+    }
+
+    .epi-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 30px 0;
+    }
+
+    .epi-type-card {
+      background: var(--branco);
+      border: 2px solid var(--cinza-claro);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .epi-type-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      border-color: var(--laranja);
+    }
+
+    .epi-type-icon {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+
+    .epi-type-title {
+      color: var(--azul);
+      font-size: 1.3em;
+      margin: 0 0 10px 0;
+    }
+
+    .epi-type-desc {
+      color: var(--cinza-texto);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .alert-box {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .alert-box h3 {
+      color: #856404;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .alert-box p {
+      color: #856404;
+      margin: 0;
+    }
+
+    .emergency-box {
+      background: #f8d7da;
+      border: 2px solid #dc3545;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .emergency-box h3 {
+      color: #721c24;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .emergency-box p {
+      color: #721c24;
+      margin: 0;
+    }
+
+    .quiz-section {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      padding: 40px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .quiz-section h2 {
+      color: var(--azul);
+      font-size: 1.8em;
+      margin-top: 0;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .question {
+      background: var(--branco);
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .question h3 {
+      color: var(--azul);
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.2em;
+    }
+
+    .options {
+      display: grid;
+      gap: 12px;
+    }
+
+    .option {
+      background: var(--cinza-claro);
+      border: 2px solid transparent;
+      padding: 15px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .option:hover {
+      background: #e8f4fd;
+      border-color: var(--azul);
+    }
+
+    .option.selected {
+      background: #d4edda;
+      border-color: #28a745;
+    }
+
+    .option.correct {
+      background: #d4edda;
+      border-color: #28a745;
+    }
+
+    .option.incorrect {
+      background: #f8d7da;
+      border-color: #dc3545;
+    }
+
+    .quiz-actions {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .quiz-btn {
+      background: var(--azul);
+      color: var(--branco);
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 0 10px;
+      transition: background 0.3s;
+    }
+
+    .quiz-btn:hover {
+      background: #0a2d6b;
+    }
+
+    .quiz-btn.primary {
+      background: var(--laranja);
+    }
+
+    .quiz-btn.primary:hover {
+      background: #e66800;
+    }
+
+    .result-container {
+      text-align: center;
+      padding: 30px;
+      background: var(--branco);
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .result-container h3 {
+      color: var(--azul);
+      font-size: 1.8em;
+      margin-top: 0;
+    }
+
+    .score {
+      font-size: 3em;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .score.pass {
+      color: #28a745;
+    }
+
+    .score.fail {
+      color: #dc3545;
+    }
+
+    .result-message {
+      font-size: 1.2em;
+      margin: 20px 0;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      header, footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 40px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2.2em;
+      }
+
+      .course-section, .quiz-section {
+        padding: 25px;
+      }
+
+      .epi-types-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1><span>RSS3</span> Treinamentos</h1>
+    </div>
+    <nav>
+      <a href="../index.html" data-translate="nav-back">Voltar</a>
+      <a href="#" data-translate="nav-about">Sobre</a>
+    </nav>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1 data-translate="mask-hero-title">Máscara de Emergência</h1>
+      <p data-translate="mask-hero-subtitle">Proteção rápida para situações de perigo</p>
+      <button class="start-btn" onclick="scrollToContent()" data-translate="mask-hero-btn">Começar Curso</button>
+    </div>
+
+    <section class="course-section">
+      <h2 data-translate="mask-section-1-title">O que é a máscara de emergência?</h2>
+      <p data-translate="mask-section-1-text">
+        A máscara de emergência é um equipamento que protege o ar que você respira 
+        quando tem gases ou fumaça perigosos no ambiente. Ela é diferente da máscara 
+        normal de trabalho porque é usada só em emergências.
+      </p>
+      
+      <div class="epi-types-grid">
+        <div class="epi-type-card">
+          <div class="epi-type-icon">mask</div>
+          <h3 class="epi-type-title" data-translate="mask-type-1-title">Proteção Rápida</h3>
+          <p class="epi-type-desc" data-translate="mask-type-1-desc">Feita para colocar rápido quando tem perigo no ar.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">air</div>
+          <h3 class="epi-type-title" data-translate="mask-type-2-title">Ar Limpo</h3>
+          <p class="epi-type-desc" data-translate="mask-type-2-desc">Filtra gases venenosos e deixa passar só ar seguro.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">emergency</div>
+          <h3 class="epi-type-title" data-translate="mask-type-3-title">Só para Emergência</h3>
+          <p class="epi-type-desc" data-translate="mask-type-3-desc">Não é para uso normal, só quando tem risco de vida.</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="mask-section-2-title">Quando usar a máscara de emergência?</h2>
+      <p data-translate="mask-section-2-text">
+        A máscara de emergência deve ser usada só em situações muito perigosas. 
+        Ela salva vidas quando o ar fica contaminado.
+      </p>
+      
+      <div class="emergency-box">
+        <h3>warning <span data-translate="mask-emergency-title">SITUAÇÕES DE EMERGÊNCIA</span></h3>
+        <p data-translate="mask-emergency-text">Use a máscara IMEDIATAMENTE nestes casos!</p>
+      </div>
+      
+      <ul class="info-list">
+        <li data-translate="mask-situation-1"><strong>Vazamento de gás:</strong> Quando sentir cheiro forte de gás ou ver alarme de gás.</li>
+        <li data-translate="mask-situation-2"><strong>Fumaça de incêndio:</strong> Quando tiver fumaça densa e não conseguir respirar.</li>
+        <li data-translate="mask-situation-3"><strong>Vazamento químico:</strong> Quando produtos químicos vazarem e formarem vapor.</li>
+        <li data-translate="mask-situation-4"><strong>Explosão:</strong> Depois de explosão que solta gases ou fumaça.</li>
+        <li data-translate="mask-situation-5"><strong>Ordem de evacuação:</strong> Quando o responsável mandar usar máscara.</li>
+      </ul>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="mask-section-3-title">Como usar a máscara corretamente?</h2>
+      <p data-translate="mask-section-3-text">
+        Em emergência, cada segundo conta. Você precisa saber usar a máscara rápido e certo. 
+        Siga estes passos:
+      </p>
+      
+    <div class="alert-box">
+      <h4 data-translate="mask-alert-title">AGIR RÁPIDO SALVA VIDAS!</h4>
+      <p data-translate="mask-alert-text">Pratique sempre para não errar na hora da emergência.</p>
+    </div>
+      
+      <ul class="info-list">
+        <li data-translate="mask-step-1"><strong>1. Pegue a máscara:</strong> Corra até o ponto de emergência mais próximo.</li>
+        <li data-translate="mask-step-2"><strong>2. Retire a embalagem:</strong> Abra rápido o plástico protetor.</li>
+        <li data-translate="mask-step-3"><strong>3. Coloque no rosto:</strong> Cubra boca e nariz completamente.</li>
+        <li data-translate="mask-step-4"><strong>4. Ajuste bem:</strong> Aperte as tiras para não entrar ar pelos lados.</li>
+        <li data-translate="mask-step-5"><strong>5. Verifique o vedação:</strong> Passe a mão nas bordas para sentir se entra ar.</li>
+        <li data-translate="mask-step-6"><strong>6. Saia do local:</strong> Vá para o ponto de reunião com a máscara.</li>
+      </ul>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="mask-section-4-title">Onde fica a máscara de emergência?</h2>
+      <p data-translate="mask-section-4-text">
+        As máscaras de emergência ficam em lugares estratégicos e fáceis de achar. 
+        Todo mundo precisa saber onde estão as máscaras mais próximas do seu trabalho.
+      </p>
+      
+      <div class="epi-types-grid">
+        <div class="epi-type-card">
+          <div class="epi-type-icon">wall</div>
+          <h3 class="epi-type-title" data-translate="mask-location-1-title">Pontos de Emergência</h3>
+          <p class="epi-type-desc" data-translate="mask-location-1-desc">Caixas vermelhas ou amarelas nas paredes com várias máscaras.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">exit</div>
+          <h3 class="epi-type-title" data-translate="mask-location-2-title">Próximo de Saídas</h3>
+          <p class="epi-type-desc" data-translate="mask-location-2-desc">Perto das portas de emergência e rotas de fuga.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">area</div>
+          <h3 class="epi-type-title" data-translate="mask-location-3-title">Áreas de Risco</h3>
+          <p class="epi-type-desc" data-translate="mask-location-3-desc">Onde trabalha com produtos químicos ou gases.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">office</div>
+          <h3 class="epi-type-title" data-translate="mask-location-4-title">Salas de Controle</h3>
+          <p class="epi-type-desc" data-translate="mask-location-4-desc">Onde os operadores ficam durante o trabalho.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">meeting_room</div>
+          <h3 class="epi-type-title" data-translate="mask-location-5-title">Refeitórios</h3>
+          <p class="epi-type-desc" data-translate="mask-location-5-desc">Onde as pessoas se reúnem durante as pausas.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">storage</div>
+          <h3 class="epi-type-title" data-translate="mask-location-6-title">Almoxarifado</h3>
+          <p class="epi-type-desc" data-translate="mask-location-6-desc">Onde guarda materiais e equipamentos.</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="mask-section-5-title">Importância de agir rápido</h2>
+      <p data-translate="mask-section-5-text">
+        Em emergência com gases ou fumaça, você tem poucos segundos para se proteger. 
+        Esperar pode ser fatal. Agir rápido é a diferença entre vida e morte.
+      </p>
+      
+      <div class="emergency-box">
+        <h3>priority_high <span data-translate="mask-danger-title">PERIGOS DE NÃO USAR A MÁSCARA</span></h3>
+        <p data-translate="mask-danger-text">Sem proteção, gases podem matar em menos de 1 minuto!</p>
+      </div>
+      
+      <ul class="info-list">
+        <li data-translate="mask-danger-1"><strong>Asfixia:</strong> Falta de ar que causa desmaio e morte.</li>
+        <li data-translate="mask-danger-2"><strong>Intoxicação:</strong> Gases venenosos que danificam pulmões e cérebro.</li>
+        <li data-translate="mask-danger-3"><strong>Queimaduras:</strong> Gases que queimam vias respiratórias.</li>
+        <li data-translate="mask-danger-4"><strong>Perda de consciência:</strong> Não consegue mais pensar ou se mover.</li>
+        <li data-translate="mask-danger-5"><strong>Morte:</strong> Risco real se não usar proteção rápida.</li>
+      </ul>
+      
+      <div class="alert-box">
+        <h3>tips_and_updates <span data-translate="mask-tip-title">LEMBRE-SE SEMPRE</span></h3>
+        <p data-translate="mask-tip-text">Na dúvida, use a máscara! É melhor prevenir do que arriscar a vida.</p>
+      </div>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="mask-section-6-title">Cuidados com a máscara</h2>
+      <p data-translate="mask-section-6-text">
+        A máscara de emergência precisa estar sempre pronta para usar. 
+        Todo mundo precisa ajudar a cuidar dos equipamentos.
+      </p>
+      
+      <ul class="info-list">
+        <li data-translate="mask-care-1"><strong>Não mexa sem necessidade:</strong> Só toque na máscara em emergência ou treinamento.</li>
+        <li data-translate="mask-care-2"><strong>Avise se estiver danificada:</strong> Informe ao responsável se vir algo errado.</li>
+        <li data-translate="mask-care-3"><strong>Não guarde nada em frente:</strong> Mantenha o acesso livre e fácil.</li>
+        <li data-translate="mask-care-4"><strong>Participe dos treinamentos:</strong> Aprenda a usar corretamente.</li>
+        <li data-translate="mask-care-5"><strong>Conheça os locais:</strong> Saiba onde estão as máscaras perto do seu trabalho.</li>
+      </ul>
+      
+    </section>
+
+  <section class="quiz-section">
+    <h2 class="quiz-title" data-translate="mask-quiz-title">Teste seu Conhecimento</h2>
+    
+    <div class="quiz-question">
+      <h4 data-translate="mask-quiz-question-1">1. Quando usar a máscara de emergência?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="a" class="quiz-option">
+          <span data-translate="mask-quiz-q1-a">Todo dia no trabalho normal</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="b" class="quiz-option">
+          <span data-translate="mask-quiz-q1-b">Só em vazamento de gás ou fumaça</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="c" class="quiz-option">
+          <span data-translate="mask-quiz-q1-c">Quando sentir cansaço</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="d" class="quiz-option">
+          <span data-translate="mask-quiz-q1-d">Para proteger do pó normal</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="e" class="quiz-option">
+          <span data-translate="mask-quiz-q1-e">Quando o chefe mandar</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="mask-quiz-question-2">2. O que fazer primeiro em emergência?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="a" class="quiz-option">
+          <span data-translate="mask-quiz-q2-a">Avisar o chefe</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="b" class="quiz-option">
+          <span data-translate="mask-quiz-q2-b">Pegar a máscara e colocar</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="c" class="quiz-option">
+          <span data-translate="mask-quiz-q2-c">Correr para a saída</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="d" class="quiz-option">
+          <span data-translate="mask-quiz-q2-d">Ligar para emergência</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="e" class="quiz-option">
+          <span data-translate="mask-quiz-q2-e">Tirar foto do local</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="mask-quiz-question-3">3. Onde normalmente ficam as máscaras?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="a" class="quiz-option">
+          <span data-translate="mask-quiz-q3-a">No bolso do trabalhador</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="b" class="quiz-option">
+          <span data-translate="mask-quiz-q3-b">Em casa</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="c" class="quiz-option">
+          <span data-translate="mask-quiz-q3-c">Em pontos de emergência na parede</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="d" class="quiz-option">
+          <span data-translate="mask-quiz-q3-d">No banheiro</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="e" class="quiz-option">
+          <span data-translate="mask-quiz-q3-e">Na caixa de ferramentas</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="mask-quiz-question-4">4. Por que é importante agir rápido?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="a" class="quiz-option">
+          <span data-translate="mask-quiz-q4-a">Para não perder o horário do almoço</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="b" class="quiz-option">
+          <span data-translate="mask-quiz-q4-b">Porque gases podem matar em segundos</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="c" class="quiz-option">
+          <span data-translate="mask-quiz-q4-c">Para mostrar que é corajoso</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="d" class="quiz-option">
+          <span data-translate="mask-quiz-q4-d">Porque é obrigatório</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="e" class="quiz-option">
+          <span data-translate="mask-quiz-q4-e">Para não pegar multa</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-actions">
+      <button class="quiz-btn" onclick="checkQuiz()" data-translate="mask-quiz-submit">Verificar Respostas</button>
+      <button class="quiz-btn" onclick="resetQuiz()" data-translate="mask-quiz-reset">Refazer Quiz</button>
+    </div>
+  </section>
+
+  <div id="quiz-result" class="quiz-result" style="display: none;">
+    <h3 data-translate="mask-quiz-result-title">Resultado</h3>
+    <p id="quiz-score"></p>
+    <p id="quiz-message"></p>
+    <div class="quiz-actions">
+      <button class="quiz-btn" onclick="resetQuiz()" data-translate="mask-quiz-reset">Refazer Quiz</button>
+      <button class="quiz-btn" onclick="window.location.href='../index.html'" data-translate="mask-quiz-back">Voltar</button>
+    </div>
+  </div>
+
+  </main>
+
+  <footer>
+    <div>
+      <p>© 2026 <span>RSS3</span> Treinamentos de Segurança</p>
+    </div>
+    <div>
+      <p>Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+// Sistema de Tradução
+const translations = {
+    pt: {
+        'nav-back': 'Voltar',
+        'nav-about': 'Sobre',
+        'mask-hero-title': 'Máscara de Emergência',
+        'mask-hero-subtitle': 'Proteção rápida para situações de perigo',
+        'mask-hero-btn': 'Começar Curso',
+        
+        'mask-section-1-title': 'O que é a máscara de emergência?',
+        'mask-section-1-text': 'A máscara de emergência é um equipamento que protege o ar que você respira quando tem gases ou fumaça perigosos no ambiente. Ela é diferente da máscara normal de trabalho porque é usada só em emergências.',
+        
+        'mask-type-1-title': 'Proteção Rápida',
+        'mask-type-1-desc': 'Feita para colocar rápido quando tem perigo no ar.',
+        'mask-type-2-title': 'Ar Limpo',
+        'mask-type-2-desc': 'Filtra gases venenosos e deixa passar só ar seguro.',
+        'mask-type-3-title': 'Só para Emergência',
+        'mask-type-3-desc': 'Não é para uso normal, só quando tem risco de vida.',
+        
+        'mask-section-2-title': 'Quando usar a máscara de emergência?',
+        'mask-section-2-text': 'A máscara de emergência deve ser usada só em situações muito perigosas. Ela salva vidas quando o ar fica contaminado.',
+        
+        'mask-emergency-title': 'SITUAÇÕES DE EMERGÊNCIA',
+        'mask-emergency-text': 'Use a máscara IMEDIATAMENTE nestes casos!',
+        
+        'mask-situation-1': 'Vazamento de gás: Quando sentir cheiro forte de gás ou ver alarme de gás.',
+        'mask-situation-2': 'Fumaça de incêndio: Quando tiver fumaça densa e não conseguir respirar.',
+        'mask-situation-3': 'Vazamento químico: Quando produtos químicos vazarem e formarem vapor.',
+        'mask-situation-4': 'Explosão: Depois de explosão que solta gases ou fumaça.',
+        'mask-situation-5': 'Ordem de evacuação: Quando o responsável mandar usar máscara.',
+        
+        'mask-section-3-title': 'Como usar a máscara corretamente?',
+        'mask-section-3-text': 'Em emergência, cada segundo conta. Você precisa saber usar a máscara rápido e certo. Siga estes passos:',
+        
+        'mask-alert-title': 'AGIR RÁPIDO SALVA VIDAS!',
+        'mask-alert-text': 'Pratique sempre para não errar na hora da emergência.',
+        
+        'mask-step-1': '1. Pegue a máscara: Corra até o ponto de emergência mais próximo.',
+        'mask-step-2': '2. Retire a embalagem: Abra rápido o plástico protetor.',
+        'mask-step-3': '3. Coloque no rosto: Cubra boca e nariz completamente.',
+        'mask-step-4': '4. Ajuste bem: Aperte as tiras para não entrar ar pelos lados.',
+        'mask-step-5': '5. Verifique o vedação: Passe a mão nas bordas para sentir se entra ar.',
+        'mask-step-6': '6. Saia do local: Vá para o ponto de reunião com a máscara.',
+        
+        'mask-section-4-title': 'Onde fica a máscara de emergência?',
+        'mask-section-4-text': 'As máscaras de emergência ficam em lugares estratégicos e fáceis de achar. Todo mundo precisa saber onde estão as máscaras mais próximas do seu trabalho.',
+        
+        'mask-location-1-title': 'Pontos de Emergência',
+        'mask-location-1-desc': 'Caixas vermelhas ou amarelas nas paredes com várias máscaras.',
+        'mask-location-2-title': 'Próximo de Saídas',
+        'mask-location-2-desc': 'Perto das portas de emergência e rotas de fuga.',
+        'mask-location-3-title': 'Áreas de Risco',
+        'mask-location-3-desc': 'Onde trabalha com produtos químicos ou gases.',
+        'mask-location-4-title': 'Salas de Controle',
+        'mask-location-4-desc': 'Onde os operadores ficam durante o trabalho.',
+        'mask-location-5-title': 'Refeitórios',
+        'mask-location-5-desc': 'Onde as pessoas se reúnem durante as pausas.',
+        'mask-location-6-title': 'Almoxarifado',
+        'mask-location-6-desc': 'Onde guarda materiais e equipamentos.',
+        
+        'mask-section-5-title': 'Importância de agir rápido',
+        'mask-section-5-text': 'Em emergência com gases ou fumaça, você tem poucos segundos para se proteger. Esperar pode ser fatal. Agir rápido é a diferença entre vida e morte.',
+        
+        'mask-danger-title': 'PERIGOS DE NÃO USAR A MÁSCARA',
+        'mask-danger-text': 'Sem proteção, gases podem matar em menos de 1 minuto!',
+        
+        'mask-danger-1': 'Asfixia: Falta de ar que causa desmaio e morte.',
+        'mask-danger-2': 'Intoxicação: Gases venenosos que danificam pulmões e cérebro.',
+        'mask-danger-3': 'Queimaduras: Gases que queimam vias respiratórias.',
+        'mask-danger-4': 'Perda de consciência: Não consegue mais pensar ou se mover.',
+        'mask-danger-5': 'Morte: Risco real se não usar proteção rápida.',
+        
+        'mask-tip-title': 'LEMBRE-SE SEMPRE',
+        'mask-tip-text': 'Na dúvida, use a máscara! É melhor prevenir do que arriscar a vida.',
+        
+        'mask-section-6-title': 'Cuidados com a máscara',
+        'mask-section-6-text': 'A máscara de emergência precisa estar sempre pronta para usar. Todo mundo precisa ajudar a cuidar dos equipamentos.',
+        
+        'mask-care-1': 'Não mexa sem necessidade: Só toque na máscara em emergência ou treinamento.',
+        'mask-care-2': 'Avise se estiver danificada: Informe ao responsável se vir algo errado.',
+        'mask-care-3': 'Não guarde nada em frente: Mantenha o acesso livre e fácil.',
+        'mask-care-4': 'Participe dos treinamentos: Aprenda a usar corretamente.',
+        'mask-care-5': 'Conheça os locais: Saiba onde estão as máscaras perto do seu trabalho.',
+        
+        'quiz-title': 'Teste seu conhecimento',
+        'mask-question-1': '1. Quando usar a máscara de emergência?',
+        'mask-question-2': '2. O que fazer primeiro em emergência?',
+        'mask-question-3': '3. Onde normalmente ficam as máscaras?',
+        'mask-question-4': '4. Por que é importante agir rápido?',
+        'quiz-check': 'Verificar Respostas',
+        'quiz-retry': 'Refazer Quiz',
+        'quiz-result-title': 'Resultado do Quiz',
+        'quiz-back': 'Voltar aos Cursos'
+    },
+    
+    es: {
+        'nav-back': 'Volver',
+        'nav-about': 'Acerca de',
+        'mask-hero-title': 'Máscara de Emergencia',
+        'mask-hero-subtitle': 'Protección rápida para situaciones de peligro',
+        'mask-hero-btn': 'Comenzar Curso',
+        
+        'mask-section-1-title': '¿Qué es la máscara de emergencia?',
+        'mask-section-1-text': 'La máscara de emergencia es un equipo que protege el aire que respiras cuando hay gases o humo peligrosos en el ambiente. Es diferente de la máscara normal de trabajo porque se usa solo en emergencias.',
+        
+        'mask-type-1-title': 'Protección Rápida',
+        'mask-type-1-desc': 'Hecha para poner rápido cuando hay peligro en el aire.',
+        'mask-type-2-title': 'Aire Limpio',
+        'mask-type-2-desc': 'Filtra gases venenosos y deja pasar solo aire seguro.',
+        'mask-type-3-title': 'Solo para Emergencia',
+        'mask-type-3-desc': 'No es para uso normal, solo cuando hay riesgo de vida.',
+        
+        'mask-section-2-title': '¿Cuándo usar la máscara de emergencia?',
+        'mask-section-2-text': 'La máscara de emergencia debe usarse solo en situaciones muy peligrosas. Salva vidas cuando el aire se contamina.',
+        
+        'mask-emergency-title': 'SITUACIONES DE EMERGENCIA',
+        'mask-emergency-text': '¡Use la máscara INMEDIATAMENTE en estos casos!',
+        
+        'mask-situation-1': 'Fuga de gas: Cuando sienta olor fuerte de gas o vea alarma de gas.',
+        'mask-situation-2': 'Humo de incendio: Cuando haya humo denso y no pueda respirar.',
+        'mask-situation-3': 'Fuga química: Cuando productos químicos se filtren y formen vapor.',
+        'mask-situation-4': 'Explosión: Después de explosión que suelta gases o humo.',
+        'mask-situation-5': 'Orden de evacuación: Cuando el responsable mande usar máscara.',
+        
+        'mask-section-3-title': '¿Cómo usar la máscara correctamente?',
+        'mask-section-3-text': 'En emergencia, cada segundo cuenta. Necesitas saber usar la máscara rápido y bien. Sigue estos pasos:',
+        
+        'mask-alert-title': '¡ACTUAR RÁPIDO SALVA VIDAS!',
+        'mask-alert-text': 'Practique siempre para no errar en la hora de la emergencia.',
+        
+        'mask-step-1': '1. Tome la máscara: Corra hasta el punto de emergencia más cercano.',
+        'mask-step-2': '2. Retire el empaque: Abra rápido el plástico protector.',
+        'mask-step-3': '3. Póngala en la cara: Cubra boca y nariz completamente.',
+        'mask-step-4': '4. Ajuste bien: Apriete las tiras para que no entre aire por los lados.',
+        'mask-step-5': '5. Verifique el sello: Pase la mano en los bordes para sentir si entra aire.',
+        'mask-step-6': '6. Salga del lugar: Vaya al punto de reunión con la máscara.',
+        
+        'mask-section-4-title': '¿Dónde está la máscara de emergencia?',
+        'mask-section-4-text': 'Las máscaras de emergencia están en lugares estratégicos y fáciles de encontrar. Todos necesitan saber dónde están las máscaras más cercanas de su trabajo.',
+        
+        'mask-location-1-title': 'Puntos de Emergencia',
+        'mask-location-1-desc': 'Cajas rojas o amarillas en las paredes con varias máscaras.',
+        'mask-location-2-title': 'Cerca de Salidas',
+        'mask-location-2-desc': 'Cerca de las puertas de emergencia y rutas de escape.',
+        'mask-location-3-title': 'Áreas de Riesgo',
+        'mask-location-3-desc': 'Donde se trabaja con productos químicos o gases.',
+        'mask-location-4-title': 'Salas de Control',
+        'mask-location-4-desc': 'Donde los operadores están durante el trabajo.',
+        'mask-location-5-title': 'Comedores',
+        'mask-location-5-desc': 'Donde las personas se reúnen durante las pausas.',
+        'mask-location-6-title': 'Almacén',
+        'mask-location-6-desc': 'Donde se guardan materiales y equipos.',
+        
+        'mask-section-5-title': 'Importancia de actuar rápido',
+        'mask-section-5-text': 'En emergencia con gases o humo, tienes pocos segundos para protegerte. Esperar puede ser fatal. Actuar rápido es la diferencia entre vida y muerte.',
+        
+        'mask-danger-title': 'PELIGROS DE NO USAR LA MÁSCARA',
+        'mask-danger-text': '¡Sin protección, gases pueden matar en menos de 1 minuto!',
+        
+        'mask-danger-1': 'Asfixia: Falta de aire que causa desmayo y muerte.',
+        'mask-danger-2': 'Intoxicación: Gases venenosos que dañan pulmones y cerebro.',
+        'mask-danger-3': 'Quemaduras: Gases que queman vías respiratorias.',
+        'mask-danger-4': 'Pérdida de conciencia: No puede más pensar o moverse.',
+        'mask-danger-5': 'Muerte: Riesgo real si no usa protección rápida.',
+        
+        'mask-tip-title': 'RECUERDE SIEMPRE',
+        'mask-tip-text': 'En la duda, use la máscara! Es mejor prevenir que arriesgar la vida.',
+        
+        'mask-section-6-title': 'Cuidados con la máscara',
+        'mask-section-6-text': 'La máscara de emergencia necesita estar siempre lista para usar. Todos necesitan ayudar a cuidar los equipos.',
+        
+        'mask-care-1': 'No toque sin necesidad: Solo toque la máscara en emergencia o entrenamiento.',
+        'mask-care-2': 'Avise si está dañada: Informe al responsable si ve algo errado.',
+        'mask-care-3': 'No guarde nada adelante: Mantenga el acceso libre y fácil.',
+        'mask-care-4': 'Participe de los entrenamientos: Aprenda a usar correctamente.',
+        'mask-care-5': 'Conozca los lugares: Sepa dónde están las máscaras cerca de su trabajo.',
+        
+        'quiz-title': 'Pruebe su conocimiento',
+        'mask-question-1': '1. ¿Cuándo usar la máscara de emergencia?',
+        'mask-question-2': '2. ¿Qué hacer primero en emergencia?',
+        'mask-question-3': '3. ¿Dónde normalmente están las máscaras?',
+        'mask-question-4': '4. ¿Por qué es importante actuar rápido?',
+        'quiz-check': 'Verificar Respuestas',
+        'quiz-retry': 'Rehacer Quiz',
+        'quiz-result-title': 'Resultado del Quiz',
+        'quiz-back': 'Volver a los Cursos'
+    },
+    
+    en: {
+        'nav-back': 'Back',
+        'nav-about': 'About',
+        'mask-hero-title': 'Emergency Mask',
+        'mask-hero-subtitle': 'Quick protection for dangerous situations',
+        'mask-hero-btn': 'Start Course',
+        
+        'mask-section-1-title': 'What is the emergency mask?',
+        'mask-section-1-text': 'The emergency mask is equipment that protects the air you breathe when there are dangerous gases or smoke in the environment. It\'s different from the normal work mask because it\'s only used in emergencies.',
+        
+        'mask-type-1-title': 'Quick Protection',
+        'mask-type-1-desc': 'Made to put on quickly when there\'s danger in the air.',
+        'mask-type-2-title': 'Clean Air',
+        'mask-type-2-desc': 'Filters poisonous gases and lets only safe air pass.',
+        'mask-type-3-title': 'Emergency Only',
+        'mask-type-3-desc': 'Not for normal use, only when there\'s life risk.',
+        
+        'mask-section-2-title': 'When to use the emergency mask?',
+        'mask-section-2-text': 'The emergency mask should only be used in very dangerous situations. It saves lives when the air becomes contaminated.',
+        
+        'mask-emergency-title': 'EMERGENCY SITUATIONS',
+        'mask-emergency-text': 'Use the mask IMMEDIATELY in these cases!',
+        
+        'mask-situation-1': 'Gas leak: When you feel strong gas smell or see gas alarm.',
+        'mask-situation-2': 'Fire smoke: When there\'s dense smoke and you can\'t breathe.',
+        'mask-situation-3': 'Chemical leak: When chemical products leak and form vapor.',
+        'mask-situation-4': 'Explosion: After explosion that releases gases or smoke.',
+        'mask-situation-5': 'Evacuation order: When the responsible person orders to use mask.',
+        
+        'mask-section-3-title': 'How to use the mask correctly?',
+        'mask-section-3-text': 'In emergency, every second counts. You need to know how to use the mask quickly and correctly. Follow these steps:',
+        
+        'mask-alert-title': 'ACTING FAST SAVES LIVES!',
+        'mask-alert-text': 'Practice always so you don\'t make mistakes in emergency time.',
+        
+        'mask-step-1': '1. Get the mask: Run to the nearest emergency point.',
+        'mask-step-2': '2. Remove packaging: Open the protective plastic quickly.',
+        'mask-step-3': '3. Put on face: Cover mouth and nose completely.',
+        'mask-step-4': '4. Adjust well: Tighten the straps so air doesn\'t enter from sides.',
+        'mask-step-5': '5. Check seal: Pass hand on edges to feel if air enters.',
+        'mask-step-6': '6. Leave the place: Go to meeting point with the mask.',
+        
+        'mask-section-4-title': 'Where is the emergency mask?',
+        'mask-section-4-text': 'Emergency masks are in strategic and easy-to-find places. Everyone needs to know where the masks closest to their work are.',
+        
+        'mask-location-1-title': 'Emergency Points',
+        'mask-location-1-desc': 'Red or yellow boxes on walls with several masks.',
+        'mask-location-2-title': 'Near Exits',
+        'mask-location-2-desc': 'Near emergency doors and escape routes.',
+        'mask-location-3-title': 'Risk Areas',
+        'mask-location-3-desc': 'Where work with chemical products or gases.',
+        'mask-location-4-title': 'Control Rooms',
+        'mask-location-4-desc': 'Where operators stay during work.',
+        'mask-location-5-title': 'Canteens',
+        'mask-location-5-desc': 'Where people gather during breaks.',
+        'mask-location-6-title': 'Warehouse',
+        'mask-location-6-desc': 'Where materials and equipment are stored.',
+        
+        'mask-section-5-title': 'Importance of acting fast',
+        'mask-section-5-text': 'In emergency with gases or smoke, you have few seconds to protect yourself. Waiting can be fatal. Acting fast is the difference between life and death.',
+        
+        'mask-danger-title': 'DANGERS OF NOT USING THE MASK',
+        'mask-danger-text': 'Without protection, gases can kill in less than 1 minute!',
+        
+        'mask-danger-1': 'Asphyxiation: Lack of air that causes fainting and death.',
+        'mask-danger-2': 'Intoxication: Poisonous gases that damage lungs and brain.',
+        'mask-danger-3': 'Burns: Gases that burn airways.',
+        'mask-danger-4': 'Loss of consciousness: Can no longer think or move.',
+        'mask-danger-5': 'Death: Real risk if you don\'t use quick protection.',
+        
+        'mask-tip-title': 'ALWAYS REMEMBER',
+        'mask-tip-text': 'In doubt, use the mask! It\'s better to prevent than risk your life.',
+        
+        'mask-section-6-title': 'Mask care',
+        'mask-section-6-text': 'The emergency mask needs to be always ready to use. Everyone needs to help take care of the equipment.',
+        
+        'mask-care-1': 'Don\'t touch without need: Only touch the mask in emergency or training.',
+        'mask-care-2': 'Warn if damaged: Inform the responsible if you see something wrong.',
+        'mask-care-3': 'Don\'t store anything in front: Keep access free and easy.',
+        'mask-care-4': 'Participate in trainings: Learn to use correctly.',
+        'mask-care-5': 'Know the locations: Know where the masks are near your work.',
+        
+        'mask-quiz-title': 'Test your Knowledge',
+        'mask-quiz-question-1': '1. When to use the emergency mask?',
+        'mask-quiz-q1-a': 'Every day in normal work',
+        'mask-quiz-q1-b': 'Only in gas leak or smoke',
+        'mask-quiz-q1-c': 'When feeling tired',
+        'mask-quiz-q1-d': 'To protect from normal dust',
+        'mask-quiz-q1-e': 'When the boss orders',
+        
+        'mask-quiz-question-2': '2. What to do first in emergency?',
+        'mask-quiz-q2-a': 'Inform the boss',
+        'mask-quiz-q2-b': 'Get the mask and put on',
+        'mask-quiz-q2-c': 'Run to the exit',
+        'mask-quiz-q2-d': 'Call emergency',
+        'mask-quiz-q2-e': 'Take photo of the place',
+        
+        'mask-quiz-question-3': '3. Where are the masks normally?',
+        'mask-quiz-q3-a': 'In the worker\'s pocket',
+        'mask-quiz-q3-b': 'At home',
+        'mask-quiz-q3-c': 'At emergency points on the wall',
+        'mask-quiz-q3-d': 'In the bathroom',
+        'mask-quiz-q3-e': 'In the toolbox',
+        
+        'mask-quiz-question-4': '4. Why is it important to act fast?',
+        'mask-quiz-q4-a': 'To not miss lunch time',
+        'mask-quiz-q4-b': 'Because gases can kill in seconds',
+        'mask-quiz-q4-c': 'To show you\'re brave',
+        'mask-quiz-q4-d': 'Because it\'s mandatory',
+        'mask-quiz-q4-e': 'To not get a fine',
+        
+        'mask-quiz-submit': 'Check Answers',
+        'mask-quiz-reset': 'Retry Quiz',
+        'mask-quiz-result-title': 'Result',
+        'mask-quiz-back': 'Back'
+    }
+};
+
+// Sistema de Quiz
+class QuizSystem {
+    constructor() {
+        this.currentQuiz = null;
+        this.answers = {};
+        this.score = 0;
+        this.correctAnswers = {
+            'mask': {
+                'q1': 'b',
+                'q2': 'b', 
+                'q3': 'c',
+                'q4': 'b'
+            }
+        };
+    }
+
+    startQuiz(quizType) {
+        this.currentQuiz = quizType;
+        this.answers = {};
+        this.score = 0;
+        
+        // Limpar seleções anteriores
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+    }
+
+    submitQuiz() {
+        if (!this.currentQuiz) return;
+        
+        const quizAnswers = this.correctAnswers[this.currentQuiz];
+        let correctCount = 0;
+        const totalQuestions = Object.keys(quizAnswers).length;
+        
+        // Verificar cada resposta
+        for (const [questionId, correctAnswer] of Object.entries(quizAnswers)) {
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+            
+            if (selectedOption) {
+                const userAnswer = selectedOption.value;
+                this.answers[questionId] = userAnswer;
+                
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    // Marcar como correto
+                    selectedOption.parentElement.classList.add('correct');
+                } else {
+                    // Marcar como incorreto e mostrar a resposta correta
+                    selectedOption.parentElement.classList.add('incorrect');
+                    const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`);
+                    if (correctOption) {
+                        correctOption.parentElement.classList.add('correct');
+                    }
+                }
+            } else {
+                // Não respondida - mostrar resposta correta
+                const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`);
+                if (correctOption) {
+                    correctOption.parentElement.classList.add('correct');
+                }
+            }
+        }
+        
+        this.score = correctCount;
+        this.showResult(correctCount, totalQuestions);
+    }
+
+    showResult(correctCount, totalQuestions) {
+        const resultDiv = document.getElementById('quiz-result');
+        const scoreElement = document.getElementById('quiz-score');
+        const messageElement = document.getElementById('quiz-message');
+        
+        if (resultDiv && scoreElement && messageElement) {
+            const percentage = Math.round((correctCount / totalQuestions) * 100);
+            
+            scoreElement.textContent = this.getTranslatedText('mask-quiz-score-text') + `: ${correctCount}/${totalQuestions} (${percentage}%)`;
+            
+            if (percentage >= 70) {
+                messageElement.textContent = this.getTranslatedText('mask-quiz-success-message');
+                scoreElement.style.color = '#28a745';
+            } else {
+                messageElement.textContent = this.getTranslatedText('mask-quiz-fail-message');
+                scoreElement.style.color = '#dc3545';
+            }
+            
+            resultDiv.style.display = 'block';
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    retryQuiz() {
+        if (!this.currentQuiz) return;
+        
+        // Limpar seleções
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Limpar classes de correção
+        document.querySelectorAll('.quiz-option-label').forEach(label => {
+            label.classList.remove('correct', 'incorrect');
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+        
+        // Resetar
+        this.answers = {};
+        this.score = 0;
+        
+        // Voltar ao topo do quiz
+        const quizSection = document.querySelector('.quiz-section');
+        if (quizSection) {
+            quizSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    getTranslatedText(key) {
+        const lang = localStorage.getItem('rss3-language') || 'pt';
+        if (translations && translations[lang] && translations[lang][key]) {
+            return translations[lang][key];
+        }
+        return key;
+    }
+}
+
+// Instância global do quiz
+const quizSystem = new QuizSystem();
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado - iniciando sistema de idiomas');
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            changeLanguage(btn.getAttribute('data-lang'));
+        });
+    });
+    
+    // Iniciar quiz mask
+    quizSystem.startQuiz('mask');
+});
+
+// Funções globais para o quiz
+function checkQuiz() {
+    quizSystem.submitQuiz();
+}
+
+function resetQuiz() {
+    quizSystem.retryQuiz();
+}
+
+// Sistema de Tradução
+let currentLanguage = 'pt';
+
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Função para rolar para o conteúdo
+function scrollToContent() {
+    document.querySelector('.course-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+  </script>
+
+</body>
+</html>

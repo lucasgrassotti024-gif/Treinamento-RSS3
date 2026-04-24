@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso NR-03 - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-1px);
+    }
+
+    /* Seletor de Idiomas */
+    .language-selector {
+      display: flex;
+      gap: 5px;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--branco);
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8em;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+      color: var(--branco);
+      border-color: var(--laranja);
+    }
+
+    /* Conteúdo Principal */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0a3d91, #1a5fb8);
+      color: var(--branco);
+      padding: 60px 30px;
+      text-align: center;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    .hero-btn {
+      background: var(--laranja);
+      color: var(--branco);
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .hero-btn:hover {
+      background: #e68a00;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(255,122,0,0.3);
+    }
+
+    .course-section {
+      background: var(--branco);
+      padding: 40px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .course-section h2 {
+      color: var(--azul);
+      margin-bottom: 25px;
+      font-size: 1.8em;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-list li {
+      background: var(--cinza-claro);
+      margin-bottom: 15px;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid var(--laranja);
+      transition: all 0.3s ease;
+    }
+
+    .info-list li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .info-list strong {
+      color: var(--azul);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .alert-box {
+      background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+      border: 2px solid var(--laranja);
+      border-radius: 10px;
+      padding: 25px;
+      margin: 30px 0;
+      box-shadow: 0 4px 15px rgba(255,122,0,0.2);
+    }
+
+    .alert-box h4 {
+      color: var(--azul);
+      margin-bottom: 15px;
+      font-size: 1.3em;
+    }
+
+    .alert-box p {
+      color: var(--cinza-texto);
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    /* Quiz */
+    .quiz-section {
+      background: var(--branco);
+      padding: 40px;
+      border-radius: 12px;
+      margin-top: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .quiz-title {
+      color: var(--azul);
+      margin-bottom: 30px;
+      font-size: 1.8em;
+      text-align: center;
+    }
+
+    .quiz-question {
+      margin-bottom: 30px;
+      padding: 25px;
+      background: var(--cinza-claro);
+      border-radius: 10px;
+      border-left: 5px solid var(--azul);
+    }
+
+    .quiz-question h4 {
+      color: var(--azul);
+      margin-bottom: 20px;
+      font-size: 1.2em;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 15px;
+    }
+
+    .quiz-option-label {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background: var(--branco);
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-option-label:hover {
+      border-color: var(--azul);
+      background: rgba(10,61,145,0.05);
+    }
+
+    .quiz-option {
+      margin-right: 12px;
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .quiz-btn {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-btn:hover {
+      background: #0956b3;
+      transform: translateY(-2px);
+    }
+
+    .quiz-result {
+      background: linear-gradient(135deg, #e8f5e8, #f5f5f5);
+      border: 2px solid var(--azul);
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 30px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .quiz-result h3 {
+      color: var(--azul);
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+
+    #quiz-score {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    #quiz-message {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .correct {
+      background: #d4edda !important;
+      border-color: #28a745 !important;
+      color: #155724 !important;
+    }
+
+    .incorrect {
+      background: #f8d7da !important;
+      border-color: #dc3545 !important;
+      color: #721c24 !important;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      header, footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 40px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .course-section, .quiz-section {
+        padding: 25px;
+      }
+
+      .quiz-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>RSS<span>3</span> Treinamentos</h1>
+  <nav>
+    <a href="../index.html" data-translate="nav-back">Voltar</a>
+    <a href="../sobre.html" data-translate="nav-about">Sobre</a>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 data-translate="nr03-hero-title">NR-03 Embargo ou Interdição</h1>
+    <p data-translate="nr03-hero-subtitle">
+      Procedimentos essenciais de bloqueio e sinalização para garantir 
+      segurança durante manutenções e serviços especiais.
+    </p>
+    <a href="#conteudo" class="hero-btn" data-translate="nr03-hero-btn">Começar Curso</a>
+  </div>
+</section>
+
+<main id="conteudo">
+  <section class="course-section">
+    <h2 data-translate="nr03-section-1-title">O que é Embargo ou Interdição?</h2>
+    <p data-translate="nr03-section-1-text">
+      Embargo ou interdição é um procedimento de segurança que impede 
+      a energização de máquinas e equipamentos durante manutenções, 
+      reparos ou serviços especiais. É uma medida preventiva 
+      fundamental para proteger trabalhadores contra acidentes.
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr03-point-1">
+        <strong>Objetivo Principal:</strong>
+        Bloquear todas as fontes de energia para evitar acidentes.
+      </li>
+      <li data-translate="nr03-point-2">
+        <strong>Quando Aplicar:</strong>
+        Durante manutenções, limpezas, reparos e inspeções.
+      </li>
+      <li data-translate="nr03-point-3">
+        <strong>Tipos de Bloqueio:</strong>
+        Elétrico, mecânico, hidráulico e pneumático.
+      </li>
+      <li data-translate="nr03-point-4">
+        <strong>Sinalização:</strong>
+        Placas e etiquetas que indicam equipamento bloqueado.
+      </li>
+      <li data-translate="nr03-point-5">
+        <strong>Responsável:</strong>
+        Profissional autorizado e capacitado para o bloqueio.
+      </li>
+    </ul>
+  </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr03-section-2-title">Procedimentos de Bloqueio</h2>
+    <p data-translate="nr03-section-2-text">
+      Os procedimentos de bloqueio devem ser seguidos rigorosamente 
+      para garantir a segurança de todos os envolvidos no processo.
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr03-procedure-1">
+        <strong>Preparação:</strong>
+        Identificar fontes de energia e verificar equipamentos.
+      </li>
+      <li data-translate="nr03-procedure-2">
+        <strong>Comunicação:</strong>
+        Informar todos os trabalhadores sobre o bloqueio.
+      </li>
+      <li data-translate="nr03-procedure-3">
+        <strong>Bloqueio:</strong>
+        Aplicar cadeados e travas em todas as fontes.
+      </li>
+      <li data-translate="nr03-procedure-4">
+        <strong>Verificação:</strong>
+        Confirmar que a energia está realmente cortada.
+      </li>
+      <li data-translate="nr03-procedure-5">
+        <strong>Liberação:</strong>
+          Remover bloqueios apenas por profissional autorizado.
+      </li>
+      <li data-translate="nr03-procedure-6">
+        <strong>Registro:</strong>
+          Documentar todo o processo de bloqueio e desbloqueio.
+      </li>
+    </ul>
+  </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr03-section-3-title">Equipamentos de Proteção</h2>
+    <p data-translate="nr03-section-3-text">
+      Para realizar o bloqueio seguro, são necessários equipamentos 
+      específicos que garantem a proteção individual e coletiva.
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr03-equipment-1">
+        <strong>Cadeados e Travas:</strong>
+        Dispositivos para bloqueio mecânico de equipamentos.
+      </li>
+      <li data-translate="nr03-equipment-2">
+        <strong>Disjuntores:</strong>
+        Para corte e seccionamento de circuitos elétricos.
+      </li>
+      <li data-translate="nr03-equipment-3">
+        <strong>Placas de Bloqueio:</strong>
+          Identificação e advertência de equipamento bloqueado.
+      </li>
+      <li data-translate="nr03-equipment-4">
+        <strong>Cadeado e Lacre:</strong>
+          Para bloqueio de válvulas e conexões hidráulicas.
+      </li>
+      <li data-translate="nr03-equipment-5">
+        <strong>Dispositivos de Grupo:</strong>
+          Bloqueio múltiplo com um único cadeado.
+      </li>
+      <li data-translate="nr03-equipment-6">
+        <strong>Equipamentos de Teste:</strong>
+          Detectores de tensão e testadores de ausência de energia.
+      </li>
+    </ul>
+  </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr03-section-4-title">Sinalização de Segurança</h2>
+    <p data-translate="nr03-section-4-text">
+      A sinalização adequada é essencial para complementar o bloqueio 
+      e alertar sobre os perigos existentes na área.
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr03-signal-1">
+        <strong>Placas de Perigo:</strong>
+          Triângulo amarelo com borda preta.
+      </li>
+      <li data-translate="nr03-signal-2">
+        <strong>Placas de Proibição:</strong>
+          Círculo vermelho com barra diagonal.
+      </li>
+      <li data-translate="nr03-signal-3">
+        <strong>Placas de Bloqueio:</strong>
+          Quadrado azul com cadeado branco.
+      </li>
+      <li data-translate="nr03-signal-4">
+        <strong>Placas de Atenção:</strong>
+          Triângulo amarelo com borda amarela.
+      </li>
+      <li data-translate="nr03-signal-5">
+        <strong>Fitas de Sinalização:</strong>
+          Cores padrão para identificação de tubulações.
+      </li>
+      <li data-translate="nr03-signal-6">
+        <strong>Etiquetas de Bloqueio:</strong>
+          Identificação do responsável pelo bloqueio.
+      </li>
+    </ul>
+  </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr03-section-5-title">Responsabilidades e Deveres</h2>
+    <p data-translate="nr03-section-5-text">
+      Todos os envolvidos no processo de bloqueio e interdição 
+      têm responsabilidades específicas que devem ser cumpridas.
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr03-responsibility-1">
+        <strong>Do Empregador:</strong>
+          Treinar, fornecer EPIs e fiscalizar procedimentos.
+      </li>
+      <li data-translate="nr03-responsibility-2">
+        <strong>Do Trabalhador:</strong>
+          Seguir procedimentos, usar EPIs e comunicar problemas.
+      </li>
+      <li data-translate="nr03-responsibility-3">
+        <strong>Do Supervisor:</strong>
+          Autorizar bloqueios, supervisionar e garantir segurança.
+      </li>
+      <li data-translate="nr03-responsibility-4">
+        <strong>Da Equipe:</strong>
+          Trabalhar em equipe, comunicar e ajudar mutuamente.
+      </li>
+      <li data-translate="nr03-responsibility-5">
+        <strong>Do Profissional de Bloqueio:</strong>
+          Executar bloqueio conforme padrões e normas.
+      </li>
+    </ul>
+  </section>
+
+  <div class="alert-box">
+    <h4 data-translate="nr03-tip-title">DICAS IMPORTANTES</h4>
+    <p data-translate="nr03-tip-text">
+      O bloqueio é uma medida de segurança que salva vidas. 
+      Nunca realize manutenção sem seguir os procedimentos corretos!
+    </p>
+  </div>
+
+  <section class="quiz-section">
+    <h2 class="quiz-title" data-translate="nr03-quiz-title">Teste seu Conhecimento</h2>
+    
+    <div class="quiz-question">
+      <h4 data-translate="nr03-quiz-question-1">1. O que significa LOTO?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="a" class="quiz-option">
+          <span data-translate="nr03-quiz-q1-a">Lockout Tagout</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="b" class="quiz-option">
+          <span data-translate="nr03-quiz-q1-b">Bloqueio Elétrico</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="c" class="quiz-option">
+          <span data-translate="nr03-quiz-q1-c">Segurança em Manutenção</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="d" class="quiz-option">
+          <span data-translate="nr03-quiz-q1-d">Procedimento de Segurança</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="e" class="quiz-option">
+          <span data-translate="nr03-quiz-q1-e">Inspeção de Equipamentos</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="nr03-quiz-question-2">2. Quando deve ser aplicado o bloqueio?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="a" class="quiz-option">
+          <span data-translate="nr03-quiz-q2-a">Apenas em emergências</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="b" class="quiz-option">
+          <span data-translate="nr03-quiz-q2-b">Durante qualquer manutenção</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="c" class="quiz-option">
+          <span data-translate="nr03-quiz-q2-c">Apenas em equipamentos elétricos</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="d" class="quiz-option">
+          <span data-translate="nr03-quiz-q2-d">Sempre que houver risco energético</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="e" class="quiz-option">
+          <span data-translate="nr03-quiz-q2-e">Quando o equipamento estiver em operação</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="nr03-quiz-question-3">3. Qual é a função principal do bloqueio?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="a" class="quiz-option">
+          <span data-translate="nr03-quiz-q3-a">Proteger equipamentos</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="b" class="quiz-option">
+          <span data-translate="nr03-quiz-q3-b">Proteger trabalhadores</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="c" class="quiz-option">
+          <span data-translate="nr03-quiz-q3-c">Evitar acidentes</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="d" class="quiz-option">
+          <span data-translate="nr03-quiz-q3-d">Cumprir normas</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="e" class="quiz-option">
+          <span data-translate="nr03-quiz-q3-e">Todas as anteriores</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="nr03-quiz-question-4">4. Quem pode realizar o bloqueio?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="a" class="quiz-option">
+          <span data-translate="nr03-quiz-q4-a">Apenas eletricistas</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="b" class="quiz-option">
+          <span data-translate="nr03-quiz-q4-b">Qualquer trabalhador treinado</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="c" class="quiz-option">
+          <span data-translate="nr03-quiz-q4-c">Apenas supervisores</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="d" class="quiz-option">
+          <span data-translate="nr03-quiz-q4-d">Profissional certificado</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="e" class="quiz-option">
+          <span data-translate="nr03-quiz-q4-e">Qualquer pessoa autorizada</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-actions">
+      <button class="quiz-btn" onclick="checkQuiz()" data-translate="nr03-quiz-submit">Verificar Respostas</button>
+      <button class="quiz-btn" onclick="resetQuiz()" data-translate="nr03-quiz-reset">Refazer Quiz</button>
+    </div>
+  </section>
+
+  <div id="quiz-result" class="quiz-result" style="display: none;">
+    <h3 data-translate="nr03-quiz-result-title">Resultado</h3>
+    <p id="quiz-score"></p>
+    <p id="quiz-message"></p>
+    <div class="quiz-actions">
+      <button class="quiz-btn" onclick="resetQuiz()" data-translate="nr03-quiz-reset">Refazer Quiz</button>
+      <button class="quiz-btn" onclick="window.location.href='../index.html'" data-translate="nr03-quiz-back">Voltar</button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-box">
+      <h4>🏢 <span data-translate="footer-courses">Cursos</span></h4>
+      <p><a href="../index.html" data-translate="footer-all-courses">Todos os cursos</a></p>
+    </div>
+    <div class="footer-box">
+      <h4>📚 <span data-translate="footer-resources">Recursos</span></h4>
+      <p><a href="../sobre.html" data-translate="footer-materials">Materiais de apoio</a></p>
+    </div>
+    <div class="footer-box">
+      <h4>📞 <span data-translate="footer-contact">Contato</span></h4>
+      <p data-translate="footer-support">Suporte RSS3</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 <span>RSS3</span> Treinamentos de Segurança
+  </div>
+</footer>
+
+<script>
+// Sistema de Tradução
+const translations = {
+    pt: {
+        'nav-back': 'Voltar',
+        'nav-about': 'Sobre',
+        'nr03-hero-title': 'NR-03 Embargo ou Interdição',
+        'nr03-hero-subtitle': 'Procedimentos essenciais de bloqueio e sinalização para garantir segurança durante manutenções e serviços especiais.',
+        'nr03-hero-btn': 'Começar Curso',
+        
+        'nr03-section-1-title': 'O que é Embargo ou Interdição?',
+        'nr03-section-1-text': 'Embargo ou interdição é um procedimento de segurança que impede a energização de máquinas e equipamentos durante manutenções, reparos ou serviços especiais. É uma medida preventiva fundamental para proteger trabalhadores contra acidentes.',
+        'nr03-point-1': '<strong>Objetivo Principal:</strong> Bloquear todas as fontes de energia para evitar acidentes.',
+        'nr03-point-2': '<strong>Quando Aplicar:</strong> Durante manutenções, limpezas, reparos e inspeções.',
+        'nr03-point-3': '<strong>Tipos de Bloqueio:</strong> Elétrico, mecânico, hidráulico e pneumático.',
+        'nr03-point-4': '<strong>Sinalização:</strong> Placas e etiquetas que indicam equipamento bloqueado.',
+        'nr03-point-5': '<strong>Responsável:</strong> Profissional autorizado e capacitado para o bloqueio.',
+        
+        'nr03-section-2-title': 'Procedimentos de Bloqueio',
+        'nr03-section-2-text': 'Os procedimentos de bloqueio devem ser seguidos rigorosamente para garantir a segurança de todos os envolvidos no processo.',
+        'nr03-procedure-1': '<strong>Preparação:</strong> Identificar fontes de energia e verificar equipamentos.',
+        'nr03-procedure-2': '<strong>Comunicação:</strong> Informar todos os trabalhadores sobre o bloqueio.',
+        'nr03-procedure-3': '<strong>Bloqueio:</strong> Aplicar cadeados e travas em todas as fontes.',
+        'nr03-procedure-4': '<strong>Verificação:</strong> Confirmar que a energia está realmente cortada.',
+        'nr03-procedure-5': '<strong>Liberação:</strong> Remover bloqueios apenas por profissional autorizado.',
+        'nr03-procedure-6': '<strong>Registro:</strong> Documentar todo o processo de bloqueio e desbloqueio.',
+        
+        'nr03-section-3-title': 'Equipamentos de Proteção',
+        'nr03-section-3-text': 'Para realizar o bloqueio seguro, são necessários equipamentos específicos que garantem a proteção individual e coletiva.',
+        'nr03-equipment-1': '<strong>Cadeados e Travas:</strong> Dispositivos para bloqueio mecânico de equipamentos.',
+        'nr03-equipment-2': '<strong>Disjuntores:</strong> Para corte e seccionamento de circuitos elétricos.',
+        'nr03-equipment-3': '<strong>Placas de Bloqueio:</strong> Identificação e advertência de equipamento bloqueado.',
+        'nr03-equipment-4': '<strong>Cadeado e Lacre:</strong> Para bloqueio de válvulas e conexões hidráulicas.',
+        'nr03-equipment-5': '<strong>Dispositivos de Grupo:</strong> Bloqueio múltiplo com um único cadeado.',
+        'nr03-equipment-6': '<strong>Equipamentos de Teste:</strong> Detectores de tensão e testadores de ausência de energia.',
+        
+        'nr03-section-4-title': 'Sinalização de Segurança',
+        'nr03-section-4-text': 'A sinalização adequada é essencial para complementar o bloqueio e alertar sobre os perigos existentes na área.',
+        'nr03-signal-1': '<strong>Placas de Perigo:</strong> Triângulo amarelo com borda preta.',
+        'nr03-signal-2': '<strong>Placas de Proibição:</strong> Círculo vermelho com barra diagonal.',
+        'nr03-signal-3': '<strong>Placas de Bloqueio:</strong> Quadrado azul com cadeado branco.',
+        'nr03-signal-4': '<strong>Placas de Atenção:</strong> Triângulo amarelo com borda amarela.',
+        'nr03-signal-5': '<strong>Fitas de Sinalização:</strong> Cores padrão para identificação de tubulações.',
+        'nr03-signal-6': '<strong>Etiquetas de Bloqueio:</strong> Identificação do responsável pelo bloqueio.',
+        
+        'nr03-section-5-title': 'Responsabilidades e Deveres',
+        'nr03-section-5-text': 'Todos os envolvidos no processo de bloqueio e interdição têm responsabilidades específicas que devem ser cumpridas.',
+        'nr03-responsibility-1': '<strong>Do Empregador:</strong> Treinar, fornecer EPIs e fiscalizar procedimentos.',
+        'nr03-responsibility-2': '<strong>Do Trabalhador:</strong> Seguir procedimentos, usar EPIs e comunicar problemas.',
+        'nr03-responsibility-3': '<strong>Do Supervisor:</strong> Autorizar bloqueios, supervisionar e garantir segurança.',
+        'nr03-responsibility-4': '<strong>Da Equipe:</strong> Trabalhar em equipe, comunicar e ajudar mutuamente.',
+        'nr03-responsibility-5': '<strong>Do Profissional de Bloqueio:</strong> Executar bloqueio conforme padrões e normas.',
+        
+        'nr03-tip-title': 'DICAS IMPORTANTES',
+        'nr03-tip-text': 'O bloqueio é uma medida de segurança que salva vidas. Nunca realize manutenção sem seguir os procedimentos corretos!',
+        
+        'nr03-quiz-title': 'Teste seu Conhecimento',
+        'nr03-quiz-question-1': '1. O que significa LOTO?',
+        'nr03-quiz-q1-a': 'Lockout Tagout',
+        'nr03-quiz-q1-b': 'Bloqueio Elétrico',
+        'nr03-quiz-q1-c': 'Segurança em Manutenção',
+        'nr03-quiz-q1-d': 'Procedimento de Segurança',
+        'nr03-quiz-q1-e': 'Inspeção de Equipamentos',
+        
+        'nr03-quiz-question-2': '2. Quando deve ser aplicado o bloqueio?',
+        'nr03-quiz-q2-a': 'Apenas em emergências',
+        'nr03-quiz-q2-b': 'Durante qualquer manutenção',
+        'nr03-quiz-q2-c': 'Apenas em equipamentos elétricos',
+        'nr03-quiz-q2-d': 'Sempre que houver risco energético',
+        'nr03-quiz-q2-e': 'Quando o equipamento estiver em operação',
+        
+        'nr03-quiz-question-3': '3. Qual é a função principal do bloqueio?',
+        'nr03-quiz-q3-a': 'Proteger equipamentos',
+        'nr03-quiz-q3-b': 'Proteger trabalhadores',
+        'nr03-quiz-q3-c': 'Evitar acidentes',
+        'nr03-quiz-q3-d': 'Cumprir normas',
+        'nr03-quiz-q3-e': 'Todas as anteriores',
+        
+        'nr03-quiz-question-4': '4. Quem pode realizar o bloqueio?',
+        'nr03-quiz-q4-a': 'Apenas eletricistas',
+        'nr03-quiz-q4-b': 'Qualquer trabalhador treinado',
+        'nr03-quiz-q4-c': 'Apenas supervisores',
+        'nr03-quiz-q4-d': 'Profissional certificado',
+        'nr03-quiz-q4-e': 'Qualquer pessoa autorizada',
+        
+        'nr03-quiz-submit': 'Verificar Respostas',
+        'nr03-quiz-reset': 'Refazer Quiz',
+        'nr03-quiz-result-title': 'Resultado',
+        'nr03-quiz-back': 'Voltar',
+        'nr03-quiz-score-text': 'Sua pontuação',
+        'nr03-quiz-success-message': 'Parabéns! Você demonstrou excelente conhecimento sobre bloqueio e interdição, essencial para a segurança em manutenções.',
+        'nr03-quiz-fail-message': 'Estude um pouco mais. O bloqueio correto salva vidas e é fundamental para prevenir acidentes graves.',
+        
+        'footer-courses': 'Cursos',
+        'footer-all-courses': 'Todos os cursos',
+        'footer-resources': 'Recursos',
+        'footer-materials': 'Materiais de apoio',
+        'footer-contact': 'Contato',
+        'footer-support': 'Suporte RSS3'
+    },
+    
+    es: {
+        'nav-back': 'Volver',
+        'nav-about': 'Acerca de',
+        'nr03-hero-title': 'NR-03 Embargo o Interdicción',
+        'nr03-hero-subtitle': 'Procedimientos esenciales de bloqueo y señalización para garantizar seguridad durante mantenimientos y servicios especiales.',
+        'nr03-hero-btn': 'Comenzar Curso',
+        
+        'nr03-section-1-title': '¿Qué es Embargo o Interdicción?',
+        'nr03-section-1-text': 'El embargo o interdicción es un procedimiento de seguridad que impide la energización de máquinas y equipos durante mantenimientos, reparos o servicios especiales. Es una medida preventiva fundamental para proteger a los trabajadores contra accidentes.',
+        'nr03-point-1': '<strong>Objetivo Principal:</strong> Bloquear todas las fuentes de energía para evitar accidentes.',
+        'nr03-point-2': '<strong>Cuándo Aplicar:</strong> Durante mantenimientos, limpiezas, reparos e inspecciones.',
+        'nr03-point-3': '<strong>Tipos de Bloqueo:</strong> Eléctrico, mecánico, hidráulico y neumático.',
+        'nr03-point-4': '<strong>Señalización:</strong> Placas y etiquetas que indican equipo bloqueado.',
+        'nr03-point-5': '<strong>Responsable:</strong> Profesional autorizado y capacitado para el bloqueo.',
+        
+        'nr03-section-2-title': 'Procedimientos de Bloqueo',
+        'nr03-section-2-text': 'Los procedimientos de bloqueo deben ser seguidos rigurosamente para garantizar la seguridad de todos los involucrados en el proceso.',
+        'nr03-procedure-1': '<strong>Preparación:</strong> Identificar fuentes de energía y verificar equipos.',
+        'nr03-procedure-2': '<strong>Comunicación:</strong> Informar a todos los trabajadores sobre el bloqueo.',
+        'nr03-procedure-3': '<strong>Bloqueo:</strong> Aplicar candados y trancas en todas las fuentes.',
+        'nr03-procedure-4': '<strong>Verificación:</strong> Confirmar que la energía está realmente cortada.',
+        'nr03-procedure-5': '<strong>Liberación:</strong> Remover bloqueos solo por profesional autorizado.',
+        'nr03-procedure-6': '<strong>Registro:</strong> Documentar todo el proceso de bloqueo y desbloqueo.',
+        
+        'nr03-section-3-title': 'Equipamentos de Protección',
+        'nr03-section-3-text': 'Para realizar el bloqueo seguro, son necesarios equipos específicos que garanten la protección individual y colectiva.',
+        'nr03-equipment-1': '<strong>Candados y Trancas:</strong> Dispositivos para bloqueo mecánico de equipos.',
+        'nr03-equipment-2': '<strong>Disyuntores:</strong> Para corte y seccionamiento de circuitos eléctricos.',
+        'nr03-equipment-3': '<strong>Placas de Bloqueo:</strong> Identificación y advertencia de equipo bloqueado.',
+        'nr03-equipment-4': '<strong>Candado y Sello:</strong> Para bloqueo de válvulas y conexiones hidráulicas.',
+        'nr03-equipment-5': '<strong>Dispositivos de Grupo:</strong> Bloqueo múltiple con un único candado.',
+        'nr03-equipment-6': '<strong>Equipamentos de Prueba:</strong> Detectores de tensión y probadores de ausencia de energía.',
+        
+        'nr03-section-4-title': 'Señalización de Seguridad',
+        'nr03-section-4-text': 'La señalización adecuada es esencial para complementar el bloqueo y alertar sobre los peligros existentes en el área.',
+        'nr03-signal-1': '<strong>Placas de Peligro:</strong> Triángulo amarillo con borde negro.',
+        'nr03-signal-2': '<strong>Placas de Prohibición:</strong> Círculo rojo con barra diagonal.',
+        'nr03-signal-3': '<strong>Placas de Bloqueo:</strong> Cuadrado azul con candado blanco.',
+        'nr03-signal-4': '<strong>Placas de Atención:</strong> Triángulo amarillo con borde amarillo.',
+        'nr03-signal-5': '<strong>Cintas de Señalización:</strong> Colores estándar para identificación de tuberías.',
+        'nr03-signal-6': '<strong>Etiquetas de Bloqueo:</strong> Identificación del responsable por el bloqueo.',
+        
+        'nr03-section-5-title': 'Responsabilidades y Deberes',
+        'nr03-section-5-text': 'Todos los involucrados en el proceso de bloqueo e interdicción tienen responsabilidades específicas que deben ser cumplidas.',
+        'nr03-responsibility-1': '<strong>Del Empleador:</strong> Entrenar, proporcionar EPIs y fiscalizar procedimientos.',
+        'nr03-responsibility-2': '<strong>Del Trabajador:</strong> Seguir procedimientos, usar EPIs y comunicar problemas.',
+        'nr03-responsibility-3': '<strong>Del Supervisor:</strong> Autorizar bloqueos, supervisar y garantizar seguridad.',
+        'nr03-responsibility-4': '<strong>Del Equipo:</strong> Trabajar en equipo, comunicar y ayudarse mutuamente.',
+        'nr03-responsibility-5': '<strong>Del Profesional de Bloqueo:</strong> Ejecutar bloqueo conforme estándares y normas.',
+        
+        'nr03-tip-title': 'CONSEJOS IMPORTANTES',
+        'nr03-tip-text': 'El bloqueo es una medida de seguridad que salva vidas. ¡Nunca realice mantenimiento sin seguir los procedimientos correctos!',
+        
+        'nr03-quiz-title': 'Pruebe su Conocimiento',
+        'nr03-quiz-question-1': '1. ¿Qué significa LOTO?',
+        'nr03-quiz-q1-a': 'Lockout Tagout',
+        'nr03-quiz-q1-b': 'Bloqueo Eléctrico',
+        'nr03-quiz-q1-c': 'Seguridad en Mantenimiento',
+        'nr03-quiz-q1-d': 'Procedimiento de Seguridad',
+        'nr03-quiz-q1-e': 'Inspección de Equipos',
+        
+        'nr03-quiz-question-2': '2. ¿Cuándo debe aplicarse el bloqueo?',
+        'nr03-quiz-q2-a': 'Solo en emergencias',
+        'nr03-quiz-q2-b': 'Durante cualquier mantenimiento',
+        'nr03-quiz-q2-c': 'Solo en equipos eléctricos',
+        'nr03-quiz-q2-d': 'Siempre que haya riesgo energético',
+        'nr03-quiz-q2-e': 'Cuando el equipo esté en operación',
+        
+        'nr03-quiz-question-3': '3. ¿Cuál es la función principal del bloqueo?',
+        'nr03-quiz-q3-a': 'Proteger equipos',
+        'nr03-quiz-q3-b': 'Proteger trabajadores',
+        'nr03-quiz-q3-c': 'Evitar accidentes',
+        'nr03-quiz-q3-d': 'Cumplir normas',
+        'nr03-quiz-q3-e': 'Todas las anteriores',
+        
+        'nr03-quiz-question-4': '4. ¿Quién puede realizar el bloqueo?',
+        'nr03-quiz-q4-a': 'Solo electricistas',
+        'nr03-quiz-q4-b': 'Cual trabajador entrenado',
+        'nr03-quiz-q4-c': 'Solo supervisores',
+        'nr03-quiz-q4-d': 'Profesional certificado',
+        'nr03-quiz-q4-e': 'Cual persona autorizada',
+        
+        'nr03-quiz-submit': 'Verificar Respuestas',
+        'nr03-quiz-reset': 'Rehacer Quiz',
+        'nr03-quiz-result-title': 'Resultado',
+        'nr03-quiz-back': 'Volver',
+        'nr03-quiz-score-text': 'Su puntuación',
+        'nr03-quiz-success-message': '¡Felicidades! Usted demostró excelente conocimiento sobre bloqueo e interdicción, esencial para la seguridad en mantenimientos.',
+        'nr03-quiz-fail-message': 'Estudie un poco más. El bloqueo correcto salva vidas y es fundamental para prevenir accidentes graves.',
+        
+        'footer-courses': 'Cursos',
+        'footer-all-courses': 'Todos los cursos',
+        'footer-resources': 'Recursos',
+        'footer-materials': 'Materiales de apoyo',
+        'footer-contact': 'Contacto',
+        'footer-support': 'Soporte RSS3'
+    },
+    
+    en: {
+        'nav-back': 'Back',
+        'nav-about': 'About',
+        'nr03-hero-title': 'NR-03 Lockout/Tagout',
+        'nr03-hero-subtitle': 'Essential lockout and signaling procedures to ensure safety during maintenance and special services.',
+        'nr03-hero-btn': 'Start Course',
+        
+        'nr03-section-1-title': 'What is Lockout/Tagout?',
+        'nr03-section-1-text': 'Lockout/tagout is a safety procedure that prevents energization of machines and equipment during maintenance, repairs or special services. It is a fundamental preventive measure to protect workers from accidents.',
+        'nr03-point-1': '<strong>Main Objective:</strong> Block all energy sources to prevent accidents.',
+        'nr03-point-2': '<strong>When to Apply:</strong> During maintenance, cleaning, repairs and inspections.',
+        'nr03-point-3': '<strong>Types of Lockout:</strong> Electrical, mechanical, hydraulic and pneumatic.',
+        'nr03-point-4': '<strong>Signaling:</strong> Plates and labels indicating blocked equipment.',
+        'nr03-point-5': '<strong>Responsible:</strong> Authorized and trained professional for lockout.',
+        
+        'nr03-section-2-title': 'Lockout Procedures',
+        'nr03-section-2-text': 'Lockout procedures must be strictly followed to ensure the safety of everyone involved in the process.',
+        'nr03-procedure-1': '<strong>Preparation:</strong> Identify energy sources and verify equipment.',
+        'nr03-procedure-2': '<strong>Communication:</strong> Inform all workers about the lockout.',
+        'nr03-procedure-3': '<strong>Lockout:</strong> Apply locks and latches on all sources.',
+        'nr03-procedure-4': '<strong>Verification:</strong> Confirm that energy is actually cut off.',
+        'nr03-procedure-5': '<strong>Release:</strong> Remove locks only by authorized professional.',
+        'nr03-procedure-6': '<strong>Registration:</strong> Document the entire lockout and unlock process.',
+        
+        'nr03-section-3-title': 'Protection Equipment',
+        'nr03-section-3-text': 'To perform safe lockout, specific equipment is necessary that guarantees individual and collective protection.',
+        'nr03-equipment-1': '<strong>Locks and Latches:</strong> Devices for mechanical equipment lockout.',
+        'nr03-equipment-2': '<strong>Disconnect Switches:</strong> For cutting and sectioning electrical circuits.',
+        'nr03-equipment-3': '<strong>Lockout Plates:</strong> Identification and warning of blocked equipment.',
+        'nr03-equipment-4': '<strong>Lock and Seal:</strong> For locking valves and hydraulic connections.',
+        'nr03-equipment-5': '<strong>Group Devices:</strong> Multiple lockout with a single lock.',
+        'nr03-equipment-6': '<strong>Test Equipment:</strong> Voltage detectors and absence of energy testers.',
+        
+        'nr03-section-4-title': 'Safety Signaling',
+        'nr03-section-4-text': 'Proper signaling is essential to complement lockout and alert about existing hazards in the area.',
+        'nr03-signal-1': '<strong>Danger Plates:</strong> Yellow triangle with black border.',
+        'nr03-signal-2': '<strong>Prohibition Plates:</strong> Red circle with diagonal bar.',
+        'nr03-signal-3': '<strong>Lockout Plates:</strong> Blue square with white padlock.',
+        'nr03-signal-4': '<strong>Attention Plates:</strong> Yellow triangle with yellow border.',
+        'nr03-signal-5': '<strong>Signaling Tapes:</strong> Standard colors for pipe identification.',
+        'nr03-signal-6': '<strong>Lockout Labels:</strong> Identification of responsible for lockout.',
+        
+        'nr03-section-5-title': 'Responsibilities and Duties',
+        'nr03-section-5-text': 'Everyone involved in the lockout/tagout process has specific responsibilities that must be fulfilled.',
+        'nr03-responsibility-1': '<strong>From Employer:</strong> Train, provide PPEs and monitor procedures.',
+        'nr03-responsibility-2': '<strong>From Worker:</strong> Follow procedures, use PPEs and communicate problems.',
+        'nr03-responsibility-3': '<strong>From Supervisor:</strong> Authorize lockouts, supervise and ensure safety.',
+        'nr03-responsibility-4': '<strong>From Team:</strong> Work as a team, communicate and help each other.',
+        'nr03-responsibility-5': '<strong>From Lockout Professional:</strong> Execute lockout according to standards and regulations.',
+        
+        'nr03-tip-title': 'IMPORTANT TIPS',
+        'nr03-tip-text': 'Lockout is a safety measure that saves lives. Never perform maintenance without following correct procedures!',
+        
+        'nr03-quiz-title': 'Test your Knowledge',
+        'nr03-quiz-question-1': '1. What does LOTO mean?',
+        'nr03-quiz-q1-a': 'Lockout Tagout',
+        'nr03-quiz-q1-b': 'Electrical Lockout',
+        'nr03-quiz-q1-c': 'Maintenance Safety',
+        'nr03-quiz-q1-d': 'Safety Procedure',
+        'nr03-quiz-q1-e': 'Equipment Inspection',
+        
+        'nr03-quiz-question-2': '2. When should lockout be applied?',
+        'nr03-quiz-q2-a': 'Only in emergencies',
+        'nr03-quiz-q2-b': 'During any maintenance',
+        'nr03-quiz-q2-c': 'Only to electrical equipment',
+        'nr03-quiz-q2-d': 'Whenever there is energy risk',
+        'nr03-quiz-q2-e': 'When equipment is in operation',
+        
+        'nr03-quiz-question-3': '3. What is the main function of lockout?',
+        'nr03-quiz-q3-a': 'Protect equipment',
+        'nr03-quiz-q3-b': 'Protect workers',
+        'nr03-quiz-q3-c': 'Prevent accidents',
+        'nr03-quiz-q3-d': 'Comply with standards',
+        'nr03-quiz-q3-e': 'All of the above',
+        
+        'nr03-quiz-question-4': '4. Who can perform lockout?',
+        'nr03-quiz-q4-a': 'Only electricians',
+        'nr03-quiz-q4-b': 'Any trained worker',
+        'nr03-quiz-q4-c': 'Only supervisors',
+        'nr03-quiz-q4-d': 'Certified professional',
+        'nr03-quiz-q4-e': 'Any authorized person',
+        
+        'nr03-quiz-submit': 'Check Answers',
+        'nr03-quiz-reset': 'Retry Quiz',
+        'nr03-quiz-result-title': 'Result',
+        'nr03-quiz-back': 'Back',
+        'nr03-quiz-score-text': 'Your score',
+        'nr03-quiz-success-message': 'Congratulations! You demonstrated excellent knowledge about lockout and tagout, essential for safety in maintenance.',
+        'nr03-quiz-fail-message': 'Study a little more. Correct lockout saves lives and is fundamental to prevent serious accidents.',
+        
+        'footer-courses': 'Courses',
+        'footer-all-courses': 'All Courses',
+        'footer-resources': 'Resources',
+        'footer-materials': 'Support Materials',
+        'footer-contact': 'Contact',
+        'footer-support': 'RSS3 Support'
+    }
+};
+
+// Sistema de Quiz
+class QuizSystem {
+    constructor() {
+        this.currentQuiz = null;
+        this.answers = {};
+        this.score = 0;
+        this.correctAnswers = {
+            'nr03': {
+                'q1': 'a',
+                'q2': 'b',
+                'q3': 'b',
+                'q4': 'b'
+            }
+        };
+    }
+
+    startQuiz(quizType) {
+        this.currentQuiz = quizType;
+        this.answers = {};
+        this.score = 0;
+        
+        // Limpar seleções anteriores
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+    }
+
+    submitQuiz() {
+        if (!this.currentQuiz) return;
+        
+        const quizAnswers = this.correctAnswers[this.currentQuiz];
+        let correctCount = 0;
+        const totalQuestions = Object.keys(quizAnswers).length;
+        
+        // Verificar cada resposta
+        for (const [questionId, correctAnswer] of Object.entries(quizAnswers)) {
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+            
+            if (selectedOption) {
+                const userAnswer = selectedOption.value;
+                this.answers[questionId] = userAnswer;
+                
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    // Marcar como correto
+                    selectedOption.parentElement.classList.add('correct');
+                } else {
+                    // Marcar como incorreto e mostrar a resposta correta
+                    selectedOption.parentElement.classList.add('incorrect');
+                    const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`);
+                    if (correctOption) {
+                        correctOption.parentElement.classList.add('correct');
+                    }
+                }
+            } else {
+                // Não respondida - mostrar resposta correta
+                const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`);
+                if (correctOption) {
+                    correctOption.parentElement.classList.add('correct');
+                }
+            }
+        }
+        
+        this.score = correctCount;
+        this.showResult(correctCount, totalQuestions);
+    }
+
+    showResult(correctCount, totalQuestions) {
+        const resultDiv = document.getElementById('quiz-result');
+        const scoreElement = document.getElementById('quiz-score');
+        const messageElement = document.getElementById('quiz-message');
+        
+        if (resultDiv && scoreElement && messageElement) {
+            const percentage = Math.round((correctCount / totalQuestions) * 100);
+            
+            scoreElement.textContent = this.getTranslatedText('nr03-quiz-score-text') + `: ${correctCount}/${totalQuestions} (${percentage}%)`;
+            
+            if (percentage >= 70) {
+                messageElement.textContent = this.getTranslatedText('nr03-quiz-success-message');
+                scoreElement.style.color = '#28a745';
+            } else {
+                messageElement.textContent = this.getTranslatedText('nr03-quiz-fail-message');
+                scoreElement.style.color = '#dc3545';
+            }
+            
+            resultDiv.style.display = 'block';
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    retryQuiz() {
+        if (!this.currentQuiz) return;
+        
+        // Limpar seleções
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Limpar classes de correção
+        document.querySelectorAll('.quiz-option-label').forEach(label => {
+            label.classList.remove('correct', 'incorrect');
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+        
+        // Resetar
+        this.answers = {};
+        this.score = 0;
+        
+        // Voltar ao topo do quiz
+        const quizSection = document.querySelector('.quiz-section');
+        if (quizSection) {
+            quizSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    getTranslatedText(key) {
+        const lang = localStorage.getItem('rss3-language') || 'pt';
+        if (translations && translations[lang] && translations[lang][key]) {
+            return translations[lang][key];
+        }
+        return key;
+    }
+}
+
+// Instância global do quiz
+const quizSystem = new QuizSystem();
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado - iniciando sistema de idiomas');
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            changeLanguage(btn.getAttribute('data-lang'));
+        });
+    });
+    
+    // Iniciar quiz nr03
+    quizSystem.startQuiz('nr03');
+});
+
+// Funções globais para o quiz
+function checkQuiz() {
+    quizSystem.submitQuiz();
+}
+
+function resetQuiz() {
+    quizSystem.retryQuiz();
+}
+
+// Sistema de Tradução
+let currentLanguage = 'pt';
+
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Função para rolar para o conteúdo
+function scrollToContent() {
+    document.querySelector('.course-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+  </script>
+
+</body>
+</html>

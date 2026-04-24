@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso Descarte Correto de Resíduos - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--laranja);
+    }
+
+    .language-selector {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: var(--branco);
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--azul), #1a5fb4);
+      color: var(--branco);
+      padding: 60px 40px;
+      border-radius: 15px;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .hero h1 {
+      font-size: 2.8em;
+      margin: 0 0 15px 0;
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      margin: 0 0 30px 0;
+      opacity: 0.9;
+    }
+
+    .start-btn {
+      background: var(--laranja);
+      color: var(--branco);
+      border: none;
+      padding: 15px 35px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-weight: bold;
+    }
+
+    .start-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255,122,0,0.4);
+    }
+
+    .course-section {
+      background: var(--branco);
+      padding: 40px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .course-section h2 {
+      color: var(--azul);
+      font-size: 1.8em;
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--laranja);
+      padding-bottom: 10px;
+    }
+
+    .course-section p {
+      font-size: 1.1em;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .info-list li {
+      background: var(--cinza-claro);
+      padding: 15px 20px;
+      margin-bottom: 10px;
+      border-left: 5px solid var(--laranja);
+      border-radius: 5px;
+      font-size: 1.05em;
+    }
+
+    .info-list li strong {
+      color: var(--azul);
+    }
+
+    .epi-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 30px 0;
+    }
+
+    .epi-type-card {
+      background: var(--branco);
+      border: 2px solid var(--cinza-claro);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .epi-type-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      border-color: var(--laranja);
+    }
+
+    .epi-type-icon {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+
+    .epi-type-title {
+      color: var(--azul);
+      font-size: 1.3em;
+      margin: 0 0 10px 0;
+    }
+
+    .epi-type-desc {
+      color: var(--cinza-texto);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .alert-box {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .alert-box h3 {
+      color: #856404;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .alert-box p {
+      color: #856404;
+      margin: 0;
+    }
+
+    .danger-box {
+      background: #f8d7da;
+      border: 2px solid #dc3545;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .danger-box h3 {
+      color: #721c24;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .danger-box p {
+      color: #721c24;
+      margin: 0;
+    }
+
+    .quiz-section {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      padding: 40px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .quiz-section h2 {
+      color: var(--azul);
+      font-size: 1.8em;
+      margin-top: 0;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .question {
+      background: var(--branco);
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .question h3 {
+      color: var(--azul);
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.2em;
+    }
+
+    .options {
+      display: grid;
+      gap: 12px;
+    }
+
+    .option {
+      background: var(--cinza-claro);
+      border: 2px solid transparent;
+      padding: 15px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .option:hover {
+      background: #e8f4fd;
+      border-color: var(--azul);
+    }
+
+    .option.selected {
+      background: #d4edda;
+      border-color: #28a745;
+    }
+
+    .option.correct {
+      background: #d4edda;
+      border-color: #28a745;
+    }
+
+    .option.incorrect {
+      background: #f8d7da;
+      border-color: #dc3545;
+    }
+
+    .quiz-actions {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .quiz-btn {
+      background: var(--azul);
+      color: var(--branco);
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 0 10px;
+      transition: background 0.3s;
+    }
+
+    .quiz-btn:hover {
+      background: #0a2d6b;
+    }
+
+    .quiz-btn.primary {
+      background: var(--laranja);
+    }
+
+    .quiz-btn.primary:hover {
+      background: #e66800;
+    }
+
+    .result-container {
+      text-align: center;
+      padding: 30px;
+      background: var(--branco);
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .result-container h3 {
+      color: var(--azul);
+      font-size: 1.8em;
+      margin-top: 0;
+    }
+
+    .score {
+      font-size: 3em;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .score.pass {
+      color: #28a745;
+    }
+
+    .score.fail {
+      color: #dc3545;
+    }
+
+    .result-message {
+      font-size: 1.2em;
+      margin: 20px 0;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      header, footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 40px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2.2em;
+      }
+
+      .course-section, .quiz-section {
+        padding: 25px;
+      }
+
+      .epi-types-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1><span>RSS3</span> Treinamentos</h1>
+    </div>
+    <nav>
+      <a href="../index.html" data-translate="nav-back">Voltar</a>
+      <a href="#" data-translate="nav-about">Sobre</a>
+    </nav>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1 data-translate="waste-hero-title">Descarte Correto de Resíduos</h1>
+      <p data-translate="waste-hero-subtitle">Lixo no lugar certo protege todos e o meio ambiente</p>
+      <button class="start-btn" onclick="scrollToContent()" data-translate="waste-hero-btn">Começar Curso</button>
+    </div>
+
+    <section class="course-section">
+      <h2 data-translate="waste-section-1-title">O que são resíduos na obra?</h2>
+      <p data-translate="waste-section-1-text">
+        Resíduos são tudo que não usamos mais e precisa ser jogado fora. 
+        Na obra e na indústria, temos muitos tipos de lixo que precisam ser 
+        separados e descartados corretamente.
+      </p>
+      
+      <div class="epi-types-grid">
+        <div class="epi-type-card">
+          <div class="epi-type-icon">delete</div>
+          <h3 class="epi-type-title" data-translate="waste-type-1-title">Sobra de Material</h3>
+          <p class="epi-type-desc" data-translate="waste-type-1-desc">Restos de madeira, metal, plástico e outros materiais.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">cleaning_services</div>
+          <h3 class="epi-type-title" data-translate="waste-type-2-title">Embalagens</h3>
+          <p class="epi-type-desc" data-translate="waste-type-2-desc">Caixas, sacolas, potes e embalagens de produtos.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">science</div>
+          <h3 class="epi-type-title" data-translate="waste-type-3-title">Produtos Químicos</h3>
+          <p class="epi-type-desc" data-translate="waste-type-3-desc">Tintas, solventes, óleos e produtos químicos usados.</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="waste-section-2-title">Tipos de resíduos</h2>
+      <p data-translate="waste-section-2-text">
+        Na obra, temos 3 tipos principais de resíduos. Cada um vai em um lugar diferente. 
+        Separar corretamente é muito importante para a segurança e para o meio ambiente.
+      </p>
+      
+      <div class="epi-types-grid">
+        <div class="epi-type-card">
+          <div class="epi-type-icon">recycling</div>
+          <h3 class="epi-type-title" data-translate="waste-recyclable-title">Resíduo Comum</h3>
+          <p class="epi-type-desc" data-translate="waste-recyclable-desc">Lixo normal: papel, plástico comum, restos de comida limpos.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">eco</div>
+          <h3 class="epi-type-title" data-translate="waste-common-title">Resíduo Reciclável</h3>
+          <p class="epi-type-desc" data-translate="waste-common-desc">Pode ser reaproveitado: metal, papel, plástico limpo, vidro.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">warning</div>
+          <h3 class="epi-type-title" data-translate="waste-dangerous-title">Resíduo Perigoso</h3>
+          <p class="epi-type-desc" data-translate="waste-dangerous-desc">Cuidado especial: tintas, óleos, produtos químicos, material contaminado.</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="waste-section-3-title">Como fazer o descarte correto?</h2>
+      <p data-translate="waste-section-3-text">
+        Fazer o descarte certo é fácil se você seguir as regras. 
+        Cada tipo de lixo tem seu lugar certo. Veja como fazer:
+      </p>
+      
+    <div class="alert-box">
+      <h4 data-translate="waste-tip-title">DICAS IMPORTANTES</h4>
+      <p data-translate="waste-tip-text">Olhe sempre as cores das lixeiras e as placas. Cada cor tem um tipo de lixo!</p>
+    </div>
+      
+      <ul class="info-list">
+        <li data-translate="waste-step-1"><strong>1. Identifique o resíduo:</strong> Veja que tipo de material você tem na mão.</li>
+        <li data-translate="waste-step-2"><strong>2. Separe corretamente:</strong> Coloque cada tipo em seu lugar certo.</li>
+        <li data-translate="waste-step-3"><strong>3. Use as lixeiras certas:</strong> Verde para reciclável, cinza para comum, vermelha para perigoso.</li>
+        <li data-translate="waste-step-4"><strong>4. Não misture:</strong> Nunca misture resíduos perigosos com lixo normal.</li>
+        <li data-translate="waste-step-5"><strong>5. Peça ajuda:</strong> Se tiver dúvida, pergunte ao responsável.</li>
+        <li data-translate="waste-step-6"><strong>6. Mantenha limpo:</strong> Não junte lixo no chão, use sempre as lixeiras.</li>
+      </ul>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="waste-section-4-title">Por que não pode jogar lixo em qualquer lugar?</h2>
+      <p data-translate="waste-section-4-text">
+        Jogar lixo em qualquer lugar é perigoso e errado. 
+        Isso causa problemas graves para todos e para o meio ambiente.
+      </p>
+      
+      <div class="danger-box">
+        <h3>error <span data-translate="waste-danger-title">PERIGOS DO LIXO ERRADO</span></h3>
+        <p data-translate="waste-danger-text">Jogar lixo errado pode causar acidentes graves e até matar!</p>
+      </div>
+      
+      <ul class="info-list">
+        <li data-translate="waste-risk-1"><strong>Acidentes:</strong> Alguém pode tropeçar e cair no lixo jogado no chão.</li>
+        <li data-translate="waste-risk-2"><strong>Incêndios:</strong> Lixo químico pode pegar fogo facilmente.</li>
+        <li data-translate="waste-risk-3"><strong>Contaminação:</strong> Produtos químicos podem sujar o chão e a água.</li>
+        <li data-translate="waste-risk-4"><strong>Intoxicação:</strong> Gases do lixo podem fazer mal para a saúde.</li>
+        <li data-translate="waste-risk-5"><strong>Multas:</strong> Jogar lixo errado pode dar multa para a empresa.</li>
+        <li data-translate="waste-risk-6"><strong>Poluição:</strong> Estraga o meio ambiente e prejudica a natureza.</li>
+      </ul>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="waste-section-5-title">Impactos no meio ambiente</h2>
+      <p data-translate="waste-section-5-text">
+        O descarte errado de resíduos prejudica muito o meio ambiente. 
+        Nós precisamos proteger a natureza para as futuras gerações.
+      </p>
+      
+      <div class="epi-types-grid">
+        <div class="epi-type-card">
+          <div class="epi-type-icon">water_drop</div>
+          <h3 class="epi-type-title" data-translate="waste-impact-1-title">Poluição da Água</h3>
+          <p class="epi-type-desc" data-translate="waste-impact-1-desc">Lixo químico contamina rios, lagos e o mar.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">air</div>
+          <h3 class="epi-type-title" data-translate="waste-impact-2-title">Poluição do Ar</h3>
+          <p class="epi-type-desc" data-translate="waste-impact-2-desc">Lixo queimado solta fumaça venenosa.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">terrain</div>
+          <h3 class="epi-type-title" data-translate="waste-impact-3-title">Poluição do Solo</h3>
+          <p class="epi-type-desc" data-translate="waste-impact-3-desc">Lixo enterrado errado contamina a terra.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">pets</div>
+          <h3 class="epi-type-title" data-translate="waste-impact-4-title">Mata Animais</h3>
+          <p class="epi-type-desc" data-translate="waste-impact-4-desc">Animais podem comer lixo e morrer.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">forest</div>
+          <h3 class="epi-type-title" data-translate="waste-impact-5-title">Destrói Plantas</h3>
+          <p class="epi-type-desc" data-translate="waste-impact-5-desc">Lixo químico mata árvores e plantas.</p>
+        </div>
+        
+        <div class="epi-type-card">
+          <div class="epi-type-icon">public</div>
+          <h3 class="epi-type-title" data-translate="waste-impact-6-title">Prejudica Pessoas</h3>
+          <p class="epi-type-desc" data-translate="waste-impact-6-desc">Lixo errado causa doenças na comunidade.</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="waste-section-6-title">Cuidados especiais com resíduos perigosos</h2>
+      <p data-translate="waste-section-6-text">
+        Resíduos perigosos precisam de cuidado redobrado. 
+        Eles podem causar acidentes graves se não forem manuseados corretamente.
+      </p>
+      
+      <div class="danger-box">
+        <h3>priority_high <span data-translate="waste-warning-title">CUIDADO MÁXIMO!</span></h3>
+        <p data-translate="waste-warning-text">Resíduos perigosos podem matar! Use sempre EPI e siga as regras.</p>
+      </div>
+      
+      <ul class="info-list">
+        <li data-translate="waste-safety-1"><strong>Use EPI:</strong> Luvas, óculos e máscara para manusear produtos químicos.</li>
+        <li data-translate="waste-safety-2"><strong>Embale bem:</strong> Coloque em recipientes fechados e identificados.</li>
+        <li data-translate="waste-safety-3"><strong>Não misture:</strong> Nunca misture produtos químicos diferentes.</li>
+        <li data-translate="waste-safety-4"><strong>Guarde em local seguro:</strong> Longe do sol, calor e de crianças.</li>
+        <li data-translate="waste-safety-5"><strong>Avise se derramar:</strong> Limpe imediatamente e avise o responsável.</li>
+        <li data-translate="waste-safety-6"><strong>Use coletor certo:</strong> Só jogue nos coletores específicos para resíduos perigosos.</li>
+      </ul>
+      
+    </section>
+
+    <section class="course-section">
+      <h2 data-translate="waste-section-7-title">Responsabilidade de todos</h2>
+      <p data-translate="waste-section-7-text">
+        O descarte correto é responsabilidade de todos que trabalham na obra. 
+        Cada um precisa fazer sua parte para manter o ambiente seguro e limpo.
+      </p>
+      
+      <ul class="info-list">
+        <li data-translate="waste-responsibility-1"><strong>Seja exemplo:</strong> Descarte seu lixo corretamente.</li>
+        <li data-translate="waste-responsibility-2"><strong>Avise os outros:</strong> Ajude os colegas a descartar certo.</li>
+        <li data-translate="waste-responsibility-3"><strong>Denuncie erros:</strong> Avise se alguém jogar lixo errado.</li>
+        <li data-translate="waste-responsibility-4"><strong>Participe de treinamentos:</strong> Aprenda sempre mais sobre o assunto.</li>
+        <li data-translate="waste-responsibility-5"><strong>Pense no futuro:</strong> Lixo certo hoje protege o amanhã.</li>
+      </ul>
+      
+    <div class="alert-box">
+      <h4 data-translate="waste-benefit-title">BENEFÍCIOS DO DESCARTE CORRETO</h4>
+      <p data-translate="waste-benefit-text">Ambiente limpo = menos acidentes + mais segurança + natureza protegida!</p>
+    </div>
+      
+    </section>
+
+  <section class="quiz-section">
+    <h2 class="quiz-title" data-translate="waste-quiz-title">Teste seu Conhecimento</h2>
+    
+    <div class="quiz-question">
+      <h4 data-translate="waste-quiz-question-1">1. O que é resíduo perigoso?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="a" class="quiz-option">
+          <span data-translate="waste-quiz-q1-a">Lixo de papel e plástico limpo</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="b" class="quiz-option">
+          <span data-translate="waste-quiz-q1-b">Restos de comida</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="c" class="quiz-option">
+          <span data-translate="waste-quiz-q1-c">Tintas, óleos e produtos químicos</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="d" class="quiz-option">
+          <span data-translate="waste-quiz-q1-d">Folhas e galhos de árvores</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="e" class="quiz-option">
+          <span data-translate="waste-quiz-q1-e">Roupas velhas</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="waste-quiz-question-2">2. Por que não pode jogar lixo em qualquer lugar?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="a" class="quiz-option">
+          <span data-translate="waste-quiz-q2-a">Porque suja a rua</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="b" class="quiz-option">
+          <span data-translate="waste-quiz-q2-b">Porque pode causar acidentes e poluição</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="c" class="quiz-option">
+          <span data-translate="waste-quiz-q2-c">Porque o chefe não gosta</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="d" class="quiz-option">
+          <span data-translate="waste-quiz-q2-d">Porque é mais fácil</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="e" class="quiz-option">
+          <span data-translate="waste-quiz-q2-e">Porque não tem lixeira</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="waste-quiz-question-3">3. Qual a cor da lixeira para resíduos perigosos?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="a" class="quiz-option">
+          <span data-translate="waste-quiz-q3-a">Verde</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="b" class="quiz-option">
+          <span data-translate="waste-quiz-q3-b">Azul</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="c" class="quiz-option">
+          <span data-translate="waste-quiz-q3-c">Cinza</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="d" class="quiz-option">
+          <span data-translate="waste-quiz-q3-d">Vermelha</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="e" class="quiz-option">
+          <span data-translate="waste-quiz-q3-e">Amarela</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="waste-quiz-question-4">4. O que fazer com resíduos químicos?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="a" class="quiz-option">
+          <span data-translate="waste-quiz-q4-a">Jogar no lixo normal</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="b" class="quiz-option">
+          <span data-translate="waste-quiz-q4-b">Enterrar no chão</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="c" class="quiz-option">
+          <span data-translate="waste-quiz-q4-c">Usar EPI e descartar em local específico</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="d" class="quiz-option">
+          <span data-translate="waste-quiz-q4-d">Deixar no canto</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="e" class="quiz-option">
+          <span data-translate="waste-quiz-q4-e">Queimar</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-actions">
+      <button class="quiz-btn" onclick="checkQuiz()" data-translate="waste-quiz-submit">Verificar Respostas</button>
+      <button class="quiz-btn" onclick="resetQuiz()" data-translate="waste-quiz-reset">Refazer Quiz</button>
+    </div>
+  </section>
+
+  <div id="quiz-result" class="quiz-result" style="display: none;">
+    <h3 data-translate="waste-quiz-result-title">Resultado</h3>
+    <p id="quiz-score"></p>
+    <p id="quiz-message"></p>
+    <div class="quiz-actions">
+      <button class="quiz-btn" onclick="resetQuiz()" data-translate="waste-quiz-reset">Refazer Quiz</button>
+      <button class="quiz-btn" onclick="window.location.href='../index.html'" data-translate="waste-quiz-back">Voltar</button>
+    </div>
+  </div>
+
+  </main>
+
+  <footer>
+    <div>
+      <p>© 2026 <span>RSS3</span> Treinamentos de Segurança</p>
+    </div>
+    <div>
+      <p>Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+// Sistema de Tradução
+const translations = {
+    pt: {
+        'nav-back': 'Voltar',
+        'nav-about': 'Sobre',
+        'waste-hero-title': 'Descarte Correto de Resíduos',
+        'waste-hero-subtitle': 'Lixo no lugar certo protege todos e o meio ambiente',
+        'waste-hero-btn': 'Começar Curso',
+        
+        'waste-section-1-title': 'O que são resíduos na obra?',
+        'waste-section-1-text': 'Resíduos são tudo que não usamos mais e precisa ser jogado fora. Na obra e na indústria, temos muitos tipos de lixo que precisam ser separados e descartados corretamente.',
+        
+        'waste-type-1-title': 'Sobra de Material',
+        'waste-type-1-desc': 'Restos de madeira, metal, plástico e outros materiais.',
+        'waste-type-2-title': 'Embalagens',
+        'waste-type-2-desc': 'Caixas, sacolas, potes e embalagens de produtos.',
+        'waste-type-3-title': 'Produtos Químicos',
+        'waste-type-3-desc': 'Tintas, solventes, óleos e produtos químicos usados.',
+        
+        'waste-section-2-title': 'Tipos de resíduos',
+        'waste-section-2-text': 'Na obra, temos 3 tipos principais de resíduos. Cada um vai em um lugar diferente. Separar corretamente é muito importante para a segurança e para o meio ambiente.',
+        
+        'waste-recyclable-title': 'Resíduo Comum',
+        'waste-recyclable-desc': 'Lixo normal: papel, plástico comum, restos de comida limpos.',
+        'waste-common-title': 'Resíduo Reciclável',
+        'waste-common-desc': 'Pode ser reaproveitado: metal, papel, plástico limpo, vidro.',
+        'waste-dangerous-title': 'Resíduo Perigoso',
+        'waste-dangerous-desc': 'Cuidado especial: tintas, óleos, produtos químicos, material contaminado.',
+        
+        'waste-section-3-title': 'Como fazer o descarte correto?',
+        'waste-section-3-text': 'Fazer o descarte certo é fácil se você seguir as regras. Cada tipo de lixo tem seu lugar certo. Veja como fazer:',
+        
+        'waste-tip-title': 'DICAS IMPORTANTES',
+        'waste-tip-text': 'Olhe sempre as cores das lixeiras e as placas. Cada cor tem um tipo de lixo!',
+        
+        'waste-step-1': '1. Identifique o resíduo: Veja que tipo de material você tem na mão.',
+        'waste-step-2': '2. Separe corretamente: Coloque cada tipo em seu lugar certo.',
+        'waste-step-3': '3. Use as lixeiras certas: Verde para reciclável, cinza para comum, vermelha para perigoso.',
+        'waste-step-4': '4. Não misture: Nunca misture resíduos perigosos com lixo normal.',
+        'waste-step-5': '5. Peça ajuda: Se tiver dúvida, pergunte ao responsável.',
+        'waste-step-6': '6. Mantenha limpo: Não junte lixo no chão, use sempre as lixeiras.',
+        
+        'waste-section-4-title': 'Por que não pode jogar lixo em qualquer lugar?',
+        'waste-section-4-text': 'Jogar lixo em qualquer lugar é perigoso e errado. Isso causa problemas graves para todos e para o meio ambiente.',
+        
+        'waste-danger-title': 'PERIGOS DO LIXO ERRADO',
+        'waste-danger-text': 'Jogar lixo errado pode causar acidentes graves e até matar!',
+        
+        'waste-risk-1': 'Acidentes: Alguém pode tropeçar e cair no lixo jogado no chão.',
+        'waste-risk-2': 'Incêndios: Lixo químico pode pegar fogo facilmente.',
+        'waste-risk-3': 'Contaminação: Produtos químicos podem sujar o chão e a água.',
+        'waste-risk-4': 'Intoxicação: Gases do lixo podem fazer mal para a saúde.',
+        'waste-risk-5': 'Multas: Jogar lixo errado pode dar multa para a empresa.',
+        'waste-risk-6': 'Poluição: Estraga o meio ambiente e prejudica a natureza.',
+        
+        'waste-section-5-title': 'Impactos no meio ambiente',
+        'waste-section-5-text': 'O descarte errado de resíduos prejudica muito o meio ambiente. Nós precisamos proteger a natureza para as futuras gerações.',
+        
+        'waste-impact-1-title': 'Poluição da Água',
+        'waste-impact-1-desc': 'Lixo químico contamina rios, lagos e o mar.',
+        'waste-impact-2-title': 'Poluição do Ar',
+        'waste-impact-2-desc': 'Lixo queimado solta fumaça venenosa.',
+        'waste-impact-3-title': 'Poluição do Solo',
+        'waste-impact-3-desc': 'Lixo enterrado errado contamina a terra.',
+        'waste-impact-4-title': 'Mata Animais',
+        'waste-impact-4-desc': 'Animais podem comer lixo e morrer.',
+        'waste-impact-5-title': 'Destrói Plantas',
+        'waste-impact-5-desc': 'Lixo químico mata árvores e plantas.',
+        'waste-impact-6-title': 'Prejudica Pessoas',
+        'waste-impact-6-desc': 'Lixo errado causa doenças na comunidade.',
+        
+        'waste-section-6-title': 'Cuidados especiais com resíduos perigosos',
+        'waste-section-6-text': 'Resíduos perigosos precisam de cuidado redobrado. Eles podem causar acidentes graves se não forem manuseados corretamente.',
+        
+        'waste-warning-title': 'CUIDADO MÁXIMO!',
+        'waste-warning-text': 'Resíduos perigosos podem matar! Use sempre EPI e siga as regras.',
+        
+        'waste-safety-1': 'Use EPI: Luvas, óculos e máscara para manusear produtos químicos.',
+        'waste-safety-2': 'Embale bem: Coloque em recipientes fechados e identificados.',
+        'waste-safety-3': 'Não misture: Nunca misture produtos químicos diferentes.',
+        'waste-safety-4': 'Guarde em local seguro: Longe do sol, calor e de crianças.',
+        'waste-safety-5': 'Avise se derramar: Limpe imediatamente e avise o responsável.',
+        'waste-safety-6': 'Use coletor certo: Só jogue nos coletores específicos para resíduos perigosos.',
+        
+        'waste-section-7-title': 'Responsabilidade de todos',
+        'waste-section-7-text': 'O descarte correto é responsabilidade de todos que trabalham na obra. Cada um precisa fazer sua parte para manter o ambiente seguro e limpo.',
+        
+        'waste-responsibility-1': 'Seja exemplo: Descarte seu lixo corretamente.',
+        'waste-responsibility-2': 'Avise os outros: Ajude os colegas a descartar certo.',
+        'waste-responsibility-3': 'Denuncie erros: Avise se alguém jogar lixo errado.',
+        'waste-responsibility-4': 'Participe de treinamentos: Aprenda sempre mais sobre o assunto.',
+        'waste-responsibility-5': 'Pense no futuro: Lixo certo hoje protege o amanhã.',
+        
+        'waste-benefit-title': 'BENEFÍCIOS DO DESCARTE CORRETO',
+        'waste-benefit-text': 'Ambiente limpo = menos acidentes + mais segurança + natureza protegida!',
+        
+        'waste-quiz-title': 'Teste seu Conhecimento',
+        'waste-quiz-question-1': '1. O que é resíduo perigoso?',
+        'waste-quiz-q1-a': 'Lixo de papel e plástico limpo',
+        'waste-quiz-q1-b': 'Restos de comida',
+        'waste-quiz-q1-c': 'Tintas, óleos e produtos químicos',
+        'waste-quiz-q1-d': 'Folhas e galhos de árvores',
+        'waste-quiz-q1-e': 'Roupas velhas',
+        
+        'waste-quiz-question-2': '2. Por que não pode jogar lixo em qualquer lugar?',
+        'waste-quiz-q2-a': 'Porque suja a rua',
+        'waste-quiz-q2-b': 'Porque pode causar acidentes e poluição',
+        'waste-quiz-q2-c': 'Porque o chefe não gosta',
+        'waste-quiz-q2-d': 'Porque é mais fácil',
+        'waste-quiz-q2-e': 'Porque não tem lixeira',
+        
+        'waste-quiz-question-3': '3. Qual a cor da lixeira para resíduos perigosos?',
+        'waste-quiz-q3-a': 'Verde',
+        'waste-quiz-q3-b': 'Azul',
+        'waste-quiz-q3-c': 'Cinza',
+        'waste-quiz-q3-d': 'Vermelha',
+        'waste-quiz-q3-e': 'Amarela',
+        
+        'waste-quiz-question-4': '4. O que fazer com resíduos químicos?',
+        'waste-quiz-q4-a': 'Jogar no lixo normal',
+        'waste-quiz-q4-b': 'Enterrar no chão',
+        'waste-quiz-q4-c': 'Usar EPI e descartar em local específico',
+        'waste-quiz-q4-d': 'Deixar no canto',
+        'waste-quiz-q4-e': 'Queimar',
+        
+        'waste-quiz-submit': 'Verificar Respostas',
+        'waste-quiz-reset': 'Refazer Quiz',
+        'waste-quiz-result-title': 'Resultado',
+        'waste-quiz-back': 'Voltar'
+    },
+    
+    es: {
+        'nav-back': 'Volver',
+        'nav-about': 'Acerca de',
+        'waste-hero-title': 'Descarte Correcto de Residuos',
+        'waste-hero-subtitle': 'Basura en el lugar correcto protege a todos y el medio ambiente',
+        'waste-hero-btn': 'Comenzar Curso',
+        
+        'waste-section-1-title': '¿Qué son los residuos en la obra?',
+        'waste-section-1-text': 'Los residuos son todo lo que ya no usamos y necesita ser tirado. En la obra y la industria, tenemos muchos tipos de basura que necesitan ser separados y descartados correctamente.',
+        
+        'waste-type-1-title': 'Sobra de Material',
+        'waste-type-1-desc': 'Restos de madera, metal, plástico y otros materiales.',
+        'waste-type-2-title': 'Embalajes',
+        'waste-type-2-desc': 'Cajas, bolsas, potes y embalajes de productos.',
+        'waste-type-3-title': 'Productos Químicos',
+        'waste-type-3-desc': 'Pinturas, solventes, aceites y productos químicos usados.',
+        
+        'waste-section-2-title': 'Tipos de residuos',
+        'waste-section-2-text': 'En la obra, tenemos 3 tipos principales de residuos. Cada uno va en un lugar diferente. Separar correctamente es muy importante para la seguridad y para el medio ambiente.',
+        
+        'waste-recyclable-title': 'Residuo Común',
+        'waste-recyclable-desc': 'Basura normal: papel, plástico común, restos de comida limpios.',
+        'waste-common-title': 'Residuo Reciclable',
+        'waste-common-desc': 'Puede ser reaprovechado: metal, papel, plástico limpio, vidrio.',
+        'waste-dangerous-title': 'Residuo Peligroso',
+        'waste-dangerous-desc': 'Cuidado especial: pinturas, aceites, productos químicos, material contaminado.',
+        
+        'waste-section-3-title': '¿Cómo hacer el descarte correcto?',
+        'waste-section-3-text': 'Hacer el descarte correcto es fácil si sigues las reglas. Cada tipo de basura tiene su lugar correcto. Mira cómo hacer:',
+        
+        'waste-tip-title': 'CONSEJOS IMPORTANTES',
+        'waste-tip-text': '¡Mire siempre los colores de los basureros y las placas! Cada color tiene un tipo de basura.',
+        
+        'waste-step-1': '1. Identifique el residuo: Vea qué tipo de material tiene en la mano.',
+        'waste-step-2': '2. Separe correctamente: Coloque cada tipo en su lugar correcto.',
+        'waste-step-3': '3. Use los basureros correctos: Verde para reciclable, gris para común, rojo para peligroso.',
+        'waste-step-4': '4. No mezcle: Nunca mezcle residuos peligrosos con basura normal.',
+        'waste-step-5': '5. Pida ayuda: Si tiene duda, pregunte al responsable.',
+        'waste-step-6': '6. Mantenga limpio: No junte basura en el suelo, use siempre los basureros.',
+        
+        'waste-section-4-title': '¿Por qué no se puede tirar basura en cualquier lugar?',
+        'waste-section-4-text': 'Tirar basura en cualquier lugar es peligroso y equivocado. Esto causa problemas graves para todos y para el medio ambiente.',
+        
+        'waste-danger-title': 'PELIGROS DE LA BASURA ERRADA',
+        'waste-danger-text': '¡Tirar basura errada puede causar accidentes graves y hasta matar!',
+        
+        'waste-risk-1': 'Accidentes: Alguien puede tropezar y caer en la basura tirada en el suelo.',
+        'waste-risk-2': 'Incendios: Basura química puede prender fuego fácilmente.',
+        'waste-risk-3': 'Contaminación: Productos químicos pueden ensuciar el suelo y el agua.',
+        'waste-risk-4': 'Intoxicación: Gases de la basura pueden hacer mal para la salud.',
+        'waste-risk-5': 'Multas: Tirar basura errada puede dar multa para la empresa.',
+        'waste-risk-6': 'Contaminación: Estropea el medio ambiente y perjudica la naturaleza.',
+        
+        'waste-section-5-title': 'Impactos en el medio ambiente',
+        'waste-section-5-text': 'El descarte errado de residuos perjudica mucho el medio ambiente. Necesitamos proteger la naturaleza para las futuras generaciones.',
+        
+        'waste-impact-1-title': 'Contaminación del Agua',
+        'waste-impact-1-desc': 'Basura química contamina ríos, lagos y el mar.',
+        'waste-impact-2-title': 'Contaminación del Aire',
+        'waste-impact-2-desc': 'Basura quemada suelta humo venenoso.',
+        'waste-impact-3-title': 'Contaminación del Suelo',
+        'waste-impact-3-desc': 'Basura enterrada errada contamina la tierra.',
+        'waste-impact-4-title': 'Mata Animales',
+        'waste-impact-4-desc': 'Animales pueden comer basura y morir.',
+        'waste-impact-5-title': 'Destruye Plantas',
+        'waste-impact-5-desc': 'Basura química mata árboles y plantas.',
+        'waste-impact-6-title': 'Perjudica Personas',
+        'waste-impact-6-desc': 'Basura errada causa enfermedades en la comunidad.',
+        
+        'waste-section-6-title': 'Cuidados especiales con residuos peligrosos',
+        'waste-section-6-text': 'Los residuos peligrosos necesitan cuidado redoblado. Pueden causar accidentes graves si no son manejados correctamente.',
+        
+        'waste-warning-title': '¡CUIDADO MÁXIMO!',
+        'waste-warning-text': '¡Los residuos peligrosos pueden matar! Use siempre EPI y siga las reglas.',
+        
+        'waste-safety-1': 'Use EPI: Guantes, gafas y máscara para manejar productos químicos.',
+        'waste-safety-2': 'Embale bien: Coloque en recipientes cerrados e identificados.',
+        'waste-safety-3': 'No mezcle: Nunca mezcle productos químicos diferentes.',
+        'waste-safety-4': 'Guarde en lugar seguro: Lejos del sol, calor y de niños.',
+        'waste-safety-5': 'Avise si derrama: Limpie inmediatamente y avise al responsable.',
+        'waste-safety-6': 'Use colector correcto: Sólo tire en los colectores específicos para residuos peligrosos.',
+        
+        'waste-section-7-title': 'Responsabilidad de todos',
+        'waste-section-7-text': 'El descarte correcto es responsabilidad de todos que trabajan en la obra. Cada uno necesita hacer su parte para mantener el ambiente seguro y limpio.',
+        
+        'waste-responsibility-1': 'Sea ejemplo: Descarte su basura correctamente.',
+        'waste-responsibility-2': 'Avise a los otros: Ayude a los colegas a descartar correcto.',
+        'waste-responsibility-3': 'Denuncie errores: Avise si alguien tira basura errada.',
+        'waste-responsibility-4': 'Participe de entrenamientos: Aprenda siempre más sobre el asunto.',
+        'waste-responsibility-5': 'Piense en el futuro: Basura correcta hoy protege el mañana.',
+        
+        'waste-benefit-title': 'BENEFICIOS DEL DESCARTE CORRECTO',
+        'waste-benefit-text': '¡Ambiente limpio = menos accidentes + más seguridad + naturaleza protegida!',
+        
+        'quiz-title': 'Pruebe su conocimiento',
+        'waste-question-1': '1. ¿Qué es residuo peligroso?',
+        'waste-question-2': '2. ¿Por qué no se puede tirar basura en cualquier lugar?',
+        'waste-question-3': '3. ¿Cuál es el color del basurero para residuos peligrosos?',
+        'waste-question-4': '4. ¿Qué hacer con residuos químicos?',
+        'quiz-check': 'Verificar Respuestas',
+        'quiz-retry': 'Rehacer Quiz',
+        'quiz-result-title': 'Resultado del Quiz',
+        'quiz-back': 'Volver a los Cursos'
+    },
+    
+    en: {
+        'nav-back': 'Back',
+        'nav-about': 'About',
+        'waste-hero-title': 'Correct Waste Disposal',
+        'waste-hero-subtitle': 'Trash in the right place protects everyone and the environment',
+        'waste-hero-btn': 'Start Course',
+        
+        'waste-section-1-title': 'What are waste materials at the construction site?',
+        'waste-section-1-text': 'Waste materials are everything we no longer use and needs to be thrown away. At the construction site and industry, we have many types of trash that need to be separated and disposed of correctly.',
+        
+        'waste-type-1-title': 'Material Leftovers',
+        'waste-type-1-desc': 'Wood scraps, metal, plastic and other materials.',
+        'waste-type-2-title': 'Packaging',
+        'waste-type-2-desc': 'Boxes, bags, containers and product packaging.',
+        'waste-type-3-title': 'Chemical Products',
+        'waste-type-3-desc': 'Paints, solvents, oils and used chemical products.',
+        
+        'waste-section-2-title': 'Types of waste',
+        'waste-section-2-text': 'At the construction site, we have 3 main types of waste. Each one goes in a different place. Separating correctly is very important for safety and for the environment.',
+        
+        'waste-recyclable-title': 'Common Waste',
+        'waste-recyclable-desc': 'Normal trash: paper, common plastic, clean food scraps.',
+        'waste-common-title': 'Recyclable Waste',
+        'waste-common-desc': 'Can be reused: metal, paper, clean plastic, glass.',
+        'waste-dangerous-title': 'Hazardous Waste',
+        'waste-dangerous-desc': 'Special care: paints, oils, chemical products, contaminated material.',
+        
+        'waste-section-3-title': 'How to do correct disposal?',
+        'waste-section-3-text': 'Doing correct disposal is easy if you follow the rules. Each type of trash has its right place. See how to do it:',
+        
+        'waste-tip-title': 'IMPORTANT TIPS',
+        'waste-tip-text': 'Always look at the trash can colors and signs! Each color has a type of trash.',
+        
+        'waste-step-1': '1. Identify the waste: See what type of material you have in hand.',
+        'waste-step-2': '2. Separate correctly: Put each type in its right place.',
+        'waste-step-3': '3. Use the right trash cans: Green for recyclable, gray for common, red for hazardous.',
+        'waste-step-4': '4. Don\'t mix: Never mix hazardous waste with normal trash.',
+        'waste-step-5': '5. Ask for help: If in doubt, ask the responsible person.',
+        'waste-step-6': '6. Keep clean: Don\'t pile trash on the ground, always use trash cans.',
+        
+        'waste-section-4-title': 'Why can\'t you throw trash anywhere?',
+        'waste-section-4-text': 'Throwing trash anywhere is dangerous and wrong. This causes serious problems for everyone and for the environment.',
+        
+        'waste-danger-title': 'DANGERS OF WRONG TRASH',
+        'waste-danger-text': 'Wrong trash disposal can cause serious accidents and even kill!',
+        
+        'waste-risk-1': 'Accidents: Someone can trip and fall on trash thrown on the ground.',
+        'waste-risk-2': 'Fires: Chemical trash can catch fire easily.',
+        'waste-risk-3': 'Contamination: Chemical products can dirty the ground and water.',
+        'waste-risk-4': 'Intoxication: Trash gases can be harmful to health.',
+        'waste-risk-5': 'Fines: Wrong trash disposal can give fines to the company.',
+        'waste-risk-6': 'Pollution: Damages the environment and harms nature.',
+        
+        'waste-section-5-title': 'Environmental impacts',
+        'waste-section-5-text': 'Wrong waste disposal greatly harms the environment. We need to protect nature for future generations.',
+        
+        'waste-impact-1-title': 'Water Pollution',
+        'waste-impact-1-desc': 'Chemical trash contaminates rivers, lakes and the sea.',
+        'waste-impact-2-title': 'Air Pollution',
+        'waste-impact-2-desc': 'Burned trash releases poisonous smoke.',
+        'waste-impact-3-title': 'Soil Pollution',
+        'waste-impact-3-desc': 'Wrong buried trash contaminates the earth.',
+        'waste-impact-4-title': 'Kills Animals',
+        'waste-impact-4-desc': 'Animals can eat trash and die.',
+        'waste-impact-5-title': 'Destroys Plants',
+        'waste-impact-5-desc': 'Chemical trash kills trees and plants.',
+        'waste-impact-6-title': 'Harms People',
+        'waste-impact-6-desc': 'Wrong trash causes diseases in the community.',
+        
+        'waste-section-6-title': 'Special care with hazardous waste',
+        'waste-section-6-text': 'Hazardous waste needs extra care. They can cause serious accidents if not handled correctly.',
+        
+        'waste-warning-title': 'MAXIMUM CARE!',
+        'waste-warning-text': 'Hazardous waste can kill! Always use PPE and follow the rules.',
+        
+        'waste-safety-1': 'Use PPE: Gloves, glasses and mask to handle chemical products.',
+        'waste-safety-2': 'Package well: Put in closed and identified containers.',
+        'waste-safety-3': 'Don\'t mix: Never mix different chemical products.',
+        'waste-safety-4': 'Store in safe place: Away from sun, heat and children.',
+        'waste-safety-5': 'Warn if spills: Clean immediately and warn the responsible person.',
+        'waste-safety-6': 'Use correct collector: Only throw in specific collectors for hazardous waste.',
+        
+        'waste-section-7-title': 'Everyone\'s responsibility',
+        'waste-section-7-text': 'Correct disposal is everyone\'s responsibility who works at the construction site. Each one needs to do their part to keep the environment safe and clean.',
+        
+        'waste-responsibility-1': 'Be an example: Dispose your trash correctly.',
+        'waste-responsibility-2': 'Warn others: Help colleagues to dispose correctly.',
+        'waste-responsibility-3': 'Report mistakes: Warn if someone throws wrong trash.',
+        'waste-responsibility-4': 'Participate in trainings: Always learn more about the subject.',
+        'waste-responsibility-5': 'Think about the future: Right trash today protects tomorrow.',
+        
+        'waste-benefit-title': 'BENEFITS OF CORRECT DISPOSAL',
+        'waste-benefit-text': 'Clean environment = fewer accidents + more safety + protected nature!',
+        
+        'quiz-title': 'Test your knowledge',
+        'waste-question-1': '1. What is hazardous waste?',
+        'waste-question-2': '2. Why can\'t you throw trash anywhere?',
+        'waste-question-3': '3. What is the trash can color for hazardous waste?',
+        'waste-question-4': '4. What to do with chemical waste?',
+        'quiz-check': 'Check Answers',
+        'quiz-retry': 'Retry Quiz',
+        'quiz-result-title': 'Quiz Result',
+        'quiz-back': 'Back to Courses'
+    }
+};
+
+// Sistema de Quiz
+class QuizSystem {
+    constructor() {
+        this.currentQuiz = null;
+        this.answers = {};
+        this.score = 0;
+        this.correctAnswers = {
+            'waste': {
+                'q1': 'c',
+                'q2': 'b', 
+                'q3': 'd',
+                'q4': 'c'
+            }
+        };
+    }
+
+    startQuiz(quizType) {
+        this.currentQuiz = quizType;
+        this.answers = {};
+        this.score = 0;
+        
+        // Limpar seleções anteriores
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+    }
+
+    submitQuiz() {
+        if (!this.currentQuiz) return;
+        
+        const quizAnswers = this.correctAnswers[this.currentQuiz];
+        let correctCount = 0;
+        const totalQuestions = Object.keys(quizAnswers).length;
+        
+        // Verificar cada resposta
+        for (const [questionId, correctAnswer] of Object.entries(quizAnswers)) {
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+            
+            if (selectedOption) {
+                const userAnswer = selectedOption.value;
+                this.answers[questionId] = userAnswer;
+                
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    // Marcar como correto
+                    selectedOption.parentElement.classList.add('correct');
+                } else {
+                    // Marcar como incorreto e mostrar a resposta correta
+                    selectedOption.parentElement.classList.add('incorrect');
+                    const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`);
+                    if (correctOption) {
+                        correctOption.parentElement.classList.add('correct');
+                    }
+                }
+            } else {
+                // Não respondida - mostrar resposta correta
+                const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`);
+                if (correctOption) {
+                    correctOption.parentElement.classList.add('correct');
+                }
+            }
+        }
+        
+        this.score = correctCount;
+        this.showResult(correctCount, totalQuestions);
+    }
+
+    showResult(correctCount, totalQuestions) {
+        const resultDiv = document.getElementById('quiz-result');
+        const scoreElement = document.getElementById('quiz-score');
+        const messageElement = document.getElementById('quiz-message');
+        
+        if (resultDiv && scoreElement && messageElement) {
+            const percentage = Math.round((correctCount / totalQuestions) * 100);
+            
+            scoreElement.textContent = this.getTranslatedText('waste-quiz-score-text') + `: ${correctCount}/${totalQuestions} (${percentage}%)`;
+            
+            if (percentage >= 70) {
+                messageElement.textContent = this.getTranslatedText('waste-quiz-success-message');
+                scoreElement.style.color = '#28a745';
+            } else {
+                messageElement.textContent = this.getTranslatedText('waste-quiz-fail-message');
+                scoreElement.style.color = '#dc3545';
+            }
+            
+            resultDiv.style.display = 'block';
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    retryQuiz() {
+        if (!this.currentQuiz) return;
+        
+        // Limpar seleções
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Limpar classes de correção
+        document.querySelectorAll('.quiz-option-label').forEach(label => {
+            label.classList.remove('correct', 'incorrect');
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+        
+        // Resetar
+        this.answers = {};
+        this.score = 0;
+        
+        // Voltar ao topo do quiz
+        const quizSection = document.querySelector('.quiz-section');
+        if (quizSection) {
+            quizSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    getTranslatedText(key) {
+        const lang = localStorage.getItem('rss3-language') || 'pt';
+        if (translations && translations[lang] && translations[lang][key]) {
+            return translations[lang][key];
+        }
+        return key;
+    }
+}
+
+// Instância global do quiz
+const quizSystem = new QuizSystem();
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado - iniciando sistema de idiomas');
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            changeLanguage(btn.getAttribute('data-lang'));
+        });
+    });
+    
+    // Iniciar quiz waste
+    quizSystem.startQuiz('waste');
+});
+
+// Funções globais para o quiz
+function checkQuiz() {
+    quizSystem.submitQuiz();
+}
+
+function resetQuiz() {
+    quizSystem.retryQuiz();
+}
+
+// Sistema de Tradução
+let currentLanguage = 'pt';
+
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Função para rolar para o conteúdo
+function scrollToContent() {
+    document.querySelector('.course-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+  </script>
+
+</body>
+</html>

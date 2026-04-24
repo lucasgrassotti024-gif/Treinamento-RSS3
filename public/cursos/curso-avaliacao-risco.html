@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso Avaliação Risco - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--laranja);
+    }
+
+    /* HERO / BANNER PRINCIPAL */
+.hero {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8, #ff7a00);
+  color: var(--branco);
+  padding: 90px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 2.6em;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.15em;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--branco);
+  padding: 16px 36px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: 0.2s;
+}
+
+.hero-btn:hover {
+  background: var(--branco);
+  color: var(--azul);
+  transform: translateY(-3px);
+}
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      flex: 1;
+      font-size: 0.95em;
+    }
+
+    .card a {
+      margin-top: 15px;
+      background: var(--laranja);
+      color: var(--branco);
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .secao-titulo {
+      margin: 50px 0 20px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+      color: var(--azul);
+    }
+
+    /* Seletor de Idiomas */
+    .language-selector {
+      display: flex;
+      gap: 5px;
+      margin-left: 20px;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--branco);
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8em;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+      color: var(--branco);
+      border-color: var(--laranja);
+    }
+
+    /* Estilos do Curso */
+    .course-section {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .course-section h2 {
+      color: var(--azul);
+      margin-bottom: 20px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+    }
+
+    .course-section p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .epi-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .epi-type-card {
+      background: var(--branco);
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .epi-type-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .epi-type-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--azul);
+    }
+
+    .epi-type-title {
+      font-size: 1.2rem;
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .epi-type-desc {
+      color: var(--cinza-texto);
+      line-height: 1.5;
+    }
+
+    .image-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .course-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .image-caption {
+      font-style: italic;
+      color: #666;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .info-list li {
+      background: var(--cinza-claro);
+      border-left: 4px solid var(--laranja);
+      padding: 15px 20px;
+      margin: 10px 0;
+      border-radius: 0 8px 8px 0;
+      transition: transform 0.3s ease;
+    }
+
+    .info-list li:hover {
+      transform: translateX(5px);
+      background: #e9ecef;
+    }
+
+    .alert-box {
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+      box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+    }
+
+    .alert-box h4 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .quiz-section {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .quiz-title {
+      color: var(--azul);
+      text-align: center;
+      margin-bottom: 30px;
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .quiz-question {
+      background: var(--cinza-claro);
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .quiz-question h4 {
+      color: var(--azul);
+      margin-bottom: 15px;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quiz-option-label {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      background: var(--branco);
+      border: 1px solid #e9ecef;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-option-label:hover {
+      background: var(--cinza-claro);
+      border-color: var(--laranja);
+    }
+
+    .quiz-option-label input[type="radio"] {
+      margin-right: 12px;
+    }
+
+    .quiz-submit-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .quiz-submit {
+      background: var(--laranja);
+      color: var(--branco);
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .quiz-submit:hover {
+      background: #e67300;
+      transform: translateY(-2px);
+    }
+
+    .quiz-result {
+      display: none;
+      background: var(--branco);
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .quiz-result h3 {
+      color: var(--azul);
+      margin-bottom: 20px;
+    }
+
+    .score-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      margin: 20px 0;
+    }
+
+    .score-circle.passing {
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+    }
+
+    .score-circle.failing {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+    }
+
+    .quiz-message {
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .quiz-message.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .quiz-message.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .quiz-actions button, .quiz-actions a {
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .quiz-actions button {
+      background: var(--azul);
+      color: var(--branco);
+      border: none;
+    }
+
+    .quiz-actions a {
+      background: var(--laranja);
+      color: var(--branco);
+    }
+
+    .quiz-actions button:hover, .quiz-actions a:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      nav a {
+        margin: 5px 0;
+      }
+      
+      .hero {
+        padding: 60px 20px;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .epi-types-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .quiz-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>RSS<span>3</span> Treinamentos</h1>
+  <nav>
+    <a href="../index.html" data-translate="nav-home">Início</a>
+    <a href="../sobre.html" data-translate="nav-about">Sobre</a>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2 data-translate="course-risk-hero-title">Avaliação de Riscos</h2>
+    <p data-translate="course-risk-hero-subtitle">Aprenda a identificar e avaliar perigos na fábrica de celulose</p>
+    <a href="#conteudo" class="hero-btn" data-translate="hero-btn">Começar Curso</a>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <section class="course-section">
+    <h2 data-translate="risk-section-1-title">O que é Avaliação de Riscos?</h2>
+    <p data-translate="course-risk-intro">
+      Avaliação de riscos é o processo sistemático de identificar perigos, analisar riscos e implementar medidas de controle. Na fábrica de celulose, isso significa examinar todas as atividades, equipamentos e processos para encontrar potenciais problemas de segurança antes que causem acidentes. Uma boa avaliação de riscos protege trabalhadores, equipamentos e a produção.
+    </p>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="risk-section-2-title">Metodologia de Avaliação</h2>
+    <p data-translate="risk-section-2-text">
+      A avaliação de riscos segue estes passos fundamentais:
+    </p>
+    
+    <div class="epi-types-grid">
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🔍</div>
+        <h3 class="epi-type-title" data-translate="risk-type-1-title">Identificação de Perigos</h3>
+        <p class="epi-type-desc" data-translate="risk-type-1-desc">Reconhecer tudo que pode causar dano ou lesão.</p>
+      </div>
+      
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🔍</div>
+        <h3 class="epi-type-title" data-translate="risk-type-2-title">Análise de Riscos</h3>
+        <p class="epi-type-desc" data-translate="risk-type-2-desc">Avaliar probabilidade e severidade dos danos.</p>
+      </div>
+      
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🔍</div>
+        <h3 class="epi-type-title" data-translate="risk-type-3-title">Controle de Riscos</h3>
+        <p class="epi-type-desc" data-translate="risk-type-3-desc">Implementar medidas para eliminar ou reduzir riscos.</p>
+      </div>
+    </div>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="risk-section-3-title">Tipos de Perigos</h2>
+    <p data-translate="risk-section-3-text">
+      Na fábrica de celulose, os principais perigos são:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="risk-hazards-1">Perigos mecânicos: máquinas, equipamentos e ferramentas</li>
+      <li data-translate="risk-hazards-2">Perigos químicos: produtos químicos e gases industriais</li>
+      <li data-translate="risk-hazards-3">Perigos físicos: ruído, vibração, temperatura e radiação</li>
+      <li data-translate="risk-hazards-4">Perigos ergonômicos: postura, esforço e repetitividade</li>
+      <li data-translate="risk-hazards-5">Perigos de acidentes: quedas, choques e incêndios</li>
+    </ul>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="risk-section-4-title">Matriz de Riscos</h2>
+    <p data-translate="risk-section-4-text">
+      Para classificar os riscos, usamos uma matriz que combina:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="risk-matrix-1">Probabilidade: frequência com que o perigo pode causar dano</li>
+      <li data-translate="risk-matrix-2">Severidade: gravidade do dano potencial</li>
+      <li data-translate="risk-matrix-3">Nível de risco: combinação de probabilidade e severidade</li>
+      <li data-translate="risk-matrix-4">Priorização: riscos altos precisam ação imediata</li>
+      <li data-translate="risk-matrix-5">Monitoramento: avaliação contínua dos controles implementados</li>
+    </ul>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="risk-section-5-title">Hierarquia de Controles</h2>
+    <p data-translate="risk-section-5-text">
+      Para controlar riscos, siga esta ordem de preferência:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="risk-controls-1">Eliminação: remover completamente o perigo</li>
+      <li data-translate="risk-controls-2">Substituição: usar material ou processo menos perigoso</li>
+      <li data-translate="risk-controls-3">Controles de engenharia: isolar o perigo da pessoa</li>
+      <li data-translate="risk-controls-4">Controles administrativos: mudar procedimentos de trabalho</li>
+      <li data-translate="risk-controls-5">EPIs: equipamentos de proteção individual como última opção</li>
+    </ul>
+    
+        
+    <div class="alert-box">
+      <h4 data-translate="risk-alert-title">Importante!</h4>
+      <p data-translate="risk-alert-text">A avaliação de riscos não é um documento para guardar na gaveta. É uma ferramenta viva que precisa ser atualizada sempre que houver mudanças nos processos, equipamentos ou quando ocorrer incidentes. A segurança é um processo contínuo.</p>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h2 class="quiz-title" data-translate="risk-quiz-title">Teste seu Conhecimento</h2>
+    
+    <div class="quiz-question">
+      <h4 data-translate="risk-quiz-question-1">Qual o primeiro passo na avaliação de riscos?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="a" class="quiz-option">
+          <span data-translate="risk-quiz-q1-a">Comprar EPIs</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="b" class="quiz-option">
+          <span data-translate="risk-quiz-q1-b">Identificar perigos</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="c" class="quiz-option">
+          <span data-translate="risk-quiz-q1-c">Fazer treinamento</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="d" class="quiz-option">
+          <span data-translate="risk-quiz-q1-d">Apenas registrar</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="e" class="quiz-option">
+          <span data-translate="risk-quiz-q1-e">Esperar acidente</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="risk-quiz-question-2">Qual a melhor forma de controlar um risco?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="a" class="quiz-option">
+          <span data-translate="risk-quiz-q2-a">Apenas usar EPI</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="b" class="quiz-option">
+          <span data-translate="risk-quiz-q2-b">Eliminar o perigo completamente</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="c" class="quiz-option">
+          <span data-translate="risk-quiz-q2-c">Apenas treinar os trabalhadores</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="d" class="quiz-option">
+          <span data-translate="risk-quiz-q2-d">Apenas colocar placas</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="e" class="quiz-option">
+          <span data-translate="risk-quiz-q2-e">Apenas avisar o supervisor</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="risk-quiz-question-3">O que combina probabilidade e severidade?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="a" class="quiz-option">
+          <span data-translate="risk-quiz-q3-a">Lista de tarefas</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="b" class="quiz-option">
+          <span data-translate="risk-quiz-q3-b">Matriz de riscos</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="c" class="quiz-option">
+          <span data-translate="risk-quiz-q3-c">Relatório de produção</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="d" class="quiz-option">
+          <span data-translate="risk-quiz-q3-d">Folha de ponto</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="e" class="quiz-option">
+          <span data-translate="risk-quiz-q3-e">Lista de materiais</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="risk-quiz-question-4">Quando atualizar a avaliação de riscos?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="a" class="quiz-option">
+          <span data-translate="risk-quiz-q4-a">Apenas uma vez por ano</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="b" class="quiz-option">
+          <span data-translate="risk-quiz-q4-b">Quando houver mudanças ou incidentes</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="c" class="quiz-option">
+          <span data-translate="risk-quiz-q4-c">Apenas quando o supervisor mandar</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="d" class="quiz-option">
+          <span data-translate="risk-quiz-q4-d">Apenas no início do projeto</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="e" class="quiz-option">
+          <span data-translate="risk-quiz-q4-e">Nunca mais</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-submit-container">
+      <button id="quiz-submit" class="quiz-submit" data-translate="quiz-submit">Enviar Respostas</button>
+    </div>
+    
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 <span>RSS3</span> Treinamentos de Segurança
+</footer>
+
+<script>
+// Sistema de Tradução RSS3 Treinamentos
+const translations = {
+    pt: {
+        'nav-home': 'Início',
+        'nav-about': 'Sobre',
+        'course-risk-hero-title': 'Avaliação de Riscos',
+        'course-risk-hero-subtitle': 'Aprenda a identificar e avaliar perigos na fábrica de celulose',
+        'hero-btn': 'Começar Curso',
+        
+        'risk-section-1-title': 'O que é Avaliação de Riscos?',
+        'course-risk-intro': 'Avaliação de riscos é o processo sistemático de identificar perigos, analisar riscos e implementar medidas de controle. Na fábrica de celulose, isso significa examinar todas as atividades, equipamentos e processos para encontrar potenciais problemas de segurança antes que causem acidentes. Uma boa avaliação de riscos protege trabalhadores, equipamentos e a produção.',
+        
+        'risk-section-2-title': 'Metodologia de Avaliação',
+        'risk-section-2-text': 'A avaliação de riscos segue estes passos fundamentais:',
+        
+        'risk-type-1-title': 'Identificação de Perigos',
+        'risk-type-1-desc': 'Reconhecer tudo que pode causar dano ou lesão.',
+        
+        'risk-type-2-title': 'Análise de Riscos',
+        'risk-type-2-desc': 'Avaliar probabilidade e severidade dos danos.',
+        
+        'risk-type-3-title': 'Controle de Riscos',
+        'risk-type-3-desc': 'Implementar medidas para eliminar ou reduzir riscos.',
+        
+        'risk-section-3-title': 'Tipos de Perigos',
+        'risk-section-3-text': 'Na fábrica de celulose, os principais perigos são:',
+        
+        'risk-hazards-1': 'Perigos mecânicos: máquinas, equipamentos e ferramentas',
+        'risk-hazards-2': 'Perigos químicos: produtos químicos e gases industriais',
+        'risk-hazards-3': 'Perigos físicos: ruído, vibração, temperatura e radiação',
+        'risk-hazards-4': 'Perigos ergonômicos: postura, esforço e repetitividade',
+        'risk-hazards-5': 'Perigos de acidentes: quedas, choques e incêndios',
+        
+        'risk-section-4-title': 'Matriz de Riscos',
+        'risk-section-4-text': 'Para classificar os riscos, usamos uma matriz que combina:',
+        
+        'risk-matrix-1': 'Probabilidade: frequência com que o perigo pode causar dano',
+        'risk-matrix-2': 'Severidade: gravidade do dano potencial',
+        'risk-matrix-3': 'Nível de risco: combinação de probabilidade e severidade',
+        'risk-matrix-4': 'Priorização: riscos altos precisam ação imediata',
+        'risk-matrix-5': 'Monitoramento: avaliação contínua dos controles implementados',
+        
+        'risk-section-5-title': 'Hierarquia de Controles',
+        'risk-section-5-text': 'Para controlar riscos, siga esta ordem de preferência:',
+        
+        'risk-controls-1': 'Eliminação: remover completamente o perigo',
+        'risk-controls-2': 'Substituição: usar material ou processo menos perigoso',
+        'risk-controls-3': 'Controles de engenharia: isolar o perigo da pessoa',
+        'risk-controls-4': 'Controles administrativos: mudar procedimentos de trabalho',
+        'risk-controls-5': 'EPIs: equipamentos de proteção individual como última opção',
+        
+        'risk-alert-title': 'Importante!',
+        'risk-alert-text': 'A avaliação de riscos não é um documento para guardar na gaveta. É uma ferramenta viva que precisa ser atualizada sempre que houver mudanças nos processos, equipamentos ou quando ocorrer incidentes. A segurança é um processo contínuo.',
+        
+        'risk-quiz-title': 'Teste seu Conhecimento',
+        'risk-quiz-question-1': 'Qual o primeiro passo na avaliação de riscos?',
+        'risk-quiz-question-2': 'Qual a melhor forma de controlar um risco?',
+        'risk-quiz-question-3': 'O que combina probabilidade e severidade?',
+        'risk-quiz-question-4': 'Quando atualizar a avaliação de riscos?',
+        
+        'risk-quiz-q1-a': 'Comprar EPIs',
+        'risk-quiz-q1-b': 'Identificar perigos',
+        'risk-quiz-q1-c': 'Fazer treinamento',
+        'risk-quiz-q1-d': 'Apenas registrar',
+        'risk-quiz-q1-e': 'Esperar acidente',
+        
+        'risk-quiz-q2-a': 'Apenas usar EPI',
+        'risk-quiz-q2-b': 'Eliminar o perigo completamente',
+        'risk-quiz-q2-c': 'Apenas treinar os trabalhadores',
+        'risk-quiz-q2-d': 'Apenas colocar placas',
+        'risk-quiz-q2-e': 'Apenas avisar o supervisor',
+        
+        'risk-quiz-q3-a': 'Lista de tarefas',
+        'risk-quiz-q3-b': 'Matriz de riscos',
+        'risk-quiz-q3-c': 'Relatório de produção',
+        'risk-quiz-q3-d': 'Folha de ponto',
+        'risk-quiz-q3-e': 'Lista de materiais',
+        
+        'risk-quiz-q4-a': 'Apenas uma vez por ano',
+        'risk-quiz-q4-b': 'Quando houver mudanças ou incidentes',
+        'risk-quiz-q4-c': 'Apenas quando o supervisor mandar',
+        'risk-quiz-q4-d': 'Apenas no início do projeto',
+        'risk-quiz-q4-e': 'Nunca mais',
+        
+        'quiz-submit': 'Enviar Respostas',
+        'quiz-result-title': 'Resultado do Quiz',
+        'quiz-score': 'Sua pontuação',
+        'quiz-correct': 'Respostas corretas',
+        'quiz-incorrect': 'Respostas incorretas',
+        'quiz-congratulations': 'Parabéns! Você acertou',
+        'quiz-try-again': 'Tente novamente! Você acertou',
+        'quiz-retry': 'Refazer Quiz',
+        'quiz-back': 'Voltar para os Cursos'
+    },
+    
+    es: {
+        'nav-home': 'Inicio',
+        'nav-about': 'Acerca de',
+        'course-risk-hero-title': 'Evaluación de Riesgos',
+        'course-risk-hero-subtitle': 'Aprenda a identificar y evaluar peligros en la fábrica de celulosa',
+        'hero-btn': 'Comenzar Curso',
+        
+        'risk-section-1-title': '¿Qué es Evaluación de Riesgos?',
+        'course-risk-intro': 'Evaluación de riesgos es el proceso sistemático de identificar peligros, analizar riesgos e implementar medidas de control. En la fábrica de celulosa, esto significa examinar todas las actividades, equipos y procesos para encontrar potenciales problemas de seguridad antes que causen accidentes. Una buena evaluación de riesgos protege trabajadores, equipos y la producción.',
+        
+        'risk-section-2-title': 'Metodología de Evaluación',
+        'risk-section-2-text': 'La evaluación de riesgos sigue estos pasos fundamentales:',
+        
+        'risk-type-1-title': 'Identificación de Peligros',
+        'risk-type-1-desc': 'Reconocer todo lo que puede causar daño o lesión.',
+        
+        'risk-type-2-title': 'Análisis de Riesgos',
+        'risk-type-2-desc': 'Evaluar probabilidad y severidad de los daños.',
+        
+        'risk-type-3-title': 'Control de Riesgos',
+        'risk-type-3-desc': 'Implementar medidas para eliminar o reducir riesgos.',
+        
+        'risk-section-3-title': 'Tipos de Peligros',
+        'risk-section-3-text': 'En la fábrica de celulosa, los principales peligros son:',
+        
+        'risk-hazards-1': 'Peligros mecánicos: máquinas, equipos y herramientas',
+        'risk-hazards-2': 'Peligros químicos: productos químicos y gases industriales',
+        'risk-hazards-3': 'Peligros físicos: ruido, vibración, temperatura y radiación',
+        'risk-hazards-4': 'Peligros ergonómicos: postura, esfuerzo y repetitividad',
+        'risk-hazards-5': 'Peligros de accidentes: caídas, golpes e incendios',
+        
+        'risk-section-4-title': 'Matriz de Riesgos',
+        'risk-section-4-text': 'Para clasificar los riesgos, usamos una matriz que combina:',
+        
+        'risk-matrix-1': 'Probabilidad: frecuencia con que el peligro puede causar daño',
+        'risk-matrix-2': 'Severidad: gravedad del daño potencial',
+        'risk-matrix-3': 'Nivel de riesgo: combinación de probabilidad y severidad',
+        'risk-matrix-4': 'Priorización: riesgos altos necesitan acción inmediata',
+        'risk-matrix-5': 'Monitoreo: evaluación continua de los controles implementados',
+        
+        'risk-section-5-title': 'Jerarquía de Controles',
+        'risk-section-5-text': 'Para controlar riesgos, siga esta orden de preferencia:',
+        
+        'risk-controls-1': 'Eliminación: remover completamente el peligro',
+        'risk-controls-2': 'Sustitución: usar material o proceso menos peligroso',
+        'risk-controls-3': 'Controles de ingeniería: aislar el peligro de la persona',
+        'risk-controls-4': 'Controles administrativos: cambiar procedimientos de trabajo',
+        'risk-controls-5': 'EPIs: equipos de protección individual como última opción',
+        
+        'risk-alert-title': '¡Importante!',
+        'risk-alert-text': 'La evaluación de riesgos no es un documento para guardar en el cajón. Es una herramienta viva que necesita ser actualizada siempre que haya cambios en los procesos, equipos o cuando ocurran incidentes. La seguridad es un proceso continuo.',
+        
+        'risk-quiz-title': 'Pruebe su Conocimiento',
+        'risk-quiz-question-1': '¿Cuál es el primer paso en la evaluación de riesgos?',
+        'risk-quiz-question-2': '¿Cuál es la mejor forma de controlar un riesgo?',
+        'risk-quiz-question-3': '¿Qué combina probabilidad y severidad?',
+        'risk-quiz-question-4': '¿Cuándo actualizar la evaluación de riesgos?',
+        
+        'risk-quiz-q1-a': 'Comprar EPIs',
+        'risk-quiz-q1-b': 'Identificar peligros',
+        'risk-quiz-q1-c': 'Hacer entrenamiento',
+        'risk-quiz-q1-d': 'Solo registrar',
+        'risk-quiz-q1-e': 'Esperar accidente',
+        
+        'risk-quiz-q2-a': 'Solo usar EPI',
+        'risk-quiz-q2-b': 'Eliminar el peligro completamente',
+        'risk-quiz-q2-c': 'Solo entrenar a los trabajadores',
+        'risk-quiz-q2-d': 'Solo colocar señales',
+        'risk-quiz-q2-e': 'Solo avisar al supervisor',
+        
+        'risk-quiz-q3-a': 'Lista de tareas',
+        'risk-quiz-q3-b': 'Matriz de riesgos',
+        'risk-quiz-q3-c': 'Informe de producción',
+        'risk-quiz-q3-d': 'Hoja de punto',
+        'risk-quiz-q3-e': 'Lista de materiales',
+        
+        'risk-quiz-q4-a': 'Solo una vez al año',
+        'risk-quiz-q4-b': 'Cuando haya cambios o incidentes',
+        'risk-quiz-q4-c': 'Solo cuando el supervisor mande',
+        'risk-quiz-q4-d': 'Solo al inicio del proyecto',
+        'risk-quiz-q4-e': 'Nunca más',
+        
+        'quiz-submit': 'Enviar Respuestas',
+        'quiz-result-title': 'Resultado del Quiz',
+        'quiz-score': 'Su puntuación',
+        'quiz-correct': 'Respuestas correctas',
+        'quiz-incorrect': 'Respuestas incorrectas',
+        'quiz-congratulations': '¡Felicidades! Usted acertó',
+        'quiz-try-again': '¡Inténtelo de nuevo! Usted acertó',
+        'quiz-retry': 'Rehacer Quiz',
+        'quiz-back': 'Volver a los Cursos'
+    },
+    
+    en: {
+        'nav-home': 'Home',
+        'nav-about': 'About',
+        'course-risk-hero-title': 'Risk Assessment',
+        'course-risk-hero-subtitle': 'Learn to identify and assess hazards in the pulp factory',
+        'hero-btn': 'Start Course',
+        
+        'risk-section-1-title': 'What is Risk Assessment?',
+        'course-risk-intro': 'Risk assessment is the systematic process of identifying hazards, analyzing risks and implementing control measures. In the pulp factory, this means examining all activities, equipment and processes to find potential safety problems before they cause accidents. Good risk assessment protects workers, equipment and production.',
+        
+        'risk-section-2-title': 'Assessment Methodology',
+        'risk-section-2-text': 'Risk assessment follows these fundamental steps:',
+        
+        'risk-type-1-title': 'Hazard Identification',
+        'risk-type-1-desc': 'Recognize everything that can cause harm or injury.',
+        
+        'risk-type-2-title': 'Risk Analysis',
+        'risk-type-2-desc': 'Assess probability and severity of damages.',
+        
+        'risk-type-3-title': 'Risk Control',
+        'risk-type-3-desc': 'Implement measures to eliminate or reduce risks.',
+        
+        'risk-section-3-title': 'Types of Hazards',
+        'risk-section-3-text': 'In the pulp factory, the main hazards are:',
+        
+        'risk-hazards-1': 'Mechanical hazards: machines, equipment and tools',
+        'risk-hazards-2': 'Chemical hazards: chemical products and industrial gases',
+        'risk-hazards-3': 'Physical hazards: noise, vibration, temperature and radiation',
+        'risk-hazards-4': 'Ergonomic hazards: posture, effort and repetitiveness',
+        'risk-hazards-5': 'Accident hazards: falls, impacts and fires',
+        
+        'risk-section-4-title': 'Risk Matrix',
+        'risk-section-4-text': 'To classify risks, we use a matrix that combines:',
+        
+        'risk-matrix-1': 'Probability: frequency with which the hazard can cause damage',
+        'risk-matrix-2': 'Severity: seriousness of potential damage',
+        'risk-matrix-3': 'Risk level: combination of probability and severity',
+        'risk-matrix-4': 'Prioritization: high risks need immediate action',
+        'risk-matrix-5': 'Monitoring: continuous evaluation of implemented controls',
+        
+        'risk-section-5-title': 'Hierarchy of Controls',
+        'risk-section-5-text': 'To control risks, follow this order of preference:',
+        
+        'risk-controls-1': 'Elimination: completely remove the hazard',
+        'risk-controls-2': 'Substitution: use less dangerous material or process',
+        'risk-controls-3': 'Engineering controls: isolate the hazard from the person',
+        'risk-controls-4': 'Administrative controls: change work procedures',
+        'risk-controls-5': 'PPE: personal protective equipment as last option',
+        
+        'risk-alert-title': 'Important!',
+        'risk-alert-text': 'Risk assessment is not a document to store in the drawer. It is a living tool that needs to be updated whenever there are changes in processes, equipment or when incidents occur. Safety is a continuous process.',
+        
+        'risk-quiz-title': 'Test Your Knowledge',
+        'risk-quiz-question-1': 'What is the first step in risk assessment?',
+        'risk-quiz-question-2': 'What is the best way to control a risk?',
+        'risk-quiz-question-3': 'What combines probability and severity?',
+        'risk-quiz-question-4': 'When to update risk assessment?',
+        
+        'risk-quiz-q1-a': 'Buy PPE',
+        'risk-quiz-q1-b': 'Identify hazards',
+        'risk-quiz-q1-c': 'Do training',
+        'risk-quiz-q1-d': 'Just register',
+        'risk-quiz-q1-e': 'Wait for accident',
+        
+        'risk-quiz-q2-a': 'Just use PPE',
+        'risk-quiz-q2-b': 'Completely eliminate the hazard',
+        'risk-quiz-q2-c': 'Just train workers',
+        'risk-quiz-q2-d': 'Just put up signs',
+        'risk-quiz-q2-e': 'Just notify supervisor',
+        
+        'risk-quiz-q3-a': 'Task list',
+        'risk-quiz-q3-b': 'Risk matrix',
+        'risk-quiz-q3-c': 'Production report',
+        'risk-quiz-q3-d': 'Timesheet',
+        'risk-quiz-q3-e': 'Materials list',
+        
+        'risk-quiz-q4-a': 'Only once a year',
+        'risk-quiz-q4-b': 'When there are changes or incidents',
+        'risk-quiz-q4-c': 'Only when supervisor orders',
+        'risk-quiz-q4-d': 'Only at project start',
+        'risk-quiz-q4-e': 'Never again',
+        
+        'quiz-submit': 'Submit Answers',
+        'quiz-result-title': 'Quiz Result',
+        'quiz-score': 'Your score',
+        'quiz-correct': 'Correct answers',
+        'quiz-incorrect': 'Incorrect answers',
+        'quiz-congratulations': 'Congratulations! You got',
+        'quiz-try-again': 'Try again! You got',
+        'quiz-retry': 'Retry Quiz',
+        'quiz-back': 'Back to Courses'
+    }
+};
+
+// Estado atual do idioma
+let currentLanguage = 'pt';
+
+// Função para traduzir elementos
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+// Função para mudar idioma
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Sistema de Quiz
+class QuizSystem {
+    constructor() {
+        this.currentQuiz = null;
+        this.answers = {};
+        this.score = 0;
+        this.totalQuestions = 0;
+    }
+
+    initQuiz(quizData) {
+        this.currentQuiz = quizData;
+        this.answers = {};
+        this.score = 0;
+        this.totalQuestions = Object.keys(quizData.questions).length;
+        
+        // Limpar seleções anteriores
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado anterior
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+    }
+
+    submitQuiz() {
+        if (!this.currentQuiz) return;
+        
+        this.score = 0;
+        this.answers = {};
+        
+        // Coletar respostas
+        Object.keys(this.currentQuiz.questions).forEach(questionKey => {
+            const selectedOption = document.querySelector(`input[name="${questionKey}"]:checked`);
+            if (selectedOption) {
+                this.answers[questionKey] = selectedOption.value;
+                if (selectedOption.value === this.currentQuiz.questions[questionKey].correct) {
+                    this.score++;
+                }
+            }
+        });
+        
+        // Mostrar resultado
+        this.showResult();
+    }
+
+    showResult() {
+        const resultDiv = document.getElementById('quiz-result');
+        if (!resultDiv) return;
+        
+        const percentage = Math.round((this.score / this.totalQuestions) * 100);
+        const isPassing = percentage >= 70;
+        
+        // Obter textos traduzidos
+        const resultTitle = this.getTranslatedText('quiz-result-title');
+        const scoreText = this.getTranslatedText('quiz-score');
+        const correctText = this.getTranslatedText('quiz-correct');
+        const incorrectText = this.getTranslatedText('quiz-incorrect');
+        const congratulationsText = this.getTranslatedText('quiz-congratulations');
+        const tryAgainText = this.getTranslatedText('quiz-try-again');
+        const retryText = this.getTranslatedText('quiz-retry');
+        const backText = this.getTranslatedText('quiz-back');
+        
+        resultDiv.innerHTML = `
+            <h3>${resultTitle}</h3>
+            <div style="text-align: center; margin: 20px 0;">
+                <div class="score-circle ${isPassing ? 'passing' : 'failing'}">
+                    <span>${percentage}%</span>
+                </div>
+                <div style="margin-top: 20px;">
+                    <p><strong>${scoreText}:</strong> ${this.score}/${this.totalQuestions}</p>
+                    <p style="color: #27ae60; font-weight: bold;">${correctText}: ${this.score}</p>
+                    <p style="color: #e74c3c; font-weight: bold;">${incorrectText}: ${this.totalQuestions - this.score}</p>
+                </div>
+            </div>
+            <div class="quiz-message ${isPassing ? 'success' : 'error'}">
+                ${isPassing ? 
+                    `<p>${congratulationsText} ${this.score} de ${this.totalQuestions} perguntas!</p>` :
+                    `<p>${tryAgainText} ${this.score} de ${this.totalQuestions} perguntas.</p>`
+                }
+            </div>
+            <div class="quiz-actions">
+                <button onclick="quizSystem.retryQuiz()">${retryText}</button>
+                <a href="../index.html">${backText}</a>
+            </div>
+        `;
+        
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    retryQuiz() {
+        if (!this.currentQuiz) return;
+        
+        // Limpar seleções
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+        
+        // Resetar
+        this.answers = {};
+        this.score = 0;
+        
+        // Voltar ao topo do quiz
+        const quizSection = document.querySelector('.quiz-section');
+        if (quizSection) {
+            quizSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    getTranslatedText(key) {
+        const lang = localStorage.getItem('rss3-language') || 'pt';
+        if (translations && translations[lang] && translations[lang][key]) {
+            return translations[lang][key];
+        }
+        return key;
+    }
+}
+
+// Instância global do quiz
+const quizSystem = new QuizSystem();
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado - iniciando sistema de idiomas');
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            changeLanguage(lang);
+        });
+    });
+    
+    // Adicionar evento ao botão de submit
+    const submitBtn = document.getElementById('quiz-submit');
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+            quizSystem.submitQuiz();
+        });
+    }
+    
+    // Inicializar quiz
+    const quizData = {
+        questions: {
+            q1: { correct: 'b' },
+            q2: { correct: 'b' },
+            q3: { correct: 'b' },
+            q4: { correct: 'b' }
+        }
+    };
+    
+    quizSystem.initQuiz(quizData);
+});
+</script>
+
+</body>
+</html>

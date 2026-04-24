@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso NR-05 - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-1px);
+    }
+
+    /* Seletor de Idiomas */
+    .language-selector {
+      display: flex;
+      gap: 5px;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--branco);
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8em;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+      color: var(--branco);
+      border-color: var(--laranja);
+    }
+
+    /* Conteúdo Principal */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0a3d91, #1a5fb8);
+      color: var(--branco);
+      padding: 60px 30px;
+      text-align: center;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    .hero-btn {
+      background: var(--laranja);
+      color: var(--branco);
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .hero-btn:hover {
+      background: #e68a00;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(255,122,0,0.3);
+    }
+
+    .course-section {
+      background: var(--branco);
+      padding: 40px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .course-section h2 {
+      color: var(--azul);
+      margin-bottom: 25px;
+      font-size: 1.8em;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-list li {
+      background: var(--cinza-claro);
+      margin-bottom: 15px;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid var(--laranja);
+      transition: all 0.3s ease;
+    }
+
+    .info-list li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .info-list strong {
+      color: var(--azul);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .alert-box {
+      background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+      border: 2px solid var(--laranja);
+      border-radius: 10px;
+      padding: 25px;
+      margin: 30px 0;
+      box-shadow: 0 4px 15px rgba(255,122,0,0.2);
+    }
+
+    .alert-box h4 {
+      color: var(--azul);
+      margin-bottom: 15px;
+      font-size: 1.3em;
+    }
+
+    .alert-box p {
+      color: var(--cinza-texto);
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    /* Quiz */
+    .quiz-section {
+      background: var(--branco);
+      padding: 40px;
+      border-radius: 12px;
+      margin-top: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .quiz-title {
+      color: var(--azul);
+      margin-bottom: 30px;
+      font-size: 1.8em;
+      text-align: center;
+    }
+
+    .quiz-question {
+      margin-bottom: 30px;
+      padding: 25px;
+      background: var(--cinza-claro);
+      border-radius: 10px;
+      border-left: 5px solid var(--azul);
+    }
+
+    .quiz-question h4 {
+      color: var(--azul);
+      margin-bottom: 20px;
+      font-size: 1.2em;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 15px;
+    }
+
+    .quiz-option-label {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background: var(--branco);
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-option-label:hover {
+      border-color: var(--azul);
+      background: rgba(10,61,145,0.05);
+    }
+
+    .quiz-option {
+      margin-right: 12px;
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .quiz-btn {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-btn:hover {
+      background: #0956b3;
+      transform: translateY(-2px);
+    }
+
+    .quiz-result {
+      background: linear-gradient(135deg, #e8f5e8, #f5f5f5);
+      border: 2px solid var(--azul);
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 30px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .quiz-result h3 {
+      color: var(--azul);
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+
+    #quiz-score {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    #quiz-message {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .correct {
+      background: #d4edda !important;
+      border-color: #28a745 !important;
+      color: #155724 !important;
+    }
+
+    .incorrect {
+      background: #f8d7da !important;
+      border-color: #dc3545 !important;
+      color: #721c24 !important;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      header, footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 40px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .course-section, .quiz-section {
+        padding: 25px;
+      }
+
+      .quiz-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>RSS<span>3</span> Treinamentos</h1>
+  <nav>
+    <a href="../index.html" data-translate="nav-back">Voltar</a>
+    <a href="../sobre.html" data-translate="nav-about">Sobre</a>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 data-translate="nr05-hero-title">NR-05 CIPA</h1>
+    <p data-translate="nr05-hero-subtitle">
+      Comissão Interna de Prevenção de Acidentes - organização, 
+      estruturação e funcionamento para garantir um ambiente de trabalho seguro.
+    </p>
+    <a href="#conteudo" class="hero-btn" data-translate="nr05-hero-btn">Começar Curso</a>
+  </div>
+</section>
+
+<main id="conteudo">
+  <section class="course-section">
+    <h2 data-translate="nr05-section-1-title">O que é a CIPA?</h2>
+    <p data-translate="nr05-section-1-text">
+      A CIPA (Comissão Interna de Prevenção de Acidentes) é uma comissão 
+      obrigatória em empresas com mais de 20 funcionários, composta por 
+      representantes dos trabalhadores e empregadores, com o objetivo de prevenir 
+      acidentes e doenças ocupacionais.
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr05-point-1">
+        <strong>Objetivo Principal:</strong>
+          Prevenir acidentes e doenças através de ações preventivas.
+      </li>
+      <li data-translate="nr05-point-2">
+        <strong>Obrigatoriedade:</strong>
+          Empresas com mais de 20 funcionários precisam ter CIPA.
+      </li>
+      <li data-translate="nr05-point-3">
+        <strong>Composição:</strong>
+          Representantes dos trabalhadores (eleitos) e empregadores (indicados).
+      </li>
+      <li data-translate="nr05-point-4">
+        <strong>Mandato:</strong>
+          Um ano de mandato para os representantes dos trabalhadores.
+      </li>
+      <li data-translate="nr05-point-5">
+        <strong>Estabilidade:</strong>
+          Membros da CIPA têm estabilidade no emprego.
+      </li>
+    </ul>
+  </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr05-section-2-title">Estrutura da CIPA</h2>
+    <p data-translate="nr05-section-2-text">
+      A CIPA possui uma estrutura organizacional definida com cargos, 
+      funções e responsabilidades específicas para garantir seu funcionamento 
+      eficiente e cumprimento dos objetivos.
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr05-structure-1">
+        <strong>Presidente:</strong>
+          Coordenar todas as atividades da comissão.
+      </li>
+      <li data-translate="nr05-structure-2">
+        <strong>Vice-Presidente:</strong>
+          Auxiliar o presidente e substituí-lo em sua ausência.
+      </li>
+      <li data-translate="nr05-structure-3">
+        <strong>Secretário:</strong>
+          Documentar reuniões, atas e relatórios da CIPA.
+      </li>
+      <li data-translate="nr05-structure-4">
+        <strong>Representantes dos Trabalhadores:</strong>
+          Eleitos pelos funcionários, representam cada setor.
+      </li>
+      <li data-translate="nr05-structure-5">
+        <strong>Representantes do Empregador:</strong>
+          Indicados pela empresa, representam a gestão.
+      </li>
+      <li data-translate="nr05-structure-6">
+        <strong>Suplentes:</strong>
+          Membros que substituem os titulares quando necessário.
+      </li>
+    </ul>
+  </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr05-section-3-title">Atribuições da CIPA</h2>
+    <p data-translate="nr05-section-3-text">
+      A CIPA tem responsabilidades específicas definidas pela NR-05, 
+      incluindo inspeções, investigações, treinamentos e campanhas 
+      de conscientização sobre segurança.
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr05-attribution-1">
+        <strong>Inspeções de Segurança:</strong>
+          Verificar condições de trabalho e identificar riscos.
+      </li>
+      <li data-translate="nr05-attribution-2">
+        <strong>Investigação de Acidentes:</strong>
+          Analisar causas e propor medidas preventivas.
+      </li>
+      <li data-translate="nr05-attribution-3">
+        <strong>Reuniões Mensais:</strong>
+          Discutir problemas e planejar ações preventivas.
+      </li>
+      <li data-translate="nr05-attribution-4">
+        <strong>Campanhas de Segurança:</strong>
+          Conscientizar sobre prevenção de acidentes.
+      </li>
+      <li data-translate="nr05-attribution-5">
+        <strong>Mapa de Riscos:</strong>
+          Identificar e sinalizar perigos no ambiente.
+      </li>
+      <li data-translate="nr05-attribution-6">
+        <strong>Comunicação:</strong>
+          Divulgar informações de segurança aos trabalhadores.
+      </li>
+    </ul>
+  </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr05-section-4-title">Eleições da CIPA</h2>
+    <p data-translate="nr05-section-4-text">
+      Os representantes dos trabalhadores na CIPA são eleitos democraticamente 
+      através de processo definido pela NR-05, garantindo representatividade 
+      e legitimidade da comissão.
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr05-election-1">
+        <strong>Período Eleitoral:</strong>
+          Eleições realizadas anualmente.
+      </li>
+      <li data-translate="nr05-election-2">
+        <strong>Candidatos:</strong>
+          Trabalhadores interessados em representar os colegas.
+      </li>
+      <li data-translate="nr05-election-3">
+        <strong>Voto Secreto:</strong>
+          Processo de votação sigiloso e universal.
+      </li>
+      <li data-translate="nr05-election-4">
+        <strong>Apuração:</strong>
+          Contagem dos votos realizada por comissão eleitoral.
+      </li>
+      <li data-translate="nr05-election-5">
+        <strong>Posse:</strong>
+          Cerimônia de posse dos novos membros eleitos.
+      </li>
+      <li data-translate="nr05-election-6">
+        <strong>Estabilidade:</strong>
+          Membros eleitos têm estabilidade durante o mandato.
+      </li>
+    </ul>
+  </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr05-section-5-title">Benefícios da CIPA</h2>
+    <p data-translate="nr05-section-5-text">
+      A CIPA traz diversos benefícios tanto para os trabalhadores 
+      quanto para a empresa, contribuindo para um ambiente de trabalho 
+      mais seguro e produtivo.
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr05-benefit-1">
+        <strong>Redução de Acidentes:</strong>
+          Ações preventivas diminuem ocorrências.
+      </li>
+      <li data-translate="nr05-benefit-2">
+        <strong>Conscientização:</strong>
+          Trabalhadores mais atentos à segurança.
+      </li>
+      <li data-translate="nr05-benefit-3">
+        <strong>Diálogo:</strong>
+          Melhora na comunicação entre empresa e funcionários.
+      </li>
+      <li data-translate="nr05-benefit-4">
+        <strong>Participação:</strong>
+          Trabalhadores participam ativamente da segurança.
+      </li>
+      <li data-translate="nr05-benefit-5">
+        <strong>Cumprimento Legal:</strong>
+          Empresa em conformidade com a NR-05.
+      </li>
+      <li data-translate="nr05-benefit-6">
+        <strong>Cultura de Segurança:</strong>
+          Fortalece a cultura preventiva na organização.
+      </li>
+    </ul>
+  </section>
+
+  <div class="alert-box">
+    <h4 data-translate="nr05-tip-title">DICAS IMPORTANTES</h4>
+    <p data-translate="nr05-tip-text">
+      A CIPA é uma ferramenta poderosa para prevenção. 
+      Participar ativamente faz diferença na segurança do trabalho!
+    </p>
+  </div>
+
+  <section class="quiz-section">
+    <h2 class="quiz-title" data-translate="nr05-quiz-title">Teste seu Conhecimento</h2>
+    
+    <div class="quiz-question">
+      <h4 data-translate="nr05-quiz-question-1">1. O que significa CIPA?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="a" class="quiz-option">
+          <span data-translate="nr05-quiz-q1-a">Comissão Interna de Prevenção de Acidentes</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="b" class="quiz-option">
+          <span data-translate="nr05-quiz-q1-b">Comissão de Investigação de Perigos</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="c" class="quiz-option">
+          <span data-translate="nr05-quiz-q1-c">Comissão de Segurança Ocupacional</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="d" class="quiz-option">
+          <span data-translate="nr05-quiz-q1-d">Comissão de Proteção Individual</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="e" class="quiz-option">
+          <span data-translate="nr05-quiz-q1-e">Comissão de Análise de Riscos</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="nr05-quiz-question-2">2. Quando é obrigatória a CIPA?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="a" class="quiz-option">
+          <span data-translate="nr05-quiz-q2-a">Empresas com mais de 10 funcionários</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="b" class="quiz-option">
+          <span data-translate="nr05-quiz-q2-b">Empresas com mais de 20 funcionários</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="c" class="quiz-option">
+          <span data-translate="nr05-quiz-q2-c">Empresas com mais de 50 funcionários</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="d" class="quiz-option">
+          <span data-translate="nr05-quiz-q2-d">Indústrias em geral</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="e" class="quiz-option">
+          <span data-translate="nr05-quiz-q2-e">Todas as empresas sem exceção</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="nr05-quiz-question-3">3. Qual é o principal objetivo da CIPA?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="a" class="quiz-option">
+          <span data-translate="nr05-quiz-q3-a">Investigar acidentes</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="b" class="quiz-option">
+          <span data-translate="nr05-quiz-q3-b">Prevenir acidentes</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="c" class="quiz-option">
+          <span data-translate="nr05-quiz-q3-c">Treinar trabalhadores</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="d" class="quiz-option">
+          <span data-translate="nr05-quiz-q3-d">Documentar ocorrências</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="e" class="quiz-option">
+          <span data-translate="nr05-quiz-q3-e">Fiscalizar EPIs</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <h4 data-translate="nr05-quiz-question-4">4. Quanto tempo dura o mandato da CIPA?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="a" class="quiz-option">
+          <span data-translate="nr05-quiz-q4-a">6 meses</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="b" class="quiz-option">
+          <span data-translate="nr05-quiz-q4-b">1 ano</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="c" class="quiz-option">
+          <span data-translate="nr05-quiz-q4-c">2 anos</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="d" class="quiz-option">
+          <span data-translate="nr05-quiz-q4-d">3 anos</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="e" class="quiz-option">
+          <span data-translate="nr05-quiz-q4-e">4 anos</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz-actions">
+      <button class="quiz-btn" onclick="checkQuiz()" data-translate="nr05-quiz-submit">Verificar Respostas</button>
+      <button class="quiz-btn" onclick="resetQuiz()" data-translate="nr05-quiz-reset">Refazer Quiz</button>
+    </div>
+  </section>
+
+  <div id="quiz-result" class="quiz-result" style="display: none;">
+    <h3 data-translate="nr05-quiz-result-title">Resultado</h3>
+    <p id="quiz-score"></p>
+    <p id="quiz-message"></p>
+    <div class="quiz-actions">
+      <button class="quiz-btn" onclick="resetQuiz()" data-translate="nr05-quiz-reset">Refazer Quiz</button>
+      <button class="quiz-btn" onclick="window.location.href='../index.html'" data-translate="nr05-quiz-back">Voltar</button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-box">
+      <h4>🏢 <span data-translate="footer-courses">Cursos</span></h4>
+      <p><a href="../index.html" data-translate="footer-all-courses">Todos os cursos</a></p>
+    </div>
+    <div class="footer-box">
+      <h4>📚 <span data-translate="footer-resources">Recursos</span></h4>
+      <p><a href="../sobre.html" data-translate="footer-materials">Materiais de apoio</a></p>
+    </div>
+    <div class="footer-box">
+      <h4>📞 <span data-translate="footer-contact">Contato</span></h4>
+      <p data-translate="footer-support">Suporte RSS3</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 <span>RSS3</span> Treinamentos de Segurança
+  </div>
+</footer>
+
+<script>
+// Sistema de Tradução
+const translations = {
+    pt: {
+        'nav-back': 'Voltar',
+        'nav-about': 'Sobre',
+        'nr05-hero-title': 'NR-05 CIPA',
+        'nr05-hero-subtitle': 'Comissão Interna de Prevenção de Acidentes - organização, estruturação e funcionamento para garantir um ambiente de trabalho seguro.',
+        'nr05-hero-btn': 'Começar Curso',
+        
+        'nr05-section-1-title': 'O que é a CIPA?',
+        'nr05-section-1-text': 'A CIPA (Comissão Interna de Prevenção de Acidentes) é uma comissão obrigatória em empresas com mais de 20 funcionários, composta por representantes dos trabalhadores e empregadores, com o objetivo de prevenir acidentes e doenças ocupacionais.',
+        'nr05-point-1': '<strong>Objetivo Principal:</strong> Prevenir acidentes e doenças através de ações preventivas.',
+        'nr05-point-2': '<strong>Obrigatoriedade:</strong> Empresas com mais de 20 funcionários precisam ter CIPA.',
+        'nr05-point-3': '<strong>Composição:</strong> Representantes dos trabalhadores (eleitos) e empregadores (indicados).',
+        'nr05-point-4': '<strong>Mandato:</strong> Um ano de mandato para os representantes dos trabalhadores.',
+        'nr05-point-5': '<strong>Estabilidade:</strong> Membros da CIPA têm estabilidade no emprego.',
+        
+        'nr05-section-2-title': 'Estrutura da CIPA',
+        'nr05-section-2-text': 'A CIPA possui uma estrutura organizacional definida com cargos, funções e responsabilidades específicas para garantir seu funcionamento eficiente e cumprimento dos objetivos.',
+        'nr05-structure-1': '<strong>Presidente:</strong> Coordenar todas as atividades da comissão.',
+        'nr05-structure-2': '<strong>Vice-Presidente:</strong> Auxiliar o presidente e substituí-lo em sua ausência.',
+        'nr05-structure-3': '<strong>Secretário:</strong> Documentar reuniões, atas e relatórios da CIPA.',
+        'nr05-structure-4': '<strong>Representantes dos Trabalhadores:</strong> Eleitos pelos funcionários, representam cada setor.',
+        'nr05-structure-5': '<strong>Representantes do Empregador:</strong> Indicados pela empresa, representam a gestão.',
+        'nr05-structure-6': '<strong>Suplentes:</strong> Membros que substituem os titulares quando necessário.',
+        
+        'nr05-section-3-title': 'Atribuições da CIPA',
+        'nr05-section-3-text': 'A CIPA tem responsabilidades específicas definidas pela NR-05, incluindo inspeções, investigações, treinamentos e campanhas de conscientização sobre segurança.',
+        'nr05-attribution-1': '<strong>Inspeções de Segurança:</strong> Verificar condições de trabalho e identificar riscos.',
+        'nr05-attribution-2': '<strong>Investigação de Acidentes:</strong> Analisar causas e propor medidas preventivas.',
+        'nr05-attribution-3': '<strong>Reuniões Mensais:</strong> Discutir problemas e planejar ações preventivas.',
+        'nr05-attribution-4': '<strong>Campanhas de Segurança:</strong> Conscientizar sobre prevenção de acidentes.',
+        'nr05-attribution-5': '<strong>Mapa de Riscos:</strong> Identificar e sinalizar perigos no ambiente.',
+        'nr05-attribution-6': '<strong>Comunicação:</strong> Divulgar informações de segurança aos trabalhadores.',
+        
+        'nr05-section-4-title': 'Eleições da CIPA',
+        'nr05-section-4-text': 'Os representantes dos trabalhadores na CIPA são eleitos democraticamente através de processo definido pela NR-05, garantindo representatividade e legitimidade da comissão.',
+        'nr05-election-1': '<strong>Período Eleitoral:</strong> Eleições realizadas anualmente.',
+        'nr05-election-2': '<strong>Candidatos:</strong> Trabalhadores interessados em representar os colegas.',
+        'nr05-election-3': '<strong>Voto Secreto:</strong> Processo de votação sigiloso e universal.',
+        'nr05-election-4': '<strong>Apuração:</strong> Contagem dos votos realizada por comissão eleitoral.',
+        'nr05-election-5': '<strong>Posse:</strong> Cerimônia de posse dos novos membros eleitos.',
+        'nr05-election-6': '<strong>Estabilidade:</strong> Membros eleitos têm estabilidade durante o mandato.',
+        
+        'nr05-section-5-title': 'Benefícios da CIPA',
+        'nr05-section-5-text': 'A CIPA traz diversos benefícios tanto para os trabalhadores quanto para a empresa, contribuindo para um ambiente de trabalho mais seguro e produtivo.',
+        'nr05-benefit-1': '<strong>Redução de Acidentes:</strong> Ações preventivas diminuem ocorrências.',
+        'nr05-benefit-2': '<strong>Conscientização:</strong> Trabalhadores mais atentos à segurança.',
+        'nr05-benefit-3': '<strong>Diálogo:</strong> Melhora na comunicação entre empresa e funcionários.',
+        'nr05-benefit-4': '<strong>Participação:</strong> Trabalhadores participam ativamente da segurança.',
+        'nr05-benefit-5': '<strong>Cumprimento Legal:</strong> Empresa em conformidade com a NR-05.',
+        'nr05-benefit-6': '<strong>Cultura de Segurança:</strong> Fortalece a cultura preventiva na organização.',
+        
+        'nr05-tip-title': 'DICAS IMPORTANTES',
+        'nr05-tip-text': 'A CIPA é uma ferramenta poderosa para prevenção. Participar ativamente faz diferença na segurança do trabalho!',
+        
+        'nr05-quiz-title': 'Teste seu Conhecimento',
+        'nr05-quiz-question-1': '1. O que significa CIPA?',
+        'nr05-quiz-q1-a': 'Comissão Interna de Prevenção de Acidentes',
+        'nr05-quiz-q1-b': 'Comissão de Investigação de Perigos',
+        'nr05-quiz-q1-c': 'Comissão de Segurança Ocupacional',
+        'nr05-quiz-q1-d': 'Comissão de Proteção Individual',
+        'nr05-quiz-q1-e': 'Comissão de Análise de Riscos',
+        
+        'nr05-quiz-question-2': '2. Quando é obrigatória a CIPA?',
+        'nr05-quiz-q2-a': 'Empresas com mais de 10 funcionários',
+        'nr05-quiz-q2-b': 'Empresas com mais de 20 funcionários',
+        'nr05-quiz-q2-c': 'Empresas com mais de 50 funcionários',
+        'nr05-quiz-q2-d': 'Indústrias em geral',
+        'nr05-quiz-q2-e': 'Todas as empresas sem exceção',
+        
+        'nr05-quiz-question-3': '3. Qual é o principal objetivo da CIPA?',
+        'nr05-quiz-q3-a': 'Investigar acidentes',
+        'nr05-quiz-q3-b': 'Prevenir acidentes',
+        'nr05-quiz-q3-c': 'Treinar trabalhadores',
+        'nr05-quiz-q3-d': 'Documentar ocorrências',
+        'nr05-quiz-q3-e': 'Fiscalizar EPIs',
+        
+        'nr05-quiz-question-4': '4. Quanto tempo dura o mandato da CIPA?',
+        'nr05-quiz-q4-a': '6 meses',
+        'nr05-quiz-q4-b': '1 ano',
+        'nr05-quiz-q4-c': '2 anos',
+        'nr05-quiz-q4-d': '3 anos',
+        'nr05-quiz-q4-e': '4 anos',
+        
+        'nr05-quiz-submit': 'Verificar Respostas',
+        'nr05-quiz-reset': 'Refazer Quiz',
+        'nr05-quiz-result-title': 'Resultado',
+        'nr05-quiz-back': 'Voltar',
+        'nr05-quiz-score-text': 'Sua pontuação',
+        'nr05-quiz-success-message': 'Parabéns! Você demonstrou excelente conhecimento sobre a CIPA e seu papel fundamental na prevenção de acidentes.',
+        'nr05-quiz-fail-message': 'Estude um pouco mais. A CIPA é essencial para garantir a segurança e prevenir acidentes no ambiente de trabalho.',
+        
+        'footer-courses': 'Cursos',
+        'footer-all-courses': 'Todos os cursos',
+        'footer-resources': 'Recursos',
+        'footer-materials': 'Materiais de apoio',
+        'footer-contact': 'Contato',
+        'footer-support': 'Suporte RSS3'
+    },
+    
+    es: {
+        'nav-back': 'Volver',
+        'nav-about': 'Acerca de',
+        'nr05-hero-title': 'NR-05 CIPA',
+        'nr05-hero-subtitle': 'Comisión Interna de Prevención de Accidentes - organización, estructuración y funcionamiento para garantizar un ambiente de trabajo seguro.',
+        'nr05-hero-btn': 'Comenzar Curso',
+        
+        'nr05-section-1-title': '¿Qué es la CIPA?',
+        'nr05-section-1-text': 'La CIPA (Comisión Interna de Prevención de Accidentes) es una comisión obligatoria en empresas con más de 20 funcionarios, compuesta por representantes de los trabajadores y empleadores, con el objetivo de prevenir accidentes y enfermedades ocupacionales.',
+        'nr05-point-1': '<strong>Objetivo Principal:</strong> Prevenir accidentes y enfermedades a través de acciones preventivas.',
+        'nr05-point-2': '<strong>Obligatoriedad:</strong> Empresas con más de 20 funcionarios necesitan tener CIPA.',
+        'nr05-point-3': '<strong>Composición:</strong> Representantes de los trabajadores (elegidos) y empleadores (indicados).',
+        'nr05-point-4': '<strong>Mandato:</strong> Un año de mandato para los representantes de los trabajadores.',
+        'nr05-point-5': '<strong>Estabilidad:</strong> Miembros de la CIPA tienen estabilidad en el empleo.',
+        
+        'nr05-section-2-title': 'Estructura de la CIPA',
+        'nr05-section-2-text': 'La CIPA posee una estructura organizacional definida con cargos, funciones y responsabilidades específicas para garantizar su funcionamiento eficiente y cumplimiento de los objetivos.',
+        'nr05-structure-1': '<strong>Presidente:</strong> Coordinar todas las actividades de la comisión.',
+        'nr05-structure-2': '<strong>Vice-Presidente:</strong> Auxiliar al presidente y sustituirlo en su ausencia.',
+        'nr05-structure-3': '<strong>Secretario:</strong> Documentar reuniones, actas e informes de la CIPA.',
+        'nr05-structure-4': '<strong>Representantes de los Trabajadores:</strong> Elegidos por los funcionarios, representan cada sector.',
+        'nr05-structure-5': '<strong>Representantes del Empleador:</strong> Indicados por la empresa, representan la gestión.',
+        'nr05-structure-6': '<strong>Suplentes:</strong> Miembros que sustituyen a los titulares cuando es necesario.',
+        
+        'nr05-section-3-title': 'Atribuciones de la CIPA',
+        'nr05-section-3-text': 'La CIPA tiene responsabilidades específicas definidas por la NR-05, incluyendo inspecciones, investigaciones, entrenamientos y campañas de concientización sobre seguridad.',
+        'nr05-attribution-1': '<strong>Inspecciones de Seguridad:</strong> Verificar condiciones de trabajo e identificar riesgos.',
+        'nr05-attribution-2': '<strong>Investigación de Accidentes:</strong> Analizar causas y proponer medidas preventivas.',
+        'nr05-attribution-3': '<strong>Reuniones Mensuales:</strong> Discutir problemas y planificar acciones preventivas.',
+        'nr05-attribution-4': '<strong>Campañas de Seguridad:</strong> Concientizar sobre prevención de accidentes.',
+        'nr05-attribution-5': '<strong>Mapa de Riesgos:</strong> Identificar y señalizar peligros en el ambiente.',
+        'nr05-attribution-6': '<strong>Comunicación:</strong> Divulgar informaciones de seguridad a los trabajadores.',
+        
+        'nr05-section-4-title': 'Elecciones de la CIPA',
+        'nr05-section-4-text': 'Los representantes de los trabajadores en la CIPA son elegidos democráticamente a través de proceso definido por la NR-05, garantizando representatividad y legitimidad de la comisión.',
+        'nr05-election-1': '<strong>Período Electoral:</strong> Elecciones realizadas anualmente.',
+        'nr05-election-2': '<strong>Candidatos:</strong> Trabajadores interesados en representar a los colegas.',
+        'nr05-election-3': '<strong>Voto Secreto:</strong> Proceso de votación sigiloso y universal.',
+        'nr05-election-4': '<strong>Apuración:</strong> Conteo de los votos realizada por comisión electoral.',
+        'nr05-election-5': '<strong>Posesión:</strong> Cerimonia de posesión de los nuevos miembros elegidos.',
+        'nr05-election-6': '<strong>Estabilidad:</strong> Miembros elegidos tienen estabilidad durante el mandato.',
+        
+        'nr05-section-5-title': 'Beneficios de la CIPA',
+        'nr05-section-5-text': 'La CIPA trae diversos beneficios tanto para los trabajadores como para la empresa, contribuyendo para un ambiente de trabajo más seguro y productivo.',
+        'nr05-benefit-1': '<strong>Reducción de Accidentes:</strong> Acciones preventivas disminuyen ocurrencias.',
+        'nr05-benefit-2': '<strong>Concientización:</strong> Trabajadores más atentos a la seguridad.',
+        'nr05-benefit-3': '<strong>Diálogo:</strong> Mejora en la comunicación entre empresa y funcionarios.',
+        'nr05-benefit-4': '<strong>Participación:</strong> Trabajadores participan activamente de la seguridad.',
+        'nr05-benefit-5': '<strong>Cumplimiento Legal:</strong> Empresa en conformidad con la NR-05.',
+        'nr05-benefit-6': '<strong>Cultura de Seguridad:</strong> Fortalece la cultura preventiva en la organización.',
+        
+        'nr05-tip-title': 'CONSEJOS IMPORTANTES',
+        'nr05-tip-text': 'La CIPA es una herramienta poderosa para prevención. ¡Participar activamente hace diferencia en la seguridad del trabajo!',
+        
+        'nr05-quiz-title': 'Pruebe su Conocimiento',
+        'nr05-quiz-question-1': '1. ¿Qué significa CIPA?',
+        'nr05-quiz-q1-a': 'Comisión Interna de Prevención de Accidentes',
+        'nr05-quiz-q1-b': 'Comisión de Investigación de Peligros',
+        'nr05-quiz-q1-c': 'Comisión de Seguridad Ocupacional',
+        'nr05-quiz-q1-d': 'Comisión de Protección Individual',
+        'nr05-quiz-q1-e': 'Comisión de Análisis de Riesgos',
+        
+        'nr05-quiz-question-2': '2. ¿Cuándo es obligatoria la CIPA?',
+        'nr05-quiz-q2-a': 'Empresas con más de 10 funcionarios',
+        'nr05-quiz-q2-b': 'Empresas con más de 20 funcionarios',
+        'nr05-quiz-q2-c': 'Empresas con más de 50 funcionarios',
+        'nr05-quiz-q2-d': 'Industrias en general',
+        'nr05-quiz-q2-e': 'Todas las empresas sin excepción',
+        
+        'nr05-quiz-question-3': '3. ¿Cuál es el objetivo principal de la CIPA?',
+        'nr05-quiz-q3-a': 'Investigar accidentes',
+        'nr05-quiz-q3-b': 'Prevenir accidentes',
+        'nr05-quiz-q3-c': 'Entrenar trabajadores',
+        'nr05-quiz-q3-d': 'Documentar ocurrencias',
+        'nr05-quiz-q3-e': 'Fiscalizar EPIs',
+        
+        'nr05-quiz-question-4': '4. ¿Cuánto tiempo dura el mandato de la CIPA?',
+        'nr05-quiz-q4-a': '6 meses',
+        'nr05-quiz-q4-b': '1 año',
+        'nr05-quiz-q4-c': '2 años',
+        'nr05-quiz-q4-d': '3 años',
+        'nr05-quiz-q4-e': '4 años',
+        
+        'nr05-quiz-submit': 'Verificar Respuestas',
+        'nr05-quiz-reset': 'Rehacer Quiz',
+        'nr05-quiz-result-title': 'Resultado',
+        'nr05-quiz-back': 'Volver',
+        'nr05-quiz-score-text': 'Su puntuación',
+        'nr05-quiz-success-message': '¡Felicidades! Usted demostró excelente conocimiento sobre la CIPA y su papel fundamental en la prevención de accidentes.',
+        'nr05-quiz-fail-message': 'Estudie un poco más. La CIPA es esencial para garantizar la seguridad y prevenir accidentes en el ambiente de trabajo.',
+        
+        'footer-courses': 'Cursos',
+        'footer-all-courses': 'Todos los cursos',
+        'footer-resources': 'Recursos',
+        'footer-materials': 'Materiales de apoyo',
+        'footer-contact': 'Contacto',
+        'footer-support': 'Soporte RSS3'
+    },
+    
+    en: {
+        'nav-back': 'Back',
+        'nav-about': 'About',
+        'nr05-hero-title': 'NR-05 CIPA',
+        'nr05-hero-subtitle': 'Internal Accident Prevention Commission - organization, structuring and functioning to ensure a safe work environment.',
+        'nr05-hero-btn': 'Start Course',
+        
+        'nr05-section-1-title': 'What is CIPA?',
+        'nr05-section-1-text': 'CIPA (Internal Accident Prevention Commission) is a mandatory commission in companies with more than 20 employees, composed of worker and employer representatives, with the objective of preventing accidents and occupational diseases.',
+        'nr05-point-1': '<strong>Main Objective:</strong> Prevent accidents and diseases through preventive actions.',
+        'nr05-point-2': '<strong>Mandatory:</strong> Companies with more than 20 employees need to have CIPA.',
+        'nr05-point-3': '<strong>Composition:</strong> Worker representatives (elected) and employer representatives (indicated).',
+        'nr05-point-4': '<strong>Mandate:</strong> One year mandate for worker representatives.',
+        'nr05-point-5': '<strong>Stability:</strong> CIPA members have job stability.',
+        
+        'nr05-section-2-title': 'CIPA Structure',
+        'nr05-section-2-text': 'CIPA has a defined organizational structure with positions, functions and specific responsibilities to ensure efficient operation and fulfillment of objectives.',
+        'nr05-structure-1': '<strong>President:</strong> Coordinate all commission activities.',
+        'nr05-structure-2': '<strong>Vice-President:</strong> Assist the president and replace them in their absence.',
+        'nr05-structure-3': '<strong>Secretary:</strong> Document meetings, minutes and CIPA reports.',
+        'nr05-structure-4': '<strong>Worker Representatives:</strong> Elected by employees, represent each sector.',
+        'nr05-structure-5': '<strong>Employer Representatives:</strong> Indicated by the company, represent management.',
+        'nr05-structure-6': '<strong>Substitutes:</strong> Members who replace the holders when necessary.',
+        
+        'nr05-section-3-title': 'CIPA Responsibilities',
+        'nr05-section-3-text': 'CIPA has specific responsibilities defined by NR-05, including inspections, investigations, trainings and awareness campaigns about safety.',
+        'nr05-attribution-1': '<strong>Safety Inspections:</strong> Verify working conditions and identify risks.',
+        'nr05-attribution-2': '<strong>Accident Investigation:</strong> Analyze causes and propose preventive measures.',
+        'nr05-attribution-3': '<strong>Monthly Meetings:</strong> Discuss problems and plan preventive actions.',
+        'nr05-attribution-4': '<strong>Safety Campaigns:</strong> Raise awareness about accident prevention.',
+        'nr05-attribution-5': '<strong>Risk Map:</strong> Identify and signal hazards in the environment.',
+        'nr05-attribution-6': '<strong>Communication:</strong> Disseminate safety information to workers.',
+        
+        'nr05-section-4-title': 'CIPA Elections',
+        'nr05-section-4-text': 'Worker representatives in CIPA are democratically elected through a process defined by NR-05, ensuring representativeness and legitimacy of the commission.',
+        'nr05-election-1': '<strong>Electoral Period:</strong> Elections held annually.',
+        'nr05-election-2': '<strong>Candidates:</strong> Workers interested in representing colleagues.',
+        'nr05-election-3': '<strong>Secret Vote:</strong> Secret and universal voting process.',
+        'nr05-election-4': '<strong>Counting:</strong> Vote counting performed by electoral commission.',
+        'nr05-election-5': '<strong>Inauguration:</strong> Inauguration ceremony of new elected members.',
+        'nr05-election-6': '<strong>Stability:</strong> Elected members have stability during the mandate.',
+        
+        'nr05-section-5-title': 'CIPA Benefits',
+        'nr05-section-5-text': 'CIPA brings various benefits both for workers and for the company, contributing to a safer and more productive work environment.',
+        'nr05-benefit-1': '<strong>Accident Reduction:</strong> Preventive actions reduce occurrences.',
+        'nr05-benefit-2': '<strong>Awareness:</strong> Workers more attentive to safety.',
+        'nr05-benefit-3': '<strong>Dialogue:</strong> Improvement in communication between company and employees.',
+        'nr05-benefit-4': '<strong>Participation:</strong> Workers actively participate in safety.',
+        'nr05-benefit-5': '<strong>Legal Compliance:</strong> Company in compliance with NR-05.',
+        'nr05-benefit-6': '<strong>Safety Culture:</strong> Strengthens preventive culture in the organization.',
+        
+        'nr05-tip-title': 'IMPORTANT TIPS',
+        'nr05-tip-text': 'CIPA is a powerful tool for prevention. Active participation makes a difference in work safety!',
+        
+        'nr05-quiz-title': 'Test your Knowledge',
+        'nr05-quiz-question-1': '1. What does CIPA mean?',
+        'nr05-quiz-q1-a': 'Internal Accident Prevention Commission',
+        'nr05-quiz-q1-b': 'Hazard Investigation Commission',
+        'nr05-quiz-q1-c': 'Occupational Safety Commission',
+        'nr05-quiz-q1-d': 'Individual Protection Commission',
+        'nr05-quiz-q1-e': 'Risk Analysis Commission',
+        
+        'nr05-quiz-question-2': '2. When is CIPA mandatory?',
+        'nr05-quiz-q2-a': 'Companies with more than 10 employees',
+        'nr05-quiz-q2-b': 'Companies with more than 20 employees',
+        'nr05-quiz-q2-c': 'Companies with more than 50 employees',
+        'nr05-quiz-q2-d': 'Industries in general',
+        'nr05-quiz-q2-e': 'All companies without exception',
+        
+        'nr05-quiz-question-3': '3. What is the main objective of CIPA?',
+        'nr05-quiz-q3-a': 'Investigate accidents',
+        'nr05-quiz-q3-b': 'Prevent accidents',
+        'nr05-quiz-q3-c': 'Train workers',
+        'nr05-quiz-q3-d': 'Document occurrences',
+        'nr05-quiz-q3-e': 'Monitor PPEs',
+        
+        'nr05-quiz-question-4': '4. How long does CIPA mandate last?',
+        'nr05-quiz-q4-a': '6 months',
+        'nr05-quiz-q4-b': '1 year',
+        'nr05-quiz-q4-c': '2 years',
+        'nr05-quiz-q4-d': '3 years',
+        'nr05-quiz-q4-e': '4 years',
+        
+        'nr05-quiz-submit': 'Check Answers',
+        'nr05-quiz-reset': 'Retry Quiz',
+        'nr05-quiz-result-title': 'Result',
+        'nr05-quiz-back': 'Back',
+        'nr05-quiz-score-text': 'Your score',
+        'nr05-quiz-success-message': 'Congratulations! You demonstrated excellent knowledge about CIPA and its fundamental role in accident prevention.',
+        'nr05-quiz-fail-message': 'Study a little more. CIPA is essential to ensure safety and prevent accidents in the work environment.',
+        
+        'footer-courses': 'Courses',
+        'footer-all-courses': 'All Courses',
+        'footer-resources': 'Resources',
+        'footer-materials': 'Support Materials',
+        'footer-contact': 'Contact',
+        'footer-support': 'RSS3 Support'
+    }
+};
+
+// Sistema de Quiz
+class QuizSystem {
+    constructor() {
+        this.currentQuiz = null;
+        this.answers = {};
+        this.score = 0;
+        this.correctAnswers = {
+            'nr05': {
+                'q1': 'a',
+                'q2': 'b',
+                'q3': 'b',
+                'q4': 'b'
+            }
+        };
+    }
+
+    startQuiz(quizType) {
+        this.currentQuiz = quizType;
+        this.answers = {};
+        this.score = 0;
+        
+        // Limpar seleções anteriores
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+    }
+
+    submitQuiz() {
+        if (!this.currentQuiz) return;
+        
+        const quizAnswers = this.correctAnswers[this.currentQuiz];
+        let correctCount = 0;
+        const totalQuestions = Object.keys(quizAnswers).length;
+        
+        // Verificar cada resposta
+        for (const [questionId, correctAnswer] of Object.entries(quizAnswers)) {
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+            
+            if (selectedOption) {
+                const userAnswer = selectedOption.value;
+                this.answers[questionId] = userAnswer;
+                
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    // Marcar como correto
+                    selectedOption.parentElement.classList.add('correct');
+                } else {
+                    // Marcar como incorreto e mostrar a resposta correta
+                    selectedOption.parentElement.classList.add('incorrect');
+                    const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`);
+                    if (correctOption) {
+                        correctOption.parentElement.classList.add('correct');
+                    }
+                }
+            } else {
+                // Não respondida - mostrar resposta correta
+                const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`);
+                if (correctOption) {
+                    correctOption.parentElement.classList.add('correct');
+                }
+            }
+        }
+        
+        this.score = correctCount;
+        this.showResult(correctCount, totalQuestions);
+    }
+
+    showResult(correctCount, totalQuestions) {
+        const resultDiv = document.getElementById('quiz-result');
+        const scoreElement = document.getElementById('quiz-score');
+        const messageElement = document.getElementById('quiz-message');
+        
+        if (resultDiv && scoreElement && messageElement) {
+            const percentage = Math.round((correctCount / totalQuestions) * 100);
+            
+            scoreElement.textContent = this.getTranslatedText('nr05-quiz-score-text') + `: ${correctCount}/${totalQuestions} (${percentage}%)`;
+            
+            if (percentage >= 70) {
+                messageElement.textContent = this.getTranslatedText('nr05-quiz-success-message');
+                scoreElement.style.color = '#28a745';
+            } else {
+                messageElement.textContent = this.getTranslatedText('nr05-quiz-fail-message');
+                scoreElement.style.color = '#dc3545';
+            }
+            
+            resultDiv.style.display = 'block';
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    retryQuiz() {
+        if (!this.currentQuiz) return;
+        
+        // Limpar seleções
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Limpar classes de correção
+        document.querySelectorAll('.quiz-option-label').forEach(label => {
+            label.classList.remove('correct', 'incorrect');
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+        
+        // Resetar
+        this.answers = {};
+        this.score = 0;
+        
+        // Voltar ao topo do quiz
+        const quizSection = document.querySelector('.quiz-section');
+        if (quizSection) {
+            quizSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    getTranslatedText(key) {
+        const lang = localStorage.getItem('rss3-language') || 'pt';
+        if (translations && translations[lang] && translations[lang][key]) {
+            return translations[lang][key];
+        }
+        return key;
+    }
+}
+
+// Instância global do quiz
+const quizSystem = new QuizSystem();
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado - iniciando sistema de idiomas');
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            changeLanguage(btn.getAttribute('data-lang'));
+        });
+    });
+    
+    // Iniciar quiz nr05
+    quizSystem.startQuiz('nr05');
+});
+
+// Funções globais para o quiz
+function checkQuiz() {
+    quizSystem.submitQuiz();
+}
+
+function resetQuiz() {
+    quizSystem.retryQuiz();
+}
+
+// Sistema de Tradução
+let currentLanguage = 'pt';
+
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Função para rolar para o conteúdo
+function scrollToContent() {
+    document.querySelector('.course-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+  </script>
+
+</body>
+</html>

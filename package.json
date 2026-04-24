@@ -1,0 +1,16 @@
+{
+  "name": "treinamento-interno-rss3",
+  "version": "1.0.0",
+  "description": "Sistema de treinamentos RSS3",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

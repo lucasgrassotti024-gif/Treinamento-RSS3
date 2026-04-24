@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>RSS3 Treinamentos de Segurança</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+
+
+
+
+
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--laranja);
+    }
+
+    /* HERO / BANNER PRINCIPAL */
+.hero {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8, #ff7a00);
+  color: var(--branco);
+  padding: 90px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 2.6em;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.15em;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--branco);
+  padding: 16px 36px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: 0.2s;
+}
+
+.hero-btn:hover {
+  background: var(--branco);
+  color: var(--azul);
+  transform: translateY(-3px);
+}
+
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      flex: 1;
+      font-size: 0.95em;
+    }
+
+    .card a {
+      margin-top: 15px;
+      background: var(--laranja);
+      color: var(--branco);
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .secao-titulo {
+      margin: 50px 0 20px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+      color: var(--azul);
+    }
+
+    /* Seletor de Idiomas */
+    .language-selector {
+      display: flex;
+      gap: 5px;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--branco);
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8em;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+      color: var(--branco);
+      border-color: var(--laranja);
+    }
+
+    /* Sistema de Busca */
+    .search-container {
+      margin: 30px 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--branco);
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .search-box:focus-within {
+      border-color: var(--laranja);
+      box-shadow: 0 4px 12px rgba(255, 122, 0, 0.2);
+    }
+
+    #courseSearch {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 12px 15px;
+      font-size: 16px;
+      background: transparent;
+      color: var(--cinza-texto);
+    }
+
+    #courseSearch::placeholder {
+      color: #999;
+    }
+
+    .search-btn, .clear-btn {
+      background: none;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+    }
+
+    .search-btn {
+      color: var(--azul);
+    }
+
+    .search-btn:hover {
+      background: rgba(10, 61, 145, 0.1);
+    }
+
+    .clear-btn {
+      color: #666;
+    }
+
+    .clear-btn:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .search-results {
+      margin-top: 20px;
+      padding: 20px;
+      background: var(--branco);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .search-results h3 {
+      margin: 0 0 20px 0;
+      color: var(--azul);
+      font-size: 1.4em;
+      border-left: 4px solid var(--laranja);
+      padding-left: 15px;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 40px 20px;
+      color: #666;
+    }
+
+    .no-results p {
+      font-size: 1.1em;
+      margin: 0;
+    }
+
+    /* Animações para busca */
+    .search-container {
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .search-results {
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>RSS<span>3</span> Treinamentos</h1>
+  <nav>
+    <a href="index.html" data-translate="nav-home">Início</a>
+    <a href="sobre.html" data-translate="nav-about">Sobre</a>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2 data-translate="hero-title">Treinamentos interno de Segurança Industrial</h2>
+    <p data-translate="hero-subtitle">
+      Plataforma de conscientização para apoiar o aprendizado, reforçar
+      comportamentos seguros e reduzir riscos no ambiente de trabalho.
+    </p>
+
+    <a href="#cursos" class="hero-btn" data-translate="hero-btn">Ver Cursos</a>
+  </div>
+</section>
+
+
+<main id="cursos">
+
+  <!-- FILTRO DE BUSCA -->
+  <div class="search-container">
+    <div class="search-box">
+      <input type="text" id="courseSearch" placeholder="Buscar curso..." data-translate-placeholder="search-placeholder">
+      <button id="searchBtn" class="search-btn">
+        <span>search</span>
+      </button>
+      <button id="clearSearchBtn" class="clear-btn" style="display: none;">
+        <span>clear</span>
+      </button>
+    </div>
+    <div id="searchResults" class="search-results" style="display: none;">
+      <h3 data-translate="search-results-title">Resultados da Busca</h3>
+      <div id="searchResultsGrid" class="grid"></div>
+    </div>
+  </div>
+
+  <!-- NORMAS REGULAMENTADORAS (NRs) -->
+  <h2 class="secao-titulo" data-translate="section-nr-title">Normas Regulamentadoras (NRs)</h2>
+  <div class="grid">
+    <div class="card">
+      <h3 data-translate="course-nr01-title">NR-01 Disposições Gerais</h3>
+      <p data-translate="course-nr01-desc">Fundamentos básicos de segurança e medicina do trabalho.</p>
+      <a href="cursos/curso-nr01.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-nr03-title">NR-03 Embargo ou Interdição</h3>
+      <p data-translate="course-nr03-desc">Procedimentos de bloqueio e sinalização de áreas perigosas.</p>
+      <a href="cursos/curso-nr03.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-nr04-title">NR-04 Serviços Especializados em Segurança</h3>
+      <p data-translate="course-nr04-desc">SESMT, CIPA e responsabilidades em segurança do trabalho.</p>
+      <a href="cursos/curso-nr04.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-nr05-title">NR-05 CIPA</h3>
+      <p data-translate="course-nr05-desc">Comissão Interna de Prevenção de Acidentes e organização.</p>
+      <a href="cursos/curso-nr05.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-nr07-title">NR-07 PCMSO</h3>
+      <p data-translate="course-nr07-desc">Programa de Controle Médico de Saúde Ocupacional.</p>
+      <a href="cursos/curso-nr07.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-nr08-title">NR-08 Edificações</h3>
+      <p data-translate="course-nr08-desc">Requisitos de segurança em construções e estruturas.</p>
+      <a href="cursos/curso-nr08.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-nr09-title">NR-09 Programas de Prevenção de Riscos Ambientais</h3>
+      <p data-translate="course-nr09-desc">PPRA e gerenciamento de riscos físicos, químicos e biológicos.</p>
+      <a href="cursos/curso-nr09.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-epi-title">NR-06 Uso de EPI</h3>
+      <p data-translate="course-epi-desc">Importância do EPI, uso correto, conservação e responsabilidade.</p>
+      <a href="cursos/curso-epi.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-fire-title">NR-23 Prevenção e Combate a Incêndio</h3>
+      <p data-translate="course-fire-desc">Extintores, rotas de fuga, tipos de fogo e comportamento seguro.</p>
+      <a href="cursos/curso-incendio.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-height-title">NR-35 Trabalho em Altura</h3>
+      <p data-translate="course-height-desc">Cinto, ancoragem, quedas e regras básicas acima de 2 metros.</p>
+      <a href="cursos/curso-nr35.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-nr11-title">NR-11 Movimentação de Cargas</h3>
+      <p data-translate="course-nr11-desc">Empilhadeiras, pontes rolantes e transporte interno.</p>
+      <a href="cursos/curso-nr11.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-nr12-title">NR-12 Máquinas e Equipamentos</h3>
+      <p data-translate="course-nr12-desc">Proteções, bloqueios e segurança em máquinas.</p>
+      <a href="cursos/curso-maquinas.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-nr10-title">NR-10 Segurança em Instalações Elétricas</h3>
+      <p data-translate="course-nr10-desc">Choques elétricos, arcos, curtos e proteções.</p>
+      <a href="cursos/curso-eletrica.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    
+    <div class="card">
+      <h3 data-translate="course-confined-title">NR-33 Espaço Confinado</h3>
+      <p data-translate="course-confined-desc">Falta de oxigênio, gases e resgate.</p>
+      <a href="cursos/curso-espaco-confinado.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-nr13-title">NR-13 Caldeiras e Vasos de Pressão</h3>
+      <p data-translate="course-nr13-desc">Operação segura, inspeção e manutenção de equipamentos sob pressão.</p>
+      <a href="cursos/curso-nr13.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+  </div>
+
+  <!-- RESÍDUOS E MEIO AMBIENTE -->
+  <h2 class="secao-titulo" data-translate="section-waste-title">Resíduos e Meio Ambiente</h2>
+  <div class="grid">
+    <div class="card">
+      <h3 data-translate="course-waste-title">Descarte Correto de Resíduos</h3>
+      <p data-translate="course-waste-desc">Lixo no lugar certo protege todos e o meio ambiente.</p>
+      <a href="cursos/curso-descarte-residuos.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-hydrovac-title">Hidrovácuo Operação Segura</h3>
+      <p data-translate="course-hydrovac-desc">Sucção, gases e resíduos contaminados.</p>
+      <a href="cursos/curso-hidrovacuo.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-5s-title">Ordem e Limpeza (5S)</h3>
+      <p data-translate="course-5s-desc">Organização do ambiente de trabalho e cultura de segurança.</p>
+      <a href="cursos/curso-ordem-limpeza.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+  </div>
+
+  <!-- EQUIPAMENTOS E PROTEÇÃO -->
+  <h2 class="secao-titulo" data-translate="section-equipment-title">Equipamentos e Proteção</h2>
+  <div class="grid">
+    <div class="card">
+      <h3 data-translate="course-respiratory-title">Proteção Respiratória</h3>
+      <p data-translate="course-respiratory-desc">Uso correto de respiradores e proteção contra poeiras e gases.</p>
+      <a href="cursos/curso-protecao-respiratoria.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-mask-title">Máscara de Emergência</h3>
+      <p data-translate="course-mask-desc">Proteção rápida para situações de perigo com gases e fumaça.</p>
+      <a href="cursos/curso-mascara-emergencia.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-shower-title">Chuveiro de Emergência e Lava-Olhos</h3>
+      <p data-translate="course-shower-desc">Uso correto em acidentes químicos.</p>
+      <a href="cursos/curso-chuveiro-lavaolhos.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-scaffold-title">Uso Seguro de Andaimes</h3>
+      <p data-translate="course-scaffold-desc">Quedas, inspeção, guarda-corpo e acesso seguro.</p>
+      <a href="cursos/curso-andaime.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-pipes-title">Cores das Tubulações</h3>
+      <p data-translate="course-pipes-desc">Cada cor indica um produto diferente - saiba identificar!</p>
+      <a href="cursos/curso-cores-tubulacoes.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+  </div>
+
+  <!-- TRABALHOS ESPECIAIS E OPERAÇÕES -->
+  <h2 class="secao-titulo" data-translate="section-operations-title">Trabalhos Especiais e Operações</h2>
+  <div class="grid">
+    <div class="card">
+      <h3 data-translate="course-paint-title">Pintura Industrial Segura</h3>
+      <p data-translate="course-paint-desc">Vapores, incêndio, EPIs e cuidados na pintura.</p>
+      <a href="cursos/curso-pintura.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-hydrojet-title">Hidrojato Riscos e Segurança</h3>
+      <p data-translate="course-hydrojet-desc">Alta pressão, cortes e EPIs especiais.</p>
+      <a href="cursos/curso-hidrojato.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-gases-title">Gases e Vazamentos Químicos</h3>
+      <p data-translate="course-gases-desc">Identificação, fuga e comunicação.</p>
+      <a href="cursos/curso-gases-vazamentos.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-permit-title">Permissão de Trabalho (PT)</h3>
+      <p data-translate="course-permit-desc">Autorização, riscos e responsabilidades.</p>
+      <a href="cursos/curso-permissao-trabalho.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-stoppage-title">Parada Geral Segurança</h3>
+      <p data-translate="course-stoppage-desc">Grandes manutenções e riscos elevados.</p>
+      <a href="cursos/curso-parada-geral.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+  </div>
+
+  <!-- GESTÃO E CULTURA DE SEGURANÇA -->
+  <h2 class="secao-titulo" data-translate="section-management-title">Gestão e Cultura de Segurança</h2>
+  <div class="grid">
+    <div class="card">
+      <h3 data-translate="course-dds-title">DDS - Diálogo Diário de Segurança</h3>
+      <p data-translate="course-dds-desc">Conversa rápida para proteger todos os dias no trabalho.</p>
+      <a href="cursos/curso-dds.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-communication-title">Comunicação em Segurança</h3>
+      <p data-translate="course-communication-desc">Comunicação de riscos, emergências e procedimentos.</p>
+      <a href="cursos/curso-comunicacao-seguranca.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-risk-title">Avaliação de Riscos</h3>
+      <p data-translate="course-risk-desc">Identificação, análise e controle de perigos industriais.</p>
+      <a href="cursos/curso-avaliacao-risco.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+
+    <div class="card">
+      <h3 data-translate="course-firstaid-title">Primeiros Socorros</h3>
+      <p data-translate="course-firstaid-desc">Atendimento imediato a vítimas de acidentes industriais.</p>
+      <a href="cursos/curso-primeiros-socorros.html" data-translate="course-access">Acessar Curso</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 <span>RSS3</span> Treinamentos de Segurança
+</footer>
+
+<script>
+// Sistema de Tradução RSS3 Treinamentos
+const translations = {
+    pt: {
+        'nav-home': 'Início',
+        'nav-about': 'Sobre',
+        'hero-title': 'Treinamentos interno de Segurança Industrial',
+        'hero-subtitle': 'Plataforma de conscientização para apoiar o aprendizado, reforçar comportamentos seguros e reduzir riscos no ambiente de trabalho.',
+        'hero-btn': 'Ver Cursos',
+        
+        'section-nr-title': 'Normas Regulamentadoras (NRs)',
+        'section-waste-title': 'Resíduos e Meio Ambiente',
+        'section-equipment-title': 'Equipamentos e Proteção',
+        'section-operations-title': 'Trabalhos Especiais e Operações',
+        'section-management-title': 'Gestão e Cultura de Segurança',
+        
+        'search-placeholder': 'Buscar curso...',
+        'search-results-title': 'Resultados da Busca',
+        'search-no-results': 'Nenhum curso encontrado para "{0}"',
+        
+        'course-nr01-title': 'NR-01 Disposições Gerais',
+        'course-nr01-desc': 'Fundamentos básicos de segurança e medicina do trabalho.',
+        
+        'course-nr03-title': 'NR-03 Embargo ou Interdição',
+        'course-nr03-desc': 'Procedimentos de bloqueio e sinalização de áreas perigosas.',
+        
+        'course-nr04-title': 'NR-04 Serviços Especializados em Segurança',
+        'course-nr04-desc': 'SESMT, CIPA e responsabilidades em segurança do trabalho.',
+        
+        'course-nr05-title': 'NR-05 CIPA',
+        'course-nr05-desc': 'Comissão Interna de Prevenção de Acidentes e organização.',
+        
+        'course-nr07-title': 'NR-07 PCMSO',
+        'course-nr07-desc': 'Programa de Controle Médico de Saúde Ocupacional.',
+        
+        'course-nr08-title': 'NR-08 Edificações',
+        'course-nr08-desc': 'Requisitos de segurança em construções e estruturas.',
+        
+        'course-nr09-title': 'NR-09 Programas de Prevenção de Riscos Ambientais',
+        'course-nr09-desc': 'PPRA e gerenciamento de riscos físicos, químicos e biológicos.',
+        
+        'course-epi-title': 'NR-06 Uso de EPI',
+        'course-epi-desc': 'Importância do EPI, uso correto, conservação e responsabilidade.',
+        
+        'course-fire-title': 'NR-23 Prevenção e Combate a Incêndio',
+        'course-fire-desc': 'Extintores, rotas de fuga, tipos de fogo e comportamento seguro.',
+        
+        'course-height-title': 'NR-35 Trabalho em Altura',
+        'course-height-desc': 'Cinto, ancoragem, quedas e regras básicas acima de 2 metros.',
+        
+        'course-nr11-title': 'NR-11 Movimentação de Cargas',
+        'course-nr11-desc': 'Empilhadeiras, pontes rolantes e transporte interno.',
+        
+        'course-nr12-title': 'NR-12 Máquinas e Equipamentos',
+        'course-nr12-desc': 'Proteções, bloqueios e segurança em máquinas.',
+        
+        'course-nr10-title': 'NR-10 Segurança em Instalações Elétricas',
+        'course-nr10-desc': 'Choques elétricos, arcos, curtos e proteções.',
+        
+        'course-paint-title': 'Pintura Industrial Segura',
+        'course-paint-desc': 'Vapores, incêndio, EPIs e cuidados na pintura.',
+        
+        'course-nr13-title': 'NR-13 Caldeiras e Vasos de Pressão',
+        'course-nr13-desc': 'Operação segura, inspeção e manutenção de equipamentos sob pressão.',
+        
+        'course-scaffold-title': 'Uso Seguro de Andaimes',
+        'course-scaffold-desc': 'Quedas, inspeção, guarda-corpo e acesso seguro.',
+        
+        'course-hydrojet-title': 'Hidrojato Riscos e Segurança',
+        'course-hydrojet-desc': 'Alta pressão, cortes e EPIs especiais.',
+        
+        'course-hydrovac-title': 'Hidrovácuo Operação Segura',
+        'course-hydrovac-desc': 'Sucção, gases e resíduos contaminados.',
+        
+        'course-gases-title': 'Gases e Vazamentos Químicos',
+        'course-gases-desc': 'Identificação, fuga e comunicação.',
+        
+        'course-shower-title': 'Chuveiro de Emergência e Lava-Olhos',
+        'course-shower-desc': 'Uso correto em acidentes químicos.',
+        
+        'course-confined-title': 'Espaço Confinado (NR-33)',
+        'course-confined-desc': 'Falta de oxigênio, gases e resgate.',
+        
+        'course-permit-title': 'Permissão de Trabalho (PT)',
+        'course-permit-desc': 'Autorização, riscos e responsabilidades.',
+        
+        'course-stoppage-title': 'Parada Geral Segurança',
+        'course-stoppage-desc': 'Grandes manutenções e riscos elevados.',
+        
+        'section-complementary-title': 'Cursos Complementares',
+        
+        'course-respiratory-title': 'Proteção Respiratória',
+        'course-respiratory-desc': 'Uso correto de respiradores e proteção contra poeiras e gases.',
+        
+        'course-5s-title': 'Ordem e Limpeza (5S)',
+        'course-5s-desc': 'Organização do ambiente de trabalho e cultura de segurança.',
+        
+        'course-communication-title': 'Comunicação em Segurança',
+        'course-communication-desc': 'Comunicação de riscos, emergências e procedimentos.',
+        
+        'course-risk-title': 'Avaliação de Riscos',
+        'course-risk-desc': 'Identificação, análise e controle de perigos industriais.',
+        
+        'course-firstaid-title': 'Primeiros Socorros',
+        'course-firstaid-desc': 'Atendimento imediato a vítimas de acidentes industriais.',
+        
+        'section-basic-additional-title': 'Cursos Básicos Essenciais',
+        
+        'course-dds-title': 'DDS - Diálogo Diário de Segurança',
+        'course-dds-desc': 'Conversa rápida para proteger todos os dias no trabalho.',
+        
+        'course-mask-title': 'Máscara de Emergência',
+        'course-mask-desc': 'Proteção rápida para situações de perigo com gases e fumaça.',
+        
+        'course-waste-title': 'Descarte Correto de Resíduos',
+        'course-waste-desc': 'Lixo no lugar certo protege todos e o meio ambiente.',
+        
+        'course-pipes-title': 'Cores das Tubulações',
+        'course-pipes-desc': 'Cada cor indica um produto diferente - saiba identificar!',
+        
+        'course-access': 'Acessar Curso'
+    },
+    
+    es: {
+        'nav-home': 'Inicio',
+        'nav-about': 'Acerca de',
+        'hero-title': 'Capacitación interna en Seguridad Industrial',
+        'hero-subtitle': 'Plataforma de concientización para apoyar el aprendizaje, reforzar comportamientos seguros y reducir riesgos en el ambiente laboral.',
+        'hero-btn': 'Ver Cursos',
+        
+        'section-nr-title': 'Normas Regulamentadoras (NRs)',
+        'section-waste-title': 'Residuos y Medio Ambiente',
+        'section-equipment-title': 'Equipamientos y Protección',
+        'section-operations-title': 'Trabajos Especiales y Operaciones',
+        'section-management-title': 'Gestión y Cultura de Seguridad',
+        
+        'search-placeholder': 'Buscar curso...',
+        'search-results-title': 'Resultados de la Búsqueda',
+        'search-no-results': 'Ningún curso encontrado para "{0}"',
+        
+        'course-epi-title': 'NR-06 Uso de EPI',
+        'course-epi-desc': 'Importancia del EPI, uso correcto, conservación y responsabilidad.',
+        
+        'course-fire-title': 'NR-23 Prevención y Combate de Incendios',
+        'course-fire-desc': 'Extintores, rutas de escape, tipos de fuego y comportamiento seguro.',
+        
+        'course-height-title': 'NR-35 Trabajo en Altura',
+        'course-height-desc': 'Cinturón, anclaje, caídas y reglas básicas arriba de 2 metros.',
+        
+        'course-nr11-title': 'NR-11 Movimentación de Cargas',
+        'course-nr11-desc': 'Montacargas, puentes grúa y transporte interno.',
+        
+        'course-nr12-title': 'NR-12 Máquinas y Equipamientos',
+        'course-nr12-desc': 'Protecciones, bloqueos y seguridad en máquinas.',
+        
+        'course-nr10-title': 'NR-10 Seguridad en Instalaciones Eléctricas',
+        'course-nr10-desc': 'Choques eléctricos, arcos, cortos y protecciones.',
+        
+                
+        'course-paint-title': 'Pintura Industrial Segura',
+        'course-paint-desc': 'Vapores, incendio, EPIs y cuidados en la pintura.',
+        
+        'course-scaffold-title': 'Uso Seguro de Andamios',
+        'course-scaffold-desc': 'Caídas, inspección, barandillas y acceso seguro.',
+        
+        'course-hydrojet-title': 'Hidrojato Riesgos y Seguridad',
+        'course-hydrojet-desc': 'Alta presión, cortes y EPIs especiales.',
+        
+        'course-hydrovac-title': 'Hidrovacuo Operación Segura',
+        'course-hydrovac-desc': 'Succión, gases y residuos contaminados.',
+        
+        'course-gases-title': 'Gases y Fugas Químicas',
+        'course-gases-desc': 'Identificación, fuga y comunicación.',
+        
+        'course-shower-title': 'Ducha de Emergencia y Lava-Ojos',
+        'course-shower-desc': 'Uso correcto en accidentes químicos.',
+        
+        'course-confined-title': 'Espacio Confinado (NR-33)',
+        'course-confined-desc': 'Falta de oxígeno, gases y rescate.',
+        
+        'course-permit-title': 'Permiso de Trabajo (PT)',
+        'course-permit-desc': 'Autorización, riesgos y responsabilidades.',
+        
+        'course-stoppage-title': 'Parada General Seguridad',
+        'course-stoppage-desc': 'Grandes mantenimientos y riesgos elevados.',
+        
+        'section-complementary-title': 'Cursos Complementarios',
+        
+        'course-respiratory-title': 'Protección Respiratoria',
+        'course-respiratory-desc': 'Uso correcto de respiradores y protección contra polvos y gases.',
+        
+        'course-5s-title': 'Orden y Limpieza (5S)',
+        'course-5s-desc': 'Organización del ambiente de trabajo y cultura de seguridad.',
+        
+        'course-communication-title': 'Comunicación en Seguridad',
+        'course-communication-desc': 'Comunicación de riesgos, emergencias y procedimientos.',
+        
+        'course-risk-title': 'Evaluación de Riesgos',
+        'course-risk-desc': 'Identificación, análisis y control de peligros industriales.',
+        
+        'course-firstaid-title': 'Primeros Auxilios',
+        'course-firstaid-desc': 'Atención inmediata a víctimas de accidentes industriales.',
+        
+        'section-basic-additional-title': 'Cursos Básicos Esenciales',
+        
+        'course-dds-title': 'DDS - Diálogo Diario de Seguridad',
+        'course-dds-desc': 'Conversación rápida para proteger todos los días en el trabajo.',
+        
+        'course-mask-title': 'Máscara de Emergencia',
+        'course-mask-desc': 'Protección rápida para situaciones de peligro con gases y humo.',
+        
+        'course-waste-title': 'Descarte Correcto de Residuos',
+        'course-waste-desc': 'Basura en el lugar correcto protege a todos y el medio ambiente.',
+        
+        'course-pipes-title': 'Colores de las Tubulaciones',
+        'course-pipes-desc': '¡Cada color indica un producto diferente - aprenda a identificar!',
+        
+        'course-access': 'Acceder al Curso'
+    },
+    
+    en: {
+        'nav-home': 'Home',
+        'nav-about': 'About',
+        'hero-title': 'Internal Industrial Safety Training',
+        'hero-subtitle': 'Awareness platform to support learning, reinforce safe behaviors and reduce risks in the work environment.',
+        'hero-btn': 'View Courses',
+        
+        'section-nr-title': 'Regulatory Standards (NRs)',
+        'section-waste-title': 'Waste and Environment',
+        'section-equipment-title': 'Equipment and Protection',
+        'section-operations-title': 'Special Works and Operations',
+        'section-management-title': 'Management and Safety Culture',
+        
+        'search-placeholder': 'Search course...',
+        'search-results-title': 'Search Results',
+        'search-no-results': 'No course found for "{0}"',
+        
+        'course-epi-title': 'NR-06 PPE Use',
+        'course-epi-desc': 'Importance of PPE, correct use, conservation and responsibility.',
+        
+        'course-fire-title': 'NR-23 Fire Prevention and Combat',
+        'course-fire-desc': 'Extinguishers, escape routes, fire types and safe behavior.',
+        
+        'course-height-title': 'NR-35 Work at Height',
+        'course-height-desc': 'Belt, anchorage, falls and basic rules above 2 meters.',
+        
+        'course-nr11-title': 'NR-11 Load Handling',
+        'course-nr11-desc': 'Forklifts, overhead cranes and internal transport.',
+        
+        'course-nr12-title': 'NR-12 Machines and Equipment',
+        'course-nr12-desc': 'Protections, lockouts and machine safety.',
+        
+        'course-nr10-title': 'NR-10 Safety in Electrical Installations',
+        'course-nr10-desc': 'Electric shocks, arcs, shorts and protections.',
+        
+                
+        'course-paint-title': 'Safe Industrial Painting',
+        'course-paint-desc': 'Vapors, fire, PPEs and painting precautions.',
+        
+        'course-scaffold-title': 'Safe Scaffold Use',
+        'course-scaffold-desc': 'Falls, inspection, guardrails and safe access.',
+        
+        'course-hydrojet-title': 'Hydrojet Risks and Safety',
+        'course-hydrojet-desc': 'High pressure, cuts and special PPEs.',
+        
+        'course-hydrovac-title': 'Hydrovacuum Safe Operation',
+        'course-hydrovac-desc': 'Suction, gases and contaminated residues.',
+        
+        'course-gases-title': 'Gases and Chemical Leaks',
+        'course-gases-desc': 'Identification, escape and communication.',
+        
+        'course-shower-title': 'Emergency Shower and Eye-Wash',
+        'course-shower-desc': 'Correct use in chemical accidents.',
+        
+        'course-confined-title': 'Confined Space (NR-33)',
+        'course-confined-desc': 'Lack of oxygen, gases and rescue.',
+        
+        'course-permit-title': 'Work Permit (PT)',
+        'course-permit-desc': 'Authorization, risks and responsibilities.',
+        
+        'course-stoppage-title': 'General Stoppage Safety',
+        'course-stoppage-desc': 'Large maintenance and high risks.',
+        
+        'section-complementary-title': 'Complementary Courses',
+        
+        'course-respiratory-title': 'Respiratory Protection',
+        'course-respiratory-desc': 'Correct use of respirators and protection against dusts and gases.',
+        
+        'course-5s-title': 'Order and Cleanliness (5S)',
+        'course-5s-desc': 'Work environment organization and safety culture.',
+        
+        'course-communication-title': 'Safety Communication',
+        'course-communication-desc': 'Risk, emergency and procedure communication.',
+        
+        'course-risk-title': 'Risk Assessment',
+        'course-risk-desc': 'Identification, analysis and control of industrial hazards.',
+        
+        'course-firstaid-title': 'First Aid',
+        'course-firstaid-desc': 'Immediate care for industrial accident victims.',
+        
+        'section-basic-additional-title': 'Essential Basic Courses',
+        
+        'course-dds-title': 'DDS - Daily Safety Dialogue',
+        'course-dds-desc': 'Quick conversation to protect everyone daily at work.',
+        
+        'course-mask-title': 'Emergency Mask',
+        'course-mask-desc': 'Quick protection for dangerous situations with gases and smoke.',
+        
+        'course-waste-title': 'Correct Waste Disposal',
+        'course-waste-desc': 'Trash in the right place protects everyone and the environment.',
+        
+        'course-pipes-title': 'Pipe Colors',
+        'course-pipes-desc': 'Each color indicates a different product - learn to identify!',
+        
+        'course-access': 'Access Course'
+    }
+};
+
+// Estado atual do idioma
+let currentLanguage = 'pt';
+
+// Função para traduzir elementos
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+// Função para mudar idioma
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            changeLanguage(lang);
+        });
+    });
+    
+    // Inicializar sistema de busca
+    initializeSearch();
+});
+
+// Sistema de Busca de Cursos
+function initializeSearch() {
+    const searchInput = document.getElementById('courseSearch');
+    const searchBtn = document.getElementById('searchBtn');
+    const clearBtn = document.getElementById('clearSearchBtn');
+    const searchResults = document.getElementById('searchResults');
+    const searchResultsGrid = document.getElementById('searchResultsGrid');
+    
+    // Coletar todos os cursos
+    const allCourses = collectAllCourses();
+    
+    // Event listeners
+    searchInput.addEventListener('input', function() {
+        const query = this.value.trim();
+        if (query.length > 0) {
+            clearBtn.style.display = 'inline-flex';
+            performSearch(query, allCourses);
+        } else {
+            clearSearch();
+        }
+    });
+    
+    searchBtn.addEventListener('click', function() {
+        const query = searchInput.value.trim();
+        if (query.length > 0) {
+            performSearch(query, allCourses);
+        }
+    });
+    
+    clearBtn.addEventListener('click', clearSearch);
+    
+    // Busca ao pressionar Enter
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            const query = this.value.trim();
+            if (query.length > 0) {
+                performSearch(query, allCourses);
+            }
+        }
+    });
+}
+
+function collectAllCourses() {
+    const courses = [];
+    const cards = document.querySelectorAll('.card');
+    
+    cards.forEach(card => {
+        const titleElement = card.querySelector('h3');
+        const descElement = card.querySelector('p');
+        const linkElement = card.querySelector('a');
+        
+        if (titleElement && descElement && linkElement) {
+            // Coletar chaves de tradução
+            const titleKey = titleElement.getAttribute('data-translate');
+            const descKey = descElement.getAttribute('data-translate');
+            
+            courses.push({
+                titleKey: titleKey,
+                descKey: descKey,
+                title: titleElement.textContent.trim(),
+                description: descElement.textContent.trim(),
+                link: linkElement.getAttribute('href'),
+                element: card
+            });
+        }
+    });
+    
+    return courses;
+}
+
+function performSearch(query, courses) {
+    const searchResults = document.getElementById('searchResults');
+    const searchResultsGrid = document.getElementById('searchResultsGrid');
+    const normalizedQuery = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    
+    // Obter idioma atual
+    const currentLang = localStorage.getItem('rss3-language') || 'pt';
+    
+    // Filtrar cursos
+    const filteredCourses = courses.filter(course => {
+        // Tentar obter textos traduzidos
+        const translatedTitle = getTranslatedText(course.titleKey) || course.title;
+        const translatedDesc = getTranslatedText(course.descKey) || course.description;
+        
+        const normalizedTitle = translatedTitle.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const normalizedDesc = translatedDesc.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        
+        return normalizedTitle.includes(normalizedQuery) || 
+               normalizedDesc.includes(normalizedQuery);
+    });
+    
+    // Limpar resultados anteriores
+    searchResultsGrid.innerHTML = '';
+    
+    if (filteredCourses.length > 0) {
+        // Mostrar resultados
+        filteredCourses.forEach(course => {
+            const courseCard = createCourseCard(course);
+            searchResultsGrid.appendChild(courseCard);
+        });
+        searchResults.style.display = 'block';
+        
+        // Esconder seções originais
+        hideOriginalSections();
+    } else {
+        // Mostrar mensagem de nenhum resultado
+        const noResultsMsg = createNoResultsMessage(query);
+        searchResultsGrid.appendChild(noResultsMsg);
+        searchResults.style.display = 'block';
+        
+        // Esconder seções originais
+        hideOriginalSections();
+    }
+}
+
+function createCourseCard(course) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    
+    // Usar textos traduzidos
+    const translatedTitle = getTranslatedText(course.titleKey) || course.title;
+    const translatedDesc = getTranslatedText(course.descKey) || course.description;
+    const accessText = getTranslatedText('course-access');
+    
+    card.innerHTML = `
+        <h3>${translatedTitle}</h3>
+        <p>${translatedDesc}</p>
+        <a href="${course.link}">${accessText}</a>
+    `;
+    return card;
+}
+
+function createNoResultsMessage(query) {
+    const message = document.createElement('div');
+    message.className = 'no-results';
+    const noResultsText = getTranslatedText('search-no-results').replace('{0}', query);
+    message.innerHTML = `<p>${noResultsText}</p>`;
+    return message;
+}
+
+function clearSearch() {
+    const searchInput = document.getElementById('courseSearch');
+    const clearBtn = document.getElementById('clearSearchBtn');
+    const searchResults = document.getElementById('searchResults');
+    
+    searchInput.value = '';
+    clearBtn.style.display = 'none';
+    searchResults.style.display = 'none';
+    
+    // Mostrar seções originais
+    showOriginalSections();
+}
+
+function hideOriginalSections() {
+    const sections = document.querySelectorAll('main > h2, main > .grid');
+    sections.forEach(section => {
+        section.style.display = 'none';
+    });
+}
+
+function showOriginalSections() {
+    const sections = document.querySelectorAll('main > h2, main > .grid');
+    sections.forEach(section => {
+        section.style.display = '';
+    });
+}
+
+function getTranslatedText(key) {
+    const lang = localStorage.getItem('rss3-language') || 'pt';
+    if (translations && translations[lang] && translations[lang][key]) {
+        return translations[lang][key];
+    }
+    return key;
+}
+</script>
+
+</body>
+</html>

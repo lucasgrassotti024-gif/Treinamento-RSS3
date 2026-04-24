@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sobre - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--laranja);
+    }
+
+    /* Seletor de Idiomas */
+    .language-selector {
+      display: flex;
+      gap: 5px;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--branco);
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8em;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+      color: var(--branco);
+      border-color: var(--laranja);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .sobre-section {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 40px;
+      margin: 20px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .sobre-section h1 {
+      color: var(--azul);
+      margin-bottom: 30px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+      font-size: 2.2em;
+    }
+
+    .sobre-section p {
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-size: 1.1em;
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .sobre-card {
+      background: var(--cinza-claro);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .sobre-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .sobre-card h3 {
+      color: var(--azul);
+      margin-bottom: 15px;
+      font-size: 1.3em;
+    }
+
+    .sobre-card p {
+      color: var(--cinza-texto);
+      line-height: 1.5;
+    }
+
+    .highlight {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      nav a {
+        margin: 5px 0;
+      }
+      
+      .sobre-section {
+        padding: 20px;
+      }
+      
+      .sobre-section h1 {
+        font-size: 1.8em;
+      }
+      
+      .sobre-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>RSS<span>3</span> Treinamentos</h1>
+  <nav>
+    <a href="index.html" data-translate="nav-home">Início</a>
+    <a href="sobre.html" data-translate="nav-about">Sobre</a>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="sobre-section">
+    <h1 data-translate="sobre-title">Sobre RSS3 Treinamentos</h1>
+    
+    <p data-translate="sobre-intro">
+      Bem-vindo ao <span class="highlight">RSS3 Treinamentos</span>, sua plataforma especializada em segurança industrial. 
+      Criamos este site para ajudar trabalhadores como você a se manterem <span class="highlight">seguros</span> e 
+      <span class="highlight">protegidos</span> no ambiente de trabalho.
+    </p>
+    
+    <p data-translate="sobre-mission">
+      Nossa missão é simples: oferecer treinamentos fáceis de entender, práticos e que realmente 
+      fazem a diferença no seu dia a dia. Acreditamos que segurança não precisa ser complicada.
+    </p>
+
+    <div class="sobre-grid">
+      <div class="sobre-card">
+        <h3 data-translate="sobre-card-1-title">Conteúdo Claro</h3>
+        <p data-translate="sobre-card-1-desc">
+          Explicamos tudo de forma simples, sem complicação. 
+          Linguagem direta para trabalhadores que precisam de informações práticas.
+        </p>
+      </div>
+      
+      <div class="sobre-card">
+        <h3 data-translate="sobre-card-2-title">Treinamentos Práticos</h3>
+        <p data-translate="sobre-card-2-desc">
+          Cursos focados no que você realmente precisa saber para trabalhar com segurança. 
+          Sem teoria desnecessária, apenas o essencial.
+        </p>
+      </div>
+      
+      <div class="sobre-card">
+        <h3 data-translate="sobre-card-3-title">Acessível a Todos</h3>
+        <p data-translate="sobre-card-3-desc">
+          Disponível em português, espanhol e inglês. 
+          Para que todos possam aprender, independente do idioma.
+        </p>
+      </div>
+    </div>
+    
+    <p data-translate="sobre-conclusion">
+      Segurança no trabalho é responsabilidade de todos, mas começa com conhecimento correto. 
+      Estamos aqui para ajudar você a ter esse conhecimento de forma fácil e acessível.
+    </p>
+  </section>
+</main>
+
+<footer>
+  © 2026 <span>RSS3</span> Treinamentos de Segurança
+</footer>
+
+<script>
+// Sistema de Tradução RSS3 Treinamentos
+const translations = {
+    pt: {
+        'nav-home': 'Início',
+        'nav-about': 'Sobre',
+        'sobre-title': 'Sobre RSS3 Treinamentos',
+        'sobre-intro': 'Bem-vindo ao RSS3 Treinamentos, sua plataforma especializada em segurança industrial. Criamos este site para ajudar trabalhadores como você a se manterem seguros e protegidos no ambiente de trabalho.',
+        'sobre-mission': 'Nossa missão é simples: oferecer treinamentos fáceis de entender, práticos e que realmente fazem a diferença no seu dia a dia. Acreditamos que segurança não precisa ser complicada.',
+        'sobre-card-1-title': 'Conteúdo Claro',
+        'sobre-card-1-desc': 'Explicamos tudo de forma simples, sem complicação. Linguagem direta para trabalhadores que precisam de informações práticas.',
+        'sobre-card-2-title': 'Treinamentos Práticos',
+        'sobre-card-2-desc': 'Cursos focados no que você realmente precisa saber para trabalhar com segurança. Sem teoria desnecessária, apenas o essencial.',
+        'sobre-card-3-title': 'Acessível a Todos',
+        'sobre-card-3-desc': 'Disponível em português, espanhol e inglês. Para que todos possam aprender, independente do idioma.',
+        'sobre-conclusion': 'Segurança no trabalho é responsabilidade de todos, mas começa com conhecimento correto. Estamos aqui para ajudar você a ter esse conhecimento de forma fácil e acessível.'
+    },
+    
+    es: {
+        'nav-home': 'Inicio',
+        'nav-about': 'Acerca de',
+        'sobre-title': 'Acerca de RSS3 Entrenamientos',
+        'sobre-intro': 'Bienvenido a RSS3 Entrenamientos, su plataforma especializada en seguridad industrial. Creamos este sitio para ayudar a trabajadores como usted a mantenerse seguros y protegidos en el ambiente laboral.',
+        'sobre-mission': 'Nuestra misión es simple: ofrecer entrenamientos fáciles de entender, prácticos y que realmente marcan la diferencia en su día a día. Creemos que la seguridad no necesita ser complicada.',
+        'sobre-card-1-title': 'Contenido Claro',
+        'sobre-card-1-desc': 'Explicamos todo de forma simple, sin complicación. Lenguaje directo para trabajadores que necesitan información práctica.',
+        'sobre-card-2-title': 'Entrenamientos Prácticos',
+        'sobre-card-2-desc': 'Cursos enfocados en lo que realmente necesita saber para trabajar con seguridad. Sin teoría innecesaria, solo lo esencial.',
+        'sobre-card-3-title': 'Accesible para Todos',
+        'sobre-card-3-desc': 'Disponible en portugués, español e inglés. Para que todos puedan aprender, independientemente del idioma.',
+        'sobre-conclusion': 'La seguridad laboral es responsabilidad de todos, pero comienza con conocimiento correcto. Estamos aquí para ayudarle a tener ese conocimiento de forma fácil y accesible.'
+    },
+    
+    en: {
+        'nav-home': 'Home',
+        'nav-about': 'About',
+        'sobre-title': 'About RSS3 Training',
+        'sobre-intro': 'Welcome to RSS3 Training, your specialized platform in industrial safety. We created this site to help workers like you stay safe and protected in the work environment.',
+        'sobre-mission': 'Our mission is simple: offer easy-to-understand, practical trainings that really make a difference in your daily life. We believe safety doesn\'t need to be complicated.',
+        'sobre-card-1-title': 'Clear Content',
+        'sobre-card-1-desc': 'We explain everything simply, without complication. Direct language for workers who need practical information.',
+        'sobre-card-2-title': 'Practical Training',
+        'sobre-card-2-desc': 'Courses focused on what you really need to know to work safely. Without unnecessary theory, just the essential.',
+        'sobre-card-3-title': 'Accessible to All',
+        'sobre-card-3-desc': 'Available in Portuguese, Spanish and English. So everyone can learn, regardless of language.',
+        'sobre-conclusion': 'Work safety is everyone\'s responsibility, but it starts with correct knowledge. We are here to help you have this knowledge in an easy and accessible way.'
+    }
+};
+
+// Estado atual do idioma
+let currentLanguage = 'pt';
+
+// Função para traduzir elementos
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+// Função para mudar idioma
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            changeLanguage(lang);
+        });
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso Pintura - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--laranja);
+    }
+
+    /* HERO / BANNER PRINCIPAL */
+.hero {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8, #ff7a00);
+  color: var(--branco);
+  padding: 90px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 2.6em;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.15em;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--branco);
+  padding: 16px 36px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: 0.2s;
+}
+
+.hero-btn:hover {
+  background: var(--branco);
+  color: var(--azul);
+  transform: translateY(-3px);
+}
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      flex: 1;
+      font-size: 0.95em;
+    }
+
+    .card a {
+      margin-top: 15px;
+      background: var(--laranja);
+      color: var(--branco);
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .secao-titulo {
+      margin: 50px 0 20px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+      color: var(--azul);
+    }
+
+    /* Seletor de Idiomas */
+    .language-selector {
+      display: flex;
+      gap: 5px;
+      margin-left: 20px;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--branco);
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8em;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+      color: var(--branco);
+      border-color: var(--laranja);
+    }
+
+    /* Estilos do Curso */
+    .course-section {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .course-section h2 {
+      color: var(--azul);
+      margin-bottom: 20px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+    }
+
+    .course-section p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .epi-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .epi-type-card {
+      background: var(--branco);
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .epi-type-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .epi-type-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--azul);
+    }
+
+    .epi-type-title {
+      font-size: 1.2rem;
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .epi-type-desc {
+      color: var(--cinza-texto);
+      line-height: 1.5;
+    }
+
+    .image-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .course-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .image-caption {
+      font-style: italic;
+      color: #666;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .info-list li {
+      background: var(--cinza-claro);
+      border-left: 4px solid var(--laranja);
+      padding: 15px 20px;
+      margin: 10px 0;
+      border-radius: 0 8px 8px 0;
+      transition: transform 0.3s ease;
+    }
+
+    .info-list li:hover {
+      transform: translateX(5px);
+      background: #e9ecef;
+    }
+
+    .alert-box {
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+      box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+    }
+
+    .alert-box h4 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .quiz-section {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .quiz-title {
+      color: var(--azul);
+      text-align: center;
+      margin-bottom: 30px;
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .quiz-question {
+      background: var(--cinza-claro);
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .quiz-question h4 {
+      color: var(--azul);
+      margin-bottom: 15px;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quiz-option-label {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      background: var(--branco);
+      border: 1px solid #e9ecef;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-option-label:hover {
+      background: var(--cinza-claro);
+      border-color: var(--laranja);
+    }
+
+    .quiz-option-label input[type="radio"] {
+      margin-right: 12px;
+    }
+
+    .quiz-submit-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .quiz-submit {
+      background: var(--laranja);
+      color: var(--branco);
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .quiz-submit:hover {
+      background: #e67300;
+      transform: translateY(-2px);
+    }
+
+    .quiz-result {
+      display: none;
+      background: var(--branco);
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .quiz-result h3 {
+      color: var(--azul);
+      margin-bottom: 20px;
+    }
+
+    .score-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      margin: 20px 0;
+    }
+
+    .score-circle.passing {
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+    }
+
+    .score-circle.failing {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+    }
+
+    .quiz-message {
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .quiz-message.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .quiz-message.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .quiz-actions button, .quiz-actions a {
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .quiz-actions button {
+      background: var(--azul);
+      color: var(--branco);
+      border: none;
+    }
+
+    .quiz-actions a {
+      background: var(--laranja);
+      color: var(--branco);
+    }
+
+    .quiz-actions button:hover, .quiz-actions a:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      nav a {
+        margin: 5px 0;
+      }
+      
+      .hero {
+        padding: 60px 20px;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .epi-types-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .quiz-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>RSS<span>3</span> Treinamentos</h1>
+  <nav>
+    <a href="../index.html" data-translate="nav-home">Início</a>
+    <a href="../sobre.html" data-translate="nav-about">Sobre</a>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2 data-translate="course-paint-hero-title">Pintura Industrial Segura</h2>
+    <p data-translate="course-paint-hero-subtitle">Aprenda a pintar com segurança na fábrica de celulose</p>
+    <a href="#conteudo" class="hero-btn" data-translate="hero-btn">Começar Curso</a>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <section class="course-section">
+    <h2 data-translate="paint-section-1-title">O que é Pintura Industrial?</h2>
+    <p data-translate="course-paint-intro">
+      Pintura industrial na fábrica de celulose protege equipamentos e estruturas contra corrosão. Mas os produtos químicos e vapores podem ser muito perigosos para a saúde. É preciso usar proteção e seguir regras de segurança.
+    </p>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="paint-section-2-title">Riscos da Pintura Industrial</h2>
+    <p data-translate="paint-section-2-text">
+      A pintura industrial apresenta vários riscos que precisam ser controlados:
+    </p>
+    
+    <div class="epi-types-grid">
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🎨</div>
+        <h3 class="epi-type-title" data-translate="paint-type-1-title">Vapores Químicos</h3>
+        <p class="epi-type-desc" data-translate="paint-type-1-desc">Gases tóxicos que podem causar problemas respiratórios.</p>
+      </div>
+      
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🎨</div>
+        <h3 class="epi-type-title" data-translate="paint-type-2-title">Risco de Incêndio</h3>
+        <p class="epi-type-desc" data-translate="paint-type-2-desc">Produtos inflamáveis que podem pegar fogo facilmente.</p>
+      </div>
+      
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🎨</div>
+        <h3 class="epi-type-title" data-translate="paint-type-3-title">Contato com a Pele</h3>
+        <p class="epi-type-desc" data-translate="paint-type-3-desc">Produtos químicos que causam queimaduras e alergias.</p>
+      </div>
+    </div>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="paint-section-3-title">Equipamentos de Proteção</h2>
+    <p data-translate="paint-section-3-text">
+      Para pintar com segurança, use sempre estes equipamentos:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="paint-protection-1">Máscara com filtro para vapores químicos</li>
+      <li data-translate="paint-protection-2">Luvas resistentes a produtos químicos</li>
+      <li data-translate="paint-protection-3">Óculos de proteção ampla visão</li>
+      <li data-translate="paint-protection-4">Avental e roupa de proteção</li>
+      <li data-translate="paint-protection-5">Calçado de segurança impermeável</li>
+    </ul>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="paint-section-4-title">Área de Pintura Segura</h2>
+    <p data-translate="paint-section-4-text">
+      O local de pintura precisa estar seguro para todos:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="paint-area-1">Ventilação adequada para remover vapores</li>
+      <li data-translate="paint-area-2">Sem fontes de calor ou faíscas próximas</li>
+      <li data-translate="paint-area-3">Extintores de incêndio disponíveis</li>
+      <li data-translate="paint-area-4">Sinalização de área com produtos químicos</li>
+      <li data-translate="paint-area-5">Kit de primeiros socorros disponível</li>
+    </ul>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="paint-section-5-title">Procedimentos de Emergência</h2>
+    <p data-translate="paint-section-5-text">
+      Em caso de acidente com produtos químicos, saiba como agir:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="paint-emergency-1">Remova a vítima da área contaminada</li>
+      <li data-translate="paint-emergency-2">Retire roupas contaminadas imediatamente</li>
+      <li data-translate="paint-emergency-3">Lave a pele com água corrente por 15 minutos</li>
+      <li data-translate="paint-emergency-4">Use chuveiro de emergência se necessário</li>
+      <li data-translate="paint-emergency-5">Chame socorro médico especializado</li>
+    </ul>
+    
+        
+    <div class="alert-box">
+      <h4 data-translate="paint-alert-title">Perigo!</h4>
+      <p data-translate="paint-alert-text">Nunca pinte sem proteção. Os vapores podem causar danos permanentes à saúde e o risco de incêndio é muito alto.</p>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h2 class="quiz-title" data-translate="paint-quiz-title">Teste seu Conhecimento</h2>
+    
+    <div class="quiz-question">
+      <h4 data-translate="paint-quiz-question-1">Qual proteção mais importante na pintura industrial?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="a" class="quiz-option">
+          <span data-translate="paint-quiz-q1-a">Apenas luvas</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="b" class="quiz-option">
+          <span data-translate="paint-quiz-q1-b">Máscara com filtro para vapores</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="c" class="quiz-option">
+          <span data-translate="paint-quiz-q1-c">Óculos de proteção</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="d" class="quiz-option">
+          <span data-translate="paint-quiz-q1-d">Calçado de segurança</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="e" class="quiz-option">
+          <span data-translate="paint-quiz-q1-e">Avental de proteção</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="paint-quiz-question-2">O que fazer se produto químico cair na pele?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="a" class="quiz-option">
+          <span data-translate="paint-quiz-q2-a">Esperar secar e continuar trabalhando</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="b" class="quiz-option">
+          <span data-translate="paint-quiz-q2-b">Lavar com água corrente por 15 minutos</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="c" class="quiz-option">
+          <span data-translate="paint-quiz-q2-c">Limpar com pano seco</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="d" class="quiz-option">
+          <span data-translate="paint-quiz-q2-d">Apenas avisar o supervisor</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="e" class="quiz-option">
+          <span data-translate="paint-quiz-q2-e">Continuar o trabalho e limpar depois</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="paint-quiz-question-3">Pode fumar próximo à área de pintura?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="a" class="quiz-option">
+          <span data-translate="paint-quiz-q3-a">Sim, se for longe das tintas</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="b" class="quiz-option">
+          <span data-translate="paint-quiz-q3-b">Não, nunca em hipótese alguma</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="c" class="quiz-option">
+          <span data-translate="paint-quiz-q3-c">Apenas durante as pausas</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="d" class="quiz-option">
+          <span data-translate="paint-quiz-q3-d">Se tiver extintor por perto</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="e" class="quiz-option">
+          <span data-translate="paint-quiz-q3-e">Depende do tipo de tinta</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="paint-quiz-question-4">Qual a importância da ventilação na pintura?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="a" class="quiz-option">
+          <span data-translate="paint-quiz-q4-a">Apenas para refrescar o ambiente</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="b" class="quiz-option">
+          <span data-translate="paint-quiz-q4-b">Remover vapores tóxicos e prevenir incêndios</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="c" class="quiz-option">
+          <span data-translate="paint-quiz-q4-c">Para secar a tinta mais rápido</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="d" class="quiz-option">
+          <span data-translate="paint-quiz-q4-d">Apenas no verão</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="e" class="quiz-option">
+          <span data-translate="paint-quiz-q4-e">Não tem muita importância</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-submit-container">
+      <button id="quiz-submit" class="quiz-submit" data-translate="quiz-submit">Enviar Respostas</button>
+    </div>
+    
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 <span>RSS3</span> Treinamentos de Segurança
+</footer>
+
+<script>
+// Sistema de Tradução RSS3 Treinamentos
+const translations = {
+    pt: {
+        'nav-home': 'Início',
+        'nav-about': 'Sobre',
+        'course-paint-hero-title': 'Pintura Industrial Segura',
+        'course-paint-hero-subtitle': 'Aprenda a pintar com segurança na fábrica de celulose',
+        'hero-btn': 'Começar Curso',
+        
+        'paint-section-1-title': 'O que é Pintura Industrial?',
+        'course-paint-intro': 'Pintura industrial na fábrica de celulose protege equipamentos e estruturas contra corrosão. Mas os produtos químicos e vapores podem ser muito perigosos para a saúde. É preciso usar proteção e seguir regras de segurança.',
+        
+        'paint-section-2-title': 'Riscos da Pintura Industrial',
+        'paint-section-2-text': 'A pintura industrial apresenta vários riscos que precisam ser controlados:',
+        
+        'paint-type-1-title': 'Vapores Químicos',
+        'paint-type-1-desc': 'Gases tóxicos que podem causar problemas respiratórios.',
+        
+        'paint-type-2-title': 'Risco de Incêndio',
+        'paint-type-2-desc': 'Produtos inflamáveis que podem pegar fogo facilmente.',
+        
+        'paint-type-3-title': 'Contato com a Pele',
+        'paint-type-3-desc': 'Produtos químicos que causam queimaduras e alergias.',
+        
+        'paint-section-3-title': 'Equipamentos de Proteção',
+        'paint-section-3-text': 'Para pintar com segurança, use sempre estes equipamentos:',
+        
+        'paint-protection-1': 'Máscara com filtro para vapores químicos',
+        'paint-protection-2': 'Luvas resistentes a produtos químicos',
+        'paint-protection-3': 'Óculos de proteção ampla visão',
+        'paint-protection-4': 'Avental e roupa de proteção',
+        'paint-protection-5': 'Calçado de segurança impermeável',
+        
+        'paint-section-4-title': 'Área de Pintura Segura',
+        'paint-section-4-text': 'O local de pintura precisa estar seguro para todos:',
+        
+        'paint-area-1': 'Ventilação adequada para remover vapores',
+        'paint-area-2': 'Sem fontes de calor ou faíscas próximas',
+        'paint-area-3': 'Extintores de incêndio disponíveis',
+        'paint-area-4': 'Sinalização de área com produtos químicos',
+        'paint-area-5': 'Kit de primeiros socorros disponível',
+        
+        'paint-section-5-title': 'Procedimentos de Emergência',
+        'paint-section-5-text': 'Em caso de acidente com produtos químicos, saiba como agir:',
+        
+        'paint-emergency-1': 'Remova a vítima da área contaminada',
+        'paint-emergency-2': 'Retire roupas contaminadas imediatamente',
+        'paint-emergency-3': 'Lave a pele com água corrente por 15 minutos',
+        'paint-emergency-4': 'Use chuveiro de emergência se necessário',
+        'paint-emergency-5': 'Chame socorro médico especializado',
+        
+        'paint-alert-title': 'Perigo!',
+        'paint-alert-text': 'Nunca pinte sem proteção. Os vapores podem causar danos permanentes à saúde e o risco de incêndio é muito alto.',
+        
+        'paint-quiz-title': 'Teste seu Conhecimento',
+        'paint-quiz-question-1': 'Qual proteção mais importante na pintura industrial?',
+        'paint-quiz-question-2': 'O que fazer se produto químico cair na pele?',
+        'paint-quiz-question-3': 'Pode fumar próximo à área de pintura?',
+        'paint-quiz-question-4': 'Qual a importância da ventilação na pintura?',
+        
+        'paint-quiz-q1-a': 'Apenas luvas',
+        'paint-quiz-q1-b': 'Máscara com filtro para vapores',
+        'paint-quiz-q1-c': 'Óculos de proteção',
+        'paint-quiz-q1-d': 'Calçado de segurança',
+        'paint-quiz-q1-e': 'Avental de proteção',
+        
+        'paint-quiz-q2-a': 'Esperar secar e continuar trabalhando',
+        'paint-quiz-q2-b': 'Lavar com água corrente por 15 minutos',
+        'paint-quiz-q2-c': 'Limpar com pano seco',
+        'paint-quiz-q2-d': 'Apenas avisar o supervisor',
+        'paint-quiz-q2-e': 'Continuar o trabalho e limpar depois',
+        
+        'paint-quiz-q3-a': 'Sim, se for longe das tintas',
+        'paint-quiz-q3-b': 'Não, nunca em hipótese alguma',
+        'paint-quiz-q3-c': 'Apenas durante as pausas',
+        'paint-quiz-q3-d': 'Se tiver extintor por perto',
+        'paint-quiz-q3-e': 'Depende do tipo de tinta',
+        
+        'paint-quiz-q4-a': 'Apenas para refrescar o ambiente',
+        'paint-quiz-q4-b': 'Remover vapores tóxicos e prevenir incêndios',
+        'paint-quiz-q4-c': 'Para secar a tinta mais rápido',
+        'paint-quiz-q4-d': 'Apenas no verão',
+        'paint-quiz-q4-e': 'Não tem muita importância',
+        
+        'quiz-submit': 'Enviar Respostas',
+        'quiz-result-title': 'Resultado do Quiz',
+        'quiz-score': 'Sua pontuação',
+        'quiz-correct': 'Respostas corretas',
+        'quiz-incorrect': 'Respostas incorretas',
+        'quiz-congratulations': 'Parabéns! Você acertou',
+        'quiz-try-again': 'Tente novamente! Você acertou',
+        'quiz-retry': 'Refazer Quiz',
+        'quiz-back': 'Voltar para os Cursos'
+    },
+    
+    es: {
+        'nav-home': 'Inicio',
+        'nav-about': 'Acerca de',
+        'course-paint-hero-title': 'Pintura Industrial Segura',
+        'course-paint-hero-subtitle': 'Aprenda a pintar con seguridad en la fábrica de celulosa',
+        'hero-btn': 'Comenzar Curso',
+        
+        'paint-section-1-title': '¿Qué es Pintura Industrial?',
+        'course-paint-intro': 'Pintura industrial en la fábrica de celulosa protege equipos y estructuras contra corrosión. Pero los productos químicos y vapores pueden ser muy peligrosos para la salud. Es necesario usar protección y seguir reglas de seguridad.',
+        
+        'paint-section-2-title': 'Riesgos de la Pintura Industrial',
+        'paint-section-2-text': 'La pintura industrial presenta varios riesgos que necesitan ser controlados:',
+        
+        'paint-type-1-title': 'Vapores Químicos',
+        'paint-type-1-desc': 'Gases tóxicos que pueden causar problemas respiratorios.',
+        
+        'paint-type-2-title': 'Riesgo de Incendio',
+        'paint-type-2-desc': 'Productos inflamables que pueden prender fuego fácilmente.',
+        
+        'paint-type-3-title': 'Contacto con la Piel',
+        'paint-type-3-desc': 'Productos químicos que causan quemaduras y alergias.',
+        
+        'paint-section-3-title': 'Equipos de Protección',
+        'paint-section-3-text': 'Para pintar con seguridad, use siempre estos equipos:',
+        
+        'paint-protection-1': 'Máscara con filtro para vapores químicos',
+        'paint-protection-2': 'Guantes resistentes a productos químicos',
+        'paint-protection-3': 'Gafas de protección amplia visión',
+        'paint-protection-4': 'Delantal y ropa de protección',
+        'paint-protection-5': 'Calzado de seguridad impermeable',
+        
+        'paint-section-4-title': 'Área de Pintura Segura',
+        'paint-section-4-text': 'El lugar de pintura necesita estar seguro para todos:',
+        
+        'paint-area-1': 'Ventilación adecuada para remover vapores',
+        'paint-area-2': 'Sin fuentes de calor o chispas cercanas',
+        'paint-area-3': 'Extintores de incendio disponibles',
+        'paint-area-4': 'Señalización de área con productos químicos',
+        'paint-area-5': 'Kit de primeros auxilios disponible',
+        
+        'paint-section-5-title': 'Procedimientos de Emergencia',
+        'paint-section-5-text': 'En caso de accidente con productos químicos, sepa cómo actuar:',
+        
+        'paint-emergency-1': 'Remueva a la víctima del área contaminada',
+        'paint-emergency-2': 'Retire la ropa contaminada inmediatamente',
+        'paint-emergency-3': 'Lave la piel con agua corriente por 15 minutos',
+        'paint-emergency-4': 'Use ducha de emergencia si es necesario',
+        'paint-emergency-5': 'Llame socorro médico especializado',
+        
+        'paint-alert-title': '¡Peligro!',
+        'paint-alert-text': 'Nunca pinte sin protección. Los vapores pueden causar daños permanentes a la salud y el riesgo de incendio es muy alto.',
+        
+        'paint-quiz-title': 'Pruebe su Conocimiento',
+        'paint-quiz-question-1': '¿Qué protección es más importante en la pintura industrial?',
+        'paint-quiz-question-2': '¿Qué hacer si el producto químico cae en la piel?',
+        'paint-quiz-question-3': '¿Puede fumar cerca del área de pintura?',
+        'paint-quiz-question-4': '¿Cuál es la importancia de la ventilación en la pintura?',
+        
+        'paint-quiz-q1-a': 'Solo guantes',
+        'paint-quiz-q1-b': 'Máscara con filtro para vapores',
+        'paint-quiz-q1-c': 'Gafas de protección',
+        'paint-quiz-q1-d': 'Calzado de seguridad',
+        'paint-quiz-q1-e': 'Delantal de protección',
+        
+        'paint-quiz-q2-a': 'Esperar secar y continuar trabajando',
+        'paint-quiz-q2-b': 'Lavar con agua corriente por 15 minutos',
+        'paint-quiz-q2-c': 'Limpiar con paño seco',
+        'paint-quiz-q2-d': 'Solo avisar al supervisor',
+        'paint-quiz-q2-e': 'Continuar el trabajo y limpiar después',
+        
+        'paint-quiz-q3-a': 'Sí, si está lejos de las pinturas',
+        'paint-quiz-q3-b': 'No, nunca bajo ninguna circunstancia',
+        'paint-quiz-q3-c': 'Solo durante las pausas',
+        'paint-quiz-q3-d': 'Si tiene extintor cerca',
+        'paint-quiz-q3-e': 'Depende del tipo de pintura',
+        
+        'paint-quiz-q4-a': 'Solo para refrescar el ambiente',
+        'paint-quiz-q4-b': 'Remover vapores tóxicos y prevenir incendios',
+        'paint-quiz-q4-c': 'Para secar la pintura más rápido',
+        'paint-quiz-q4-d': 'Solo en verano',
+        'paint-quiz-q4-e': 'No tiene mucha importancia',
+        
+        'quiz-submit': 'Enviar Respuestas',
+        'quiz-result-title': 'Resultado del Quiz',
+        'quiz-score': 'Su puntuación',
+        'quiz-correct': 'Respuestas correctas',
+        'quiz-incorrect': 'Respuestas incorrectas',
+        'quiz-congratulations': '¡Felicidades! Usted acertó',
+        'quiz-try-again': '¡Inténtelo de nuevo! Usted acertó',
+        'quiz-retry': 'Rehacer Quiz',
+        'quiz-back': 'Volver a los Cursos'
+    },
+    
+    en: {
+        'nav-home': 'Home',
+        'nav-about': 'About',
+        'course-paint-hero-title': 'Safe Industrial Painting',
+        'course-paint-hero-subtitle': 'Learn to paint safely in the pulp factory',
+        'hero-btn': 'Start Course',
+        
+        'paint-section-1-title': 'What is Industrial Painting?',
+        'course-paint-intro': 'Industrial painting in the pulp factory protects equipment and structures against corrosion. But chemical products and vapors can be very dangerous to health. It is necessary to use protection and follow safety rules.',
+        
+        'paint-section-2-title': 'Risks of Industrial Painting',
+        'paint-section-2-text': 'Industrial painting presents several risks that need to be controlled:',
+        
+        'paint-type-1-title': 'Chemical Vapors',
+        'paint-type-1-desc': 'Toxic gases that can cause respiratory problems.',
+        
+        'paint-type-2-title': 'Fire Risk',
+        'paint-type-2-desc': 'Flammable products that can catch fire easily.',
+        
+        'paint-type-3-title': 'Skin Contact',
+        'paint-type-3-desc': 'Chemical products that cause burns and allergies.',
+        
+        'paint-section-3-title': 'Protection Equipment',
+        'paint-section-3-text': 'To paint safely, always use this equipment:',
+        
+        'paint-protection-1': 'Mask with chemical vapor filter',
+        'paint-protection-2': 'Gloves resistant to chemical products',
+        'paint-protection-3': 'Wide vision safety glasses',
+        'paint-protection-4': 'Apron and protective clothing',
+        'paint-protection-5': 'Waterproof safety footwear',
+        
+        'paint-section-4-title': 'Safe Painting Area',
+        'paint-section-4-text': 'The painting place needs to be safe for everyone:',
+        
+        'paint-area-1': 'Adequate ventilation to remove vapors',
+        'paint-area-2': 'No heat sources or sparks nearby',
+        'paint-area-3': 'Fire extinguishers available',
+        'paint-area-4': 'Signage of area with chemical products',
+        'paint-area-5': 'First aid kit available',
+        
+        'paint-section-5-title': 'Emergency Procedures',
+        'paint-section-5-text': 'In case of accident with chemical products, know how to act:',
+        
+        'paint-emergency-1': 'Remove the victim from the contaminated area',
+        'paint-emergency-2': 'Remove contaminated clothing immediately',
+        'paint-emergency-3': 'Wash the skin with running water for 15 minutes',
+        'paint-emergency-4': 'Use emergency shower if necessary',
+        'paint-emergency-5': 'Call specialized medical help',
+        
+        'paint-alert-title': 'Danger!',
+        'paint-alert-text': 'Never paint without protection. Vapors can cause permanent health damage and the fire risk is very high.',
+        
+        'paint-quiz-title': 'Test Your Knowledge',
+        'paint-quiz-question-1': 'What is the most important protection in industrial painting?',
+        'paint-quiz-question-2': 'What to do if chemical product falls on skin?',
+        'paint-quiz-question-3': 'Can you smoke near the painting area?',
+        'paint-quiz-question-4': 'What is the importance of ventilation in painting?',
+        
+        'paint-quiz-q1-a': 'Only gloves',
+        'paint-quiz-q1-b': 'Mask with vapor filter',
+        'paint-quiz-q1-c': 'Safety glasses',
+        'paint-quiz-q1-d': 'Safety footwear',
+        'paint-quiz-q1-e': 'Protective apron',
+        
+        'paint-quiz-q2-a': 'Wait to dry and continue working',
+        'paint-quiz-q2-b': 'Wash with running water for 15 minutes',
+        'paint-quiz-q2-c': 'Clean with dry cloth',
+        'paint-quiz-q2-d': 'Just notify the supervisor',
+        'paint-quiz-q2-e': 'Continue work and clean later',
+        
+        'paint-quiz-q3-a': 'Yes, if far from paints',
+        'paint-quiz-q3-b': 'No, never under any circumstances',
+        'paint-quiz-q3-c': 'Only during breaks',
+        'paint-quiz-q3-d': 'If you have a fire extinguisher nearby',
+        'paint-quiz-q3-e': 'Depends on the type of paint',
+        
+        'paint-quiz-q4-a': 'Just to refresh the environment',
+        'paint-quiz-q4-b': 'Remove toxic vapors and prevent fires',
+        'paint-quiz-q4-c': 'To dry paint faster',
+        'paint-quiz-q4-d': 'Only in summer',
+        'paint-quiz-q4-e': 'Does not have much importance',
+        
+        'quiz-submit': 'Submit Answers',
+        'quiz-result-title': 'Quiz Result',
+        'quiz-score': 'Your score',
+        'quiz-correct': 'Correct answers',
+        'quiz-incorrect': 'Incorrect answers',
+        'quiz-congratulations': 'Congratulations! You got',
+        'quiz-try-again': 'Try again! You got',
+        'quiz-retry': 'Retry Quiz',
+        'quiz-back': 'Back to Courses'
+    }
+};
+
+// Estado atual do idioma
+let currentLanguage = 'pt';
+
+// Função para traduzir elementos
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+// Função para mudar idioma
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Sistema de Quiz
+class QuizSystem {
+    constructor() {
+        this.currentQuiz = null;
+        this.answers = {};
+        this.score = 0;
+        this.totalQuestions = 0;
+    }
+
+    initQuiz(quizData) {
+        this.currentQuiz = quizData;
+        this.answers = {};
+        this.score = 0;
+        this.totalQuestions = Object.keys(quizData.questions).length;
+        
+        // Limpar seleções anteriores
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado anterior
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+    }
+
+    submitQuiz() {
+        if (!this.currentQuiz) return;
+        
+        this.score = 0;
+        this.answers = {};
+        
+        // Coletar respostas
+        Object.keys(this.currentQuiz.questions).forEach(questionKey => {
+            const selectedOption = document.querySelector(`input[name="${questionKey}"]:checked`);
+            if (selectedOption) {
+                this.answers[questionKey] = selectedOption.value;
+                if (selectedOption.value === this.currentQuiz.questions[questionKey].correct) {
+                    this.score++;
+                }
+            }
+        });
+        
+        // Mostrar resultado
+        this.showResult();
+    }
+
+    showResult() {
+        const resultDiv = document.getElementById('quiz-result');
+        if (!resultDiv) return;
+        
+        const percentage = Math.round((this.score / this.totalQuestions) * 100);
+        const isPassing = percentage >= 70;
+        
+        // Obter textos traduzidos
+        const resultTitle = this.getTranslatedText('quiz-result-title');
+        const scoreText = this.getTranslatedText('quiz-score');
+        const correctText = this.getTranslatedText('quiz-correct');
+        const incorrectText = this.getTranslatedText('quiz-incorrect');
+        const congratulationsText = this.getTranslatedText('quiz-congratulations');
+        const tryAgainText = this.getTranslatedText('quiz-try-again');
+        const retryText = this.getTranslatedText('quiz-retry');
+        const backText = this.getTranslatedText('quiz-back');
+        
+        resultDiv.innerHTML = `
+            <h3>${resultTitle}</h3>
+            <div style="text-align: center; margin: 20px 0;">
+                <div class="score-circle ${isPassing ? 'passing' : 'failing'}">
+                    <span>${percentage}%</span>
+                </div>
+                <div style="margin-top: 20px;">
+                    <p><strong>${scoreText}:</strong> ${this.score}/${this.totalQuestions}</p>
+                    <p style="color: #27ae60; font-weight: bold;">${correctText}: ${this.score}</p>
+                    <p style="color: #e74c3c; font-weight: bold;">${incorrectText}: ${this.totalQuestions - this.score}</p>
+                </div>
+            </div>
+            <div class="quiz-message ${isPassing ? 'success' : 'error'}">
+                ${isPassing ? 
+                    `<p>${congratulationsText} ${this.score} de ${this.totalQuestions} perguntas!</p>` :
+                    `<p>${tryAgainText} ${this.score} de ${this.totalQuestions} perguntas.</p>`
+                }
+            </div>
+            <div class="quiz-actions">
+                <button onclick="quizSystem.retryQuiz()">${retryText}</button>
+                <a href="../index.html">${backText}</a>
+            </div>
+        `;
+        
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    retryQuiz() {
+        if (!this.currentQuiz) return;
+        
+        // Limpar seleções
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+        
+        // Resetar
+        this.answers = {};
+        this.score = 0;
+        
+        // Voltar ao topo do quiz
+        const quizSection = document.querySelector('.quiz-section');
+        if (quizSection) {
+            quizSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    getTranslatedText(key) {
+        const lang = localStorage.getItem('rss3-language') || 'pt';
+        if (translations && translations[lang] && translations[lang][key]) {
+            return translations[lang][key];
+        }
+        return key;
+    }
+}
+
+// Instância global do quiz
+const quizSystem = new QuizSystem();
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado - iniciando sistema de idiomas');
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            changeLanguage(lang);
+        });
+    });
+    
+    // Adicionar evento ao botão de submit
+    const submitBtn = document.getElementById('quiz-submit');
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+            quizSystem.submitQuiz();
+        });
+    }
+    
+    // Inicializar quiz
+    const quizData = {
+        questions: {
+            q1: { correct: 'b' },
+            q2: { correct: 'b' },
+            q3: { correct: 'b' },
+            q4: { correct: 'b' }
+        }
+    };
+    
+    quizSystem.initQuiz(quizData);
+});
+</script>
+
+</body>
+</html>

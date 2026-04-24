@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso NR-11 - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--laranja);
+    }
+
+    /* HERO / BANNER PRINCIPAL */
+.hero {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8, #ff7a00);
+  color: var(--branco);
+  padding: 90px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 2.6em;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.15em;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--branco);
+  padding: 16px 36px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: 0.2s;
+}
+
+.hero-btn:hover {
+  background: var(--branco);
+  color: var(--azul);
+  transform: translateY(-3px);
+}
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      flex: 1;
+      font-size: 0.95em;
+    }
+
+    .card a {
+      margin-top: 15px;
+      background: var(--laranja);
+      color: var(--branco);
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .secao-titulo {
+      margin: 50px 0 20px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+      color: var(--azul);
+    }
+
+    /* Seletor de Idiomas */
+    .language-selector {
+      display: flex;
+      gap: 5px;
+      margin-left: 20px;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--branco);
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8em;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+      color: var(--branco);
+      border-color: var(--laranja);
+    }
+
+    /* Estilos do Curso */
+    .course-section {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .course-section h2 {
+      color: var(--azul);
+      margin-bottom: 20px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+    }
+
+    .course-section p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .epi-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .epi-type-card {
+      background: var(--branco);
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .epi-type-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .epi-type-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--azul);
+    }
+
+    .epi-type-title {
+      font-size: 1.2rem;
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .epi-type-desc {
+      color: var(--cinza-texto);
+      line-height: 1.5;
+    }
+
+    .image-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .course-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .image-caption {
+      font-style: italic;
+      color: #666;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .info-list li {
+      background: var(--cinza-claro);
+      border-left: 4px solid var(--laranja);
+      padding: 15px 20px;
+      margin: 10px 0;
+      border-radius: 0 8px 8px 0;
+      transition: transform 0.3s ease;
+    }
+
+    .info-list li:hover {
+      transform: translateX(5px);
+      background: #e9ecef;
+    }
+
+    .alert-box {
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+      box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+    }
+
+    .alert-box h4 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .quiz-section {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .quiz-title {
+      color: var(--azul);
+      text-align: center;
+      margin-bottom: 30px;
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .quiz-question {
+      background: var(--cinza-claro);
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .quiz-question h4 {
+      color: var(--azul);
+      margin-bottom: 15px;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quiz-option-label {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      background: var(--branco);
+      border: 1px solid #e9ecef;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-option-label:hover {
+      background: var(--cinza-claro);
+      border-color: var(--laranja);
+    }
+
+    .quiz-option-label input[type="radio"] {
+      margin-right: 12px;
+    }
+
+    .quiz-submit-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .quiz-submit {
+      background: var(--laranja);
+      color: var(--branco);
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .quiz-submit:hover {
+      background: #e67300;
+      transform: translateY(-2px);
+    }
+
+    .quiz-result {
+      display: none;
+      background: var(--branco);
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .quiz-result h3 {
+      color: var(--azul);
+      margin-bottom: 20px;
+    }
+
+    .score-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      margin: 20px 0;
+    }
+
+    .score-circle.passing {
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+    }
+
+    .score-circle.failing {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+    }
+
+    .quiz-message {
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .quiz-message.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .quiz-message.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .quiz-actions button, .quiz-actions a {
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .quiz-actions button {
+      background: var(--azul);
+      color: var(--branco);
+      border: none;
+    }
+
+    .quiz-actions a {
+      background: var(--laranja);
+      color: var(--branco);
+    }
+
+    .quiz-actions button:hover, .quiz-actions a:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      nav a {
+        margin: 5px 0;
+      }
+      
+      .hero {
+        padding: 60px 20px;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .epi-types-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .quiz-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>RSS<span>3</span> Treinamentos</h1>
+  <nav>
+    <a href="../index.html" data-translate="nav-home">Início</a>
+    <a href="../sobre.html" data-translate="nav-about">Sobre</a>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2 data-translate="course-nr11-hero-title">NR-11 Movimentação de Cargas</h2>
+    <p data-translate="course-nr11-hero-subtitle">Aprenda a movimentar cargas com segurança na fábrica de celulose</p>
+    <a href="#conteudo" class="hero-btn" data-translate="hero-btn">Começar Curso</a>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <section class="course-section">
+    <h2 data-translate="nr11-section-1-title">O que é Movimentação de Cargas?</h2>
+    <p data-translate="course-nr11-intro">
+      Movimentação de cargas é o transporte de materiais, produtos e equipamentos na fábrica. Na indústria de celulose, isso inclui madeira, bobinas, produtos químicos e máquinas. É uma atividade perigosa que exige cuidados especiais.
+    </p>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr11-section-2-title">Equipamentos de Movimentação</h2>
+    <p data-translate="nr11-section-2-text">
+      Existem diferentes equipamentos para movimentar cargas na fábrica. Cada um tem suas regras de segurança:
+    </p>
+    
+    <div class="epi-types-grid">
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🏗️</div>
+        <h3 class="epi-type-title" data-translate="nr11-type-1-title">Empilhadeiras</h3>
+        <p class="epi-type-desc" data-translate="nr11-type-1-desc">Veículos para mover paletes e cargas pesadas no chão.</p>
+      </div>
+      
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🏗️</div>
+        <h3 class="epi-type-title" data-translate="nr11-type-2-title">Pontes Rolantes</h3>
+        <p class="epi-type-desc" data-translate="nr11-type-2-desc">Guindastes que se movem sobre trilhos para levantar cargas grandes.</p>
+      </div>
+      
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🏗️</div>
+        <h3 class="epi-type-title" data-translate="nr11-type-3-title">Talhas e Guinchos</h3>
+        <p class="epi-type-desc" data-translate="nr11-type-3-desc">Equipamentos para levantar cargas verticais com segurança.</p>
+      </div>
+    </div>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr11-section-3-title">Riscos na Movimentação</h2>
+    <p data-translate="nr11-section-3-text">
+      A movimentação de cargas apresenta vários riscos que precisam ser controlados:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr11-risk-1">Queda de cargas e equipamentos</li>
+      <li data-translate="nr11-risk-2">Colisões com pessoas e estruturas</li>
+      <li data-translate="nr11-risk-3">Capotamento de empilhadeiras</li>
+      <li data-translate="nr11-risk-4">Rompimento de cabos e correntes</li>
+      <li data-translate="nr11-risk-5">Esmagamento e prensagem</li>
+    </ul>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr11-section-4-title">Regras de Segurança</h2>
+    <p data-translate="nr11-section-4-text">
+      Siga estas regras ao operar equipamentos de movimentação:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr11-rule-1">Tenha habilitação e treinamento específico</li>
+      <li data-translate="nr11-rule-2">Faça inspeção diária do equipamento</li>
+      <li data-translate="nr11-rule-3">Respeite a capacidade máxima de carga</li>
+      <li data-translate="nr11-rule-4">Use sinalização e comunicação clara</li>
+      <li data-translate="nr11-rule-5">Mantenha distância segura das cargas</li>
+    </ul>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="nr11-section-5-title">Procedimentos de Emergência</h2>
+    <p data-translate="nr11-section-5-text">
+      Em caso de acidente durante movimentação, saiba como agir:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="nr11-emergency-1">Pare o equipamento imediatamente</li>
+      <li data-translate="nr11-emergency-2">Isole a área de acidente</li>
+      <li data-translate="nr11-emergency-3">Chame o socorro especializado</li>
+      <li data-translate="nr11-emergency-4">Não mova a vítima se houver suspeita de lesão</li>
+      <li data-translate="nr11-emergency-5">Comunique ao supervisor imediatamente</li>
+    </ul>
+    
+        
+    <div class="alert-box">
+      <h4 data-translate="nr11-alert-title">Atenção!</h4>
+      <p data-translate="nr11-alert-text">Nunca opere equipamentos de movimentação sem treinamento. Uma falha pode causar acidentes graves.</p>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h2 class="quiz-title" data-translate="nr11-quiz-title">Teste seu Conhecimento</h2>
+    
+    <div class="quiz-question">
+      <h4 data-translate="nr11-quiz-question-1">O que fazer antes de usar uma empilhadeira?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="a" class="quiz-option">
+          <span data-translate="nr11-quiz-q1-a">Começar a trabalhar direto</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="b" class="quiz-option">
+          <span data-translate="nr11-quiz-q1-b">Fazer inspeção de segurança</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="c" class="quiz-option">
+          <span data-translate="nr11-quiz-q1-c">Avisar os colegas</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="d" class="quiz-option">
+          <span data-translate="nr11-quiz-q1-d">Verificar a carga</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="e" class="quiz-option">
+          <span data-translate="nr11-quiz-q1-e">Ligar o motor</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="nr11-quiz-question-2">Qual a capacidade máxima de um equipamento?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="a" class="quiz-option">
+          <span data-translate="nr11-quiz-q2-a">O que o operador achar seguro</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="b" class="quiz-option">
+          <span data-translate="nr11-quiz-q2-b">A informada na placa do equipamento</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="c" class="quiz-option">
+          <span data-translate="nr11-quiz-q2-c">Depende da urgência do trabalho</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="d" class="quiz-option">
+          <span data-translate="nr11-quiz-q2-d">O que o supervisor mandar</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="e" class="quiz-option">
+          <span data-translate="nr11-quiz-q2-e">Até o equipamento começar a falhar</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="nr11-quiz-question-3">Pode operar pontes rolantes sem treinamento?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="a" class="quiz-option">
+          <span data-translate="nr11-quiz-q3-a">Sim, se for apenas por pouco tempo</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="b" class="quiz-option">
+          <span data-translate="nr11-quiz-q3-b">Não, nunca em hipótese alguma</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="c" class="quiz-option">
+          <span data-translate="nr11-quiz-q3-c">Apenas com autorização verbal</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="d" class="quiz-option">
+          <span data-translate="nr11-quiz-q3-d">Se tiver experiência anterior</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="e" class="quiz-option">
+          <span data-translate="nr11-quiz-q3-e">Apenas em emergências</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="nr11-quiz-question-4">O que fazer se uma carga cair?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="a" class="quiz-option">
+          <span data-translate="nr11-quiz-q4-a">Tentar levantar a carga rapidamente</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="b" class="quiz-option">
+          <span data-translate="nr11-quiz-q4-b">Isole a área e comunique ao supervisor</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="c" class="quiz-option">
+          <span data-translate="nr11-quiz-q4-c">Continuar o trabalho normalmente</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="d" class="quiz-option">
+          <span data-translate="nr11-quiz-q4-d">Chamar ajuda para recolocar a carga</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="e" class="quiz-option">
+          <span data-translate="nr11-quiz-q4-e">Anotar para recolocar depois</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-submit-container">
+      <button id="quiz-submit" class="quiz-submit" data-translate="quiz-submit">Enviar Respostas</button>
+    </div>
+    
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 <span>RSS3</span> Treinamentos de Segurança
+</footer>
+
+<script>
+// Sistema de Tradução RSS3 Treinamentos
+const translations = {
+    pt: {
+        'nav-home': 'Início',
+        'nav-about': 'Sobre',
+        'course-nr11-hero-title': 'NR-11 Movimentação de Cargas',
+        'course-nr11-hero-subtitle': 'Aprenda a movimentar cargas com segurança na fábrica de celulose',
+        'hero-btn': 'Começar Curso',
+        
+        'nr11-section-1-title': 'O que é Movimentação de Cargas?',
+        'course-nr11-intro': 'Movimentação de cargas é o transporte de materiais, produtos e equipamentos na fábrica. Na indústria de celulose, isso inclui madeira, bobinas, produtos químicos e máquinas. É uma atividade perigosa que exige cuidados especiais.',
+        
+        'nr11-section-2-title': 'Equipamentos de Movimentação',
+        'nr11-section-2-text': 'Existem diferentes equipamentos para movimentar cargas na fábrica. Cada um tem suas regras de segurança:',
+        
+        'nr11-type-1-title': 'Empilhadeiras',
+        'nr11-type-1-desc': 'Veículos para mover paletes e cargas pesadas no chão.',
+        
+        'nr11-type-2-title': 'Pontes Rolantes',
+        'nr11-type-2-desc': 'Guindastes que se movem sobre trilhos para levantar cargas grandes.',
+        
+        'nr11-type-3-title': 'Talhas e Guinchos',
+        'nr11-type-3-desc': 'Equipamentos para levantar cargas verticais com segurança.',
+        
+        'nr11-section-3-title': 'Riscos na Movimentação',
+        'nr11-section-3-text': 'A movimentação de cargas apresenta vários riscos que precisam ser controlados:',
+        
+        'nr11-risk-1': 'Queda de cargas e equipamentos',
+        'nr11-risk-2': 'Colisões com pessoas e estruturas',
+        'nr11-risk-3': 'Capotamento de empilhadeiras',
+        'nr11-risk-4': 'Rompimento de cabos e correntes',
+        'nr11-risk-5': 'Esmagamento e prensagem',
+        
+        'nr11-section-4-title': 'Regras de Segurança',
+        'nr11-section-4-text': 'Siga estas regras ao operar equipamentos de movimentação:',
+        
+        'nr11-rule-1': 'Tenha habilitação e treinamento específico',
+        'nr11-rule-2': 'Faça inspeção diária do equipamento',
+        'nr11-rule-3': 'Respeite a capacidade máxima de carga',
+        'nr11-rule-4': 'Use sinalização e comunicação clara',
+        'nr11-rule-5': 'Mantenha distância segura das cargas',
+        
+        'nr11-section-5-title': 'Procedimentos de Emergência',
+        'nr11-section-5-text': 'Em caso de acidente durante movimentação, saiba como agir:',
+        
+        'nr11-emergency-1': 'Pare o equipamento imediatamente',
+        'nr11-emergency-2': 'Isole a área de acidente',
+        'nr11-emergency-3': 'Chame o socorro especializado',
+        'nr11-emergency-4': 'Não mova a vítima se houver suspeita de lesão',
+        'nr11-emergency-5': 'Comunique ao supervisor imediatamente',
+        
+        'nr11-alert-title': 'Atenção!',
+        'nr11-alert-text': 'Nunca opere equipamentos de movimentação sem treinamento. Uma falha pode causar acidentes graves.',
+        
+        'nr11-quiz-title': 'Teste seu Conhecimento',
+        'nr11-quiz-question-1': 'O que fazer antes de usar uma empilhadeira?',
+        'nr11-quiz-question-2': 'Qual a capacidade máxima de um equipamento?',
+        'nr11-quiz-question-3': 'Pode operar pontes rolantes sem treinamento?',
+        'nr11-quiz-question-4': 'O que fazer se uma carga cair?',
+        
+        'nr11-quiz-q1-a': 'Começar a trabalhar direto',
+        'nr11-quiz-q1-b': 'Fazer inspeção de segurança',
+        'nr11-quiz-q1-c': 'Avisar os colegas',
+        'nr11-quiz-q1-d': 'Verificar a carga',
+        'nr11-quiz-q1-e': 'Ligar o motor',
+        
+        'nr11-quiz-q2-a': 'O que o operador achar seguro',
+        'nr11-quiz-q2-b': 'A informada na placa do equipamento',
+        'nr11-quiz-q2-c': 'Depende da urgência do trabalho',
+        'nr11-quiz-q2-d': 'O que o supervisor mandar',
+        'nr11-quiz-q2-e': 'Até o equipamento começar a falhar',
+        
+        'nr11-quiz-q3-a': 'Sim, se for apenas por pouco tempo',
+        'nr11-quiz-q3-b': 'Não, nunca em hipótese alguma',
+        'nr11-quiz-q3-c': 'Apenas com autorização verbal',
+        'nr11-quiz-q3-d': 'Se tiver experiência anterior',
+        'nr11-quiz-q3-e': 'Apenas em emergências',
+        
+        'nr11-quiz-q4-a': 'Tentar levantar a carga rapidamente',
+        'nr11-quiz-q4-b': 'Isole a área e comunique ao supervisor',
+        'nr11-quiz-q4-c': 'Continuar o trabalho normalmente',
+        'nr11-quiz-q4-d': 'Chamar ajuda para recolocar a carga',
+        'nr11-quiz-q4-e': 'Anotar para recolocar depois',
+        
+        'quiz-submit': 'Enviar Respostas',
+        'quiz-result-title': 'Resultado do Quiz',
+        'quiz-score': 'Sua pontuação',
+        'quiz-correct': 'Respostas corretas',
+        'quiz-incorrect': 'Respostas incorretas',
+        'quiz-congratulations': 'Parabéns! Você acertou',
+        'quiz-try-again': 'Tente novamente! Você acertou',
+        'quiz-retry': 'Refazer Quiz',
+        'quiz-back': 'Voltar para os Cursos'
+    },
+    
+    es: {
+        'nav-home': 'Inicio',
+        'nav-about': 'Acerca de',
+        'course-nr11-hero-title': 'NR-11 Movimentación de Cargas',
+        'course-nr11-hero-subtitle': 'Aprenda a mover cargas con seguridad en la fábrica de celulosa',
+        'hero-btn': 'Comenzar Curso',
+        
+        'nr11-section-1-title': '¿Qué es Movimentación de Cargas?',
+        'course-nr11-intro': 'Movimentación de cargas es el transporte de materiales, productos y equipos en la fábrica. En la industria de celulosa, esto incluye madera, bobinas, productos químicos y máquinas. Es una actividad peligrosa que exige cuidados especiales.',
+        
+        'nr11-section-2-title': 'Equipos de Movimentación',
+        'nr11-section-2-text': 'Existen diferentes equipos para mover cargas en la fábrica. Cada uno tiene sus reglas de seguridad:',
+        
+        'nr11-type-1-title': 'Montacargas',
+        'nr11-type-1-desc': 'Vehículos para mover palets y cargas pesadas en el suelo.',
+        
+        'nr11-type-2-title': 'Puentes Grúa',
+        'nr11-type-2-desc': 'Grúas que se mueven sobre rieles para levantar cargas grandes.',
+        
+        'nr11-type-3-title': 'Polipastos y Malacates',
+        'nr11-type-3-desc': 'Equipos para levantar cargas verticales con seguridad.',
+        
+        'nr11-section-3-title': 'Riesgos en la Movimentación',
+        'nr11-section-3-text': 'La movimentación de cargas presenta varios riesgos que necesitan ser controlados:',
+        
+        'nr11-risk-1': 'Caída de cargas y equipos',
+        'nr11-risk-2': 'Colisiones con personas y estructuras',
+        'nr11-risk-3': 'Vuelco de montacargas',
+        'nr11-risk-4': 'Rotura de cables y cadenas',
+        'nr11-risk-5': 'Aplastamiento y prensado',
+        
+        'nr11-section-4-title': 'Reglas de Seguridad',
+        'nr11-section-4-text': 'Siga estas reglas al operar equipos de movimentación:',
+        
+        'nr11-rule-1': 'Tenga habilitación y entrenamiento específico',
+        'nr11-rule-2': 'Haga inspección diaria del equipo',
+        'nr11-rule-3': 'Respete la capacidad máxima de carga',
+        'nr11-rule-4': 'Use señalización y comunicación clara',
+        'nr11-rule-5': 'Mantenga distancia segura de las cargas',
+        
+        'nr11-section-5-title': 'Procedimientos de Emergencia',
+        'nr11-section-5-text': 'En caso de accidente durante movimentación, sepa cómo actuar:',
+        
+        'nr11-emergency-1': 'Pare el equipo inmediatamente',
+        'nr11-emergency-2': 'Aisle el área de accidente',
+        'nr11-emergency-3': 'Llame al socorro especializado',
+        'nr11-emergency-4': 'No mueva a la víctima si hay sospecha de lesión',
+        'nr11-emergency-5': 'Comunique al supervisor inmediatamente',
+        
+        'nr11-alert-title': '¡Atención!',
+        'nr11-alert-text': 'Nunca opere equipos de movimentación sin entrenamiento. Una falla puede causar accidentes graves.',
+        
+        'nr11-quiz-title': 'Pruebe su Conocimiento',
+        'nr11-quiz-question-1': '¿Qué hacer antes de usar un montacargas?',
+        'nr11-quiz-question-2': '¿Cuál es la capacidad máxima de un equipo?',
+        'nr11-quiz-question-3': '¿Puede operar puentes grúa sin entrenamiento?',
+        'nr11-quiz-question-4': '¿Qué hacer si una carga cae?',
+        
+        'nr11-quiz-q1-a': 'Comenzar a trabajar directo',
+        'nr11-quiz-q1-b': 'Hacer inspección de seguridad',
+        'nr11-quiz-q1-c': 'Avisar a los colegas',
+        'nr11-quiz-q1-d': 'Verificar la carga',
+        'nr11-quiz-q1-e': 'Encender el motor',
+        
+        'nr11-quiz-q2-a': 'Lo que el operador considere seguro',
+        'nr11-quiz-q2-b': 'La informada en la placa del equipo',
+        'nr11-quiz-q2-c': 'Depende de la urgencia del trabajo',
+        'nr11-quiz-q2-d': 'Lo que el supervisor mande',
+        'nr11-quiz-q2-e': 'Hasta que el equipo empiece a fallar',
+        
+        'nr11-quiz-q3-a': 'Sí, si es solo por poco tiempo',
+        'nr11-quiz-q3-b': 'No, nunca bajo ninguna circunstancia',
+        'nr11-quiz-q3-c': 'Solo con autorización verbal',
+        'nr11-quiz-q3-d': 'Si tiene experiencia anterior',
+        'nr11-quiz-q3-e': 'Solo en emergencias',
+        
+        'nr11-quiz-q4-a': 'Intentar levantar la carga rápidamente',
+        'nr11-quiz-q4-b': 'Aisle el área y comunique al supervisor',
+        'nr11-quiz-q4-c': 'Continuar el trabajo normalmente',
+        'nr11-quiz-q4-d': 'Llamar ayuda para recolocar la carga',
+        'nr11-quiz-q4-e': 'Anotar para recolocar después',
+        
+        'quiz-submit': 'Enviar Respuestas',
+        'quiz-result-title': 'Resultado del Quiz',
+        'quiz-score': 'Su puntuación',
+        'quiz-correct': 'Respuestas correctas',
+        'quiz-incorrect': 'Respuestas incorrectas',
+        'quiz-congratulations': '¡Felicidades! Usted acertó',
+        'quiz-try-again': '¡Inténtelo de nuevo! Usted acertó',
+        'quiz-retry': 'Rehacer Quiz',
+        'quiz-back': 'Volver a los Cursos'
+    },
+    
+    en: {
+        'nav-home': 'Home',
+        'nav-about': 'About',
+        'course-nr11-hero-title': 'NR-11 Load Handling',
+        'course-nr11-hero-subtitle': 'Learn to move loads safely in the pulp factory',
+        'hero-btn': 'Start Course',
+        
+        'nr11-section-1-title': 'What is Load Handling?',
+        'course-nr11-intro': 'Load handling is the transport of materials, products and equipment in the factory. In the pulp industry, this includes wood, reels, chemicals and machines. It is a dangerous activity that requires special care.',
+        
+        'nr11-section-2-title': 'Handling Equipment',
+        'nr11-section-2-text': 'There are different equipment for moving loads in the factory. Each has its own safety rules:',
+        
+        'nr11-type-1-title': 'Forklifts',
+        'nr11-type-1-desc': 'Vehicles for moving pallets and heavy loads on the ground.',
+        
+        'nr11-type-2-title': 'Overhead Cranes',
+        'nr11-type-2-desc': 'Cranes that move on rails to lift large loads.',
+        
+        'nr11-type-3-title': 'Hoists and Winches',
+        'nr11-type-3-desc': 'Equipment for lifting vertical loads safely.',
+        
+        'nr11-section-3-title': 'Risks in Handling',
+        'nr11-section-3-text': 'Load handling presents several risks that need to be controlled:',
+        
+        'nr11-risk-1': 'Falling loads and equipment',
+        'nr11-risk-2': 'Collisions with people and structures',
+        'nr11-risk-3': 'Forklift overturning',
+        'nr11-risk-4': 'Breaking of cables and chains',
+        'nr11-risk-5': 'Crushing and pinching',
+        
+        'nr11-section-4-title': 'Safety Rules',
+        'nr11-section-4-text': 'Follow these rules when operating handling equipment:',
+        
+        'nr11-rule-1': 'Have specific qualification and training',
+        'nr11-rule-2': 'Do daily inspection of equipment',
+        'nr11-rule-3': 'Respect maximum load capacity',
+        'nr11-rule-4': 'Use clear signaling and communication',
+        'nr11-rule-5': 'Maintain safe distance from loads',
+        
+        'nr11-section-5-title': 'Emergency Procedures',
+        'nr11-section-5-text': 'In case of accident during handling, know how to act:',
+        
+        'nr11-emergency-1': 'Stop the equipment immediately',
+        'nr11-emergency-2': 'Isolate the accident area',
+        'nr11-emergency-3': 'Call specialized help',
+        'nr11-emergency-4': 'Do not move the victim if there is suspicion of injury',
+        'nr11-emergency-5': 'Communicate to supervisor immediately',
+        
+        'nr11-alert-title': 'Attention!',
+        'nr11-alert-text': 'Never operate handling equipment without training. A failure can cause serious accidents.',
+        
+        'nr11-quiz-title': 'Test Your Knowledge',
+        'nr11-quiz-question-1': 'What to do before using a forklift?',
+        'nr11-quiz-question-2': 'What is the maximum capacity of equipment?',
+        'nr11-quiz-question-3': 'Can you operate overhead cranes without training?',
+        'nr11-quiz-question-4': 'What to do if a load falls?',
+        
+        'nr11-quiz-q1-a': 'Start working directly',
+        'nr11-quiz-q1-b': 'Do safety inspection',
+        'nr11-quiz-q1-c': 'Notify colleagues',
+        'nr11-quiz-q1-d': 'Check the load',
+        'nr11-quiz-q1-e': 'Start the engine',
+        
+        'nr11-quiz-q2-a': 'What the operator thinks is safe',
+        'nr11-quiz-q2-b': 'The one informed on the equipment plate',
+        'nr11-quiz-q2-c': 'Depends on work urgency',
+        'nr11-quiz-q2-d': 'What the supervisor orders',
+        'nr11-quiz-q2-e': 'Until the equipment starts to fail',
+        
+        'nr11-quiz-q3-a': 'Yes, if only for a short time',
+        'nr11-quiz-q3-b': 'No, never under any circumstances',
+        'nr11-quiz-q3-c': 'Only with verbal authorization',
+        'nr11-quiz-q3-d': 'If you have previous experience',
+        'nr11-quiz-q3-e': 'Only in emergencies',
+        
+        'nr11-quiz-q4-a': 'Try to lift the load quickly',
+        'nr11-quiz-q4-b': 'Isolate the area and communicate to supervisor',
+        'nr11-quiz-q4-c': 'Continue work normally',
+        'nr11-quiz-q4-d': 'Call help to replace the load',
+        'nr11-quiz-q4-e': 'Note to replace later',
+        
+        'quiz-submit': 'Submit Answers',
+        'quiz-result-title': 'Quiz Result',
+        'quiz-score': 'Your score',
+        'quiz-correct': 'Correct answers',
+        'quiz-incorrect': 'Incorrect answers',
+        'quiz-congratulations': 'Congratulations! You got',
+        'quiz-try-again': 'Try again! You got',
+        'quiz-retry': 'Retry Quiz',
+        'quiz-back': 'Back to Courses'
+    }
+};
+
+// Estado atual do idioma
+let currentLanguage = 'pt';
+
+// Função para traduzir elementos
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+// Função para mudar idioma
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Sistema de Quiz
+class QuizSystem {
+    constructor() {
+        this.currentQuiz = null;
+        this.answers = {};
+        this.score = 0;
+        this.totalQuestions = 0;
+    }
+
+    initQuiz(quizData) {
+        this.currentQuiz = quizData;
+        this.answers = {};
+        this.score = 0;
+        this.totalQuestions = Object.keys(quizData.questions).length;
+        
+        // Limpar seleções anteriores
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado anterior
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+    }
+
+    submitQuiz() {
+        if (!this.currentQuiz) return;
+        
+        this.score = 0;
+        this.answers = {};
+        
+        // Coletar respostas
+        Object.keys(this.currentQuiz.questions).forEach(questionKey => {
+            const selectedOption = document.querySelector(`input[name="${questionKey}"]:checked`);
+            if (selectedOption) {
+                this.answers[questionKey] = selectedOption.value;
+                if (selectedOption.value === this.currentQuiz.questions[questionKey].correct) {
+                    this.score++;
+                }
+            }
+        });
+        
+        // Mostrar resultado
+        this.showResult();
+    }
+
+    showResult() {
+        const resultDiv = document.getElementById('quiz-result');
+        if (!resultDiv) return;
+        
+        const percentage = Math.round((this.score / this.totalQuestions) * 100);
+        const isPassing = percentage >= 70;
+        
+        // Obter textos traduzidos
+        const resultTitle = this.getTranslatedText('quiz-result-title');
+        const scoreText = this.getTranslatedText('quiz-score');
+        const correctText = this.getTranslatedText('quiz-correct');
+        const incorrectText = this.getTranslatedText('quiz-incorrect');
+        const congratulationsText = this.getTranslatedText('quiz-congratulations');
+        const tryAgainText = this.getTranslatedText('quiz-try-again');
+        const retryText = this.getTranslatedText('quiz-retry');
+        const backText = this.getTranslatedText('quiz-back');
+        
+        resultDiv.innerHTML = `
+            <h3>${resultTitle}</h3>
+            <div style="text-align: center; margin: 20px 0;">
+                <div class="score-circle ${isPassing ? 'passing' : 'failing'}">
+                    <span>${percentage}%</span>
+                </div>
+                <div style="margin-top: 20px;">
+                    <p><strong>${scoreText}:</strong> ${this.score}/${this.totalQuestions}</p>
+                    <p style="color: #27ae60; font-weight: bold;">${correctText}: ${this.score}</p>
+                    <p style="color: #e74c3c; font-weight: bold;">${incorrectText}: ${this.totalQuestions - this.score}</p>
+                </div>
+            </div>
+            <div class="quiz-message ${isPassing ? 'success' : 'error'}">
+                ${isPassing ? 
+                    `<p>${congratulationsText} ${this.score} de ${this.totalQuestions} perguntas!</p>` :
+                    `<p>${tryAgainText} ${this.score} de ${this.totalQuestions} perguntas.</p>`
+                }
+            </div>
+            <div class="quiz-actions">
+                <button onclick="quizSystem.retryQuiz()">${retryText}</button>
+                <a href="../index.html">${backText}</a>
+            </div>
+        `;
+        
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    retryQuiz() {
+        if (!this.currentQuiz) return;
+        
+        // Limpar seleções
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+        
+        // Resetar
+        this.answers = {};
+        this.score = 0;
+        
+        // Voltar ao topo do quiz
+        const quizSection = document.querySelector('.quiz-section');
+        if (quizSection) {
+            quizSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    getTranslatedText(key) {
+        const lang = localStorage.getItem('rss3-language') || 'pt';
+        if (translations && translations[lang] && translations[lang][key]) {
+            return translations[lang][key];
+        }
+        return key;
+    }
+}
+
+// Instância global do quiz
+const quizSystem = new QuizSystem();
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado - iniciando sistema de idiomas');
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            changeLanguage(lang);
+        });
+    });
+    
+    // Adicionar evento ao botão de submit
+    const submitBtn = document.getElementById('quiz-submit');
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+            quizSystem.submitQuiz();
+        });
+    }
+    
+    // Inicializar quiz
+    const quizData = {
+        questions: {
+            q1: { correct: 'b' },
+            q2: { correct: 'b' },
+            q3: { correct: 'b' },
+            q4: { correct: 'b' }
+        }
+    };
+    
+    quizSystem.initQuiz(quizData);
+});
+</script>
+
+</body>
+</html>

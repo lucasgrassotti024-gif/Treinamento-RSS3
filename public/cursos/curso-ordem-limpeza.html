@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso Ordem e Limpeza - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+
+/* HEADER MODERNO */
+header {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8);
+  color: var(--branco);
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--branco);
+}
+
+/* FOOTER MODERNO */
+footer {
+  background: linear-gradient(135deg, #0a3d91, #062a63);
+  color: var(--branco);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-box h4 {
+  color: var(--laranja);
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--laranja);
+    }
+
+    /* HERO / BANNER PRINCIPAL */
+.hero {
+  background: linear-gradient(135deg, #0a3d91, #0f5bd8, #ff7a00);
+  color: var(--branco);
+  padding: 90px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 2.6em;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.15em;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--branco);
+  padding: 16px 36px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: 0.2s;
+}
+
+.hero-btn:hover {
+  background: var(--branco);
+  color: var(--azul);
+  transform: translateY(-3px);
+}
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      flex: 1;
+      font-size: 0.95em;
+    }
+
+    .card a {
+      margin-top: 15px;
+      background: var(--laranja);
+      color: var(--branco);
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .secao-titulo {
+      margin: 50px 0 20px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+      color: var(--azul);
+    }
+
+    /* Seletor de Idiomas */
+    .language-selector {
+      display: flex;
+      gap: 5px;
+      margin-left: 20px;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--branco);
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8em;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-1px);
+    }
+
+    .lang-btn.active {
+      background: var(--laranja);
+      color: var(--branco);
+      border-color: var(--laranja);
+    }
+
+    /* Estilos do Curso */
+    .course-section {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .course-section h2 {
+      color: var(--azul);
+      margin-bottom: 20px;
+      border-left: 6px solid var(--laranja);
+      padding-left: 15px;
+    }
+
+    .course-section p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .epi-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .epi-type-card {
+      background: var(--branco);
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .epi-type-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .epi-type-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--azul);
+    }
+
+    .epi-type-title {
+      font-size: 1.2rem;
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .epi-type-desc {
+      color: var(--cinza-texto);
+      line-height: 1.5;
+    }
+
+    .image-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .course-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .image-caption {
+      font-style: italic;
+      color: #666;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .info-list li {
+      background: var(--cinza-claro);
+      border-left: 4px solid var(--laranja);
+      padding: 15px 20px;
+      margin: 10px 0;
+      border-radius: 0 8px 8px 0;
+      transition: transform 0.3s ease;
+    }
+
+    .info-list li:hover {
+      transform: translateX(5px);
+      background: #e9ecef;
+    }
+
+    .alert-box {
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+      box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+    }
+
+    .alert-box h4 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .quiz-section {
+      background: var(--branco);
+      border-radius: 14px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .quiz-title {
+      color: var(--azul);
+      text-align: center;
+      margin-bottom: 30px;
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .quiz-question {
+      background: var(--cinza-claro);
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .quiz-question h4 {
+      color: var(--azul);
+      margin-bottom: 15px;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quiz-option-label {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      background: var(--branco);
+      border: 1px solid #e9ecef;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-option-label:hover {
+      background: var(--cinza-claro);
+      border-color: var(--laranja);
+    }
+
+    .quiz-option-label input[type="radio"] {
+      margin-right: 12px;
+    }
+
+    .quiz-submit-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .quiz-submit {
+      background: var(--laranja);
+      color: var(--branco);
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .quiz-submit:hover {
+      background: #e67300;
+      transform: translateY(-2px);
+    }
+
+    .quiz-result {
+      display: none;
+      background: var(--branco);
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .quiz-result h3 {
+      color: var(--azul);
+      margin-bottom: 20px;
+    }
+
+    .score-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      margin: 20px 0;
+    }
+
+    .score-circle.passing {
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+    }
+
+    .score-circle.failing {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+    }
+
+    .quiz-message {
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .quiz-message.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .quiz-message.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .quiz-actions button, .quiz-actions a {
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .quiz-actions button {
+      background: var(--azul);
+      color: var(--branco);
+      border: none;
+    }
+
+    .quiz-actions a {
+      background: var(--laranja);
+      color: var(--branco);
+    }
+
+    .quiz-actions button:hover, .quiz-actions a:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      nav a {
+        margin: 5px 0;
+      }
+      
+      .hero {
+        padding: 60px 20px;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .epi-types-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .quiz-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>RSS<span>3</span> Treinamentos</h1>
+  <nav>
+    <a href="../index.html" data-translate="nav-home">Início</a>
+    <a href="../sobre.html" data-translate="nav-about">Sobre</a>
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2 data-translate="course-5s-hero-title">Ordem e Limpeza (5S)</h2>
+    <p data-translate="course-5s-hero-subtitle">Aprenda a organizar o ambiente de trabalho na fábrica de celulose</p>
+    <a href="#conteudo" class="hero-btn" data-translate="hero-btn">Começar Curso</a>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <section class="course-section">
+    <h2 data-translate="5s-section-1-title">O que é o Programa 5S?</h2>
+    <p data-translate="course-5s-intro">
+      O programa 5S é uma metodologia de organização do ambiente de trabalho que busca melhorar a eficiência, segurança e qualidade. Na fábrica de celulose, o 5S ajuda a reduzir acidentes, otimizar processos e criar um ambiente mais produtivo e seguro. Os 5S são: Seiri, Seiton, Seiso, Seiketsu e Shitsuke.
+    </p>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="5s-section-2-title">Os 5 Sensos</h2>
+    <p data-translate="5s-section-2-text">
+      Conheça cada um dos 5 sensos do programa:
+    </p>
+    
+    <div class="epi-types-grid">
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🧹</div>
+        <h3 class="epi-type-title" data-translate="5s-type-1-title">SEIRI - Senso de Utilização</h3>
+        <p class="epi-type-desc" data-translate="5s-type-1-desc">Separar o necessário do desnecessário e descartar o que não é útil.</p>
+      </div>
+      
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🧹</div>
+        <h3 class="epi-type-title" data-translate="5s-type-2-title">SEITON - Senso de Organização</h3>
+        <p class="epi-type-desc" data-translate="5s-type-2-desc">Organizar tudo de forma lógica e facilitar o acesso rápido.</p>
+      </div>
+      
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🧹</div>
+        <h3 class="epi-type-title" data-translate="5s-type-3-title">SEISO - Senso de Limpeza</h3>
+        <p class="epi-type-desc" data-translate="5s-type-3-desc">Manter o ambiente sempre limpo e em condições de uso.</p>
+      </div>
+    </div>
+    
+    <div class="epi-types-grid">
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🧹</div>
+        <h3 class="epi-type-title" data-translate="5s-type-4-title">SEIKETSU - Senso de Padronização</h3>
+        <p class="epi-type-desc" data-translate="5s-type-4-desc">Criar normas e padrões para manter a organização e a limpeza.</p>
+      </div>
+      
+      <div class="epi-type-card">
+        <div class="epi-type-icon">🧹</div>
+        <h3 class="epi-type-title" data-translate="5s-type-5-title">SHITSUKE - Senso de Disciplina</h3>
+        <p class="epi-type-desc" data-translate="5s-type-5-desc">Transformar os hábitos em cultura e manter o programa ativo.</p>
+      </div>
+    </div>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="5s-section-3-title">Benefícios do 5S</h2>
+    <p data-translate="5s-section-3-text">
+      O programa 5S traz inúmeros benefícios para a fábrica de celulose:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="5s-benefits-1">Redução de acidentes e lesões no trabalho</li>
+      <li data-translate="5s-benefits-2">Aumento da produtividade e eficiência</li>
+      <li data-translate="5s-benefits-3">Melhoria na qualidade dos produtos e processos</li>
+      <li data-translate="5s-benefits-4">Redução de desperdícios e custos operacionais</li>
+      <li data-translate="5s-benefits-5">Melhoria no moral e satisfação dos trabalhadores</li>
+    </ul>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="5s-section-4-title">Implementação na Fábrica</h2>
+    <p data-translate="5s-section-4-text">
+      Para implementar o 5S na fábrica de celulose, siga estes passos:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="5s-implementation-1">Forme uma equipe de liderança para o programa 5S</li>
+      <li data-translate="5s-implementation-2">Treine todos os colaboradores sobre os 5 sensos</li>
+      <li data-translate="5s-implementation-3">Comece com uma área piloto como exemplo</li>
+      <li data-translate="5s-implementation-4">Crie ferramentas visuais e indicadores de desempenho</li>
+      <li data-translate="5s-implementation-5">Realize auditorias periódicas para manter o programa</li>
+    </ul>
+    
+      </section>
+
+  <section class="course-section">
+    <h2 data-translate="5s-section-5-title">Manutenção do Programa</h2>
+    <p data-translate="5s-section-5-text">
+      Para manter o 5S ativo e eficaz na fábrica:
+    </p>
+    
+    <ul class="info-list">
+      <li data-translate="5s-maintenance-1">Realize auditorias semanais e mensais</li>
+      <li data-translate="5s-maintenance-2">Crie um sistema de reconhecimento e premiação</li>
+      <li data-translate="5s-maintenance-3">Mantenha comunicação constante sobre os resultados</li>
+      <li data-translate="5s-maintenance-4">Envolva todos os níveis da organização</li>
+      <li data-translate="5s-maintenance-5">Celebre os sucessos e aprenda com os desafios</li>
+    </ul>
+    
+        
+    <div class="alert-box">
+      <h4 data-translate="5s-alert-title">Importante!</h4>
+      <p data-translate="5s-alert-text">O 5S não é um projeto com fim, mas uma cultura contínua. O sucesso depende do comprometimento de todos, desde a liderança até os operadores. Um ambiente organizado é um ambiente seguro.</p>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h2 class="quiz-title" data-translate="5s-quiz-title">Teste seu Conhecimento</h2>
+    
+    <div class="quiz-question">
+      <h4 data-translate="5s-quiz-question-1">O que significa SEIRI no programa 5S?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="a" class="quiz-option">
+          <span data-translate="5s-quiz-q1-a">Senso de Limpeza</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="b" class="quiz-option">
+          <span data-translate="5s-quiz-q1-b">Senso de Utilização</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="c" class="quiz-option">
+          <span data-translate="5s-quiz-q1-c">Senso de Disciplina</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="d" class="quiz-option">
+          <span data-translate="5s-quiz-q1-d">Senso de Organização</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q1" value="e" class="quiz-option">
+          <span data-translate="5s-quiz-q1-e">Senso de Padronização</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="5s-quiz-question-2">Qual o principal objetivo do 5S na fábrica?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="a" class="quiz-option">
+          <span data-translate="5s-quiz-q2-a">Apenas deixar bonito</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="b" class="quiz-option">
+          <span data-translate="5s-quiz-q2-b">Melhorar segurança e produtividade</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="c" class="quiz-option">
+          <span data-translate="5s-quiz-q2-c">Apenas satisfazer o supervisor</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="d" class="quiz-option">
+          <span data-translate="5s-quiz-q2-d">Aumentar o trabalho</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q2" value="e" class="quiz-option">
+          <span data-translate="5s-quiz-q2-e">Reduzir o número de funcionários</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="5s-quiz-question-3">Qual senso envolve criar padrões?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="a" class="quiz-option">
+          <span data-translate="5s-quiz-q3-a">SEIRI</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="b" class="quiz-option">
+          <span data-translate="5s-quiz-q3-b">SEITON</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="c" class="quiz-option">
+          <span data-translate="5s-quiz-q3-c">SEISO</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="d" class="quiz-option">
+          <span data-translate="5s-quiz-q3-d">SEIKETSU</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q3" value="e" class="quiz-option">
+          <span data-translate="5s-quiz-q3-e">SHITSUKE</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-question">
+      <h4 data-translate="5s-quiz-question-4">Como manter o programa 5S ativo?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="a" class="quiz-option">
+          <span data-translate="5s-quiz-q4-a">Apenas no início do projeto</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="b" class="quiz-option">
+          <span data-translate="5s-quiz-q4-b">Com auditorias e disciplina contínua</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="c" class="quiz-option">
+          <span data-translate="5s-quiz-q4-c">Apenas quando o supervisor manda</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="d" class="quiz-option">
+          <span data-translate="5s-quiz-q4-d">Apenas uma vez por ano</span>
+        </label>
+        <label class="quiz-option-label">
+          <input type="radio" name="q4" value="e" class="quiz-option">
+          <span data-translate="5s-quiz-q4-e">Depende do humor da equipe</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quiz-submit-container">
+      <button id="quiz-submit" class="quiz-submit" data-translate="quiz-submit">Enviar Respostas</button>
+    </div>
+    
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 <span>RSS3</span> Treinamentos de Segurança
+</footer>
+
+<script>
+// Sistema de Tradução RSS3 Treinamentos
+const translations = {
+    pt: {
+        'nav-home': 'Início',
+        'nav-about': 'Sobre',
+        'course-5s-hero-title': 'Ordem e Limpeza (5S)',
+        'course-5s-hero-subtitle': 'Aprenda a organizar o ambiente de trabalho na fábrica de celulose',
+        'hero-btn': 'Começar Curso',
+        
+        '5s-section-1-title': 'O que é o Programa 5S?',
+        'course-5s-intro': 'O programa 5S é uma metodologia de organização do ambiente de trabalho que busca melhorar a eficiência, segurança e qualidade. Na fábrica de celulose, o 5S ajuda a reduzir acidentes, otimizar processos e criar um ambiente mais produtivo e seguro. Os 5S são: Seiri, Seiton, Seiso, Seiketsu e Shitsuke.',
+        
+        '5s-section-2-title': 'Os 5 Sensos',
+        '5s-section-2-text': 'Conheça cada um dos 5 sensos do programa:',
+        
+        '5s-type-1-title': 'SEIRI - Senso de Utilização',
+        '5s-type-1-desc': 'Separar o necessário do desnecessário e descartar o que não é útil.',
+        
+        '5s-type-2-title': 'SEITON - Senso de Organização',
+        '5s-type-2-desc': 'Organizar tudo de forma lógica e facilitar o acesso rápido.',
+        
+        '5s-type-3-title': 'SEISO - Senso de Limpeza',
+        '5s-type-3-desc': 'Manter o ambiente sempre limpo e em condições de uso.',
+        
+        '5s-type-4-title': 'SEIKETSU - Senso de Padronização',
+        '5s-type-4-desc': 'Criar normas e padrões para manter a organização e a limpeza.',
+        
+        '5s-type-5-title': 'SHITSUKE - Senso de Disciplina',
+        '5s-type-5-desc': 'Transformar os hábitos em cultura e manter o programa ativo.',
+        
+        '5s-section-3-title': 'Benefícios do 5S',
+        '5s-section-3-text': 'O programa 5S traz inúmeros benefícios para a fábrica de celulose:',
+        
+        '5s-benefits-1': 'Redução de acidentes e lesões no trabalho',
+        '5s-benefits-2': 'Aumento da produtividade e eficiência',
+        '5s-benefits-3': 'Melhoria na qualidade dos produtos e processos',
+        '5s-benefits-4': 'Redução de desperdícios e custos operacionais',
+        '5s-benefits-5': 'Melhoria no moral e satisfação dos trabalhadores',
+        
+        '5s-section-4-title': 'Implementação na Fábrica',
+        '5s-section-4-text': 'Para implementar o 5S na fábrica de celulose, siga estes passos:',
+        
+        '5s-implementation-1': 'Forme uma equipe de liderança para o programa 5S',
+        '5s-implementation-2': 'Treine todos os colaboradores sobre os 5 sensos',
+        '5s-implementation-3': 'Comece com uma área piloto como exemplo',
+        '5s-implementation-4': 'Crie ferramentas visuais e indicadores de desempenho',
+        '5s-implementation-5': 'Realize auditorias periódicas para manter o programa',
+        
+        '5s-section-5-title': 'Manutenção do Programa',
+        '5s-section-5-text': 'Para manter o 5S ativo e eficaz na fábrica:',
+        
+        '5s-maintenance-1': 'Realize auditorias semanais e mensais',
+        '5s-maintenance-2': 'Crie um sistema de reconhecimento e premiação',
+        '5s-maintenance-3': 'Mantenha comunicação constante sobre os resultados',
+        '5s-maintenance-4': 'Envolva todos os níveis da organização',
+        '5s-maintenance-5': 'Celebre os sucessos e aprenda com os desafios',
+        
+        '5s-alert-title': 'Importante!',
+        '5s-alert-text': 'O 5S não é um projeto com fim, mas uma cultura contínua. O sucesso depende do comprometimento de todos, desde a liderança até os operadores. Um ambiente organizado é um ambiente seguro.',
+        
+        '5s-quiz-title': 'Teste seu Conhecimento',
+        '5s-quiz-question-1': 'O que significa SEIRI no programa 5S?',
+        '5s-quiz-question-2': 'Qual o principal objetivo do 5S na fábrica?',
+        '5s-quiz-question-3': 'Qual senso envolve criar padrões?',
+        '5s-quiz-question-4': 'Como manter o programa 5S ativo?',
+        
+        '5s-quiz-q1-a': 'Senso de Limpeza',
+        '5s-quiz-q1-b': 'Senso de Utilização',
+        '5s-quiz-q1-c': 'Senso de Disciplina',
+        '5s-quiz-q1-d': 'Senso de Organização',
+        '5s-quiz-q1-e': 'Senso de Padronização',
+        
+        '5s-quiz-q2-a': 'Apenas deixar bonito',
+        '5s-quiz-q2-b': 'Melhorar segurança e produtividade',
+        '5s-quiz-q2-c': 'Apenas satisfazer o supervisor',
+        '5s-quiz-q2-d': 'Aumentar o trabalho',
+        '5s-quiz-q2-e': 'Reduzir o número de funcionários',
+        
+        '5s-quiz-q3-a': 'SEIRI',
+        '5s-quiz-q3-b': 'SEITON',
+        '5s-quiz-q3-c': 'SEISO',
+        '5s-quiz-q3-d': 'SEIKETSU',
+        '5s-quiz-q3-e': 'SHITSUKE',
+        
+        '5s-quiz-q4-a': 'Apenas no início do projeto',
+        '5s-quiz-q4-b': 'Com auditorias e disciplina contínua',
+        '5s-quiz-q4-c': 'Apenas quando o supervisor manda',
+        '5s-quiz-q4-d': 'Apenas uma vez por ano',
+        '5s-quiz-q4-e': 'Depende do humor da equipe',
+        
+        'quiz-submit': 'Enviar Respostas',
+        'quiz-result-title': 'Resultado do Quiz',
+        'quiz-score': 'Sua pontuação',
+        'quiz-correct': 'Respostas corretas',
+        'quiz-incorrect': 'Respostas incorretas',
+        'quiz-congratulations': 'Parabéns! Você acertou',
+        'quiz-try-again': 'Tente novamente! Você acertou',
+        'quiz-retry': 'Refazer Quiz',
+        'quiz-back': 'Voltar para os Cursos'
+    },
+    
+    es: {
+        'nav-home': 'Inicio',
+        'nav-about': 'Acerca de',
+        'course-5s-hero-title': 'Orden y Limpieza (5S)',
+        'course-5s-hero-subtitle': 'Aprenda a organizar el ambiente de trabajo en la fábrica de celulosa',
+        'hero-btn': 'Comenzar Curso',
+        
+        '5s-section-1-title': '¿Qué es el Programa 5S?',
+        'course-5s-intro': 'El programa 5S es una metodología de organización del ambiente de trabajo que busca mejorar la eficiencia, seguridad y calidad. En la fábrica de celulosa, el 5S ayuda a reducir accidentes, optimizar procesos y crear un ambiente más productivo y seguro. Los 5S son: Seiri, Seiton, Seiso, Seiketsu y Shitsuke.',
+        
+        '5s-section-2-title': 'Los 5 Sentidos',
+        '5s-section-2-text': 'Conozca cada uno de los 5 sentidos del programa:',
+        
+        '5s-type-1-title': 'SEIRI - Sentido de Utilización',
+        '5s-type-1-desc': 'Separar lo necesario de lo innecesario y descartar lo que no es útil.',
+        
+        '5s-type-2-title': 'SEITON - Sentido de Organización',
+        '5s-type-2-desc': 'Organizar todo de forma lógica y facilitar el acceso rápido.',
+        
+        '5s-type-3-title': 'SEISO - Sentido de Limpieza',
+        '5s-type-3-desc': 'Mantener el ambiente siempre limpio y en condiciones de uso.',
+        
+        '5s-type-4-title': 'SEIKETSU - Sentido de Estandarización',
+        '5s-type-4-desc': 'Crear normas y estándares para mantener la organización y la limpieza.',
+        
+        '5s-type-5-title': 'SHITSUKE - Sentido de Disciplina',
+        '5s-type-5-desc': 'Transformar los hábitos en cultura y mantener el programa activo.',
+        
+        '5s-section-3-title': 'Beneficios del 5S',
+        '5s-section-3-text': 'El programa 5S trae innumerables beneficios para la fábrica de celulosa:',
+        
+        '5s-benefits-1': 'Reducción de accidentes y lesiones en el trabajo',
+        '5s-benefits-2': 'Aumento de la productividad y eficiencia',
+        '5s-benefits-3': 'Mejora en la calidad de los productos y procesos',
+        '5s-benefits-4': 'Reducción de desperdicios y costos operativos',
+        '5s-benefits-5': 'Mejora en el moral y satisfacción de los trabajadores',
+        
+        '5s-section-4-title': 'Implementación en la Fábrica',
+        '5s-section-4-text': 'Para implementar el 5S en la fábrica de celulosa, siga estos pasos:',
+        
+        '5s-implementation-1': 'Forme un equipo de liderazgo para el programa 5S',
+        '5s-implementation-2': 'Entrene a todos los colaboradores sobre los 5 sentidos',
+        '5s-implementation-3': 'Comience con un área piloto como ejemplo',
+        '5s-implementation-4': 'Cree herramientas visuales e indicadores de desempeño',
+        '5s-implementation-5': 'Realice auditorías periódicas para mantener el programa',
+        
+        '5s-section-5-title': 'Mantenimiento del Programa',
+        '5s-section-5-text': 'Para mantener el 5S activo y eficaz en la fábrica:',
+        
+        '5s-maintenance-1': 'Realice auditorías semanales y mensuales',
+        '5s-maintenance-2': 'Cree un sistema de reconocimiento y premiación',
+        '5s-maintenance-3': 'Mantenga comunicación constante sobre los resultados',
+        '5s-maintenance-4': 'Involucre todos los niveles de la organización',
+        '5s-maintenance-5': 'Celebre los éxitos y aprenda con los desafíos',
+        
+        '5s-alert-title': '¡Importante!',
+        '5s-alert-text': 'El 5S no es un proyecto con fin, sino una cultura continua. El éxito depende del compromiso de todos, desde la lideranza hasta los operadores. Un ambiente organizado es un ambiente seguro.',
+        
+        '5s-quiz-title': 'Pruebe su Conocimiento',
+        '5s-quiz-question-1': '¿Qué significa SEIRI en el programa 5S?',
+        '5s-quiz-question-2': '¿Cuál es el objetivo principal del 5S en la fábrica?',
+        '5s-quiz-question-3': '¿Qué sentido involucra crear estándares?',
+        '5s-quiz-question-4': '¿Cómo mantener el programa 5S activo?',
+        
+        '5s-quiz-q1-a': 'Sentido de Limpieza',
+        '5s-quiz-q1-b': 'Sentido de Utilización',
+        '5s-quiz-q1-c': 'Sentido de Disciplina',
+        '5s-quiz-q1-d': 'Sentido de Organización',
+        '5s-quiz-q1-e': 'Sentido de Estandarización',
+        
+        '5s-quiz-q2-a': 'Solo para verse bonito',
+        '5s-quiz-q2-b': 'Mejorar seguridad y productividad',
+        '5s-quiz-q2-c': 'Solo para satisfacer al supervisor',
+        '5s-quiz-q2-d': 'Aumentar el trabajo',
+        '5s-quiz-q2-e': 'Reducir el número de funcionarios',
+        
+        '5s-quiz-q3-a': 'SEIRI',
+        '5s-quiz-q3-b': 'SEITON',
+        '5s-quiz-q3-c': 'SEISO',
+        '5s-quiz-q3-d': 'SEIKETSU',
+        '5s-quiz-q3-e': 'SHITSUKE',
+        
+        '5s-quiz-q4-a': 'Solo al inicio del proyecto',
+        '5s-quiz-q4-b': 'Con auditorías y disciplina continua',
+        '5s-quiz-q4-c': 'Solo cuando el supervisor manda',
+        '5s-quiz-q4-d': 'Solo una vez al año',
+        '5s-quiz-q4-e': 'Depende del humor del equipo',
+        
+        'quiz-submit': 'Enviar Respuestas',
+        'quiz-result-title': 'Resultado del Quiz',
+        'quiz-score': 'Su puntuación',
+        'quiz-correct': 'Respuestas correctas',
+        'quiz-incorrect': 'Respuestas incorrectas',
+        'quiz-congratulations': '¡Felicidades! Usted acertó',
+        'quiz-try-again': '¡Inténtelo de nuevo! Usted acertó',
+        'quiz-retry': 'Rehacer Quiz',
+        'quiz-back': 'Volver a los Cursos'
+    },
+    
+    en: {
+        'nav-home': 'Home',
+        'nav-about': 'About',
+        'course-5s-hero-title': 'Order and Cleanliness (5S)',
+        'course-5s-hero-subtitle': 'Learn to organize the work environment in the pulp factory',
+        'hero-btn': 'Start Course',
+        
+        '5s-section-1-title': 'What is the 5S Program?',
+        'course-5s-intro': 'The 5S program is a work environment organization methodology that seeks to improve efficiency, safety and quality. In the pulp factory, 5S helps reduce accidents, optimize processes and create a more productive and safe environment. The 5S are: Seiri, Seiton, Seiso, Seiketsu and Shitsuke.',
+        
+        '5s-section-2-title': 'The 5 Senses',
+        '5s-section-2-text': 'Meet each of the 5 senses of the program:',
+        
+        '5s-type-1-title': 'SEIRI - Sense of Use',
+        '5s-type-1-desc': 'Separate the necessary from the unnecessary and discard what is not useful.',
+        
+        '5s-type-2-title': 'SEITON - Sense of Organization',
+        '5s-type-2-desc': 'Organize everything logically and facilitate quick access.',
+        
+        '5s-type-3-title': 'SEISO - Sense of Cleanliness',
+        '5s-type-3-desc': 'Keep the environment always clean and in working condition.',
+        
+        '5s-type-4-title': 'SEIKETSU - Sense of Standardization',
+        '5s-type-4-desc': 'Create standards and norms to maintain organization and cleanliness.',
+        
+        '5s-type-5-title': 'SHITSUKE - Sense of Discipline',
+        '5s-type-5-desc': 'Transform habits into culture and keep the program active.',
+        
+        '5s-section-3-title': 'Benefits of 5S',
+        '5s-section-3-text': 'The 5S program brings countless benefits to the pulp factory:',
+        
+        '5s-benefits-1': 'Reduction of accidents and injuries at work',
+        '5s-benefits-2': 'Increase in productivity and efficiency',
+        '5s-benefits-3': 'Improvement in product and process quality',
+        '5s-benefits-4': 'Reduction of waste and operating costs',
+        '5s-benefits-5': 'Improvement in morale and worker satisfaction',
+        
+        '5s-section-4-title': 'Implementation in the Factory',
+        '5s-section-4-text': 'To implement 5S in the pulp factory, follow these steps:',
+        
+        '5s-implementation-1': 'Form a leadership team for the 5S program',
+        '5s-implementation-2': 'Train all collaborators on the 5 senses',
+        '5s-implementation-3': 'Start with a pilot area as an example',
+        '5s-implementation-4': 'Create visual tools and performance indicators',
+        '5s-implementation-5': 'Conduct periodic audits to maintain the program',
+        
+        '5s-section-5-title': 'Program Maintenance',
+        '5s-section-5-text': 'To keep 5S active and effective in the factory:',
+        
+        '5s-maintenance-1': 'Conduct weekly and monthly audits',
+        '5s-maintenance-2': 'Create a recognition and award system',
+        '5s-maintenance-3': 'Maintain constant communication about results',
+        '5s-maintenance-4': 'Involve all levels of the organization',
+        '5s-maintenance-5': 'Celebrate successes and learn from challenges',
+        
+        '5s-alert-title': 'Important!',
+        '5s-alert-text': '5S is not a project with an end, but a continuous culture. Success depends on the commitment of everyone, from leadership to operators. An organized environment is a safe environment.',
+        
+        '5s-quiz-title': 'Test Your Knowledge',
+        '5s-quiz-question-1': 'What does SEIRI mean in the 5S program?',
+        '5s-quiz-question-2': 'What is the main objective of 5S in the factory?',
+        '5s-quiz-question-3': 'Which sense involves creating standards?',
+        '5s-quiz-question-4': 'How to keep the 5S program active?',
+        
+        '5s-quiz-q1-a': 'Sense of Cleanliness',
+        '5s-quiz-q1-b': 'Sense of Use',
+        '5s-quiz-q1-c': 'Sense of Discipline',
+        '5s-quiz-q1-d': 'Sense of Organization',
+        '5s-quiz-q1-e': 'Sense of Standardization',
+        
+        '5s-quiz-q2-a': 'Just to look nice',
+        '5s-quiz-q2-b': 'Improve safety and productivity',
+        '5s-quiz-q2-c': 'Just to satisfy the supervisor',
+        '5s-quiz-q2-d': 'Increase work',
+        '5s-quiz-q2-e': 'Reduce the number of employees',
+        
+        '5s-quiz-q3-a': 'SEIRI',
+        '5s-quiz-q3-b': 'SEITON',
+        '5s-quiz-q3-c': 'SEISO',
+        '5s-quiz-q3-d': 'SEIKETSU',
+        '5s-quiz-q3-e': 'SHITSUKE',
+        
+        '5s-quiz-q4-a': 'Only at the beginning of the project',
+        '5s-quiz-q4-b': 'With audits and continuous discipline',
+        '5s-quiz-q4-c': 'Only when the supervisor orders',
+        '5s-quiz-q4-d': 'Only once a year',
+        '5s-quiz-q4-e': 'Depends on the team mood',
+        
+        'quiz-submit': 'Submit Answers',
+        'quiz-result-title': 'Quiz Result',
+        'quiz-score': 'Your score',
+        'quiz-correct': 'Correct answers',
+        'quiz-incorrect': 'Incorrect answers',
+        'quiz-congratulations': 'Congratulations! You got',
+        'quiz-try-again': 'Try again! You got',
+        'quiz-retry': 'Retry Quiz',
+        'quiz-back': 'Back to Courses'
+    }
+};
+
+// Estado atual do idioma
+let currentLanguage = 'pt';
+
+// Função para traduzir elementos
+function translateElements(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Atualizar atributo lang do HTML
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+}
+
+// Função para mudar idioma
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    translateElements(lang);
+    
+    // Atualizar botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Salvar preferência no localStorage
+    localStorage.setItem('rss3-language', lang);
+}
+
+// Sistema de Quiz
+class QuizSystem {
+    constructor() {
+        this.currentQuiz = null;
+        this.answers = {};
+        this.score = 0;
+        this.totalQuestions = 0;
+    }
+
+    initQuiz(quizData) {
+        this.currentQuiz = quizData;
+        this.answers = {};
+        this.score = 0;
+        this.totalQuestions = Object.keys(quizData.questions).length;
+        
+        // Limpar seleções anteriores
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado anterior
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+    }
+
+    submitQuiz() {
+        if (!this.currentQuiz) return;
+        
+        this.score = 0;
+        this.answers = {};
+        
+        // Coletar respostas
+        Object.keys(this.currentQuiz.questions).forEach(questionKey => {
+            const selectedOption = document.querySelector(`input[name="${questionKey}"]:checked`);
+            if (selectedOption) {
+                this.answers[questionKey] = selectedOption.value;
+                if (selectedOption.value === this.currentQuiz.questions[questionKey].correct) {
+                    this.score++;
+                }
+            }
+        });
+        
+        // Mostrar resultado
+        this.showResult();
+    }
+
+    showResult() {
+        const resultDiv = document.getElementById('quiz-result');
+        if (!resultDiv) return;
+        
+        const percentage = Math.round((this.score / this.totalQuestions) * 100);
+        const isPassing = percentage >= 70;
+        
+        // Obter textos traduzidos
+        const resultTitle = this.getTranslatedText('quiz-result-title');
+        const scoreText = this.getTranslatedText('quiz-score');
+        const correctText = this.getTranslatedText('quiz-correct');
+        const incorrectText = this.getTranslatedText('quiz-incorrect');
+        const congratulationsText = this.getTranslatedText('quiz-congratulations');
+        const tryAgainText = this.getTranslatedText('quiz-try-again');
+        const retryText = this.getTranslatedText('quiz-retry');
+        const backText = this.getTranslatedText('quiz-back');
+        
+        resultDiv.innerHTML = `
+            <h3>${resultTitle}</h3>
+            <div style="text-align: center; margin: 20px 0;">
+                <div class="score-circle ${isPassing ? 'passing' : 'failing'}">
+                    <span>${percentage}%</span>
+                </div>
+                <div style="margin-top: 20px;">
+                    <p><strong>${scoreText}:</strong> ${this.score}/${this.totalQuestions}</p>
+                    <p style="color: #27ae60; font-weight: bold;">${correctText}: ${this.score}</p>
+                    <p style="color: #e74c3c; font-weight: bold;">${incorrectText}: ${this.totalQuestions - this.score}</p>
+                </div>
+            </div>
+            <div class="quiz-message ${isPassing ? 'success' : 'error'}">
+                ${isPassing ? 
+                    `<p>${congratulationsText} ${this.score} de ${this.totalQuestions} perguntas!</p>` :
+                    `<p>${tryAgainText} ${this.score} de ${this.totalQuestions} perguntas.</p>`
+                }
+            </div>
+            <div class="quiz-actions">
+                <button onclick="quizSystem.retryQuiz()">${retryText}</button>
+                <a href="../index.html">${backText}</a>
+            </div>
+        `;
+        
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    retryQuiz() {
+        if (!this.currentQuiz) return;
+        
+        // Limpar seleções
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.checked = false;
+        });
+        
+        // Esconder resultado
+        const resultDiv = document.getElementById('quiz-result');
+        if (resultDiv) {
+            resultDiv.style.display = 'none';
+        }
+        
+        // Resetar
+        this.answers = {};
+        this.score = 0;
+        
+        // Voltar ao topo do quiz
+        const quizSection = document.querySelector('.quiz-section');
+        if (quizSection) {
+            quizSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    getTranslatedText(key) {
+        const lang = localStorage.getItem('rss3-language') || 'pt';
+        if (translations && translations[lang] && translations[lang][key]) {
+            return translations[lang][key];
+        }
+        return key;
+    }
+}
+
+// Instância global do quiz
+const quizSystem = new QuizSystem();
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado - iniciando sistema de idiomas');
+    // Verificar idioma salvo
+    const savedLanguage = localStorage.getItem('rss3-language');
+    if (savedLanguage && translations[savedLanguage]) {
+        changeLanguage(savedLanguage);
+    } else {
+        translateElements(currentLanguage);
+    }
+    
+    // Adicionar event listeners aos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            changeLanguage(lang);
+        });
+    });
+    
+    // Adicionar evento ao botão de submit
+    const submitBtn = document.getElementById('quiz-submit');
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+            quizSystem.submitQuiz();
+        });
+    }
+    
+    // Inicializar quiz
+    const quizData = {
+        questions: {
+            q1: { correct: 'b' },
+            q2: { correct: 'b' },
+            q3: { correct: 'd' },
+            q4: { correct: 'b' }
+        }
+    };
+    
+    quizSystem.initQuiz(quizData);
+});
+</script>
+
+</body>
+</html>
