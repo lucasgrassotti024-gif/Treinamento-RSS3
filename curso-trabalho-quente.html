@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso Trabalho a Quente - RSS3 Treinamentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --azul: #0a3d91;
+      --laranja: #ff7a00;
+      --branco: #ffffff;
+      --cinza-claro: #f4f6f9;
+      --cinza-texto: #444;
+      --verde: #1fa866;
+      --vermelho: #d93025;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header, footer {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header span, footer span {
+      color: var(--laranja);
+      font-weight: bold;
+    }
+
+    nav a {
+      color: var(--branco);
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--laranja);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .box {
+      background: var(--branco);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    h2, h3 {
+      color: var(--azul);
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .alerta {
+      background: #fff3cd;
+      border-left: 6px solid var(--laranja);
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 6px;
+    }
+
+    .quiz {
+      margin-top: 20px;
+    }
+
+    .pergunta {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .pergunta h4 {
+      margin-bottom: 10px;
+      color: var(--azul);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      cursor: pointer;
+    }
+
+    button {
+      background: var(--azul);
+      color: var(--branco);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: var(--laranja);
+    }
+
+    .resultado {
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .aprovado {
+      background: #e6f6ee;
+      color: var(--verde);
+      border-left: 6px solid var(--verde);
+    }
+
+    .reprovado {
+      background: #fdecea;
+      color: var(--vermelho);
+      border-left: 6px solid var(--vermelho);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>RSS<span>3</span> Treinamentos</h1>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- CONTEÚDO DO CURSO -->
+  <div class="box">
+    <h2>🔥 Trabalho a Quente</h2>
+
+    <p>
+      Trabalho a quente é toda atividade que gera faísca, chama, calor ou
+      aquecimento, como solda, corte, esmerilhamento e uso de maçarico.
+    </p>
+
+    <p>
+      Essas atividades aumentam muito o risco de incêndio e queimaduras, pois
+      pequenas faíscas podem atingir materiais inflamáveis sem que a pessoa
+      perceba.
+    </p>
+
+    <div class="alerta">
+      ⚠️ Uma única faísca pode iniciar um incêndio sério dentro da fábrica.
+    </div>
+
+    <h3>Principais riscos do trabalho a quente</h3>
+    <ul>
+      <li>Incêndio</li>
+      <li>Explosão</li>
+      <li>Queimaduras</li>
+      <li>Fumaça tóxica</li>
+      <li>Danos em equipamentos</li>
+    </ul>
+
+    <h3>Situações perigosas no dia a dia</h3>
+    <ul>
+      <li>Soldar perto de produtos inflamáveis</li>
+      <li>Esmerilhar sem proteção</li>
+      <li>Não proteger áreas ao redor</li>
+      <li>Falta de extintor por perto</li>
+      <li>Trabalhar sem autorização</li>
+    </ul>
+
+    <h3>Cuidados antes de iniciar</h3>
+    <ul>
+      <li>Verificar se há materiais inflamáveis no local</li>
+      <li>Proteger áreas próximas</li>
+      <li>Garantir ventilação adequada</li>
+      <li>Ter extintor disponível</li>
+      <li>Usar EPI correto</li>
+    </ul>
+
+    <h3>Durante o trabalho</h3>
+    <ul>
+      <li>Manter atenção nas faíscas</li>
+      <li>Não deixar materiais pegarem fogo</li>
+      <li>Parar se perceber risco</li>
+      <li>Comunicar qualquer situação perigosa</li>
+    </ul>
+
+    <h3>Após o trabalho</h3>
+    <ul>
+      <li>Verificar se não ficou nenhum foco de fogo</li>
+      <li>Esperar esfriar a área</li>
+      <li>Descartar resíduos quentes corretamente</li>
+      <li>Garantir que o local está seguro</li>
+    </ul>
+
+    <p>
+      Trabalho a quente exige atenção total. Seguir os cuidados evita incêndios,
+      protege pessoas e evita grandes prejuízos.
+    </p>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="box">
+    <h2>📝 Avaliação Rápida</h2>
+
+    <div class="quiz">
+
+      <!-- PERGUNTA 1 -->
+      <div class="pergunta">
+        <h4>1) O que é considerado trabalho a quente?</h4>
+        <label><input type="radio" name="q1" value="a"> Limpeza</label>
+        <label><input type="radio" name="q1" value="b"> Solda e esmerilhamento</label>
+        <label><input type="radio" name="q1" value="c"> Organização</label>
+        <label><input type="radio" name="q1" value="d"> Pintura</label>
+      </div>
+
+      <!-- PERGUNTA 2 -->
+      <div class="pergunta">
+        <h4>2) Qual é um dos maiores riscos do trabalho a quente?</h4>
+        <label><input type="radio" name="q2" value="a"> Cansaço</label>
+        <label><input type="radio" name="q2" value="b"> Incêndio</label>
+        <label><input type="radio" name="q2" value="c"> Atraso</label>
+        <label><input type="radio" name="q2" value="d"> Barulho</label>
+      </div>
+
+      <!-- PERGUNTA 3 -->
+      <div class="pergunta">
+        <h4>3) Antes de iniciar, o correto é:</h4>
+        <label><input type="radio" name="q3" value="a"> Começar rápido</label>
+        <label><input type="radio" name="q3" value="b"> Verificar materiais inflamáveis</label>
+        <label><input type="radio" name="q3" value="c"> Ignorar riscos</label>
+        <label><input type="radio" name="q3" value="d"> Trabalhar sem EPI</label>
+      </div>
+
+      <!-- PERGUNTA 4 -->
+      <div class="pergunta">
+        <h4>4) Após o trabalho a quente, deve-se:</h4>
+        <label><input type="radio" name="q4" value="a"> Ir embora</label>
+        <label><input type="radio" name="q4" value="b"> Verificar se não ficou fogo</label>
+        <label><input type="radio" name="q4" value="c"> Deixar como está</label>
+        <label><input type="radio" name="q4" value="d"> Jogar água em tudo</label>
+      </div>
+
+      <button onclick="corrigirQuiz()">Finalizar Avaliação</button>
+
+      <div id="resultado" class="resultado"></div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 <span>RSS3</span> Treinamentos de Segurança
+</footer>
+
+<script>
+  function corrigirQuiz() {
+    let acertos = 0;
+
+    const respostas = {
+      q1: "b",
+      q2: "b",
+      q3: "b",
+      q4: "b"
+    };
+
+    for (let pergunta in respostas) {
+      const marcada = document.querySelector(`input[name="${pergunta}"]:checked`);
+      if (marcada && marcada.value === respostas[pergunta]) {
+        acertos++;
+      }
+    }
+
+    const resultado = document.getElementById("resultado");
+    resultado.style.display = "block";
+
+    if (acertos >= 3) {
+      resultado.className = "resultado aprovado";
+      resultado.innerHTML = `✅ Aprovado!<br>Você acertou ${acertos} de 4 perguntas.<br>Bom trabalho!`;
+    } else {
+      resultado.className = "resultado reprovado";
+      resultado.innerHTML = `❌ Reprovado.<br>Você acertou ${acertos} de 4 perguntas.<br>Revise o conteúdo e tente novamente.`;
+    }
+
+    resultado.scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
+</body>
+</html>
