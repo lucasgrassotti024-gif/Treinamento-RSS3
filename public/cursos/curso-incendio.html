@@ -520,26 +520,31 @@ footer {
     }
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 15px;
-      }
-      
-      nav {
+      header, footer {
         flex-direction: column;
         text-align: center;
+        gap: 15px;
       }
-      
-      nav a {
-        margin: 5px 0;
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
       }
-      
+
       .hero {
-        padding: 60px 20px;
+        padding: 40px 20px;
       }
-      
+
       .hero h2 {
-        font-size: 2rem;
+        font-size: 2em;
+      }
+
+      .course-section, .quiz-section {
+        padding: 25px;
+      }
+
+      .quiz-actions {
+        flex-direction: column;
       }
       
       .epi-types-grid {

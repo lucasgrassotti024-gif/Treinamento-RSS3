@@ -203,30 +203,29 @@ footer {
   gap: 20px;
 }
 
-/* 📱 MOBILE */
+/* Responsivo */
 @media (max-width: 768px) {
-
-  header {
+  header, footer {
     flex-direction: column;
     text-align: center;
+    gap: 15px;
   }
 
   nav {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .hero {
-    margin: 10px;
-    padding: 30px 15px;
+    padding: 40px 20px;
   }
 
   .hero h1 {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 
-  .course-section,
-  .quiz-section {
-    padding: 15px;
+  .course-section, .quiz-section {
+    padding: 25px;
   }
 
   .quiz-actions {
