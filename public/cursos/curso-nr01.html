@@ -401,6 +401,115 @@ footer {
         flex-direction: column;
       }
     }
+
+    /* ========================= */
+/* 📱 MOBILE MELHORADO */
+/* ========================= */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  header {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    padding: 15px !important;
+  }
+
+  header h1 {
+    font-size: 1.4em;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .language-selector {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.6em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+
+  .hero-btn {
+    width: 100%;
+  }
+
+  /* MAIN */
+  main {
+    padding: 10px;
+  }
+
+  /* SEÇÕES */
+  .course-section,
+  .quiz-section {
+    padding: 20px;
+  }
+
+  .course-section h2,
+  .quiz-title {
+    font-size: 1.4em;
+    text-align: center;
+  }
+
+  /* LISTAS */
+  .info-list li {
+    padding: 15px;
+    font-size: 0.95em;
+  }
+
+  /* QUIZ */
+  .quiz-question {
+    padding: 15px;
+  }
+
+  .quiz-option-label {
+    padding: 12px;
+    font-size: 0.9em;
+  }
+
+  .quiz-actions {
+    flex-direction: column;
+  }
+
+  .quiz-btn {
+    width: 100%;
+  }
+
+  /* RESULTADO */
+  .quiz-result {
+    padding: 20px;
+  }
+
+  /* FOOTER */
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
   </style>
 </head>
 
