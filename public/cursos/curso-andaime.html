@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curso Andaime - RSS3 Treinamentos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
 
@@ -549,6 +549,66 @@ footer {
         flex-direction: column;
       }
     }
+
+    @media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 5px 0;
+  }
+
+  .language-selector {
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 50px 15px;
+  }
+
+  .hero h2 {
+    font-size: 1.6em;
+  }
+
+  .hero p {
+    font-size: 0.95em;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .course-section {
+    padding: 15px;
+  }
+
+  .epi-types-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-actions {
+    flex-direction: column;
+  }
+
+  .quiz-option-label {
+    font-size: 0.9em;
+  }
+
+  button, .quiz-submit {
+    width: 100%;
+  }
+
+}
+
   </style>
 </head>
 
