@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NR33 Básico | RSS3 Treinamentos</title>
+
+  <style>
+
+    :root{
+      --azul:#0a3d91;
+      --azul2:#0f5bd8;
+      --laranja:#ff7a00;
+      --cinza:#f4f6f9;
+      --texto:#444;
+      --verde:#17b26a;
+      --vermelho:#e5484d;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--cinza);
+      color:var(--texto);
+      line-height:1.7;
+    }
+
+    header{
+      background:linear-gradient(135deg,var(--azul),var(--azul2));
+      color:white;
+      padding:18px 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 5px 18px rgba(0,0,0,0.15);
+    }
+
+    header h1{
+      font-size:1.4em;
+    }
+
+    header span{
+      color:var(--laranja);
+    }
+
+    nav{
+      display:flex;
+      gap:20px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      color:var(--laranja);
+    }
+
+    .top-banner{
+      background:linear-gradient(135deg,#0a3d91,#0f5bd8,#ff7a00);
+      color:white;
+      padding:90px 30px;
+    }
+
+    .top-content{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    .top-content h2{
+      font-size:3em;
+      margin-bottom:20px;
+    }
+
+    .top-content p{
+      max-width:760px;
+      font-size:1.1em;
+      line-height:1.8;
+    }
+
+    main{
+      max-width:1100px;
+      margin:40px auto;
+      padding:20px;
+    }
+
+    .course-info{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      margin-bottom:40px;
+    }
+
+    .info-card{
+      background:white;
+      border-radius:18px;
+      padding:25px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .info-card h3{
+      color:var(--azul);
+      margin-bottom:10px;
+      font-size:1em;
+    }
+
+    .info-card p{
+      font-size:1.05em;
+      font-weight:bold;
+    }
+
+    .section{
+      background:white;
+      border-radius:22px;
+      padding:35px;
+      margin-bottom:30px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .section h2{
+      color:var(--azul);
+      margin-bottom:20px;
+      font-size:2em;
+    }
+
+    .section p{
+      margin-bottom:20px;
+      color:#555;
+    }
+
+    .content-image{
+      width:100%;
+      border-radius:18px;
+      margin:30px 0;
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+      border:6px solid #f4f6f9;
+    }
+
+    .image-caption{
+      text-align:center;
+      color:#666;
+      margin-top:-10px;
+      margin-bottom:25px;
+      font-size:0.95em;
+    }
+
+    .alert{
+      border-left:6px solid var(--laranja);
+      background:#fff7ef;
+      padding:20px;
+      border-radius:12px;
+      margin-top:25px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:20px;
+      margin-top:25px;
+    }
+
+    .card{
+      background:#f8fafc;
+      border-radius:16px;
+      padding:25px;
+      border:1px solid #e8edf3;
+    }
+
+    .card h3{
+      color:var(--azul);
+      margin-bottom:10px;
+    }
+
+    .checklist{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:20px;
+    }
+
+    .check-item{
+      background:#f8fafc;
+      padding:18px;
+      border-radius:12px;
+      border-left:5px solid var(--verde);
+      font-weight:bold;
+    }
+
+    .question{
+      background:#f8fafc;
+      border-radius:16px;
+      padding:25px;
+      margin-top:25px;
+      border:1px solid #e6ebf2;
+    }
+
+    .question h3{
+      margin-bottom:15px;
+      color:var(--azul);
+      font-size:1.1em;
+    }
+
+    .question label{
+      display:block;
+      margin-bottom:14px;
+      cursor:pointer;
+    }
+
+    .quiz-btn{
+      margin-top:30px;
+      background:var(--laranja);
+      color:white;
+      border:none;
+      padding:16px 28px;
+      border-radius:12px;
+      font-weight:bold;
+      cursor:pointer;
+      font-size:1em;
+    }
+
+    .result{
+      margin-top:25px;
+      font-size:1.1em;
+      font-weight:bold;
+    }
+
+    footer{
+      margin-top:60px;
+      background:linear-gradient(135deg,#0a3d91,#062a63);
+      color:white;
+      text-align:center;
+      padding:35px 20px;
+    }
+
+    footer span{
+      color:var(--laranja);
+      font-weight:bold;
+    }
+
+    @media(max-width:768px){
+
+      .top-content h2{
+        font-size:2.2em;
+      }
+
+      .section{
+        padding:25px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <h1>RSS<span>3</span> Treinamentos</h1>
+
+  <nav>
+    <a href="../../../index.html">Início</a>
+    <a href="#">Cursos</a>
+  </nav>
+
+</header>
+
+<section class="top-banner">
+
+  <div class="top-content">
+
+    <h2>
+      NR33 - Espaço Confinado
+    </h2>
+
+    <p>
+      Aprenda os riscos,
+      controles,
+      equipamentos
+      e procedimentos necessários
+      para trabalhos seguros em espaços confinados.
+    </p>
+
+  </div>
+
+</section>
+
+<main>
+
+  <!-- INFO -->
+
+  <section class="course-info">
+
+    <div class="info-card">
+      <h3>Duração</h3>
+      <p>40 minutos</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Nível</h3>
+      <p>Básico</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Área</h3>
+      <p>Segurança</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Norma</h3>
+      <p>NR33</p>
+    </div>
+
+  </section>
+
+  <!-- INTRO -->
+
+  <section class="section">
+
+    <h2>
+      O que é espaço confinado?
+    </h2>
+
+    <p>
+      Espaço confinado é qualquer área
+      não projetada para ocupação contínua,
+      que possua meios limitados de entrada e saída
+      e possa apresentar atmosfera perigosa.
+    </p>
+
+    <div class="checklist">
+
+      <div class="check-item">
+        ✔ Tanques
+      </div>
+
+      <div class="check-item">
+        ✔ Silos
+      </div>
+
+      <div class="check-item">
+        ✔ Tubulações
+      </div>
+
+      <div class="check-item">
+        ✔ Vasos de pressão
+      </div>
+
+      <div class="check-item">
+        ✔ Galerias subterrâneas
+      </div>
+
+    </div>
+
+    <div class="alert">
+      <strong>Importante:</strong>
+      nenhum trabalhador deve entrar em espaço confinado
+      sem autorização,
+      monitoramento
+      e controle adequado.
+    </div>
+
+  </section>
+
+  <!-- IMAGEM -->
+
+  <section class="section">
+
+    <h2>
+      Operação em espaço confinado
+    </h2>
+
+    <p>
+      A imagem abaixo demonstra
+      uma operação segura em espaço confinado,
+      incluindo monitoramento,
+      vigia,
+      linha de vida
+      e equipamentos obrigatórios.
+    </p>
+
+    <img
+      src="./imagens/NR-33-basico.png"
+      alt="NR33 Espaço Confinado"
+      class="content-image"
+    >
+
+    <div class="image-caption">
+      Exemplo visual de atividade segura em espaço confinado.
+    </div>
+
+  </section>
+
+  <!-- RISCOS -->
+
+  <section class="section">
+
+    <h2>
+      Principais riscos
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>
+          Atmosfera perigosa
+        </h3>
+
+        <p>
+          Deficiência de oxigênio,
+          gases tóxicos
+          ou inflamáveis.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Queda
+        </h3>
+
+        <p>
+          Entrada e movimentação
+          em locais restritos.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Explosão
+        </h3>
+
+        <p>
+          Presença de gases inflamáveis.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Soterramento
+        </h3>
+
+        <p>
+          Entrada de líquidos,
+          sólidos
+          ou materiais.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EQUIPAMENTOS -->
+
+  <section class="section">
+
+    <h2>
+      Equipamentos utilizados
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>
+          Detector de gases
+        </h3>
+
+        <p>
+          Monitora atmosfera do ambiente.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Tripé e guincho
+        </h3>
+
+        <p>
+          Sistema de acesso e resgate.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Linha de vida
+        </h3>
+
+        <p>
+          Proteção contra quedas.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Ventilação
+        </h3>
+
+        <p>
+          Renovação do ar do ambiente.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PET -->
+
+  <section class="section">
+
+    <h2>
+      Permissão de Entrada e Trabalho (PET)
+    </h2>
+
+    <p>
+      Antes de qualquer entrada,
+      deve existir uma PET válida,
+      contendo:
+    </p>
+
+    <div class="checklist">
+
+      <div class="check-item">
+        ✔ Avaliação dos riscos
+      </div>
+
+      <div class="check-item">
+        ✔ Teste de atmosfera
+      </div>
+
+      <div class="check-item">
+        ✔ Definição de controles
+      </div>
+
+      <div class="check-item">
+        ✔ Equipe autorizada
+      </div>
+
+      <div class="check-item">
+        ✔ Plano de resgate
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EQUIPE -->
+
+  <section class="section">
+
+    <h2>
+      Equipe envolvida
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>
+          Trabalhador autorizado
+        </h3>
+
+        <p>
+          Executa a atividade
+          dentro do espaço confinado.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Vigia
+        </h3>
+
+        <p>
+          Monitora a atividade externamente.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Supervisor
+        </h3>
+
+        <p>
+          Responsável pela liberação da atividade.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- QUIZ -->
+
+  <section class="section">
+
+    <h2>
+      Quiz de compreensão
+    </h2>
+
+    <!-- 1 -->
+
+    <div class="question">
+
+      <h3>
+        1. O que caracteriza um espaço confinado?
+      </h3>
+
+      <label>
+        <input type="radio" name="q1" value="a">
+        Ambiente totalmente aberto
+      </label>
+
+      <label>
+        <input type="radio" name="q1" value="b">
+        Meios limitados de entrada e saída
+      </label>
+
+      <label>
+        <input type="radio" name="q1" value="c">
+        Área administrativa
+      </label>
+
+    </div>
+
+    <!-- 2 -->
+
+    <div class="question">
+
+      <h3>
+        2. Qual equipamento monitora gases perigosos?
+      </h3>
+
+      <label>
+        <input type="radio" name="q2" value="a">
+        Rádio comunicador
+      </label>
+
+      <label>
+        <input type="radio" name="q2" value="b">
+        Detector de gases
+      </label>
+
+      <label>
+        <input type="radio" name="q2" value="c">
+        Guincho
+      </label>
+
+    </div>
+
+    <!-- 3 -->
+
+    <div class="question">
+
+      <h3>
+        3. Quem permanece fora monitorando a atividade?
+      </h3>
+
+      <label>
+        <input type="radio" name="q3" value="a">
+        Supervisor
+      </label>
+
+      <label>
+        <input type="radio" name="q3" value="b">
+        Trabalhador autorizado
+      </label>
+
+      <label>
+        <input type="radio" name="q3" value="c">
+        Vigia
+      </label>
+
+    </div>
+
+    <!-- 4 -->
+
+    <div class="question">
+
+      <h3>
+        4. Qual documento é obrigatório antes da entrada?
+      </h3>
+
+      <label>
+        <input type="radio" name="q4" value="a">
+        Ordem verbal
+      </label>
+
+      <label>
+        <input type="radio" name="q4" value="b">
+        PET
+      </label>
+
+      <label>
+        <input type="radio" name="q4" value="c">
+        Escala operacional
+      </label>
+
+    </div>
+
+    <!-- 5 -->
+
+    <div class="question">
+
+      <h3>
+        5. Qual é um dos maiores riscos em espaço confinado?
+      </h3>
+
+      <label>
+        <input type="radio" name="q5" value="a">
+        Atmosfera perigosa
+      </label>
+
+      <label>
+        <input type="radio" name="q5" value="b">
+        Baixa iluminação apenas
+      </label>
+
+      <label>
+        <input type="radio" name="q5" value="c">
+        Organização de ferramentas
+      </label>
+
+    </div>
+
+    <button class="quiz-btn" onclick="checkQuiz()">
+      Finalizar Quiz
+    </button>
+
+    <div class="result" id="result"></div>
+
+  </section>
+
+</main>
+
+<footer>
+  © 2026 <span>RSS3</span> Treinamentos
+</footer>
+
+<script>
+
+  function checkQuiz(){
+
+    let score = 0;
+
+    const answers = {
+      q1: 'b',
+      q2: 'b',
+      q3: 'c',
+      q4: 'b',
+      q5: 'a'
+    };
+
+    for(let question in answers){
+
+      const selected =
+        document.querySelector(`input[name="${question}"]:checked`);
+
+      if(selected && selected.value === answers[question]){
+        score++;
+      }
+
+    }
+
+    const result =
+      document.getElementById('result');
+
+    result.style.marginTop = '25px';
+
+    if(score === 5){
+
+      result.style.color = '#17b26a';
+
+      result.innerHTML =
+        `Excelente! Você acertou ${score}/5 perguntas.`;
+
+    }else if(score >= 3){
+
+      result.style.color = '#ff7a00';
+
+      result.innerHTML =
+        `Bom resultado! Você acertou ${score}/5 perguntas.`;
+
+    }else{
+
+      result.style.color = '#e5484d';
+
+      result.innerHTML =
+        `Você acertou ${score}/5 perguntas. Revise o conteúdo do treinamento.`;
+
+    }
+
+  }
+
+</script>
+
+</body>
+</html>
