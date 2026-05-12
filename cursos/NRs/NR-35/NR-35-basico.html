@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Uso de EPI | RSS3 Treinamentos</title>
+  <title>NR35 Básico | RSS3 Treinamentos</title>
 
   <style>
 
@@ -12,7 +12,6 @@
       --azul:#0a3d91;
       --azul2:#0f5bd8;
       --laranja:#ff7a00;
-      --branco:#ffffff;
       --cinza:#f4f6f9;
       --texto:#444;
       --verde:#17b26a;
@@ -36,8 +35,8 @@
 
     header{
       background:linear-gradient(135deg,var(--azul),var(--azul2));
-      padding:18px 30px;
       color:white;
+      padding:18px 30px;
       display:flex;
       justify-content:space-between;
       align-items:center;
@@ -64,19 +63,18 @@
       color:white;
       text-decoration:none;
       font-weight:bold;
-      transition:0.2s;
     }
 
     nav a:hover{
       color:var(--laranja);
     }
 
-    /* TOP */
+    /* HERO */
 
     .top-banner{
       background:linear-gradient(135deg,#0a3d91,#0f5bd8,#ff7a00);
       color:white;
-      padding:80px 30px;
+      padding:90px 30px;
     }
 
     .top-content{
@@ -90,7 +88,7 @@
     }
 
     .top-content p{
-      max-width:700px;
+      max-width:760px;
       font-size:1.1em;
       line-height:1.8;
     }
@@ -130,7 +128,7 @@
       font-weight:bold;
     }
 
-    /* SECTIONS */
+    /* SECTION */
 
     .section{
       background:white;
@@ -164,9 +162,9 @@
     .image-caption{
       text-align:center;
       color:#666;
-      font-size:0.95em;
       margin-top:-10px;
       margin-bottom:25px;
+      font-size:0.95em;
     }
 
     /* ALERT */
@@ -177,10 +175,6 @@
       padding:20px;
       border-radius:12px;
       margin-top:25px;
-    }
-
-    .alert strong{
-      color:#c26b00;
     }
 
     /* GRID */
@@ -241,11 +235,6 @@
       display:block;
       margin-bottom:14px;
       cursor:pointer;
-      transition:0.2s;
-    }
-
-    .question label:hover{
-      color:var(--azul);
     }
 
     .quiz-btn{
@@ -258,7 +247,6 @@
       font-weight:bold;
       cursor:pointer;
       font-size:1em;
-      transition:0.2s;
     }
 
     .quiz-btn:hover{
@@ -286,12 +274,10 @@
       font-weight:bold;
     }
 
-    /* RESPONSIVE */
-
     @media(max-width:768px){
 
       .top-content h2{
-        font-size:2.1em;
+        font-size:2.2em;
       }
 
       .section{
@@ -311,6 +297,7 @@
 
   <nav>
     <a href="../../../index.html">Início</a>
+    <a href="#">Cursos</a>
   </nav>
 
 </header>
@@ -319,12 +306,15 @@
 
   <div class="top-content">
 
-    <h2>Uso Correto de EPI</h2>
+    <h2>
+      NR35 - Trabalho em Altura
+    </h2>
 
     <p>
-      Aprenda a identificar os principais Equipamentos de Proteção
-      Individual utilizados no ambiente industrial e compreenda
-      como cada escolha influencia diretamente na segurança operacional.
+      Aprenda os fundamentos de segurança,
+      prevenção de quedas,
+      utilização correta de EPIs
+      e planejamento seguro para atividades em altura.
     </p>
 
   </div>
@@ -339,7 +329,7 @@
 
     <div class="info-card">
       <h3>Duração</h3>
-      <p>15 minutos</p>
+      <p>35 minutos</p>
     </div>
 
     <div class="info-card">
@@ -353,29 +343,59 @@
     </div>
 
     <div class="info-card">
-      <h3>Tipo</h3>
-      <p>Obrigatório</p>
+      <h3>Norma</h3>
+      <p>NR35</p>
     </div>
 
   </section>
 
-  <!-- OBJETIVO -->
+  <!-- INTRO -->
 
   <section class="section">
 
-    <h2>Objetivo do treinamento</h2>
+    <h2>
+      O que é trabalho em altura?
+    </h2>
 
     <p>
-      O objetivo deste treinamento é mostrar a importância
-      do uso correto dos EPIs no ambiente industrial,
-      ajudando a reduzir riscos, acidentes e exposição
-      a agentes perigosos.
+      Segundo a NR35,
+      trabalho em altura é toda atividade executada
+      acima de 2 metros do nível inferior,
+      onde exista risco de queda.
     </p>
 
+    <p>
+      Esse tipo de atividade exige:
+    </p>
+
+    <div class="checklist">
+
+      <div class="check-item">
+        ✔ Planejamento
+      </div>
+
+      <div class="check-item">
+        ✔ Inspeção dos equipamentos
+      </div>
+
+      <div class="check-item">
+        ✔ EPIs adequados
+      </div>
+
+      <div class="check-item">
+        ✔ Análise de riscos
+      </div>
+
+      <div class="check-item">
+        ✔ Equipe capacitada
+      </div>
+
+    </div>
+
     <div class="alert">
-      <strong>Atenção:</strong>
-      utilizar um EPI incorretamente pode gerar acidentes
-      graves mesmo quando o equipamento aparenta estar adequado.
+      <strong>Importante:</strong>
+      quedas em altura estão entre os acidentes
+      mais graves em operações industriais.
     </div>
 
   </section>
@@ -384,71 +404,132 @@
 
   <section class="section">
 
-    <h2>Principais Equipamentos de Proteção</h2>
+    <h2>
+      Sistema seguro de trabalho em altura
+    </h2>
 
     <p>
-      A imagem abaixo apresenta alguns dos principais EPIs
-      utilizados em operações industriais e a função de cada um.
+      A imagem abaixo demonstra elementos importantes
+      para execução segura de atividades em altura,
+      incluindo ancoragem,
+      EPIs,
+      checklist
+      e zonas de risco.
     </p>
 
     <img
-      src="./imagens/uso-epi-banner.png"
-      alt="Tipos de EPI"
+      src="./imagens/NR-35-basico.png"
+      alt="NR35 Trabalho em Altura"
       class="content-image"
     >
 
     <div class="image-caption">
-      Exemplo ilustrativo de Equipamentos de Proteção Individual.
+      Exemplo visual de segurança em trabalho em altura.
     </div>
 
   </section>
 
-  <!-- EXPLICAÇÃO -->
+  <!-- EPIS -->
 
   <section class="section">
 
-    <h2>Mais do que usar, é preciso entender</h2>
-
-    <p>
-      Muitos acidentes acontecem mesmo quando o trabalhador está utilizando EPI.
-      Isso normalmente ocorre por utilização inadequada, equipamento incorreto
-      para a atividade ou falsa sensação de segurança.
-    </p>
-
-    <p>
-      O EPI deve ser escolhido considerando:
-    </p>
+    <h2>
+      EPIs utilizados
+    </h2>
 
     <div class="grid">
 
       <div class="card">
-        <h3>Tipo de risco</h3>
+
+        <h3>
+          Capacete
+        </h3>
 
         <p>
-          Poeira, impacto, ruído, produtos químicos,
-          calor ou projeção de partículas.
+          Protege contra impactos
+          e quedas de objetos.
         </p>
+
       </div>
 
       <div class="card">
-        <h3>Ambiente</h3>
+
+        <h3>
+          Cinturão paraquedista
+        </h3>
 
         <p>
-          Cada operação possui riscos diferentes
-          e exige proteções específicas.
+          Distribui forças de retenção
+          em caso de queda.
         </p>
+
       </div>
 
       <div class="card">
-        <h3>Compatibilidade</h3>
+
+        <h3>
+          Talabarte
+        </h3>
 
         <p>
-          Alguns EPIs podem perder eficiência
-          quando utilizados incorretamente em conjunto.
+          Conecta o trabalhador
+          ao sistema de ancoragem.
         </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Trava-quedas
+        </h3>
+
+        <p>
+          Reduz risco de queda livre.
+        </p>
+
       </div>
 
     </div>
+
+  </section>
+
+  <!-- RISCOS -->
+
+  <section class="section">
+
+    <h2>
+      Principais riscos
+    </h2>
+
+    <div class="checklist">
+
+      <div class="check-item">
+        ✔ Queda de altura
+      </div>
+
+      <div class="check-item">
+        ✔ Falha de equipamento
+      </div>
+
+      <div class="check-item">
+        ✔ Ancoragem inadequada
+      </div>
+
+      <div class="check-item">
+        ✔ Superfícies escorregadias
+      </div>
+
+      <div class="check-item">
+        ✔ Condições climáticas perigosas
+      </div>
+
+    </div>
+
+    <p style="margin-top:25px;">
+      Pequenos erros em atividades em altura
+      podem gerar consequências graves ou fatais.
+    </p>
 
   </section>
 
@@ -456,24 +537,34 @@
 
   <section class="section">
 
-    <h2>Checklist antes da atividade</h2>
+    <h2>
+      Checklist antes da atividade
+    </h2>
 
     <div class="checklist">
 
       <div class="check-item">
-        ✔ Verificar condições físicas do equipamento
+        ✔ APR realizada
       </div>
 
       <div class="check-item">
-        ✔ Confirmar se o EPI é adequado para a atividade
+        ✔ Equipamentos inspecionados
       </div>
 
       <div class="check-item">
-        ✔ Ajustar corretamente antes do uso
+        ✔ Ponto de ancoragem validado
       </div>
 
       <div class="check-item">
-        ✔ Comunicar qualquer irregularidade
+        ✔ Área isolada e sinalizada
+      </div>
+
+      <div class="check-item">
+        ✔ Comunicação estabelecida
+      </div>
+
+      <div class="check-item">
+        ✔ Resgate planejado
       </div>
 
     </div>
@@ -484,129 +575,131 @@
 
   <section class="section">
 
-    <h2>Quiz de compreensão</h2>
+    <h2>
+      Quiz de compreensão
+    </h2>
 
-    <!-- PERGUNTA 1 -->
+    <!-- 1 -->
 
     <div class="question">
 
       <h3>
-        1. Por que um respirador inadequado pode gerar falsa sensação de segurança?
+        1. Na imagem, qual equipamento conecta o trabalhador ao ponto de ancoragem?
       </h3>
 
       <label>
         <input type="radio" name="q1" value="a">
-        Porque qualquer respirador filtra todos os contaminantes
+        Capacete
       </label>
 
       <label>
         <input type="radio" name="q1" value="b">
-        Porque o trabalhador acredita estar protegido mesmo sem filtragem adequada
+        Talabarte
       </label>
 
       <label>
         <input type="radio" name="q1" value="c">
-        Porque respiradores servem apenas para conforto
+        Calçado
       </label>
 
     </div>
 
-    <!-- PERGUNTA 2 -->
+    <!-- 2 -->
 
     <div class="question">
 
       <h3>
-        2. Qual situação pode reduzir a eficiência de um EPI mesmo quando ele aparenta estar em bom estado?
+        2. Qual risco destacado na imagem está relacionado diretamente à ausência de ancoragem adequada?
       </h3>
 
       <label>
         <input type="radio" name="q2" value="a">
-        Utilização inadequada para o tipo de risco
+        Queda de altura
       </label>
 
       <label>
         <input type="radio" name="q2" value="b">
-        Armazenamento correto
+        Condições climáticas
       </label>
 
       <label>
         <input type="radio" name="q2" value="c">
-        Limpeza adequada
+        Falha de iluminação
       </label>
 
     </div>
 
-    <!-- PERGUNTA 3 -->
+    <!-- 3 -->
 
     <div class="question">
 
       <h3>
-        3. Em algumas operações industriais, por que utilizar vários EPIs juntos exige atenção?
+        3. Na imagem, por que a área abaixo do trabalhador está isolada?
       </h3>
 
       <label>
         <input type="radio" name="q3" value="a">
-        Porque alguns equipamentos podem comprometer o ajuste de outros
+        Para impedir acesso à operação
       </label>
 
       <label>
         <input type="radio" name="q3" value="b">
-        Porque EPIs nunca devem ser utilizados em conjunto
+        Para reduzir risco de acidentes abaixo da atividade
       </label>
 
       <label>
         <input type="radio" name="q3" value="c">
-        Porque utilizar mais EPIs sempre reduz mobilidade completamente
+        Apenas para organização visual
       </label>
 
     </div>
 
-    <!-- PERGUNTA 4 -->
+    <!-- 4 -->
 
     <div class="question">
 
       <h3>
-        4. O que normalmente deve definir qual EPI será utilizado em uma atividade?
+        4. O que deve ser verificado antes da atividade em altura?
       </h3>
 
       <label>
         <input type="radio" name="q4" value="a">
-        Preferência pessoal do trabalhador
+        Apenas o clima
       </label>
 
       <label>
         <input type="radio" name="q4" value="b">
-        Aparência do equipamento
+        Equipamentos, ancoragem e análise de risco
       </label>
 
       <label>
         <input type="radio" name="q4" value="c">
-        Avaliação dos riscos presentes na operação
+        Somente o cinturão
       </label>
 
     </div>
 
-    <!-- PERGUNTA 5 -->
+    <!-- 5 -->
 
     <div class="question">
 
       <h3>
-        5. Por que danos pequenos em um EPI não devem ser ignorados?
+        5. O principal objetivo da NR35 é:
       </h3>
 
       <label>
         <input type="radio" name="q5" value="a">
-        Porque pequenas falhas podem comprometer toda a proteção
+        Aumentar produtividade
       </label>
 
       <label>
         <input type="radio" name="q5" value="b">
-        Porque danos pequenos afetam apenas a aparência
+        Prevenir acidentes em trabalho em altura
       </label>
 
       <label>
         <input type="radio" name="q5" value="c">
-        Porque EPIs danificados continuam funcionando normalmente
+        Reduzir tempo operacional
       </label>
 
     </div>
@@ -634,9 +727,9 @@
     const answers = {
       q1: 'b',
       q2: 'a',
-      q3: 'a',
-      q4: 'c',
-      q5: 'a'
+      q3: 'b',
+      q4: 'b',
+      q5: 'b'
     };
 
     for(let question in answers){
@@ -660,7 +753,7 @@
       result.style.color = '#17b26a';
 
       result.innerHTML =
-        `Excelente compreensão! Você acertou ${score}/5 perguntas.`;
+        `Excelente! Você acertou ${score}/5 perguntas.`;
 
     }else if(score >= 3){
 

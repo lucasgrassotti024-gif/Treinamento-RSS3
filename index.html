@@ -155,27 +155,61 @@
       max-width:700px;
     }
 
+    /* FILTROS */
+
+    .filters{
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+      margin-bottom:35px;
+    }
+
+    .filter-input,
+    .filter-select{
+      padding:14px 16px;
+      border-radius:12px;
+      border:1px solid #dce3ea;
+      background:white;
+      font-size:0.95em;
+      outline:none;
+    }
+
+    .filter-input{
+      flex:1;
+      min-width:250px;
+    }
+
+    .filter-select{
+      min-width:180px;
+      cursor:pointer;
+    }
+
     /* GRID */
 
     .cards-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:20px;
+      gap:22px;
     }
 
-    /* COURSE CARD */
+    /* CARD */
 
     .course-card{
       background:white;
-      border-radius:20px;
-      padding:24px;
+      border-radius:22px;
+      padding:26px;
       box-shadow:0 8px 24px rgba(0,0,0,0.07);
       border:1px solid #edf1f5;
-      transition:0.2s;
+      transition:0.25s;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:290px;
     }
 
     .course-card:hover{
-      transform:translateY(-4px);
+      transform:translateY(-6px);
+      box-shadow:0 14px 35px rgba(0,0,0,0.1);
     }
 
     .course-top{
@@ -183,12 +217,23 @@
       justify-content:space-between;
       align-items:center;
       margin-bottom:18px;
+      gap:10px;
+      flex-wrap:wrap;
     }
 
     .course-category{
       background:#eef4ff;
       color:#0a3d91;
-      padding:6px 12px;
+      padding:7px 13px;
+      border-radius:999px;
+      font-size:0.82em;
+      font-weight:bold;
+    }
+
+    .course-level{
+      background:#fff2e7;
+      color:#ff7a00;
+      padding:7px 13px;
       border-radius:999px;
       font-size:0.82em;
       font-weight:bold;
@@ -209,26 +254,32 @@
 
     .course-card p{
       color:#555;
-      line-height:1.7;
+      line-height:1.8;
       margin-bottom:25px;
       font-size:0.97em;
+      flex-grow:1;
     }
 
     .course-btn{
-      display:inline-flex;
+      display:flex;
       align-items:center;
       justify-content:center;
+      width:100%;
       background:var(--laranja);
       color:white;
       text-decoration:none;
-      padding:13px 20px;
-      border-radius:12px;
+      padding:14px 20px;
+      border-radius:14px;
       font-weight:bold;
       transition:0.2s;
     }
 
     .course-btn:hover{
       transform:translateY(-2px);
+    }
+
+    .hidden{
+      display:none;
     }
 
     /* FOOTER */
@@ -282,6 +333,15 @@
         grid-template-columns:1fr;
       }
 
+      .filters{
+        flex-direction:column;
+      }
+
+      .filter-input,
+      .filter-select{
+        width:100%;
+      }
+
     }
 
     @media(max-width:480px){
@@ -311,8 +371,7 @@
 
   <nav>
     <a href="#">Início</a>
-    <a href="#">Sobre</a>
-    <a href="#treinamentos">Treinamentos</a>
+    <a href="sobre.html">Sobre</a>
   </nav>
 
 </header>
@@ -354,16 +413,300 @@
     comportamento seguro e compreensão operacional.
   </p>
 
+  <!-- FILTROS -->
+
+  <div class="filters">
+
+    <input
+      type="text"
+      id="searchInput"
+      class="filter-input"
+      placeholder="Buscar treinamento..."
+    >
+
+    <select id="areaFilter" class="filter-select">
+      <option value="">Todas as áreas</option>
+      <option value="seguranca">Segurança</option>
+      <option value="operacoes">Operações</option>
+      <option value="gestao">Gestão</option>
+    </select>
+
+    <select id="levelFilter" class="filter-select">
+      <option value="">Todos os níveis</option>
+      <option value="basico">Básico</option>
+      <option value="intermediario">Intermediário</option>
+      <option value="avancado">Avançado</option>
+    </select>
+
+  </div>
+
+  <!-- GRID -->
+
   <div class="cards-grid">
 
-    <!-- CARD -->
 
-    <div class="course-card">
+<!-- GESTÃO DE PESSOAS -->
+
+<div
+  class="course-card"
+
+  data-title="Gestão de Pessoas Básico"
+  data-area="gestao"
+  data-level="basico"
+  data-duration="25"
+  data-tags="gestao pessoas lideranca equipe comunicacao"
+>
+
+  <div class="course-top">
+
+    <span class="course-category">
+      Gestão
+    </span>
+
+    <span class="course-level">
+      Básico
+    </span>
+
+    <span class="course-time">
+      25 min
+    </span>
+
+  </div>
+
+  <h3>
+    Gestão de Pessoas Básico
+  </h3>
+
+  <p>
+    Fundamentos de liderança,
+    comunicação,
+    trabalho em equipe
+    e desenvolvimento de pessoas.
+  </p>
+
+  <a
+    href="./cursos/gestao/gestao-de-pessoas/gestao-pessoas-basico.html"
+    class="course-btn"
+  >
+    Abrir Curso
+  </a>
+
+</div>
+
+<!-- GESTÃO DE PROCESSOS BÁSICO -->
+
+<div
+  class="course-card"
+
+  data-title="Gestão de Processos Básico"
+  data-area="gestao"
+  data-level="basico"
+  data-duration="25"
+  data-tags="gestao processos dmaic melhoria continua indicadores"
+>
+
+  <div class="course-top">
+
+    <span class="course-category">
+      Gestão
+    </span>
+
+    <span class="course-level">
+      Básico
+    </span>
+
+    <span class="course-time">
+      25 min
+    </span>
+
+  </div>
+
+  <h3>
+    Gestão de Processos Básico
+  </h3>
+
+  <p>
+    Introdução aos processos,
+    desperdícios,
+    melhoria contínua
+    e conceitos básicos de DMAIC.
+  </p>
+
+  <a
+    href="./cursos/gestao/gestao-de-processos/gestao-processos-basico.html"
+    class="course-btn"
+  >
+    Abrir Curso
+  </a>
+
+</div>
+
+<!-- GESTÃO DE PROCESSOS INTERMEDIÁRIO -->
+
+<div
+  class="course-card"
+
+  data-title="Gestão de Processos Intermediário"
+  data-area="gestao"
+  data-level="intermediario"
+  data-duration="65"
+  data-tags="gestao processos dmaic pareto ishikawa gargalos melhoria continua"
+>
+
+  <div class="course-top">
+
+    <span class="course-category">
+      Gestão
+    </span>
+
+    <span class="course-level">
+      Intermediário
+    </span>
+
+    <span class="course-time">
+      65 min
+    </span>
+
+  </div>
+
+  <h3>
+    Gestão de Processos Intermediário
+  </h3>
+
+  <p>
+    Análise de processos,
+    gargalos,
+    ferramentas da qualidade,
+    DMAIC
+    e melhoria contínua aplicada.
+  </p>
+
+  <a
+    href="./cursos/gestao/gestao-de-processos/gestao-processos-intermediario.html"
+    class="course-btn"
+  >
+    Abrir Curso
+  </a>
+
+</div>
+
+<!-- GESTÃO DE RISCOS -->
+
+<div
+  class="course-card"
+
+  data-title="Gestão de Riscos Básico"
+  data-area="gestao"
+  data-level="basico"
+  data-duration="30"
+  data-tags="gestao riscos analise risco matriz criticidade seguranca"
+>
+
+  <div class="course-top">
+
+    <span class="course-category">
+      Gestão
+    </span>
+
+    <span class="course-level">
+      Básico
+    </span>
+
+    <span class="course-time">
+      30 min
+    </span>
+
+  </div>
+
+  <h3>
+    Gestão de Riscos Básico
+  </h3>
+
+  <p>
+    Identificação,
+    análise,
+    criticidade
+    e controle de riscos operacionais.
+  </p>
+
+  <a
+    href="./cursos/gestao/gestao-de-riscos/gestao-riscos-basico.html"
+    class="course-btn"
+  >
+    Abrir Curso
+  </a>
+
+</div>
+
+<!-- NR35 -->
+
+<div
+  class="course-card"
+
+  data-title="NR35 Básico"
+  data-area="seguranca"
+  data-level="basico"
+  data-duration="35"
+  data-tags="nr35 altura seguranca ancoragem talabarte trava quedas"
+>
+
+  <div class="course-top">
+
+    <span class="course-category">
+      Segurança
+    </span>
+
+    <span class="course-level">
+      Básico
+    </span>
+
+    <span class="course-time">
+      35 min
+    </span>
+
+  </div>
+
+  <h3>
+    NR35 - Trabalho em Altura
+  </h3>
+
+  <p>
+    Segurança em atividades em altura,
+    EPIs,
+    ancoragem,
+    prevenção de quedas
+    e análise de riscos.
+  </p>
+
+  <a
+    href="./cursos/NRs/NR-35/NR35-basico.html"
+    class="course-btn"
+  >
+    Abrir Curso
+  </a>
+
+</div>
+
+    <!-- EPI -->
+
+    <div
+      class="course-card"
+
+      data-title="Uso Correto de EPI"
+      data-area="seguranca"
+      data-level="basico"
+      data-duration="15"
+      data-tags="epi seguranca protecao individual"
+    >
 
       <div class="course-top">
 
         <span class="course-category">
           Segurança
+        </span>
+
+        <span class="course-level">
+          Básico
         </span>
 
         <span class="course-time">
@@ -390,6 +733,199 @@
 
     </div>
 
+    <!-- HIDROJATO -->
+
+    <div
+      class="course-card"
+
+      data-title="Hidrojato Básico"
+      data-area="operacoes"
+      data-level="basico"
+      data-duration="20"
+      data-tags="hidrojato alta pressao operacoes limpeza industrial"
+    >
+
+      <div class="course-top">
+
+        <span class="course-category">
+          Operações
+        </span>
+
+        <span class="course-level">
+          Básico
+        </span>
+
+        <span class="course-time">
+          20 min
+        </span>
+
+      </div>
+
+      <h3>
+        Hidrojato Básico
+      </h3>
+
+      <p>
+        Fundamentos do hidrojato,
+        riscos operacionais,
+        equipamentos
+        e boas práticas de segurança.
+      </p>
+
+      <a
+        href="./cursos/operacoes/hidrojato/hidrojato-basico.html"
+        class="course-btn"
+      >
+        Abrir Curso
+      </a>
+
+    </div>
+
+    <!-- HIDROVÁCUO -->
+
+    <div
+      class="course-card"
+
+      data-title="Hidrovácuo Básico"
+      data-area="operacoes"
+      data-level="basico"
+      data-duration="20"
+      data-tags="hidrovacuo vacuo succao operacoes industrial"
+    >
+
+      <div class="course-top">
+
+        <span class="course-category">
+          Operações
+        </span>
+
+        <span class="course-level">
+          Básico
+        </span>
+
+        <span class="course-time">
+          20 min
+        </span>
+
+      </div>
+
+      <h3>
+        Hidrovácuo Básico
+      </h3>
+
+      <p>
+        Entenda operações com sucção industrial,
+        sistema a vácuo,
+        riscos operacionais
+        e procedimentos de segurança.
+      </p>
+
+      <a
+        href="./cursos/operacoes/hidrovacuo/hidrovacuo-basico.html"
+        class="course-btn"
+      >
+        Abrir Curso
+      </a>
+
+    </div>
+
+    <!-- PINTURA -->
+
+    <div
+      class="course-card"
+
+      data-title="Pintura Básico"
+      data-area="operacoes"
+      data-level="basico"
+      data-duration="20"
+      data-tags="pintura pintura industrial tinta superficie"
+    >
+
+      <div class="course-top">
+
+        <span class="course-category">
+          Operações
+        </span>
+
+        <span class="course-level">
+          Básico
+        </span>
+
+        <span class="course-time">
+          20 min
+        </span>
+
+      </div>
+
+      <h3>
+        Pintura Básico
+      </h3>
+
+      <p>
+        Conceitos básicos da pintura industrial,
+        preparação de superfícies,
+        EPIs
+        e aplicação segura.
+      </p>
+
+      <a
+        href="./cursos/operacoes/pintura/pintura-basico.html"
+        class="course-btn"
+      >
+        Abrir Curso
+      </a>
+
+    </div>
+
+    <!-- GESTÃO -->
+
+    <div
+      class="course-card"
+
+      data-title="Gestão Básico"
+      data-area="gestao"
+      data-level="basico"
+      data-duration="25"
+      data-tags="gestao planejamento organizacao lideranca processos"
+    >
+
+      <div class="course-top">
+
+        <span class="course-category">
+          Gestão
+        </span>
+
+        <span class="course-level">
+          Básico
+        </span>
+
+        <span class="course-time">
+          25 min
+        </span>
+
+      </div>
+
+      <h3>
+        Gestão Básico
+      </h3>
+
+      <p>
+        Fundamentos da gestão,
+        liderança,
+        planejamento,
+        organização
+        e melhoria contínua.
+      </p>
+
+      <a
+        href="./cursos/gestao/gestao-basico.html"
+        class="course-btn"
+      >
+        Abrir Curso
+      </a>
+
+    </div>
+
   </div>
 
 </main>
@@ -397,6 +933,53 @@
 <footer>
   © 2026 <span>RSS3</span> Treinamentos
 </footer>
+
+<script>
+
+  const searchInput = document.getElementById('searchInput');
+  const areaFilter = document.getElementById('areaFilter');
+  const levelFilter = document.getElementById('levelFilter');
+
+  const cards = document.querySelectorAll('.course-card');
+
+  function filterCourses(){
+
+    const search = searchInput.value.toLowerCase();
+    const area = areaFilter.value.toLowerCase();
+    const level = levelFilter.value.toLowerCase();
+
+    cards.forEach(card => {
+
+      const title = card.dataset.title.toLowerCase();
+      const tags = card.dataset.tags.toLowerCase();
+      const cardArea = card.dataset.area.toLowerCase();
+      const cardLevel = card.dataset.level.toLowerCase();
+
+      const matchesSearch =
+        title.includes(search) ||
+        tags.includes(search);
+
+      const matchesArea =
+        !area || cardArea === area;
+
+      const matchesLevel =
+        !level || cardLevel === level;
+
+      if(matchesSearch && matchesArea && matchesLevel){
+        card.classList.remove('hidden');
+      }else{
+        card.classList.add('hidden');
+      }
+
+    });
+
+  }
+
+  searchInput.addEventListener('input', filterCourses);
+  areaFilter.addEventListener('change', filterCourses);
+  levelFilter.addEventListener('change', filterCourses);
+
+</script>
 
 </body>
 </html>

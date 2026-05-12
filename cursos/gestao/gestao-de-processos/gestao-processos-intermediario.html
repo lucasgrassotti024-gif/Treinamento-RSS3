@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Gestão de Processos Intermediário | Parte 1</title>
+
+  <style>
+
+    :root{
+      --azul:#0a3d91;
+      --azul2:#0f5bd8;
+      --laranja:#ff7a00;
+      --cinza:#f4f6f9;
+      --texto:#444;
+      --verde:#17b26a;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--cinza);
+      color:var(--texto);
+      line-height:1.7;
+    }
+
+    /* HEADER */
+
+    header{
+      background:linear-gradient(135deg,var(--azul),var(--azul2));
+      color:white;
+      padding:18px 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 5px 18px rgba(0,0,0,0.15);
+    }
+
+    header h1{
+      font-size:1.4em;
+    }
+
+    header span{
+      color:var(--laranja);
+    }
+
+    nav{
+      display:flex;
+      gap:20px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      color:var(--laranja);
+    }
+
+    /* HERO */
+
+    .top-banner{
+      background:linear-gradient(135deg,#0a3d91,#0f5bd8,#ff7a00);
+      color:white;
+      padding:90px 30px;
+    }
+
+    .top-content{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    .top-content h2{
+      font-size:3em;
+      margin-bottom:20px;
+    }
+
+    .top-content p{
+      max-width:780px;
+      font-size:1.1em;
+      line-height:1.8;
+    }
+
+    /* MAIN */
+
+    main{
+      max-width:1100px;
+      margin:40px auto;
+      padding:20px;
+    }
+
+    /* INFO */
+
+    .course-info{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      margin-bottom:40px;
+    }
+
+    .info-card{
+      background:white;
+      border-radius:18px;
+      padding:25px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .info-card h3{
+      color:var(--azul);
+      margin-bottom:10px;
+      font-size:1em;
+    }
+
+    .info-card p{
+      font-size:1.05em;
+      font-weight:bold;
+    }
+
+    /* SECTION */
+
+    .section{
+      background:white;
+      border-radius:22px;
+      padding:35px;
+      margin-bottom:30px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .section h2{
+      color:var(--azul);
+      margin-bottom:20px;
+      font-size:2em;
+    }
+
+    .section p{
+      margin-bottom:20px;
+      color:#555;
+    }
+
+    /* ALERT */
+
+    .alert{
+      border-left:6px solid var(--laranja);
+      background:#fff7ef;
+      padding:20px;
+      border-radius:12px;
+      margin-top:25px;
+    }
+
+    /* IMAGE */
+
+    .content-image{
+      width:100%;
+      border-radius:18px;
+      margin:30px 0;
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+      border:6px solid #f4f6f9;
+    }
+
+    .image-caption{
+      text-align:center;
+      color:#666;
+      margin-top:-10px;
+      margin-bottom:25px;
+      font-size:0.95em;
+    }
+
+    /* GRID */
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:20px;
+      margin-top:25px;
+    }
+
+    .card{
+      background:#f8fafc;
+      border-radius:16px;
+      padding:25px;
+      border:1px solid #e8edf3;
+    }
+
+    .card h3{
+      color:var(--azul);
+      margin-bottom:10px;
+    }
+
+    /* CHECKLIST */
+
+    .checklist{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:20px;
+    }
+
+    .check-item{
+      background:#f8fafc;
+      padding:18px;
+      border-radius:12px;
+      border-left:5px solid var(--verde);
+      font-weight:bold;
+    }
+
+    /* BUTTON */
+
+    .next-btn{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      width:100%;
+      background:var(--laranja);
+      color:white;
+      text-decoration:none;
+      padding:18px;
+      border-radius:14px;
+      font-weight:bold;
+      margin-top:20px;
+      transition:0.2s;
+      font-size:1.05em;
+    }
+
+    .next-btn:hover{
+      transform:translateY(-2px);
+    }
+
+    /* FOOTER */
+
+    footer{
+      margin-top:60px;
+      background:linear-gradient(135deg,#0a3d91,#062a63);
+      color:white;
+      text-align:center;
+      padding:35px 20px;
+    }
+
+    footer span{
+      color:var(--laranja);
+      font-weight:bold;
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width:768px){
+
+      .top-content h2{
+        font-size:2.2em;
+      }
+
+      .section{
+        padding:25px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <h1>RSS<span>3</span> Treinamentos</h1>
+
+  <nav>
+    <a href="../../../index.html">Início</a>
+    <a href="#">Cursos</a>
+  </nav>
+
+</header>
+
+<section class="top-banner">
+
+  <div class="top-content">
+
+    <h2>
+      Gestão de Processos Intermediário
+    </h2>
+
+    <p>
+      Parte 1 — fundamentos operacionais,
+      fluxo de processos,
+      desperdícios,
+      padronização
+      e introdução ao pensamento de melhoria contínua.
+    </p>
+
+  </div>
+
+</section>
+
+<main>
+
+  <!-- INFO -->
+
+  <section class="course-info">
+
+    <div class="info-card">
+      <h3>Duração</h3>
+      <p>30 minutos</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Nível</h3>
+      <p>Intermediário</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Área</h3>
+      <p>Gestão</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Parte</h3>
+      <p>1 de 2</p>
+    </div>
+
+  </section>
+
+  <!-- INTRO -->
+
+  <section class="section">
+
+    <h2>
+      Processos estão em toda operação
+    </h2>
+
+    <p>
+      Toda atividade operacional funciona através de processos.
+      Mesmo quando eles não estão documentados,
+      ainda existem etapas,
+      decisões,
+      entradas
+      e saídas acontecendo.
+    </p>
+
+    <p>
+      Quanto mais organizado for o processo,
+      maiores são as chances de:
+    </p>
+
+    <div class="checklist">
+
+      <div class="check-item">
+        ✔ Reduzir erros
+      </div>
+
+      <div class="check-item">
+        ✔ Melhorar produtividade
+      </div>
+
+      <div class="check-item">
+        ✔ Aumentar qualidade
+      </div>
+
+      <div class="check-item">
+        ✔ Reduzir desperdícios
+      </div>
+
+      <div class="check-item">
+        ✔ Melhorar segurança operacional
+      </div>
+
+    </div>
+
+    <div class="alert">
+      <strong>Importante:</strong>
+      muitos problemas recorrentes
+      não acontecem por falha individual,
+      mas por processos mal estruturados.
+    </div>
+
+  </section>
+
+  <!-- PROCESSO -->
+
+  <section class="section">
+
+    <h2>
+      Entendendo um fluxo de processo
+    </h2>
+
+    <p>
+      Um processo normalmente possui:
+      entrada,
+      transformação,
+      verificação
+      e saída.
+    </p>
+
+    <p>
+      Processos organizados facilitam:
+      controle,
+      treinamento,
+      padronização
+      e melhoria contínua.
+    </p>
+
+    <img
+      src="./imagens/gestao-intermediario-1.png"
+      alt="Fluxo operacional"
+      class="content-image"
+    >
+
+    <div class="image-caption">
+      Exemplo visual de fluxo operacional e organização de processos.
+    </div>
+
+  </section>
+
+  <!-- PADRONIZAÇÃO -->
+
+  <section class="section">
+
+    <h2>
+      Padronização reduz variabilidade
+    </h2>
+
+    <p>
+      Quando cada pessoa executa uma atividade
+      de uma forma diferente,
+      os resultados se tornam inconsistentes.
+    </p>
+
+    <p>
+      A padronização ajuda equipes
+      a trabalharem de forma mais previsível,
+      organizada
+      e segura.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>
+          Organização
+        </h3>
+
+        <p>
+          Processos organizados facilitam
+          execução e acompanhamento.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Qualidade
+        </h3>
+
+        <p>
+          Atividades padronizadas geram
+          resultados mais consistentes.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Treinamento
+        </h3>
+
+        <p>
+          Equipes aprendem mais rápido
+          quando existe padrão definido.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DESPERDÍCIOS -->
+
+  <section class="section">
+
+    <h2>
+      Desperdícios escondidos no processo
+    </h2>
+
+    <p>
+      Muitos desperdícios acontecem silenciosamente
+      durante operações do dia a dia.
+    </p>
+
+    <p>
+      Esperas,
+      movimentações desnecessárias,
+      retrabalho
+      e excesso de etapas
+      reduzem eficiência e aumentam custos.
+    </p>
+
+    <img
+      src="./imagens/gestao-intermediario-2.png"
+      alt="Desperdícios operacionais"
+      class="content-image"
+    >
+
+    <div class="image-caption">
+      Exemplo visual de desperdícios e perdas operacionais.
+    </div>
+
+  </section>
+
+  <!-- INDICADORES -->
+
+  <section class="section">
+
+    <h2>
+      Indicadores ajudam a enxergar problemas
+    </h2>
+
+    <p>
+      O que não é medido dificilmente melhora.
+    </p>
+
+    <p>
+      Indicadores ajudam operações
+      a identificar gargalos,
+      atrasos,
+      desperdícios
+      e oportunidades de melhoria.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>
+          Tempo
+        </h3>
+
+        <p>
+          Medir tempo ajuda a identificar atrasos
+          e gargalos operacionais.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Qualidade
+        </h3>
+
+        <p>
+          Indicadores mostram falhas,
+          retrabalho
+          e perdas.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Produtividade
+        </h3>
+
+        <p>
+          Permite acompanhar desempenho operacional
+          e eficiência.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DMAIC -->
+
+  <section class="section">
+
+    <h2>
+      Introdução ao DMAIC
+    </h2>
+
+    <p>
+      O DMAIC é uma metodologia utilizada
+      para análise e melhoria contínua de processos.
+    </p>
+
+    <p>
+      Ele ajuda equipes a:
+      identificar problemas,
+      medir resultados,
+      analisar causas
+      e controlar melhorias.
+    </p>
+
+    <img
+      src="./imagens/gestao-intermediario-3.png"
+      alt="DMAIC"
+      class="content-image"
+    >
+
+    <div class="image-caption">
+      Introdução visual ao ciclo DMAIC.
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Define</h3>
+        <p>Definir o problema.</p>
+      </div>
+
+      <div class="card">
+        <h3>Measure</h3>
+        <p>Medir dados e desempenho.</p>
+      </div>
+
+      <div class="card">
+        <h3>Analyze</h3>
+        <p>Identificar causas.</p>
+      </div>
+
+      <div class="card">
+        <h3>Improve</h3>
+        <p>Aplicar melhorias.</p>
+      </div>
+
+      <div class="card">
+        <h3>Control</h3>
+        <p>Manter os resultados.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTINUAR -->
+
+  <section class="section">
+
+    <h2>
+      Continue para a Parte 2
+    </h2>
+
+    <p>
+      Na próxima etapa do treinamento,
+      você verá:
+    </p>
+
+    <div class="checklist">
+
+      <div class="check-item">
+        ✔ Ferramentas da qualidade
+      </div>
+
+      <div class="check-item">
+        ✔ Gargalos operacionais
+      </div>
+
+      <div class="check-item">
+        ✔ Causa raiz
+      </div>
+
+      <div class="check-item">
+        ✔ Análise prática
+      </div>
+
+      <div class="check-item">
+        ✔ Estudo de caso
+      </div>
+
+      <div class="check-item">
+        ✔ Quiz avançado
+      </div>
+
+    </div>
+
+    <a
+      href="./gestao-processos-intermediario2.html"
+      class="next-btn"
+    >
+      Continuar para Parte 2 →
+    </a>
+
+  </section>
+
+</main>
+
+<footer>
+  © 2026 <span>RSS3</span> Treinamentos
+</footer>
+
+</body>
+</html>

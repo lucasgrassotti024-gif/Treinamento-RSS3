@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Uso de EPI | RSS3 Treinamentos</title>
+  <title>APR Básico | RSS3 Treinamentos</title>
 
   <style>
 
@@ -12,7 +12,6 @@
       --azul:#0a3d91;
       --azul2:#0f5bd8;
       --laranja:#ff7a00;
-      --branco:#ffffff;
       --cinza:#f4f6f9;
       --texto:#444;
       --verde:#17b26a;
@@ -36,8 +35,8 @@
 
     header{
       background:linear-gradient(135deg,var(--azul),var(--azul2));
-      padding:18px 30px;
       color:white;
+      padding:18px 30px;
       display:flex;
       justify-content:space-between;
       align-items:center;
@@ -64,19 +63,18 @@
       color:white;
       text-decoration:none;
       font-weight:bold;
-      transition:0.2s;
     }
 
     nav a:hover{
       color:var(--laranja);
     }
 
-    /* TOP */
+    /* HERO */
 
     .top-banner{
       background:linear-gradient(135deg,#0a3d91,#0f5bd8,#ff7a00);
       color:white;
-      padding:80px 30px;
+      padding:90px 30px;
     }
 
     .top-content{
@@ -90,7 +88,7 @@
     }
 
     .top-content p{
-      max-width:700px;
+      max-width:760px;
       font-size:1.1em;
       line-height:1.8;
     }
@@ -130,7 +128,7 @@
       font-weight:bold;
     }
 
-    /* SECTIONS */
+    /* SECTION */
 
     .section{
       background:white;
@@ -164,9 +162,9 @@
     .image-caption{
       text-align:center;
       color:#666;
-      font-size:0.95em;
       margin-top:-10px;
       margin-bottom:25px;
+      font-size:0.95em;
     }
 
     /* ALERT */
@@ -177,10 +175,6 @@
       padding:20px;
       border-radius:12px;
       margin-top:25px;
-    }
-
-    .alert strong{
-      color:#c26b00;
     }
 
     /* GRID */
@@ -241,11 +235,6 @@
       display:block;
       margin-bottom:14px;
       cursor:pointer;
-      transition:0.2s;
-    }
-
-    .question label:hover{
-      color:var(--azul);
     }
 
     .quiz-btn{
@@ -258,7 +247,6 @@
       font-weight:bold;
       cursor:pointer;
       font-size:1em;
-      transition:0.2s;
     }
 
     .quiz-btn:hover{
@@ -286,12 +274,10 @@
       font-weight:bold;
     }
 
-    /* RESPONSIVE */
-
     @media(max-width:768px){
 
       .top-content h2{
-        font-size:2.1em;
+        font-size:2.2em;
       }
 
       .section{
@@ -311,6 +297,7 @@
 
   <nav>
     <a href="../../../index.html">Início</a>
+    <a href="#">Cursos</a>
   </nav>
 
 </header>
@@ -319,12 +306,14 @@
 
   <div class="top-content">
 
-    <h2>Uso Correto de EPI</h2>
+    <h2>
+      APR - Análise Preliminar de Risco
+    </h2>
 
     <p>
-      Aprenda a identificar os principais Equipamentos de Proteção
-      Individual utilizados no ambiente industrial e compreenda
-      como cada escolha influencia diretamente na segurança operacional.
+      Aprenda como identificar riscos,
+      analisar perigos
+      e definir controles antes da execução de atividades industriais.
     </p>
 
   </div>
@@ -339,7 +328,7 @@
 
     <div class="info-card">
       <h3>Duração</h3>
-      <p>15 minutos</p>
+      <p>30 minutos</p>
     </div>
 
     <div class="info-card">
@@ -354,28 +343,59 @@
 
     <div class="info-card">
       <h3>Tipo</h3>
-      <p>Obrigatório</p>
+      <p>Análise de Risco</p>
     </div>
 
   </section>
 
-  <!-- OBJETIVO -->
+  <!-- INTRO -->
 
   <section class="section">
 
-    <h2>Objetivo do treinamento</h2>
+    <h2>
+      O que é APR?
+    </h2>
 
     <p>
-      O objetivo deste treinamento é mostrar a importância
-      do uso correto dos EPIs no ambiente industrial,
-      ajudando a reduzir riscos, acidentes e exposição
-      a agentes perigosos.
+      APR significa:
+      <strong>Análise Preliminar de Risco</strong>.
     </p>
 
+    <p>
+      O objetivo da APR é identificar perigos,
+      avaliar riscos
+      e definir medidas de controle
+      antes da execução de uma atividade.
+    </p>
+
+    <div class="checklist">
+
+      <div class="check-item">
+        ✔ Identificar perigos
+      </div>
+
+      <div class="check-item">
+        ✔ Avaliar consequências
+      </div>
+
+      <div class="check-item">
+        ✔ Definir controles
+      </div>
+
+      <div class="check-item">
+        ✔ Planejar a atividade
+      </div>
+
+      <div class="check-item">
+        ✔ Melhorar segurança operacional
+      </div>
+
+    </div>
+
     <div class="alert">
-      <strong>Atenção:</strong>
-      utilizar um EPI incorretamente pode gerar acidentes
-      graves mesmo quando o equipamento aparenta estar adequado.
+      <strong>Importante:</strong>
+      atividades executadas sem análise prévia
+      possuem maior chance de acidentes e falhas operacionais.
     </div>
 
   </section>
@@ -384,96 +404,185 @@
 
   <section class="section">
 
-    <h2>Principais Equipamentos de Proteção</h2>
+    <h2>
+      Análise de risco em operação industrial
+    </h2>
 
     <p>
-      A imagem abaixo apresenta alguns dos principais EPIs
-      utilizados em operações industriais e a função de cada um.
+      A imagem abaixo mostra uma equipe realizando
+      análise preliminar de risco,
+      avaliando atividades,
+      perigos
+      e controles operacionais.
     </p>
 
     <img
-      src="./imagens/uso-epi-banner.png"
-      alt="Tipos de EPI"
+      src="./im/APR-basico.png"
+      alt="APR Básico"
       class="content-image"
     >
 
     <div class="image-caption">
-      Exemplo ilustrativo de Equipamentos de Proteção Individual.
+      Exemplo visual de análise preliminar de risco em ambiente industrial.
     </div>
 
   </section>
 
-  <!-- EXPLICAÇÃO -->
+  <!-- ETAPAS -->
 
   <section class="section">
 
-    <h2>Mais do que usar, é preciso entender</h2>
-
-    <p>
-      Muitos acidentes acontecem mesmo quando o trabalhador está utilizando EPI.
-      Isso normalmente ocorre por utilização inadequada, equipamento incorreto
-      para a atividade ou falsa sensação de segurança.
-    </p>
-
-    <p>
-      O EPI deve ser escolhido considerando:
-    </p>
+    <h2>
+      Etapas da APR
+    </h2>
 
     <div class="grid">
 
       <div class="card">
-        <h3>Tipo de risco</h3>
+
+        <h3>
+          Descrever atividade
+        </h3>
 
         <p>
-          Poeira, impacto, ruído, produtos químicos,
-          calor ou projeção de partículas.
+          Entender o que será executado
+          e como será realizado.
         </p>
+
       </div>
 
       <div class="card">
-        <h3>Ambiente</h3>
+
+        <h3>
+          Identificar riscos
+        </h3>
 
         <p>
-          Cada operação possui riscos diferentes
-          e exige proteções específicas.
+          Reconhecer perigos presentes na atividade.
         </p>
+
       </div>
 
       <div class="card">
-        <h3>Compatibilidade</h3>
+
+        <h3>
+          Avaliar impactos
+        </h3>
 
         <p>
-          Alguns EPIs podem perder eficiência
-          quando utilizados incorretamente em conjunto.
+          Determinar consequências
+          e criticidade.
         </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Definir controles
+        </h3>
+
+        <p>
+          Aplicar medidas preventivas
+          e corretivas.
+        </p>
+
       </div>
 
     </div>
 
   </section>
 
-  <!-- CHECKLIST -->
+  <!-- RISCOS -->
 
   <section class="section">
 
-    <h2>Checklist antes da atividade</h2>
+    <h2>
+      Exemplos de riscos operacionais
+    </h2>
 
     <div class="checklist">
 
       <div class="check-item">
-        ✔ Verificar condições físicas do equipamento
+        ✔ Queda de altura
       </div>
 
       <div class="check-item">
-        ✔ Confirmar se o EPI é adequado para a atividade
+        ✔ Choque elétrico
       </div>
 
       <div class="check-item">
-        ✔ Ajustar corretamente antes do uso
+        ✔ Esmagamento
       </div>
 
       <div class="check-item">
-        ✔ Comunicar qualquer irregularidade
+        ✔ Atmosfera perigosa
+      </div>
+
+      <div class="check-item">
+        ✔ Superfícies escorregadias
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTROLES -->
+
+  <section class="section">
+
+    <h2>
+      Medidas de controle
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>
+          EPI
+        </h3>
+
+        <p>
+          Utilização correta de equipamentos de proteção.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Isolamento
+        </h3>
+
+        <p>
+          Controle de acesso à área operacional.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Comunicação
+        </h3>
+
+        <p>
+          Alinhamento entre equipes envolvidas.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Procedimentos
+        </h3>
+
+        <p>
+          Execução padronizada da atividade.
+        </p>
+
       </div>
 
     </div>
@@ -484,129 +593,131 @@
 
   <section class="section">
 
-    <h2>Quiz de compreensão</h2>
+    <h2>
+      Quiz de compreensão
+    </h2>
 
-    <!-- PERGUNTA 1 -->
+    <!-- 1 -->
 
     <div class="question">
 
       <h3>
-        1. Por que um respirador inadequado pode gerar falsa sensação de segurança?
+        1. Na imagem, qual é o principal objetivo da equipe reunida?
       </h3>
 
       <label>
         <input type="radio" name="q1" value="a">
-        Porque qualquer respirador filtra todos os contaminantes
+        Organizar equipamentos
       </label>
 
       <label>
         <input type="radio" name="q1" value="b">
-        Porque o trabalhador acredita estar protegido mesmo sem filtragem adequada
+        Realizar análise preliminar de risco
       </label>
 
       <label>
         <input type="radio" name="q1" value="c">
-        Porque respiradores servem apenas para conforto
+        Liberar a área sem inspeção
       </label>
 
     </div>
 
-    <!-- PERGUNTA 2 -->
+    <!-- 2 -->
 
     <div class="question">
 
       <h3>
-        2. Qual situação pode reduzir a eficiência de um EPI mesmo quando ele aparenta estar em bom estado?
+        2. O quadro apresentado na imagem mostra:
       </h3>
 
       <label>
         <input type="radio" name="q2" value="a">
-        Utilização inadequada para o tipo de risco
+        Escala de funcionários
       </label>
 
       <label>
         <input type="radio" name="q2" value="b">
-        Armazenamento correto
+        Atividades, riscos e controles
       </label>
 
       <label>
         <input type="radio" name="q2" value="c">
-        Limpeza adequada
+        Custos operacionais
       </label>
 
     </div>
 
-    <!-- PERGUNTA 3 -->
+    <!-- 3 -->
 
     <div class="question">
 
       <h3>
-        3. Em algumas operações industriais, por que utilizar vários EPIs juntos exige atenção?
+        3. Qual risco está relacionado ao símbolo de raio mostrado na APR?
       </h3>
 
       <label>
         <input type="radio" name="q3" value="a">
-        Porque alguns equipamentos podem comprometer o ajuste de outros
+        Queda
       </label>
 
       <label>
         <input type="radio" name="q3" value="b">
-        Porque EPIs nunca devem ser utilizados em conjunto
+        Esmagamento
       </label>
 
       <label>
         <input type="radio" name="q3" value="c">
-        Porque utilizar mais EPIs sempre reduz mobilidade completamente
+        Choque elétrico
       </label>
 
     </div>
 
-    <!-- PERGUNTA 4 -->
+    <!-- 4 -->
 
     <div class="question">
 
       <h3>
-        4. O que normalmente deve definir qual EPI será utilizado em uma atividade?
+        4. Qual etapa acontece após identificar os riscos?
       </h3>
 
       <label>
         <input type="radio" name="q4" value="a">
-        Preferência pessoal do trabalhador
+        Avaliar impactos
       </label>
 
       <label>
         <input type="radio" name="q4" value="b">
-        Aparência do equipamento
+        Encerrar atividade
       </label>
 
       <label>
         <input type="radio" name="q4" value="c">
-        Avaliação dos riscos presentes na operação
+        Liberar operação
       </label>
 
     </div>
 
-    <!-- PERGUNTA 5 -->
+    <!-- 5 -->
 
     <div class="question">
 
       <h3>
-        5. Por que danos pequenos em um EPI não devem ser ignorados?
+        5. O principal objetivo da APR é:
       </h3>
 
       <label>
         <input type="radio" name="q5" value="a">
-        Porque pequenas falhas podem comprometer toda a proteção
+        Aumentar velocidade da atividade
       </label>
 
       <label>
         <input type="radio" name="q5" value="b">
-        Porque danos pequenos afetam apenas a aparência
+        Identificar riscos antes da execução
       </label>
 
       <label>
         <input type="radio" name="q5" value="c">
-        Porque EPIs danificados continuam funcionando normalmente
+        Reduzir documentação
       </label>
 
     </div>
@@ -633,10 +744,10 @@
 
     const answers = {
       q1: 'b',
-      q2: 'a',
-      q3: 'a',
-      q4: 'c',
-      q5: 'a'
+      q2: 'b',
+      q3: 'c',
+      q4: 'a',
+      q5: 'b'
     };
 
     for(let question in answers){
@@ -660,7 +771,7 @@
       result.style.color = '#17b26a';
 
       result.innerHTML =
-        `Excelente compreensão! Você acertou ${score}/5 perguntas.`;
+        `Excelente! Você acertou ${score}/5 perguntas.`;
 
     }else if(score >= 3){
 

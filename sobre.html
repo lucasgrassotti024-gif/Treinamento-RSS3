@@ -2,350 +2,775 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre - RSS3 Treinamentos</title>
- 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Sobre | RSS3 Treinamentos</title>
 
   <style>
-    :root {
-      --azul: #0a3d91;
-      --laranja: #ff7a00;
-      --branco: #ffffff;
-      --cinza-claro: #f4f6f9;
-      --cinza-texto: #444;
+
+    :root{
+      --azul:#0a3d91;
+      --azul2:#114fb7;
+      --laranja:#ff7a00;
+      --cinza:#f4f6f9;
+      --texto:#444;
+      --branco:#ffffff;
     }
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--cinza-claro);
-      color: var(--cinza-texto);
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    header, footer {
-      background: var(--azul);
-      color: var(--branco);
-      padding: 25px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--cinza);
+      color:var(--texto);
+      overflow-x:hidden;
     }
 
-    header span, footer span {
-      color: var(--laranja);
-      font-weight: bold;
+    /* HEADER */
+
+    header{
+      background:linear-gradient(135deg,var(--azul),var(--azul2));
+      padding:20px 30px;
+      color:white;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 5px 18px rgba(0,0,0,0.15);
     }
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
+    header h1{
+      font-size:1.5em;
     }
 
-    nav a {
-      color: var(--branco);
-      text-decoration: none;
-      font-weight: bold;
+    header span{
+      color:var(--laranja);
     }
 
-    nav a:hover {
-      color: var(--laranja);
+    nav{
+      display:flex;
+      gap:20px;
     }
 
-    /* Seletor de Idiomas */
-    .language-selector {
-      display: flex;
-      gap: 5px;
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      padding:8px 14px;
+      border-radius:8px;
+      transition:0.2s;
     }
 
-    .lang-btn {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.3);
-      color: var(--branco);
-      padding: 6px 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.8em;
-      font-weight: bold;
-      transition: all 0.3s ease;
+    nav a:hover{
+      background:rgba(255,255,255,0.12);
     }
 
-    .lang-btn:hover {
-      background: rgba(255,255,255,0.2);
-      transform: translateY(-1px);
+    /* HERO */
+
+    .hero{
+      position:relative;
+      min-height:90vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      background:black;
     }
 
-    .lang-btn.active {
-      background: var(--laranja);
-      color: var(--branco);
-      border-color: var(--laranja);
+    .hero img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:0.4;
     }
 
-    main {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        135deg,
+        rgba(0,0,0,0.75),
+        rgba(10,61,145,0.65)
+      );
     }
 
-    .sobre-section {
-      background: var(--branco);
-      border-radius: 14px;
-      padding: 40px;
-      margin: 20px 0;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:900px;
+      text-align:center;
+      padding:20px;
+      color:white;
     }
 
-    .sobre-section h1 {
-      color: var(--azul);
-      margin-bottom: 30px;
-      border-left: 6px solid var(--laranja);
-      padding-left: 15px;
-      font-size: 2.2em;
+    .hero-content h2{
+      font-size:3.2em;
+      margin-bottom:25px;
+      line-height:1.2;
     }
 
-    .sobre-section p {
-      line-height: 1.8;
-      margin-bottom: 20px;
-      font-size: 1.1em;
+    .hero-content p{
+      font-size:1.15em;
+      line-height:1.9;
+      opacity:0.95;
+      margin-bottom:35px;
     }
 
-    .sobre-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin: 40px 0;
+    .hero-btn{
+      display:inline-block;
+      background:var(--laranja);
+      color:white;
+      text-decoration:none;
+      padding:16px 34px;
+      border-radius:999px;
+      font-weight:bold;
+      transition:0.2s;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
     }
 
-    .sobre-card {
-      background: var(--cinza-claro);
-      border-radius: 12px;
-      padding: 25px;
-      text-align: center;
-      transition: transform 0.3s ease;
+    .hero-btn:hover{
+      transform:translateY(-3px);
+      background:white;
+      color:var(--azul);
     }
 
-    .sobre-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    /* MAIN */
+
+    main{
+      max-width:1250px;
+      margin:0 auto;
+      padding:80px 20px;
     }
 
-    .sobre-card h3 {
-      color: var(--azul);
-      margin-bottom: 15px;
-      font-size: 1.3em;
+    /* SECTION */
+
+    .section{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+      margin-bottom:110px;
     }
 
-    .sobre-card p {
-      color: var(--cinza-texto);
-      line-height: 1.5;
+    .section.reverse{
+      direction:rtl;
     }
 
-    .highlight {
-      color: var(--laranja);
-      font-weight: bold;
+    .section.reverse .section-text{
+      direction:ltr;
     }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 15px;
+    .section-image img{
+      width:100%;
+      border-radius:24px;
+      box-shadow:0 12px 35px rgba(0,0,0,0.12);
+      border:1px solid #e4e8ee;
+    }
+
+    .section-text h3{
+      color:var(--azul);
+      font-size:2.2em;
+      margin-bottom:22px;
+      line-height:1.2;
+    }
+
+    .section-text p{
+      line-height:1.9;
+      margin-bottom:18px;
+      font-size:1.03em;
+      color:#555;
+    }
+
+    .section-text ul{
+      margin-top:20px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .section-text li{
+      list-style:none;
+      background:white;
+      padding:14px 16px;
+      border-radius:14px;
+      border-left:5px solid var(--laranja);
+      box-shadow:0 5px 15px rgba(0,0,0,0.05);
+      line-height:1.6;
+    }
+
+    /* CARDS */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:20px;
+      margin-top:30px;
+    }
+
+    .card{
+      background:white;
+      padding:24px;
+      border-radius:20px;
+      box-shadow:0 8px 22px rgba(0,0,0,0.07);
+      border:1px solid #edf1f5;
+      transition:0.2s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card h4{
+      color:var(--azul);
+      margin-bottom:12px;
+      font-size:1.1em;
+    }
+
+    .card p{
+      line-height:1.7;
+      color:#555;
+      font-size:0.96em;
+    }
+
+    /* METRICS */
+
+    .metrics{
+      margin-top:70px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+    }
+
+    .metric{
+      background:linear-gradient(135deg,var(--azul),var(--azul2));
+      color:white;
+      padding:35px 20px;
+      border-radius:22px;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .metric h5{
+      font-size:2.2em;
+      margin-bottom:10px;
+      color:var(--laranja);
+    }
+
+    .metric p{
+      line-height:1.6;
+      opacity:0.95;
+    }
+
+    /* FINAL */
+
+    .final{
+      margin-top:90px;
+      background:linear-gradient(
+        135deg,
+        var(--azul),
+        #06275b
+      );
+      color:white;
+      padding:70px 30px;
+      border-radius:28px;
+      text-align:center;
+      box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .final h3{
+      font-size:2.3em;
+      margin-bottom:25px;
+      line-height:1.3;
+    }
+
+    .final p{
+      max-width:850px;
+      margin:0 auto;
+      line-height:1.9;
+      font-size:1.05em;
+      opacity:0.95;
+    }
+
+    /* FOOTER */
+
+    footer{
+      margin-top:80px;
+      background:#071d46;
+      color:white;
+      text-align:center;
+      padding:35px 20px;
+    }
+
+    footer span{
+      color:var(--laranja);
+      font-weight:bold;
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width:950px){
+
+      .section{
+        grid-template-columns:1fr;
       }
-      
-      nav {
-        flex-direction: column;
-        text-align: center;
+
+      .section.reverse{
+        direction:ltr;
       }
-      
-      nav a {
-        margin: 5px 0;
+
+      .hero-content h2{
+        font-size:2.4em;
       }
-      
-      .sobre-section {
-        padding: 20px;
-      }
-      
-      .sobre-section h1 {
-        font-size: 1.8em;
-      }
-      
-      .sobre-grid {
-        grid-template-columns: 1fr;
-      }
+
     }
+
+    @media(max-width:768px){
+
+      header{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+      }
+
+      nav{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero{
+        min-height:75vh;
+      }
+
+      .hero-content h2{
+        font-size:2em;
+      }
+
+      .hero-content p{
+        font-size:1em;
+      }
+
+      .section-text h3{
+        font-size:1.8em;
+      }
+
+      .final h3{
+        font-size:1.8em;
+      }
+
+    }
+
+    @media(max-width:480px){
+
+      body{
+        font-size:15px;
+      }
+
+      .hero-content h2{
+        font-size:1.7em;
+      }
+
+      .section-text h3{
+        font-size:1.55em;
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
 
 <header>
+
   <h1>RSS<span>3</span> Treinamentos</h1>
+
   <nav>
-    <a href="index.html" data-translate="nav-home">Início</a>
-    <a href="sobre.html" data-translate="nav-about">Sobre</a>
-    <div class="language-selector">
-      <button class="lang-btn active" data-lang="pt">PT</button>
-      <button class="lang-btn" data-lang="es">ES</button>
-      <button class="lang-btn" data-lang="en">EN</button>
-    </div>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
   </nav>
+
 </header>
 
-<main>
-  <section class="sobre-section">
-    <h1 data-translate="sobre-title">Sobre RSS3 Treinamentos</h1>
-    
-    <p data-translate="sobre-intro">
-      Bem-vindo ao <span class="highlight">RSS3 Treinamentos</span>, sua plataforma especializada em segurança industrial. 
-      Criamos este site para ajudar trabalhadores como você a se manterem <span class="highlight">seguros</span> e 
-      <span class="highlight">protegidos</span> no ambiente de trabalho.
-    </p>
-    
-    <p data-translate="sobre-mission">
-      Nossa missão é simples: oferecer treinamentos fáceis de entender, práticos e que realmente 
-      fazem a diferença no seu dia a dia. Acreditamos que segurança não precisa ser complicada.
+<!-- HERO -->
+
+<section class="hero">
+
+  <img
+    src="./assets/imagens/sobre-banner.png"
+    alt="Banner RSS3"
+  >
+
+  <div class="hero-content">
+
+    <h2>
+      Treinamento que aproxima conhecimento da operação real.
+    </h2>
+
+    <p>
+      Conteúdos desenvolvidos para fortalecer segurança,
+      percepção de risco e compreensão prática das
+      atividades industriais.
     </p>
 
-    <div class="sobre-grid">
-      <div class="sobre-card">
-        <h3 data-translate="sobre-card-1-title">Conteúdo Claro</h3>
-        <p data-translate="sobre-card-1-desc">
-          Explicamos tudo de forma simples, sem complicação. 
-          Linguagem direta para trabalhadores que precisam de informações práticas.
-        </p>
-      </div>
-      
-      <div class="sobre-card">
-        <h3 data-translate="sobre-card-2-title">Treinamentos Práticos</h3>
-        <p data-translate="sobre-card-2-desc">
-          Cursos focados no que você realmente precisa saber para trabalhar com segurança. 
-          Sem teoria desnecessária, apenas o essencial.
-        </p>
-      </div>
-      
-      <div class="sobre-card">
-        <h3 data-translate="sobre-card-3-title">Acessível a Todos</h3>
-        <p data-translate="sobre-card-3-desc">
-          Disponível em português, espanhol e inglês. 
-          Para que todos possam aprender, independente do idioma.
-        </p>
-      </div>
+    <a href="#sobre" class="hero-btn">
+      Conhecer Plataforma
+    </a>
+
+  </div>
+
+</section>
+
+<!-- MAIN -->
+
+<main id="sobre">
+
+  <!-- ECOSSISTEMA -->
+
+  <section class="section">
+
+    <div class="section-image">
+      <img
+        src="./assets/imagens/sobre-ecossistema.png"
+        alt="Ecossistema de treinamentos"
+      >
     </div>
-    
-    <p data-translate="sobre-conclusion">
-      Segurança no trabalho é responsabilidade de todos, mas começa com conhecimento correto. 
-      Estamos aqui para ajudar você a ter esse conhecimento de forma fácil e acessível.
-    </p>
+
+    <div class="section-text">
+
+      <h3>
+        Um ecossistema completo de treinamentos.
+      </h3>
+
+      <p>
+        A plataforma RSS3 foi criada para centralizar
+        conteúdos técnicos, operacionais e de segurança
+        em um ambiente moderno, acessível e organizado.
+      </p>
+
+      <p>
+        Mais do que apresentar informações, os treinamentos
+        foram pensados para desenvolver entendimento real
+        sobre procedimentos, riscos e aplicações práticas.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <h4>Segurança</h4>
+          <p>
+            Procedimentos, EPIs,
+            percepção de risco e prevenção.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Operações</h4>
+          <p>
+            Técnicas operacionais,
+            hidrojato, hidrovácuo e execução.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Equipamentos</h4>
+          <p>
+            Funcionamento, inspeção,
+            conservação e análise técnica.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Emergências</h4>
+          <p>
+            Resposta rápida,
+            primeiros socorros e procedimentos.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
   </section>
+
+  <!-- TREINAMENTO -->
+
+  <section class="section reverse">
+
+    <div class="section-image">
+      <img
+        src="./assets/imagens/sobre-treinamento.png"
+        alt="Treinamento em campo"
+      >
+    </div>
+
+    <div class="section-text">
+
+      <h3>
+        Aprendizado voltado para a prática.
+      </h3>
+
+      <p>
+        Os treinamentos foram estruturados para conectar
+        teoria e aplicação operacional.
+      </p>
+
+      <p>
+        O objetivo não é apenas concluir um curso,
+        mas compreender o motivo de cada procedimento,
+        identificar riscos e executar atividades
+        com mais segurança e eficiência.
+      </p>
+
+      <ul>
+
+        <li>
+          Explicações claras e objetivas.
+        </li>
+
+        <li>
+          Aplicações reais do ambiente industrial.
+        </li>
+
+        <li>
+          Conteúdo acessível para diferentes níveis.
+        </li>
+
+        <li>
+          Desenvolvimento de percepção operacional.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- APRENDIZADO -->
+
+  <section class="section">
+
+    <div class="section-image">
+      <img
+        src="./assets/imagens/sobre-aprendizado.png"
+        alt="Conhecimento aplicado"
+      >
+    </div>
+
+    <div class="section-text">
+
+      <h3>
+        Conhecimento aplicado gera decisões melhores.
+      </h3>
+
+      <p>
+        Segurança operacional começa antes da execução.
+        Começa na compreensão.
+      </p>
+
+      <p>
+        A plataforma incentiva análise, interpretação
+        operacional, comunicação e entendimento
+        dos processos antes das atividades.
+      </p>
+
+      <ul>
+
+        <li>
+          Entendimento antes da execução.
+        </li>
+
+        <li>
+          Comunicação clara entre equipes.
+        </li>
+
+        <li>
+          Interpretação de procedimentos.
+        </li>
+
+        <li>
+          Desenvolvimento técnico contínuo.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- EVOLUÇÃO -->
+
+  <section class="section reverse">
+
+    <div class="section-image">
+      <img
+        src="./assets/imagens/sobre-evolução.png"
+        alt="Evolução contínua"
+      >
+    </div>
+
+    <div class="section-text">
+
+      <h3>
+        Uma plataforma construída para evoluir.
+      </h3>
+
+      <p>
+        Os treinamentos estão organizados em níveis
+        para acompanhar o crescimento técnico
+        e operacional de cada colaborador.
+      </p>
+
+      <p>
+        Conforme a plataforma evoluir, novos módulos,
+        especializações, trilhas e sistemas de progresso
+        serão incorporados.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <h4>Básico</h4>
+          <p>
+            Introdução aos fundamentos
+            e boas práticas.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Intermediário</h4>
+          <p>
+            Interpretação operacional
+            e desenvolvimento técnico.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Avançado</h4>
+          <p>
+            Aplicação crítica,
+            liderança e tomada de decisão.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SEGURANÇA -->
+
+  <section class="section">
+
+    <div class="section-image">
+      <img
+        src="./assets/imagens/sobre-seguranca.png"
+        alt="Segurança operacional"
+      >
+    </div>
+
+    <div class="section-text">
+
+      <h3>
+        Segurança é parte da cultura operacional.
+      </h3>
+
+      <p>
+        A prevenção de riscos depende de conhecimento,
+        disciplina operacional e percepção constante
+        do ambiente de trabalho.
+      </p>
+
+      <p>
+        Por isso, os conteúdos reforçam comportamento
+        seguro, planejamento, isolamento, comunicação
+        e utilização correta de EPIs.
+      </p>
+
+      <ul>
+
+        <li>
+          Percepção de risco.
+        </li>
+
+        <li>
+          Planejamento operacional.
+        </li>
+
+        <li>
+          Uso correto de EPIs.
+        </li>
+
+        <li>
+          Segurança antes da execução.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- MÉTRICAS -->
+
+  <section class="metrics">
+
+    <div class="metric">
+      <h5>+20</h5>
+      <p>Treinamentos planejados</p>
+    </div>
+
+    <div class="metric">
+      <h5>100%</h5>
+      <p>Gratuito</p>
+    </div>
+
+    <div class="metric">
+      <h5>+8</h5>
+      <p>Áreas técnicas futuras</p>
+    </div>
+
+    <div class="metric">
+      <h5>24/7</h5>
+      <p>Acesso contínuo aos conteúdos</p>
+    </div>
+
+  </section>
+
+  <!-- FINAL -->
+
+  <section class="final">
+
+    <h3>
+      Segurança começa antes da operação.
+      Começa na compreensão.
+    </h3>
+
+    <p>
+      A plataforma RSS3 Treinamentos foi criada para
+      fortalecer conhecimento técnico, comportamento
+      seguro e desenvolvimento operacional através
+      de conteúdos claros, aplicáveis e conectados
+      com a realidade das operações industriais.
+    </p>
+
+  </section>
+
 </main>
 
 <footer>
-  © 2026 <span>RSS3</span> Treinamentos de Segurança
+  © 2026 <span>RSS3</span> Treinamentos
 </footer>
-
-<script>
-// Sistema de Tradução RSS3 Treinamentos
-const translations = {
-    pt: {
-        'nav-home': 'Início',
-        'nav-about': 'Sobre',
-        'sobre-title': 'Sobre RSS3 Treinamentos',
-        'sobre-intro': 'Bem-vindo ao RSS3 Treinamentos, sua plataforma especializada em segurança industrial. Criamos este site para ajudar trabalhadores como você a se manterem seguros e protegidos no ambiente de trabalho.',
-        'sobre-mission': 'Nossa missão é simples: oferecer treinamentos fáceis de entender, práticos e que realmente fazem a diferença no seu dia a dia. Acreditamos que segurança não precisa ser complicada.',
-        'sobre-card-1-title': 'Conteúdo Claro',
-        'sobre-card-1-desc': 'Explicamos tudo de forma simples, sem complicação. Linguagem direta para trabalhadores que precisam de informações práticas.',
-        'sobre-card-2-title': 'Treinamentos Práticos',
-        'sobre-card-2-desc': 'Cursos focados no que você realmente precisa saber para trabalhar com segurança. Sem teoria desnecessária, apenas o essencial.',
-        'sobre-card-3-title': 'Acessível a Todos',
-        'sobre-card-3-desc': 'Disponível em português, espanhol e inglês. Para que todos possam aprender, independente do idioma.',
-        'sobre-conclusion': 'Segurança no trabalho é responsabilidade de todos, mas começa com conhecimento correto. Estamos aqui para ajudar você a ter esse conhecimento de forma fácil e acessível.'
-    },
-    
-    es: {
-        'nav-home': 'Inicio',
-        'nav-about': 'Acerca de',
-        'sobre-title': 'Acerca de RSS3 Entrenamientos',
-        'sobre-intro': 'Bienvenido a RSS3 Entrenamientos, su plataforma especializada en seguridad industrial. Creamos este sitio para ayudar a trabajadores como usted a mantenerse seguros y protegidos en el ambiente laboral.',
-        'sobre-mission': 'Nuestra misión es simple: ofrecer entrenamientos fáciles de entender, prácticos y que realmente marcan la diferencia en su día a día. Creemos que la seguridad no necesita ser complicada.',
-        'sobre-card-1-title': 'Contenido Claro',
-        'sobre-card-1-desc': 'Explicamos todo de forma simple, sin complicación. Lenguaje directo para trabajadores que necesitan información práctica.',
-        'sobre-card-2-title': 'Entrenamientos Prácticos',
-        'sobre-card-2-desc': 'Cursos enfocados en lo que realmente necesita saber para trabajar con seguridad. Sin teoría innecesaria, solo lo esencial.',
-        'sobre-card-3-title': 'Accesible para Todos',
-        'sobre-card-3-desc': 'Disponible en portugués, español e inglés. Para que todos puedan aprender, independientemente del idioma.',
-        'sobre-conclusion': 'La seguridad laboral es responsabilidad de todos, pero comienza con conocimiento correcto. Estamos aquí para ayudarle a tener ese conocimiento de forma fácil y accesible.'
-    },
-    
-    en: {
-        'nav-home': 'Home',
-        'nav-about': 'About',
-        'sobre-title': 'About RSS3 Training',
-        'sobre-intro': 'Welcome to RSS3 Training, your specialized platform in industrial safety. We created this site to help workers like you stay safe and protected in the work environment.',
-        'sobre-mission': 'Our mission is simple: offer easy-to-understand, practical trainings that really make a difference in your daily life. We believe safety doesn\'t need to be complicated.',
-        'sobre-card-1-title': 'Clear Content',
-        'sobre-card-1-desc': 'We explain everything simply, without complication. Direct language for workers who need practical information.',
-        'sobre-card-2-title': 'Practical Training',
-        'sobre-card-2-desc': 'Courses focused on what you really need to know to work safely. Without unnecessary theory, just the essential.',
-        'sobre-card-3-title': 'Accessible to All',
-        'sobre-card-3-desc': 'Available in Portuguese, Spanish and English. So everyone can learn, regardless of language.',
-        'sobre-conclusion': 'Work safety is everyone\'s responsibility, but it starts with correct knowledge. We are here to help you have this knowledge in an easy and accessible way.'
-    }
-};
-
-// Estado atual do idioma
-let currentLanguage = 'pt';
-
-// Função para traduzir elementos
-function translateElements(lang) {
-    const elements = document.querySelectorAll('[data-translate]');
-    
-    elements.forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
-        }
-    });
-    
-    // Atualizar atributo lang do HTML
-    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
-}
-
-// Função para mudar idioma
-function changeLanguage(lang) {
-    currentLanguage = lang;
-    translateElements(lang);
-    
-    // Atualizar botões de idioma
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.getAttribute('data-lang') === lang) {
-            btn.classList.add('active');
-        }
-    });
-    
-    // Salvar preferência no localStorage
-    localStorage.setItem('rss3-language', lang);
-}
-
-// Inicialização
-document.addEventListener('DOMContentLoaded', function() {
-    // Verificar idioma salvo
-    const savedLanguage = localStorage.getItem('rss3-language');
-    if (savedLanguage && translations[savedLanguage]) {
-        changeLanguage(savedLanguage);
-    } else {
-        translateElements(currentLanguage);
-    }
-    
-    // Adicionar event listeners aos botões de idioma
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const lang = this.getAttribute('data-lang');
-            changeLanguage(lang);
-        });
-    });
-});
-</script>
 
 </body>
 </html>

@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Gestão de Processos Intermediário | Parte 2</title>
+
+  <style>
+
+    :root{
+      --azul:#0a3d91;
+      --azul2:#0f5bd8;
+      --laranja:#ff7a00;
+      --cinza:#f4f6f9;
+      --texto:#444;
+      --verde:#17b26a;
+      --vermelho:#e5484d;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--cinza);
+      color:var(--texto);
+      line-height:1.7;
+    }
+
+    /* HEADER */
+
+    header{
+      background:linear-gradient(135deg,var(--azul),var(--azul2));
+      color:white;
+      padding:18px 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 5px 18px rgba(0,0,0,0.15);
+    }
+
+    header h1{
+      font-size:1.4em;
+    }
+
+    header span{
+      color:var(--laranja);
+    }
+
+    nav{
+      display:flex;
+      gap:20px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      color:var(--laranja);
+    }
+
+    /* HERO */
+
+    .top-banner{
+      background:linear-gradient(135deg,#0a3d91,#0f5bd8,#ff7a00);
+      color:white;
+      padding:90px 30px;
+    }
+
+    .top-content{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    .top-content h2{
+      font-size:3em;
+      margin-bottom:20px;
+    }
+
+    .top-content p{
+      max-width:780px;
+      font-size:1.1em;
+      line-height:1.8;
+    }
+
+    /* MAIN */
+
+    main{
+      max-width:1100px;
+      margin:40px auto;
+      padding:20px;
+    }
+
+    /* INFO */
+
+    .course-info{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      margin-bottom:40px;
+    }
+
+    .info-card{
+      background:white;
+      border-radius:18px;
+      padding:25px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .info-card h3{
+      color:var(--azul);
+      margin-bottom:10px;
+      font-size:1em;
+    }
+
+    .info-card p{
+      font-size:1.05em;
+      font-weight:bold;
+    }
+
+    /* SECTION */
+
+    .section{
+      background:white;
+      border-radius:22px;
+      padding:35px;
+      margin-bottom:30px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .section h2{
+      color:var(--azul);
+      margin-bottom:20px;
+      font-size:2em;
+    }
+
+    .section p{
+      margin-bottom:20px;
+      color:#555;
+    }
+
+    /* IMAGE */
+
+    .content-image{
+      width:100%;
+      border-radius:18px;
+      margin:30px 0;
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+      border:6px solid #f4f6f9;
+    }
+
+    .image-caption{
+      text-align:center;
+      color:#666;
+      margin-top:-10px;
+      margin-bottom:25px;
+      font-size:0.95em;
+    }
+
+    /* ALERT */
+
+    .alert{
+      border-left:6px solid var(--laranja);
+      background:#fff7ef;
+      padding:20px;
+      border-radius:12px;
+      margin-top:25px;
+    }
+
+    /* GRID */
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:20px;
+      margin-top:25px;
+    }
+
+    .card{
+      background:#f8fafc;
+      border-radius:16px;
+      padding:25px;
+      border:1px solid #e8edf3;
+    }
+
+    .card h3{
+      color:var(--azul);
+      margin-bottom:10px;
+    }
+
+    /* CHECKLIST */
+
+    .checklist{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:20px;
+    }
+
+    .check-item{
+      background:#f8fafc;
+      padding:18px;
+      border-radius:12px;
+      border-left:5px solid var(--verde);
+      font-weight:bold;
+    }
+
+    /* BUTTONS */
+
+    .buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    .btn{
+      flex:1;
+      min-width:250px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-decoration:none;
+      padding:18px;
+      border-radius:14px;
+      font-weight:bold;
+      transition:0.2s;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-back{
+      background:#edf2f7;
+      color:#0a3d91;
+    }
+
+    .btn-home{
+      background:var(--laranja);
+      color:white;
+    }
+
+    /* QUIZ */
+
+    .question{
+      background:#f8fafc;
+      border-radius:16px;
+      padding:25px;
+      margin-top:25px;
+      border:1px solid #e6ebf2;
+    }
+
+    .question h3{
+      margin-bottom:15px;
+      color:var(--azul);
+      font-size:1.1em;
+    }
+
+    .question label{
+      display:block;
+      margin-bottom:14px;
+      cursor:pointer;
+    }
+
+    .quiz-btn{
+      margin-top:30px;
+      background:var(--laranja);
+      color:white;
+      border:none;
+      padding:16px 28px;
+      border-radius:12px;
+      font-weight:bold;
+      cursor:pointer;
+      font-size:1em;
+    }
+
+    .quiz-btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .result{
+      margin-top:25px;
+      font-size:1.1em;
+      font-weight:bold;
+    }
+
+    /* FOOTER */
+
+    footer{
+      margin-top:60px;
+      background:linear-gradient(135deg,#0a3d91,#062a63);
+      color:white;
+      text-align:center;
+      padding:35px 20px;
+    }
+
+    footer span{
+      color:var(--laranja);
+      font-weight:bold;
+    }
+
+    @media(max-width:768px){
+
+      .top-content h2{
+        font-size:2.2em;
+      }
+
+      .section{
+        padding:25px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <h1>RSS<span>3</span> Treinamentos</h1>
+
+  <nav>
+    <a href="../../../index.html">Início</a>
+    <a href="#">Cursos</a>
+  </nav>
+
+</header>
+
+<section class="top-banner">
+
+  <div class="top-content">
+
+    <h2>
+      Gestão de Processos Intermediário
+    </h2>
+
+    <p>
+      Parte 2 — análise de problemas,
+      ferramentas da qualidade,
+      gargalos,
+      causa raiz
+      e aplicação prática da melhoria contínua.
+    </p>
+
+  </div>
+
+</section>
+
+<main>
+
+  <!-- INFO -->
+
+  <section class="course-info">
+
+    <div class="info-card">
+      <h3>Duração</h3>
+      <p>35 minutos</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Nível</h3>
+      <p>Intermediário</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Área</h3>
+      <p>Gestão</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Parte</h3>
+      <p>2 de 2</p>
+    </div>
+
+  </section>
+
+  <!-- INTRO -->
+
+  <section class="section">
+
+    <h2>
+      Analisar problemas corretamente muda resultados
+    </h2>
+
+    <p>
+      Muitas operações corrigem sintomas,
+      mas não resolvem as causas reais dos problemas.
+    </p>
+
+    <p>
+      A melhoria contínua depende de:
+      análise,
+      medição,
+      investigação
+      e padronização.
+    </p>
+
+    <div class="alert">
+      <strong>Importante:</strong>
+      resolver apenas o efeito do problema
+      normalmente faz a falha voltar a acontecer.
+    </div>
+
+  </section>
+
+  <!-- FERRAMENTAS -->
+
+  <section class="section">
+
+    <h2>
+      Ferramentas da qualidade e análise
+    </h2>
+
+    <p>
+      Ferramentas da qualidade ajudam equipes
+      a identificar padrões,
+      entender falhas
+      e encontrar oportunidades de melhoria.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Pareto</h3>
+        <p>
+          Mostra quais problemas geram maior impacto.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Ishikawa</h3>
+        <p>
+          Organiza possíveis causas de um problema.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>5 Porquês</h3>
+        <p>
+          Técnica utilizada para aprofundar investigação.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Fluxograma</h3>
+        <p>
+          Representa visualmente o fluxo operacional.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>PDCA</h3>
+        <p>
+          Método utilizado para melhoria contínua.
+        </p>
+      </div>
+
+    </div>
+
+    <img
+      src="./imagens/gestao-intermediario-4.png"
+      alt="Ferramentas da Qualidade"
+      class="content-image"
+    >
+
+    <div class="image-caption">
+      Ferramentas utilizadas para análise e melhoria de processos.
+    </div>
+
+  </section>
+
+  <!-- GARGALOS -->
+
+  <section class="section">
+
+    <h2>
+      Gargalos operacionais
+    </h2>
+
+    <p>
+      Gargalos são pontos do processo
+      que limitam velocidade,
+      produtividade
+      e eficiência operacional.
+    </p>
+
+    <p>
+      Um único gargalo pode afetar
+      toda a operação.
+    </p>
+
+    <div class="checklist">
+
+      <div class="check-item">
+        ✔ Filas excessivas
+      </div>
+
+      <div class="check-item">
+        ✔ Esperas desnecessárias
+      </div>
+
+      <div class="check-item">
+        ✔ Excesso de retrabalho
+      </div>
+
+      <div class="check-item">
+        ✔ Falta de padronização
+      </div>
+
+      <div class="check-item">
+        ✔ Comunicação falha
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MELHORIA -->
+
+  <section class="section">
+
+    <h2>
+      Melhoria de processo na prática
+    </h2>
+
+    <p>
+      Melhorar processos significa:
+      reduzir desperdícios,
+      organizar atividades,
+      eliminar gargalos
+      e aumentar eficiência.
+    </p>
+
+    <p>
+      Pequenas melhorias aplicadas corretamente
+      podem gerar grandes resultados operacionais.
+    </p>
+
+    <img
+      src="./imagens/gestao-intermediario-5.png"
+      alt="Melhoria de Processo"
+      class="content-image"
+    >
+
+    <div class="image-caption">
+      Comparação entre um processo desorganizado e um fluxo otimizado.
+    </div>
+
+  </section>
+
+  <!-- ESTUDO -->
+
+  <section class="section">
+
+    <h2>
+      Exemplo prático de melhoria
+    </h2>
+
+    <p>
+      Uma operação apresentava:
+    </p>
+
+    <div class="checklist">
+
+      <div class="check-item">
+        ✔ Atrasos constantes
+      </div>
+
+      <div class="check-item">
+        ✔ Retrabalho frequente
+      </div>
+
+      <div class="check-item">
+        ✔ Excesso de espera
+      </div>
+
+      <div class="check-item">
+        ✔ Baixa produtividade
+      </div>
+
+    </div>
+
+    <p style="margin-top:25px;">
+      Após análise do processo,
+      foram aplicadas melhorias:
+    </p>
+
+    <div class="checklist">
+
+      <div class="check-item">
+        ✔ Padronização das atividades
+      </div>
+
+      <div class="check-item">
+        ✔ Redução de etapas desnecessárias
+      </div>
+
+      <div class="check-item">
+        ✔ Melhor distribuição operacional
+      </div>
+
+      <div class="check-item">
+        ✔ Controle por indicadores
+      </div>
+
+    </div>
+
+    <p style="margin-top:25px;">
+      Resultado:
+      redução de atrasos,
+      aumento de produtividade
+      e maior estabilidade operacional.
+    </p>
+
+  </section>
+
+  <!-- CULTURA -->
+
+  <section class="section">
+
+    <h2>
+      Melhoria contínua é cultura
+    </h2>
+
+    <p>
+      Processos nunca ficam perfeitos para sempre.
+    </p>
+
+    <p>
+      Empresas eficientes criam cultura de:
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Análise</h3>
+        <p>
+          Avaliar constantemente o desempenho.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Adaptação</h3>
+        <p>
+          Ajustar processos conforme necessidade.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Evolução</h3>
+        <p>
+          Buscar melhoria contínua de forma constante.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- QUIZ -->
+
+<section class="section">
+
+  <h2>
+    Quiz de compreensão
+  </h2>
+
+  <!-- 1 -->
+
+  <div class="question">
+
+    <h3>
+      1. Na imagem “ANTES x DEPOIS”, qual elemento representa diretamente um gargalo operacional?
+    </h3>
+
+    <label>
+      <input type="radio" name="q1" value="a">
+      O recebimento do pedido
+    </label>
+
+    <label>
+      <input type="radio" name="q1" value="b">
+      A etapa “Aguardar aprovação”
+    </label>
+
+    <label>
+      <input type="radio" name="q1" value="c">
+      O transporte final
+    </label>
+
+  </div>
+
+  <!-- 2 -->
+
+  <div class="question">
+
+    <h3>
+      2. Na comparação entre os dois fluxos da imagem de melhoria, qual foi a principal mudança estrutural do processo?
+    </h3>
+
+    <label>
+      <input type="radio" name="q2" value="a">
+      Adição de mais etapas operacionais
+    </label>
+
+    <label>
+      <input type="radio" name="q2" value="b">
+      Padronização e redução de esperas
+    </label>
+
+    <label>
+      <input type="radio" name="q2" value="c">
+      Aumento de inspeções manuais
+    </label>
+
+  </div>
+
+  <!-- 3 -->
+
+  <div class="question">
+
+    <h3>
+      3. Observando a imagem das ferramentas da qualidade, qual ferramenta seria mais indicada para descobrir quais falhas geram maior impacto operacional?
+    </h3>
+
+    <label>
+      <input type="radio" name="q3" value="a">
+      Fluxograma
+    </label>
+
+    <label>
+      <input type="radio" name="q3" value="b">
+      Pareto
+    </label>
+
+    <label>
+      <input type="radio" name="q3" value="c">
+      PDCA
+    </label>
+
+  </div>
+
+  <!-- 4 -->
+
+  <div class="question">
+
+    <h3>
+      4. A imagem dos “5 Porquês” demonstra principalmente:
+    </h3>
+
+    <label>
+      <input type="radio" name="q4" value="a">
+      Um método de aumentar produtividade rapidamente
+    </label>
+
+    <label>
+      <input type="radio" name="q4" value="b">
+      Uma investigação progressiva até encontrar a causa raiz
+    </label>
+
+    <label>
+      <input type="radio" name="q4" value="c">
+      Um modelo de controle financeiro
+    </label>
+
+  </div>
+
+  <!-- 5 -->
+
+  <div class="question">
+
+    <h3>
+      5. Na imagem “ANTES x DEPOIS”, qual indicador apresentou a maior melhoria percentual?
+    </h3>
+
+    <label>
+      <input type="radio" name="q5" value="a">
+      Entregas no prazo
+    </label>
+
+    <label>
+      <input type="radio" name="q5" value="b">
+      Tempo do processo
+    </label>
+
+    <label>
+      <input type="radio" name="q5" value="c">
+      Retrabalho
+    </label>
+
+  </div>
+
+  <!-- 6 -->
+
+  <div class="question">
+
+    <h3>
+      6. Na imagem do Ishikawa, por que as categorias estão separadas em áreas como “Métodos”, “Máquinas” e “Mão de Obra”?
+    </h3>
+
+    <label>
+      <input type="radio" name="q6" value="a">
+      Para dividir responsabilidades entre equipes
+    </label>
+
+    <label>
+      <input type="radio" name="q6" value="b">
+      Para organizar possíveis fontes do problema
+    </label>
+
+    <label>
+      <input type="radio" name="q6" value="c">
+      Para mostrar ordem de prioridade operacional
+    </label>
+
+  </div>
+
+  <!-- 7 -->
+
+  <div class="question">
+
+    <h3>
+      7. Analisando as duas imagens principais da Parte 2, qual é a relação entre análise de causa raiz e melhoria de processo?
+    </h3>
+
+    <label>
+      <input type="radio" name="q7" value="a">
+      A melhoria pode acontecer sem entender causas
+    </label>
+
+    <label>
+      <input type="radio" name="q7" value="b">
+      Melhorias sustentáveis dependem da identificação correta das causas
+    </label>
+
+    <label>
+      <input type="radio" name="q7" value="c">
+      Causa raiz serve apenas para gerar relatórios
+    </label>
+
+  </div>
+
+  <button class="quiz-btn" onclick="checkQuiz()">
+    Finalizar Quiz
+  </button>
+
+  <div class="result" id="result"></div>
+
+</section>
+
+<script>
+
+  function checkQuiz(){
+
+    let score = 0;
+
+    const answers = {
+      q1: 'b',
+      q2: 'b',
+      q3: 'b',
+      q4: 'b',
+      q5: 'c',
+      q6: 'b',
+      q7: 'b'
+    };
+
+    for(let question in answers){
+
+      const selected =
+        document.querySelector(`input[name="${question}"]:checked`);
+
+      if(selected && selected.value === answers[question]){
+        score++;
+      }
+
+    }
+
+    const result =
+      document.getElementById('result');
+
+    result.style.marginTop = '25px';
+
+    if(score === 7){
+
+      result.style.color = '#17b26a';
+
+      result.innerHTML =
+        `Excelente análise! Você acertou ${score}/7 perguntas.`;
+
+    }else if(score >= 5){
+
+      result.style.color = '#ff7a00';
+
+      result.innerHTML =
+        `Bom resultado! Você acertou ${score}/7 perguntas.`;
+
+    }else{
+
+      result.style.color = '#e5484d';
+
+      result.innerHTML =
+        `Você acertou ${score}/7 perguntas. Revise os conceitos e as imagens do treinamento.`;
+
+    }
+
+  }
+
+</script>
+
+</script>
+
+</body>
+</html>
